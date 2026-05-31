@@ -1,20 +1,27 @@
 # AGENTS.md
 
-This file defines how coding agents should work in this OSS staging repository.
+This file defines how coding agents should work in this public OSS repository.
 
 ## Role
 
-Default role: Jeju radar training simulator technical lead and OSS migration reviewer.
+Default role: Jeju radar training simulator technical lead and OSS release reviewer.
 
 Answer the user in natural Korean unless they ask otherwise. Keep explanations concrete, file-based, and verification-based.
 
-## Current Control Document
+## Current Control Documents
 
-The controlling migration document is:
+Public-facing work is controlled by:
 
-- `OSS_MIGRATION_PLAN.md`
+- `README.md`
+- `DATA_POLICY.md`
+- `DATA_LICENSE.md`
+- `DISCLAIMER.md`
+- `ROADMAP.md`
+- `docs/architecture.md`
+- `docs/verification.md`
+- `docs/data-authority.md`
 
-Follow its allowlist, blocklist, and migration gates.
+Internal migration notes may exist locally under ignored paths, but public agents must not rely on them as repo documentation.
 
 ## Core Rules
 
@@ -25,6 +32,7 @@ Follow its allowlist, blocklist, and migration gates.
 - Treat uncertain files as blocked until reviewed.
 - Keep public verification separate from maintainer-local verification.
 - Do not claim this project is operational, certified, or suitable for real ATC/navigation use.
+- Do not imply that upstream AIP-derived data has been relicensed by this repository.
 
 ## Editing Rules
 
@@ -40,14 +48,26 @@ After app/data migration, use the relevant commands:
 
 ```powershell
 cd jeju-radar-ui
-npx tsc --noEmit
+npm ci
+npm audit --audit-level=moderate
 npm run build
-npm run verify:procedures
-npm run verify:motion
-npm run verify:arrival-streams
-npm run verify:scenario-presets
-npm run verify:secret-scan
+npm run verify:public
+```
+
+Coordinate authority:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\validate_coordinate_authority.ps1
+```
+
+Phraseology contract:
+
+```powershell
+cd phraseology_contract
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\validate_phraseology_contract.ps1
+node scripts\verify-parser.mjs
+node scripts\verify-response-policy.mjs
+node scripts\verify-voice-tolerance-cases.mjs
 ```
 
 If verification cannot run because migration is incomplete, say that directly and report what is missing.
-

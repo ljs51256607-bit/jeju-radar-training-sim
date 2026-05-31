@@ -1,0 +1,56 @@
+name: Verify
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: jeju-radar-ui/package-lock.json
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install UI dependencies
+        working-directory: jeju-radar-ui
+        run: npm ci
+
+      - name: Audit UI dependencies
+        working-directory: jeju-radar-ui
+        run: npm audit --audit-level=moderate
+
+      - name: Build UI
+        working-directory: jeju-radar-ui
+        run: npm run build
+
+      - name: Verify public UI contracts
+        working-directory: jeju-radar-ui
+        run: npm run verify:public
+
+      - name: Verify coordinate authority
+        shell: pwsh
+        run: ./scripts/validate_coordinate_authority.ps1
+
+      - name: Verify phraseology contract
+        shell: pwsh
+        working-directory: phraseology_contract
+        run: |
+          ./scripts/validate_phraseology_contract.ps1
+          node scripts/verify-parser.mjs
+          node scripts/verify-response-policy.mjs
+          node scripts/verify-voice-tolerance-cases.mjs

@@ -1,6 +1,6 @@
 # Jeju Radar Training Simulator
 
-Jeju Radar Training Simulator is an open-source staging project for a browser-based radar training simulator focused on procedure-based ATC training, deterministic scenario replay, coordinate authority validation, and phraseology regression testing.
+Jeju Radar Training Simulator is an open-source browser-based radar training simulator focused on procedure-based ATC training, deterministic scenario replay, coordinate authority validation, and phraseology regression testing.
 
 Jeju/RKPC is the first reference implementation.
 
@@ -8,9 +8,15 @@ This is not an operational ATC system. It is not for real-world air traffic cont
 
 ## Project Status
 
-This repository is currently an OSS staging workspace.
+This repository is a public release candidate.
 
-The source project is being migrated by allowlist, not copied wholesale. The first migration goal is a public candidate repo that can build and run core verification without private source files, local secrets, generated artifacts, or oversized data.
+The public release surface is built from an allowlist, not a wholesale copy of the source workspace. It can build and run core verification without private source files, local secrets, generated artifacts, or oversized data.
+
+## Why This Matters
+
+Radar training often depends on dedicated simulator rooms, instructor scheduling, and another person acting as the pilot. This project explores a web-based training surface that can run on ordinary computers so controllers can rehearse procedures, phraseology, traffic sequencing, and radar decision-making with less scheduling friction.
+
+The long-term direction is to start with Jeju approach training, then generalize toward other Korean approach-control environments and enroute/ACC training. AI pilot role-play is part of that direction: the simulator should let a trainee practice alone while an AI pilot agent handles readbacks and training-only pilot responses.
 
 ## What This Project Is For
 
@@ -28,16 +34,17 @@ The source project is being migrated by allowlist, not copied wholesale. The fir
 - Not a replacement for official AIP, SOP, training manuals, or regulator-approved tools
 - Not a repo for redistributing private training material, local SOP PDFs, or secrets
 
-## Intended Public Repo Shape
+## Repository Layout
 
 ```text
-jeju-radar-training-sim-oss/
+jeju-radar-training-sim/
   README.md
   DISCLAIMER.md
   DATA_POLICY.md
   CONTRIBUTING.md
   SECURITY.md
   ROADMAP.md
+  CHANGELOG.md
   LICENSE
   DATA_LICENSE.md
   data/
@@ -46,6 +53,9 @@ jeju-radar-training-sim-oss/
     reference/
     scenarios/
   docs/
+    architecture.md
+    data-authority.md
+    verification.md
   jeju-radar-ui/
     index.html
     package.json
@@ -85,7 +95,13 @@ node scripts\verify-voice-tolerance-cases.mjs
 
 ## Migration Control
 
-Internal migration notes are kept outside the public release surface. The public boundary is defined by this README, [DATA_POLICY.md](DATA_POLICY.md), [DISCLAIMER.md](DISCLAIMER.md), and the verification scripts included in this repository.
+Internal migration notes are kept outside the public release surface. The public boundary is defined by this README, [DATA_POLICY.md](DATA_POLICY.md), [DATA_LICENSE.md](DATA_LICENSE.md), [DISCLAIMER.md](DISCLAIMER.md), the public docs under [docs/](docs/), and the verification scripts included in this repository.
+
+## Public Documentation
+
+- [Architecture](docs/architecture.md)
+- [Verification](docs/verification.md)
+- [Data authority](docs/data-authority.md)
 
 ## Data Policy
 
