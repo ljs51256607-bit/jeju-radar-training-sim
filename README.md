@@ -1,5 +1,7 @@
 # Jeju Radar Training Simulator
 
+[![Verify](https://github.com/ljs51256607-bit/jeju-radar-training-sim/actions/workflows/verify.yml/badge.svg)](https://github.com/ljs51256607-bit/jeju-radar-training-sim/actions/workflows/verify.yml)
+
 Jeju Radar Training Simulator is an open-source browser-based radar training simulator focused on procedure-based ATC training, deterministic scenario replay, coordinate authority validation, and phraseology regression testing.
 
 Jeju/RKPC is the first reference implementation.
