@@ -23,6 +23,8 @@ Allowed data may include:
 
 Allowed data must avoid embedding private source documents, full source PDFs, local secrets, or excessive copied source text.
 
+Public-source-derived aeronautical reference data may be included only when it is minimized for simulator use, carries source traceability, avoids long copied passages, and is not presented as newly relicensed upstream data.
+
 ## Blocked Data
 
 The public repository must not include:
@@ -73,6 +75,8 @@ Voice/PTT traces are local evidence, not source data. Do not commit exported tra
 Short source identifiers, section labels, and provenance fields are acceptable when needed for traceability.
 
 Do not copy large passages from source documents into repository data. Do not include private source excerpts in public JSON fixtures or test cases.
+
+When source material is publicly viewable but not clearly open-licensed, prefer derived facts, identifiers, short labels, and source links over copied source text. Do not mark AIP-derived values as CC BY 4.0 unless the upstream license clearly permits that reuse.
 
 ## Secrets
 

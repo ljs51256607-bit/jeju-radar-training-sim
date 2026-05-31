@@ -91,7 +91,7 @@ Internal migration notes are kept outside the public release surface. The public
 
 See [DATA_POLICY.md](DATA_POLICY.md).
 
-Repository-authored derived data is covered separately in [DATA_LICENSE.md](DATA_LICENSE.md). The code is covered by [LICENSE](LICENSE).
+Repository-authored data and upstream-derived data boundaries are covered separately in [DATA_LICENSE.md](DATA_LICENSE.md). The code is covered by [LICENSE](LICENSE).
 
 The short version:
 
