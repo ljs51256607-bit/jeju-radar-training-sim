@@ -41,9 +41,7 @@
         "source_section": "IPDAS FOUR KILO DEPARTURE"
       },
       "source_text_evidence": [
-        "IPDAS FOUR KILO DEPARTURE",
-        "Climb on R 067 YDM until D6.5, then turn Left to intercept R 013 CJU then proceed direct to IPDAS.",
-        "* Cross R 013 CJU/D30.0 at 7 000 ft and Cross IPDAS at 9 000 ft unless otherwise directed by ATC."
+        "derived training source text redacted for public OSS dataset"
       ],
       "derived_geometry_refs": [
         "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_YDM_R067_D6_5",
