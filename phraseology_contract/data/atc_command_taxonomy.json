@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "id": "atc_command_taxonomy_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "categories": [
+    {
+      "id": "SPEED",
+      "description": "Speed assignment, restriction, and resume normal speed"
+    },
+    {
+      "id": "ALTITUDE",
+      "description": "Climb, descend, and maintain altitude"
+    },
+    {
+      "id": "VERTICAL",
+      "description": "Vertical speed, expedite/increase rate, and resume normal climb/descent"
+    },
+    {
+      "id": "HEADING",
+      "description": "Heading assignment and explicit turn direction"
+    },
+    {
+      "id": "DIRECT",
+      "description": "Direct-to-fix command"
+    },
+    {
+      "id": "PROCEDURE",
+      "description": "STAR, SID, ILS, approach, and descend-via clearances"
+    },
+    {
+      "id": "MISSED",
+      "description": "Go-around and missed approach"
+    },
+    {
+      "id": "HOLD",
+      "description": "Holding clearance and hold parameters"
+    },
+    {
+      "id": "COMM",
+      "description": "Frequency transfer and contact/monitor instructions"
+    },
+    {
+      "id": "READBACK",
+      "description": "Readback, say again, correction, and confirmation"
+    },
+    {
+      "id": "UNABLE",
+      "description": "Pilot unable and refusal/constraint responses"
+    }
+  ]
+}

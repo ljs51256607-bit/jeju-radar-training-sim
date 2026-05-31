@@ -1,0 +1,202 @@
+{
+  "airport_meta": {
+    "icao": "RKPC",
+    "name": "Jeju International Airport",
+    "arp": {
+      "raw_coordinate": "333044N 1262934E",
+      "latitude": 33.512222,
+      "longitude": 126.492778
+    },
+    "elevation_m": 36,
+    "reference_temperature_c": 31.4,
+    "mag_var": "8° W (2025) / 0.042° increasing",
+    "transition_altitude_ft": 14000,
+    "source_file": "public_derived_training_dataset",
+    "source_section": "RKPC AD 2.2, AD 2.12",
+    "source_text": "derived training source text redacted for public OSS dataset"
+  },
+  "runways": [
+    {
+      "id": "07",
+      "true_bearing_deg": 58.46,
+      "length_m": 3180,
+      "width_m": 45,
+      "surface": "Asphalt",
+      "threshold": {
+        "raw_coordinate": "332959.57N 1262806.50E",
+        "latitude": 33.499881,
+        "longitude": 126.468472,
+        "elevation_m": 26.6
+      },
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.12 RUNWAY PHYSICAL CHARACTERISTICS"
+    },
+    {
+      "id": "25",
+      "true_bearing_deg": 238.47,
+      "length_m": 3180,
+      "width_m": 45,
+      "surface": "Asphalt",
+      "threshold": {
+        "raw_coordinate": "333053.56N 1262951.51E",
+        "latitude": 33.514878,
+        "longitude": 126.497642,
+        "elevation_m": 23.3
+      },
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.12 RUNWAY PHYSICAL CHARACTERISTICS"
+    },
+    {
+      "id": "13",
+      "true_bearing_deg": 125.62,
+      "length_m": 1900,
+      "width_m": 45,
+      "surface": "Asphalt",
+      "threshold": {
+        "raw_coordinate": "333055.66N 1262914.62E",
+        "latitude": 33.515461,
+        "longitude": 126.487394,
+        "elevation_m": 20
+      },
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.12 RUNWAY PHYSICAL CHARACTERISTICS"
+    },
+    {
+      "id": "31",
+      "true_bearing_deg": 305.63,
+      "length_m": 1900,
+      "width_m": 45,
+      "surface": "Asphalt",
+      "threshold": {
+        "raw_coordinate": "333019.74N 1263014.45E",
+        "latitude": 33.505483,
+        "longitude": 126.504014,
+        "elevation_m": 36
+      },
+      "displaced_threshold": {
+        "raw_coordinate": "333027.51N 1263001.51E",
+        "latitude": 33.507642,
+        "longitude": 126.500419,
+        "elevation_m": 32
+      },
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.12 RUNWAY PHYSICAL CHARACTERISTICS"
+    }
+  ],
+  "frequencies": [
+    {
+      "position": "AP",
+      "callsign": "JEJU APP",
+      "band": "VHF",
+      "frequency_mhz": 121.2,
+      "notes": "기본 접근관제 주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "Visual Approach Chart header"
+    },
+    {
+      "position": "AP",
+      "callsign": "JEJU APP",
+      "band": "VHF",
+      "frequency_mhz": 124.05,
+      "notes": "보조 접근관제 주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "Visual Approach Chart header"
+    },
+    {
+      "position": "AR",
+      "callsign": "Arrival control",
+      "band": "VHF",
+      "frequency_mhz": 120.425,
+      "notes": "도착관제석 운영주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제20조 주파수 운영"
+    },
+    {
+      "position": "DC",
+      "callsign": "JEJU DEP",
+      "band": "VHF",
+      "frequency_mhz": 119.225,
+      "notes": "출발관제 주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "Visual Approach Chart header"
+    },
+    {
+      "position": "TWR",
+      "callsign": "JEJU TWR",
+      "band": "VHF",
+      "frequency_mhz": 118.2,
+      "notes": "국지관제석 주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "Visual Approach Chart header"
+    },
+    {
+      "position": "TWR",
+      "callsign": "JEJU TWR",
+      "band": "VHF",
+      "frequency_mhz": 118.55,
+      "notes": "국지관제 보조 주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "Visual Approach Chart header"
+    },
+    {
+      "position": "EMERGENCY",
+      "callsign": "Emergency",
+      "band": "VHF",
+      "frequency_mhz": 121.5,
+      "notes": "비상주파수",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제20조 주파수 운영"
+    }
+  ],
+  "navaids": [
+    {
+      "id": "YDM",
+      "type": "VOR/DME",
+      "frequency": "109.0 MHz",
+      "raw_coordinate": "333041.3N 1262915.4E",
+      "latitude": 33.511472,
+      "longitude": 126.487611,
+      "notes": "VOR unusable RDL 170 clockwise RDL 190 beyond 15 NM below 12 000 ft; DME unusable RDL 150 clockwise RDL 210 beyond 15 NM below 13 000 ft.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.19 RADIO NAVIGATION AND LANDING AIDS"
+    },
+    {
+      "id": "ICJU",
+      "type": "LOC 07",
+      "frequency": "109.9 MHz",
+      "raw_coordinate": "333058.7N 1263001.6E",
+      "latitude": 33.516306,
+      "longitude": 126.500444,
+      "notes": "ILS to RWY 07; GP 3°; RDH 17.98 m.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.19 RADIO NAVIGATION AND LANDING AIDS"
+    },
+    {
+      "id": "ICHE",
+      "type": "LOC 25",
+      "frequency": "111.3 MHz",
+      "raw_coordinate": "332954.4N 1262756.4E",
+      "latitude": 33.498444,
+      "longitude": 126.465667,
+      "notes": "ILS to RWY 25; GP 3°; RDH 15.24 m.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.19 RADIO NAVIGATION AND LANDING AIDS"
+    },
+    {
+      "id": "CJU",
+      "type": "VORTAC",
+      "frequency": null,
+      "raw_coordinate": "33°23'04.6\"N 126°37'26.8\"E",
+      "latitude": 33.384611,
+      "longitude": 126.624111,
+      "notes": "Procedure table coordinate preserved from STAR/SID coding tables; ENR 4.1 reference still needed for final nav-aid record.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    }
+  ],
+  "notes": [
+    "공항 기본값은 제주공항-TEXT.pdf를 기준으로 고정했다.",
+    "주파수는 Visual Approach Chart header와 public source cross-check가 일치하는 값만 1차 반영했다.",
+    "navaid 세부 제약은 원문 문장을 그대로 notes에 보존했다."
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "id": "llm_pilot_agent_contract_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "allowed_actions": [
+    "generate_readback",
+    "request_say_again",
+    "request_confirm",
+    "respond_unable",
+    "simulate_configured_readback_delay",
+    "simulate_configured_readback_error"
+  ],
+  "forbidden_actions": [
+    "mutate_aircraft_position",
+    "mutate_aircraft_speed",
+    "mutate_aircraft_altitude",
+    "mutate_aircraft_heading",
+    "mutate_route_mode",
+    "invent_procedure_route",
+    "override_source_priority"
+  ],
+  "runtime_sequence": [
+    "controller_phrase",
+    "phraseology_parser",
+    "command_intent",
+    "validation",
+    "pilot_response_payload",
+    "llm_pilot_voice_response",
+    "accepted_command_if_payload_allows",
+    "engine_effect",
+    "aircraft_motion_model"
+  ],
+  "pilot_response_payload_contract": {
+    "required_fields": [
+      "callsign",
+      "condition",
+      "response_action",
+      "engine_action",
+      "speakable_text",
+      "llm_role",
+      "llm_allowed_actions",
+      "llm_forbidden_actions"
+    ],
+    "response_actions": [
+      "READBACK",
+      "SAY_AGAIN",
+      "CONFIRM_INTENT",
+      "CONFIRM_CANCEL_SPEED_RESTRICTION",
+      "UNABLE",
+      "SILENT_NO_RESPONSE"
+    ],
+    "engine_actions": [
+      "APPLY_AFTER_VALIDATION",
+      "HOLD_PENDING_CONFIRMATION",
+      "APPLY_PENDING_CONFIRMATION",
+      "CLEAR_PENDING_CONFIRMATION",
+      "NO_STATE_CHANGE"
+    ],
+    "llm_role": "pilot_readback_voice",
+    "llm_may": [
+      "speak the provided speakable_text",
+      "polish only the voice style without changing intent, slots, validation, or engine action"
+    ],
+    "llm_must_not": [
+      "mutate aircraft state",
+      "invent a clearance",
+      "override validation",
+      "apply an engine effect",
+      "answer an instruction when response_action is SILENT_NO_RESPONSE"
+    ]
+  },
+  "pilot_voice_proxy_contract": {
+    "input": "pilot_response_payload only",
+    "output": "one pilot voice text line",
+    "fallback": "use pilot_response_payload.speakable_text when API key, network, model, or guard fails",
+    "secret_boundary": "OpenAI API key must stay server-side and must not be exposed to browser bundle",
+    "runtime_guards": [
+      "no voice call for SILENT_NO_RESPONSE",
+      "callsign must not be omitted or changed",
+      "numeric tokens must not be changed",
+      "READBACK must not be converted into a confirmation question"
+    ]
+  }
+}

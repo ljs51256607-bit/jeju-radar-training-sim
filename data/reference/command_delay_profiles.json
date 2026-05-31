@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "status": "training_sim_v1",
+    "description": "Deterministic nominal readback and flight-deck action delay used before commanded maneuver begins.",
+    "policy": [
+      "Clearance state is shown immediately in the data block/scratchpad.",
+      "Actual aircraft maneuver starts after nominal_delay_sec.",
+      "min_delay_sec and max_delay_sec are retained for later randomization or scenario tuning."
+    ],
+    "notes": [
+      "These values are simulator training parameters, not certified human-factor timing data."
+    ]
+  },
+  "profiles": [
+    {
+      "command": "HDG",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus heading selector / mode action."
+      ]
+    },
+    {
+      "command": "SPD",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus speed intervention and thrust response start."
+      ]
+    },
+    {
+      "command": "ALT",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus altitude selector and vertical mode action."
+      ]
+    },
+    {
+      "command": "VS",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus vertical speed selection."
+      ]
+    },
+    {
+      "command": "DCT",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus FMS direct-to setup before route tracking starts."
+      ]
+    },
+    {
+      "command": "STAR",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus FMS procedure activation before route tracking starts."
+      ]
+    },
+    {
+      "command": "SID",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus FMS departure route activation before route tracking starts."
+      ]
+    },
+    {
+      "command": "ILS",
+      "min_delay_sec": 10,
+      "nominal_delay_sec": 10,
+      "max_delay_sec": 10,
+      "notes": [
+        "Readback plus approach setup before approach route tracking starts."
+      ]
+    }
+  ]
+}

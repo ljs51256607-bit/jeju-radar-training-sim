@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "name": "rkpc_chart_primitives",
+    "status": "coordinate_verified",
+    "description": "차트 primitive와 파라메트릭 reference만 분리한 document."
+  },
+  "chart_guides": {
+    "scope_extent": {
+      "id": "RKPC_ATC_SURVEILLANCE_MINIMUM_ALTITUDE_CHART_FRAME",
+      "west_longitude": 125.166667,
+      "east_longitude": 128.166667,
+      "south_latitude": 32.666667,
+      "north_latitude": 34.333333,
+      "grid_interval_minutes": 10,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "chart border graticule",
+      "notes": [
+        "공식 chart frame의 longitude labels 125°10'E to 128°10'E, latitude labels 32°40'N to 34°20'N을 기준으로 고정한다.",
+        "renderer는 이 extent를 기본 scope frame으로 사용해 label/traffic/coastline density 변화와 무관하게 TMA 표시 범위를 안정화한다."
+      ]
+    },
+    "concentric_rings": {
+      "center_point_id": "RADAR_SITE",
+      "observed_ring_distances_nm": [
+        10,
+        12,
+        15,
+        35,
+        40,
+        45,
+        50
+      ],
+      "notes": [
+        "MVA chart note 기준으로 원 중심은 YDM이 아니라 radar site다.",
+        "ring 수치는 차트상 관찰 가능한 값만 1차 저장했다.",
+        "ring polyline 자체는 아직 digitize하지 않았다."
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "NOTE 2 and chart annotations"
+    },
+    "airspace_class_rules": [
+      {
+        "class": "C",
+        "rules": [
+          "250 kt IAS or less below 10 000 ft AMSL",
+          "200 kt IAS or less below 2 500 ft AMSL within 4 NM of the airports"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "AREA CHART legend"
+      },
+      {
+        "class": "D",
+        "rules": [
+          "250 kt IAS or less below 10 000 ft AMSL",
+          "200 kt IAS or less below 2 500 ft AMSL within 4 NM of the airports"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "AREA CHART legend"
+      },
+      {
+        "class": "E",
+        "rules": [
+          "250 kt IAS or less below 10 000 ft AMSL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "AREA CHART legend"
+      }
+    ]
+  },
+  "visual_reference_geometry": [
+    {
+      "id": "RWY_07_NOISE_ABATEMENT_YDM_6DME",
+      "type": "dme_arc_reference",
+      "applies_runway": "07",
+      "center_navaid_id": "YDM",
+      "radius_nm": 6,
+      "constraint_text": "RWY 07 arriving aircraft shall align on final approach course outside YDM 6 DME due noise abatement procedure.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "Visual approach notes"
+    }
+  ]
+}

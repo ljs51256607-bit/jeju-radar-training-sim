@@ -1,0 +1,107 @@
+{
+  "status": "ipdas_4k_chart_linework_reconciliation_v1",
+  "source_pdf": "public_derived_training_dataset",
+  "page": 3,
+  "coordinate_space": "pdf_svg_page_points",
+  "upstream_grid_georeference_status": "sid_page3_grid_georeference_vector_tick_candidate_v2",
+  "upstream_centerline_status": "ipdas_4k_centerline_candidates_extracted_v1",
+  "exact_runtime_route_allowed": false,
+  "geodetic_assessment": {
+    "chart_route_line_status": "schematic_or_offset_not_geodetic_exact",
+    "exact_runtime_route_allowed": false,
+    "basis": [
+      "The R013 chart centerline is nearly parallel to the text-derived CJU R013 course.",
+      "The same chart centerline is laterally offset from the D30 and IPDAS projected radial/DME/fix positions by more than exact-route tolerance.",
+      "The selected source chart linework does not contain a validated turn/intercept shape from YDM R067/D6.5 to CJU R013."
+    ]
+  },
+  "r013_segment_reconciliation": {
+    "source_centerline_id": "IPDAS_4K_R013_TO_IPDAS_CENTERLINE_CANDIDATE",
+    "chart_page_track_deg": 5.27,
+    "expected_course_true_deg": 5,
+    "chart_page_track_deg_abs_error": 0.27,
+    "comparison_points": [
+      {
+        "point_id": "IPDAS_4K_CJU_R013_D30",
+        "label": "CJU R013 D30.0",
+        "expected_projected_svg_pt": [
+          306.061,
+          316.184
+        ],
+        "nearest_chart_centerline_svg_pt": [
+          237.997,
+          309.907
+        ],
+        "nearest_centerline_t": 0.285423,
+        "lateral_offset_pt": 68.353,
+        "lateral_offset_nm": 8.229,
+        "reconciliation_status": "offset_exceeds_exact_tolerance"
+      },
+      {
+        "point_id": "IPDAS",
+        "label": "IPDAS",
+        "expected_projected_svg_pt": [
+          322.779,
+          131.738
+        ],
+        "nearest_chart_centerline_svg_pt": [
+          255.005,
+          125.488
+        ],
+        "nearest_centerline_t": 0.921832,
+        "lateral_offset_pt": 68.062,
+        "lateral_offset_nm": 8.158,
+        "reconciliation_status": "offset_exceeds_exact_tolerance"
+      }
+    ],
+    "max_lateral_offset_nm": 8.229,
+    "geodetic_exact_status": "parallel_but_laterally_offset"
+  },
+  "d6_5_cutpoint_reconciliation": {
+    "point_id": "IPDAS_4K_YDM_R067_D6_5",
+    "label": "YDM R067 D6.5",
+    "nearest_centerline_id": "IPDAS_4K_R067_YDM_SHARED_CENTERLINE_CANDIDATE",
+    "expected_projected_svg_pt": [
+      273.938,
+      472.54
+    ],
+    "nearest_chart_centerline_svg_pt": [
+      257.504,
+      443.73
+    ],
+    "nearest_centerline_t": 0.550866,
+    "lateral_offset_pt": 33.168,
+    "lateral_offset_nm": 4.012,
+    "source_centerline_length_pt": 148.631,
+    "exact_cutpoint_status": "not_reconciled",
+    "reason": "The text-derived YDM R067/D6.5 projection lands inside the shared R067 segment neighborhood but remains laterally offset from the selected chart centerline. It cannot be used as an exact chart split point yet."
+  },
+  "turn_shape_reconciliation": {
+    "constructed_intercept_point_id": "IPDAS_4K_CJU_R013_INTERCEPT_D15",
+    "constructed_intercept_projected_svg_pt": [
+      295.171,
+      439.645
+    ],
+    "constructed_intercept_to_r013_centerline_pt": 80.068,
+    "constructed_intercept_to_r013_centerline_nm": 9.672,
+    "nearest_r013_centerline_svg_pt": [
+      230.369,
+      392.617
+    ],
+    "nearest_r013_centerline_t": 0,
+    "source_turn_shape_status": "missing_validated_source_turn_shape",
+    "exact_turn_shape_allowed": false,
+    "reason": "The training D15 intercept path is constructed from radial math. The selected source chart linework still lacks a validated curved turn/intercept centerline, so it cannot approve exact automation."
+  },
+  "exact_runtime_route_decision": {
+    "status": "blocked_chart_linework_schematic_or_offset",
+    "exact_runtime_route_allowed": false,
+    "training_runtime_path_allowed": true,
+    "reason": "Frame-tick georeference shows the selected chart linework is parallel to the intended R013 course but laterally offset from the derived radial/DME/fix positions. Treat it as schematic/offset until source linework can be reconciled by another authority."
+  },
+  "remaining_work": [
+    "Find a source that confirms whether the chart-drawn SID route line is schematic or intended as exact geodetic geometry.",
+    "If exact linework is available elsewhere, digitize the D6.5 cutpoint and curved turn/intercept shape from that authority.",
+    "Keep exact_runtime_route_allowed=false until D6.5, D30.0, IPDAS, and the turn shape reconcile within exact-route tolerance."
+  ]
+}

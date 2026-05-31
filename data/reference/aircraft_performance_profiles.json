@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "status": "training_sim_v1",
+    "description": "Conservative radar-level aircraft maneuver parameters for Jeju APP training simulation. These values are not certified aircraft performance data.",
+    "basis": [
+      "Use 25 degrees as normal bank reference and 30 degrees as upper training cap.",
+      "Compute turn rate from live bank angle and ground speed, capped by max_turn_rate_deg_sec.",
+      "Use roll-in and roll-out lag so heading changes do not enter full-rate turns instantly.",
+      "Treat controller speed as IAS/KIAS, then convert to no-wind radar ground speed by altitude.",
+      "Apply phase modifiers for climb acceleration, high-altitude acceleration, and approach deceleration.",
+      "When descent and deceleration targets conflict, shallow the descent before using an altitude hold.",
+      "When climb and acceleration targets conflict, reduce climb rate before pretending the aircraft can do both at full performance.",
+      "Treat expedite descent as a managed energy mode: higher descent priority and limited speed bias, never overriding speed restrictions.",
+      "Limit vertical-rate changes so climb/descent commands do not step instantly between rates.",
+      "Taper vertical speed near assigned altitude for smoother altitude capture."
+    ],
+    "sources": [
+      {
+        "name": "FAA Airplane Flying Handbook",
+        "url": "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/airplane_handbook",
+        "use": "Turn and bank-angle fundamentals."
+      },
+      {
+        "name": "EUROCONTROL Base of Aircraft Data (BADA)",
+        "url": "https://www.eurocontrol.int/model/bada",
+        "use": "Reference for real aircraft performance modelling scope; licensed BADA coefficients are not embedded."
+      },
+      {
+        "name": "OpenAP Handbook",
+        "url": "https://openap.dev/openap.html",
+        "use": "Open aircraft performance model reference for future refinement."
+      }
+    ]
+  },
+  "default_profile_id": "narrowbody_jet_default",
+  "profiles": [
+    {
+      "id": "narrowbody_jet_default",
+      "aircraft_types": [
+        "B737",
+        "B738",
+        "B739",
+        "A319",
+        "A320",
+        "A321"
+      ],
+      "normal_bank_deg": 25,
+      "max_bank_deg": 30,
+      "max_turn_rate_deg_sec": 3,
+      "roll_rate_deg_sec": 5,
+      "rollout_heading_delta_deg": 3,
+      "accel_kt_sec": 0.3,
+      "decel_kt_sec": 0.5,
+      "climb_accel_factor": 0.7,
+      "high_altitude_accel_factor": 0.65,
+      "approach_decel_factor": 1.2,
+      "tas_factor_per_1000_ft": 0.012,
+      "max_tas_factor": 1.3,
+      "high_altitude_threshold_ft": 14000,
+      "climb_fpm": 1800,
+      "descent_fpm": 1500,
+      "climb_acceleration_vertical_penalty_fpm_per_kt_sec": 1200,
+      "expedite_descent_fpm": 2100,
+      "expedite_descent_rate_factor": 1.3,
+      "expedite_descent_speed_bias_kt": 20,
+      "expedite_descent_max_speed_kt": 300,
+      "expedite_climb_fpm": 2200,
+      "expedite_climb_rate_factor": 1.2,
+      "increase_rate_step_fpm": 500,
+      "deceleration_descent_min_fpm": 500,
+      "deceleration_descent_buffer_sec": 10,
+      "vertical_rate_change_fpm_sec": 300,
+      "altitude_capture_ft": 100,
+      "altitude_capture_taper_ft": 900,
+      "minimum_capture_vertical_rate_fpm": 300,
+      "notes": [
+        "Default for RKPC arrival/departure training traffic.",
+        "Turn rate is derived from live bank angle and current ground speed, then capped by max_turn_rate_deg_sec.",
+        "Speed response is intentionally damped for radar-display training feel.",
+        "During managed deceleration, descent rate may shallow before an altitude hold is needed.",
+        "During climb acceleration, climb rate is reduced to reserve energy for speed.",
+        "Expedite descent increases descent priority and may bias speed upward only inside active speed limits.",
+        "Controller SPD is modelled as indicated speed; radar movement uses a simple no-wind TAS/GS altitude factor."
+      ],
+      "sources": [
+        "FAA Airplane Flying Handbook",
+        "EUROCONTROL BADA",
+        "OpenAP Handbook"
+      ]
+    },
+    {
+      "id": "regional_turboprop_default",
+      "aircraft_types": [
+        "DH8D",
+        "AT72"
+      ],
+      "normal_bank_deg": 25,
+      "max_bank_deg": 30,
+      "max_turn_rate_deg_sec": 3,
+      "roll_rate_deg_sec": 6,
+      "rollout_heading_delta_deg": 3,
+      "accel_kt_sec": 0.25,
+      "decel_kt_sec": 0.42,
+      "climb_accel_factor": 0.75,
+      "high_altitude_accel_factor": 0.7,
+      "approach_decel_factor": 1.2,
+      "tas_factor_per_1000_ft": 0.012,
+      "max_tas_factor": 1.3,
+      "high_altitude_threshold_ft": 14000,
+      "climb_fpm": 1200,
+      "descent_fpm": 1200,
+      "climb_acceleration_vertical_penalty_fpm_per_kt_sec": 900,
+      "expedite_descent_fpm": 1600,
+      "expedite_descent_rate_factor": 1.25,
+      "expedite_descent_speed_bias_kt": 15,
+      "expedite_descent_max_speed_kt": 250,
+      "expedite_climb_fpm": 1500,
+      "expedite_climb_rate_factor": 1.2,
+      "increase_rate_step_fpm": 350,
+      "deceleration_descent_min_fpm": 400,
+      "deceleration_descent_buffer_sec": 10,
+      "vertical_rate_change_fpm_sec": 250,
+      "altitude_capture_ft": 100,
+      "altitude_capture_taper_ft": 700,
+      "minimum_capture_vertical_rate_fpm": 250,
+      "notes": [
+        "Reserved for future turboprop scenario traffic."
+      ],
+      "sources": [
+        "FAA Airplane Flying Handbook",
+        "OpenAP Handbook"
+      ]
+    }
+  ]
+}

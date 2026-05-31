@@ -1,0 +1,503 @@
+{
+  "metadata": {
+    "id": "atc_command_grammar_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract",
+    "matching_policy": "narrow_standard_phrase_first"
+  },
+  "patterns": [
+    {
+      "id": "heading_basic",
+      "intent": "ASSIGN_HEADING",
+      "category": "HEADING",
+      "patterns": [
+        "HEADING {heading_deg}",
+        "FLY HEADING {heading_deg}",
+        "JEJU APPROACH RADAR CONTACT HEADING {heading_deg}",
+        "JEJU DEPARTURE RADAR CONTACT HEADING {heading_deg}"
+      ],
+      "slots": {
+        "heading_deg": "heading_3_digit"
+      }
+    },
+    {
+      "id": "heading_present",
+      "intent": "MAINTAIN_PRESENT_HEADING",
+      "category": "HEADING",
+      "patterns": [
+        "PRESENT HEADING",
+        "FLY PRESENT HEADING",
+        "MAINTAIN PRESENT HEADING",
+        "MAINTAIN HEADING",
+        "CONTINUE PRESENT HEADING",
+        "CONTINUE HEADING"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "heading_turn_direction",
+      "intent": "ASSIGN_HEADING",
+      "category": "HEADING",
+      "patterns": [
+        "TURN {turn_direction} HEADING {heading_deg}",
+        "{turn_direction} TURN HEADING {heading_deg}"
+      ],
+      "slots": {
+        "turn_direction": "LEFT_OR_RIGHT",
+        "heading_deg": "heading_3_digit"
+      }
+    },
+    {
+      "id": "speed_assign",
+      "intent": "ASSIGN_SPEED",
+      "category": "SPEED",
+      "patterns": [
+        "SPEED {speed_kt}",
+        "MAINTAIN {speed_kt} KNOTS",
+        "REDUCE SPEED {speed_kt}",
+        "REDUCE TO {speed_kt} KNOTS"
+      ],
+      "slots": {
+        "speed_kt": "speed_number_kt"
+      }
+    },
+    {
+      "id": "speed_limit",
+      "intent": "MAINTAIN_SPEED_LIMIT",
+      "category": "SPEED",
+      "patterns": [
+        "SPEED {speed_kt} OR LESS",
+        "MAINTAIN {speed_kt} OR LESS",
+        "MAINTAIN {speed_kt} KNOTS OR LESS",
+        "SPEED {speed_kt} OR GREATER",
+        "MAINTAIN {speed_kt} OR GREATER",
+        "MAINTAIN {speed_kt} KNOTS OR GREATER"
+      ],
+      "slots": {
+        "speed_kt": "speed_number_kt",
+        "speed_limit_direction": "derived_from_or_less_or_greater"
+      }
+    },
+    {
+      "id": "speed_minimum_practical",
+      "intent": "MINIMUM_SPEED",
+      "category": "SPEED",
+      "patterns": [
+        "MINIMUM SPEED",
+        "REDUCE TO MINIMUM SPEED"
+      ],
+      "slots": {
+        "speed_policy": "derived_minimum_practical_speed"
+      }
+    },
+    {
+      "id": "speed_minimum_until",
+      "intent": "MAINTAIN_SPEED_UNTIL",
+      "category": "SPEED",
+      "patterns": [
+        "MAINTAIN {speed_kt} KNOTS OR GREATER UNTIL PASSING {altitude_ft}",
+        "MAINTAIN SPEED {speed_kt} OR GREATER UNTIL PASSING {altitude_ft}",
+        "MAINTAIN {speed_kt} KNOTS OR GREATER UNTIL {fix_id}",
+        "MAINTAIN SPEED {speed_kt} OR GREATER UNTIL {fix_id}"
+      ],
+      "slots": {
+        "speed_kt": "speed_number_kt",
+        "altitude_ft": "altitude_number_ft_optional",
+        "fix_id": "fix_identifier_optional"
+      }
+    },
+    {
+      "id": "speed_resume_normal",
+      "intent": "RESUME_NORMAL_SPEED",
+      "category": "SPEED",
+      "patterns": [
+        "RESUME NORMAL SPEED"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "altitude_climb_descend",
+      "intent": "ASSIGN_ALTITUDE",
+      "category": "ALTITUDE",
+      "patterns": [
+        "CLIMB {altitude_ft}",
+        "DESCEND {altitude_ft}",
+        "MAINTAIN {altitude_ft}"
+      ],
+      "slots": {
+        "altitude_ft": "altitude_number_ft"
+      }
+    },
+    {
+      "id": "vertical_speed",
+      "intent": "ASSIGN_VERTICAL_SPEED",
+      "category": "VERTICAL",
+      "patterns": [
+        "CLIMB RATE {vertical_rate_fpm}",
+        "DESCEND RATE {vertical_rate_fpm}",
+        "VERTICAL SPEED {vertical_rate_fpm}"
+      ],
+      "slots": {
+        "vertical_rate_fpm": "vertical_rate_number_fpm"
+      }
+    },
+    {
+      "id": "vertical_increase_descent_rate",
+      "intent": "INCREASE_DESCENT_RATE",
+      "category": "VERTICAL",
+      "patterns": [
+        "INCREASE RATE OF DESCENT",
+        "INCREASE DESCENT RATE"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "vertical_increase_climb_rate",
+      "intent": "INCREASE_CLIMB_RATE",
+      "category": "VERTICAL",
+      "patterns": [
+        "INCREASE RATE OF CLIMB",
+        "INCREASE CLIMB RATE"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "vertical_expedite_descent",
+      "intent": "EXPEDITE_DESCENT",
+      "category": "VERTICAL",
+      "patterns": [
+        "EXPEDITE DESCENT",
+        "EXPEDITE DESCEND",
+        "EXPEDITE YOUR DESCENT"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "vertical_expedite_climb",
+      "intent": "EXPEDITE_CLIMB",
+      "category": "VERTICAL",
+      "patterns": [
+        "EXPEDITE CLIMB",
+        "EXPEDITE YOUR CLIMB"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "vertical_resume_climb",
+      "intent": "RESUME_NORMAL_CLIMB",
+      "category": "VERTICAL",
+      "patterns": [
+        "RESUME NORMAL CLIMB",
+        "NORMAL CLIMB"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "vertical_resume_descent",
+      "intent": "RESUME_NORMAL_DESCENT",
+      "category": "VERTICAL",
+      "patterns": [
+        "RESUME NORMAL DESCENT",
+        "NORMAL DESCENT"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "direct_to_fix",
+      "intent": "DIRECT_TO_FIX",
+      "category": "DIRECT",
+      "patterns": [
+        "DIRECT {fix_id}",
+        "DIRECT TO {fix_id}",
+        "PROCEED DIRECT {fix_id}",
+        "DIRECT {fix_id} DESCEND {altitude_ft}",
+        "DIRECT {fix_id} DESCEND TO {altitude_ft}",
+        "DIRECT TO {fix_id} DESCEND {altitude_ft}",
+        "DIRECT TO {fix_id} DESCEND TO {altitude_ft}",
+        "PROCEED DIRECT {fix_id} DESCEND {altitude_ft}",
+        "PROCEED DIRECT {fix_id} DESCEND TO {altitude_ft}",
+        "DIRECT {fix_id} DESCEND {altitude_ft} CANCEL LEVEL",
+        "DIRECT {fix_id} DESCEND {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "DIRECT {fix_id} DESCEND TO {altitude_ft} CANCEL LEVEL",
+        "DIRECT {fix_id} DESCEND TO {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "DIRECT TO {fix_id} DESCEND {altitude_ft} CANCEL LEVEL",
+        "DIRECT TO {fix_id} DESCEND {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "DIRECT TO {fix_id} DESCEND TO {altitude_ft} CANCEL LEVEL",
+        "DIRECT TO {fix_id} DESCEND TO {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "PROCEED DIRECT {fix_id} DESCEND {altitude_ft} CANCEL LEVEL",
+        "PROCEED DIRECT {fix_id} DESCEND {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "PROCEED DIRECT {fix_id} DESCEND TO {altitude_ft} CANCEL LEVEL",
+        "PROCEED DIRECT {fix_id} DESCEND TO {altitude_ft} CANCEL LEVEL RESTRICTION"
+      ],
+      "slots": {
+        "fix_id": "fix_identifier",
+        "altitude_ft": "altitude_number_ft_optional",
+        "cancel_level_restriction": "scoped_modifier_optional"
+      }
+    },
+    {
+      "id": "direct_to_fix_turn_direction",
+      "intent": "DIRECT_TO_FIX",
+      "category": "DIRECT",
+      "patterns": [
+        "TURN {turn_direction} DIRECT {fix_id}",
+        "TURN {turn_direction} DIRECT TO {fix_id}"
+      ],
+      "slots": {
+        "turn_direction": "LEFT_OR_RIGHT",
+        "fix_id": "fix_identifier"
+      }
+    },
+    {
+      "id": "cleared_star",
+      "intent": "CLEARED_STAR",
+      "category": "PROCEDURE",
+      "patterns": [
+        "CLEARED STAR",
+        "CLEARED {procedure_id} ARRIVAL",
+        "CLEARED {fix_id} {procedure_number_word} {procedure_suffix_word} ARRIVAL",
+        "{fix_id} STAR",
+        "{fix_id} ARRIVAL"
+      ],
+      "slots": {
+        "procedure_id": "procedure_identifier_optional",
+        "fix_id": "fix_identifier_optional",
+        "procedure_number_word": "procedure_number_word_optional",
+        "procedure_suffix_word": "procedure_suffix_word_optional"
+      }
+    },
+    {
+      "id": "cleared_sid",
+      "intent": "CLEARED_SID",
+      "category": "PROCEDURE",
+      "patterns": [
+        "CLEARED SID",
+        "CLEARED {procedure_id} DEPARTURE",
+        "CLEARED {fix_id} {procedure_number_word} {procedure_suffix_word} DEPARTURE",
+        "{fix_id} SID",
+        "{fix_id} DEPARTURE"
+      ],
+      "slots": {
+        "procedure_id": "procedure_identifier_optional",
+        "fix_id": "fix_identifier_optional",
+        "procedure_number_word": "procedure_number_word_optional",
+        "procedure_suffix_word": "procedure_suffix_word_optional"
+      }
+    },
+    {
+      "id": "cleared_ils",
+      "intent": "CLEARED_ILS",
+      "category": "PROCEDURE",
+      "patterns": [
+        "CLEARED ILS RUNWAY {runway}",
+        "CLEARED ILS RWY {runway}",
+        "CLEARED ILS RUNWAY {runway} APPROACH",
+        "CLEARED ILS RWY {runway} APPROACH",
+        "CLEARED ILS APPROACH RUNWAY {runway}",
+        "CLEARED ILS APPROACH RWY {runway}",
+        "CLEARED ILS {approach_variant} RUNWAY {runway} APPROACH",
+        "CLEARED ILS {approach_variant} RWY {runway}",
+        "CLEARED ILS {approach_variant} RWY {runway} APPROACH"
+      ],
+      "slots": {
+        "runway": "runway_identifier",
+        "approach_variant": "approach_variant_optional"
+      }
+    },
+    {
+      "id": "cleared_visual_approach",
+      "intent": "CLEARED_VISUAL_APPROACH",
+      "category": "PROCEDURE",
+      "patterns": [
+        "CLEARED VISUAL APPROACH RUNWAY {runway}",
+        "CLEARED VISUAL APPROACH RWY {runway}",
+        "CLEARED VISUAL RUNWAY {runway}",
+        "CLEARED VISUAL RWY {runway}",
+        "CLEARED FOR VISUAL APPROACH RUNWAY {runway}",
+        "CLEARED FOR VISUAL APPROACH RWY {runway}",
+        "CLEARED FOR VISUAL RUNWAY {runway}",
+        "CLEARED FOR VISUAL RWY {runway}"
+      ],
+      "slots": {
+        "runway": "runway_identifier"
+      }
+    },
+    {
+      "id": "go_around",
+      "intent": "GO_AROUND",
+      "category": "MISSED",
+      "patterns": [
+        "GO AROUND"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "fly_missed_approach",
+      "intent": "FLY_MISSED_APPROACH",
+      "category": "MISSED",
+      "patterns": [
+        "FLY MISSED APPROACH",
+        "EXECUTE MISSED APPROACH"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "hold_at_fix",
+      "intent": "HOLD_AT_FIX",
+      "category": "HOLD",
+      "patterns": [
+        "HOLD AT {fix_id}",
+        "HOLD AT {fix_id} {turn_direction} TURNS",
+        "HOLD AT {fix_id} {turn_direction} TURNS {leg_time_minutes} MINUTE LEGS"
+      ],
+      "slots": {
+        "fix_id": "fix_identifier",
+        "turn_direction": "LEFT_OR_RIGHT_OPTIONAL",
+        "leg_time_minutes": "number_minutes_optional"
+      }
+    },
+    {
+      "id": "descend_via",
+      "intent": "DESCEND_VIA",
+      "category": "PROCEDURE",
+      "patterns": [
+        "DESCEND VIA",
+        "DESCEND VIA {procedure_id}",
+        "DESCEND VIA {fix_id} {procedure_number_word} {procedure_suffix_word} ARRIVAL",
+        "DESCEND VIA {fix_id} {procedure_number_word} {procedure_suffix_word} ARRIVAL TO {altitude_ft}",
+        "DESCEND VIA {fix_id} {procedure_number_word} {procedure_suffix_word} ARRIVAL TO {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "DESCEND VIA {fix_id} {procedure_compact} ARRIVAL",
+        "DESCEND VIA {fix_id} {procedure_compact} ARRIVAL TO {altitude_ft}",
+        "DESCEND VIA {fix_id} {procedure_compact} ARRIVAL TO {altitude_ft} CANCEL LEVEL",
+        "DESCEND VIA {fix_id} {procedure_compact} ARRIVAL TO {altitude_ft} CANCEL LEVEL RESTRICTION",
+        "DESCEND VIA {fix_id} {procedure_compact} TO {altitude_ft}",
+        "DESCEND VIA {fix_id} {procedure_compact} TO {altitude_ft} CANCEL LEVEL",
+        "DESCEND VIA {fix_id} {procedure_compact} TO {altitude_ft} CANCEL LEVEL RESTRICTION"
+      ],
+      "slots": {
+        "procedure_id": "procedure_identifier_optional",
+        "fix_id": "fix_identifier_optional",
+        "procedure_compact": "procedure_compact_optional",
+        "procedure_number_word": "procedure_number_word_optional",
+        "procedure_suffix_word": "procedure_suffix_word_optional",
+        "altitude_ft": "altitude_number_ft_optional",
+        "cancel_level_restriction": "scoped_modifier_optional"
+      }
+    },
+    {
+      "id": "cancel_level_restriction",
+      "intent": "CANCEL_LEVEL_RESTRICTION",
+      "category": "PROCEDURE",
+      "patterns": [
+        "CANCEL LEVEL RESTRICTION",
+        "CANCEL LEVEL RESTRICTIONS",
+        "CANCEL LEVEL RESTRICTION AT {fix_id}",
+        "CANCEL LEVEL RESTRICTIONS AT {fix_id}",
+        "CANCEL {fix_id} LEVEL RESTRICTION",
+        "CANCEL {fix_id} LEVEL RESTRICTIONS"
+      ],
+      "slots": {
+        "fix_id": "fix_identifier_optional",
+        "cancel_level_restriction": "scoped_modifier"
+      }
+    },
+    {
+      "id": "cancel_speed_restriction",
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "category": "PROCEDURE",
+      "patterns": [
+        "CANCEL SPEED RESTRICTION",
+        "CANCEL SPEED RESTRICTIONS",
+        "CANCEL SPEED RESTRICTION AT {fix_id}",
+        "CANCEL SPEED RESTRICTIONS AT {fix_id}",
+        "CANCEL {fix_id} SPEED RESTRICTION",
+        "CANCEL {fix_id} SPEED RESTRICTIONS"
+      ],
+      "slots": {
+        "fix_id": "fix_identifier_optional",
+        "cancel_speed_restriction": "scoped_modifier"
+      }
+    },
+    {
+      "id": "first_contact_ack",
+      "intent": "FIRST_CONTACT_ACK",
+      "category": "COMM",
+      "patterns": [
+        "GO AHEAD",
+        "RADAR CONTACT",
+        "IDENTIFIED",
+        "JEJU APPROACH GO AHEAD",
+        "JEJU DEPARTURE GO AHEAD",
+        "JEJU APPROACH RADAR CONTACT",
+        "JEJU DEPARTURE RADAR CONTACT"
+      ],
+      "slots": {
+        "unit": "APP_OR_DEP_OPTIONAL",
+        "radar_contact": "boolean_optional"
+      }
+    },
+    {
+      "id": "affirm",
+      "intent": "AFFIRM",
+      "category": "READBACK",
+      "patterns": [
+        "AFFIRM",
+        "AFFIRMATIVE",
+        "YES",
+        "어펌",
+        "어펌입니다"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "confirm_callsign",
+      "intent": "CONFIRM_CALLSIGN",
+      "category": "READBACK",
+      "patterns": [
+        "CONFIRM CALLSIGN",
+        "SAY AGAIN CALLSIGN",
+        "CALLSIGN SAY AGAIN",
+        "CALLING STATION SAY AGAIN",
+        "CALLING JEJU APPROACH SAY AGAIN",
+        "STATION CALLING SAY AGAIN",
+        "LAST CALLING STATION SAY AGAIN",
+        "WHO CALLED",
+        "WHO WAS CALLING"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "negative",
+      "intent": "NEGATIVE",
+      "category": "READBACK",
+      "patterns": [
+        "NEGATIVE",
+        "NO",
+        "취소",
+        "아니오"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "say_again",
+      "intent": "SAY_AGAIN",
+      "category": "READBACK",
+      "patterns": [
+        "SAY AGAIN"
+      ],
+      "slots": {}
+    },
+    {
+      "id": "pilot_unable",
+      "intent": "PILOT_UNABLE",
+      "category": "UNABLE",
+      "patterns": [
+        "UNABLE",
+        "UNABLE {reason}"
+      ],
+      "slots": {
+        "reason": "free_text_optional"
+      }
+    }
+  ]
+}

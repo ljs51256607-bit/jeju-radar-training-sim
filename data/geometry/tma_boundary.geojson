@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "name": "rkpc_surveillance_reference_boundary",
+  "metadata": {
+    "status": "coordinate_verified_from_vertex_register_v2",
+    "description": "제주 ATC surveillance/MVA chart reference boundary. Primary TMA airspace boundary는 data/geometry/jeju_tma_airspace.geojson을 사용한다.",
+    "vertex_register": "data/authority/tma_boundary_vertices.csv",
+    "source_files": [
+      "public_derived_training_dataset"
+    ],
+    "limitations": [
+      "published chart에 직접 표기된 vertex와 직선 segment만 사용했다.",
+      "coastline이나 raster 눈대중 tracing을 사용하지 않았다."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "JEJU_SURVEILLANCE_REFERENCE_BOUNDARY",
+        "label": "Jeju surveillance reference boundary",
+        "status": "coordinate_verified",
+        "primary_tma_airspace": false,
+        "source": [
+          "data/authority/tma_boundary_vertices.csv",
+          "public_derived_training_dataset"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.326944,
+              34.240556
+            ],
+            [
+              127.361389,
+              34.184167
+            ],
+            [
+              127.377222,
+              33.566389
+            ],
+            [
+              127.335278,
+              33.269444
+            ],
+            [
+              127.138333,
+              32.989444
+            ],
+            [
+              126.043611,
+              32.944722
+            ],
+            [
+              125.876944,
+              33.213611
+            ],
+            [
+              126.326944,
+              34.240556
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

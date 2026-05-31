@@ -1,0 +1,338 @@
+{
+  "metadata": {
+    "id": "atc_command_intents_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "intents": [
+    {
+      "id": "ASSIGN_HEADING",
+      "category": "HEADING",
+      "required_slots": [
+        "heading_deg"
+      ],
+      "optional_slots": [
+        "turn_direction"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "MAINTAIN_PRESENT_HEADING",
+      "category": "HEADING",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "ASSIGN_SPEED",
+      "category": "SPEED",
+      "required_slots": [
+        "speed_kt"
+      ],
+      "optional_slots": [
+        "speed_policy"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "RESUME_NORMAL_SPEED",
+      "category": "SPEED",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "MINIMUM_SPEED",
+      "category": "SPEED",
+      "required_slots": [],
+      "optional_slots": [
+        "speed_policy",
+        "speed_kt"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "MAINTAIN_SPEED_UNTIL",
+      "category": "SPEED",
+      "required_slots": [
+        "speed_kt"
+      ],
+      "optional_slots": [
+        "altitude_ft",
+        "fix_id",
+        "release_condition",
+        "release_condition_text"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "MAINTAIN_SPEED_LIMIT",
+      "category": "SPEED",
+      "required_slots": [
+        "speed_kt",
+        "speed_limit_direction"
+      ],
+      "optional_slots": [
+        "speed_policy"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "ASSIGN_ALTITUDE",
+      "category": "ALTITUDE",
+      "required_slots": [
+        "altitude_ft"
+      ],
+      "optional_slots": [
+        "altitude_reference"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "ASSIGN_VERTICAL_SPEED",
+      "category": "VERTICAL",
+      "required_slots": [
+        "vertical_rate_fpm"
+      ],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "INCREASE_DESCENT_RATE",
+      "category": "VERTICAL",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "INCREASE_CLIMB_RATE",
+      "category": "VERTICAL",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "EXPEDITE_DESCENT",
+      "category": "VERTICAL",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "EXPEDITE_CLIMB",
+      "category": "VERTICAL",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "RESUME_NORMAL_CLIMB",
+      "category": "VERTICAL",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "RESUME_NORMAL_DESCENT",
+      "category": "VERTICAL",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "DIRECT_TO_FIX",
+      "category": "DIRECT",
+      "required_slots": [
+        "fix_id"
+      ],
+      "optional_slots": [
+        "turn_direction",
+        "altitude_ft",
+        "cancel_level_restriction"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "CLEARED_STAR",
+      "category": "PROCEDURE",
+      "required_slots": [],
+      "optional_slots": [
+        "procedure_id",
+        "runway"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "CLEARED_SID",
+      "category": "PROCEDURE",
+      "required_slots": [],
+      "optional_slots": [
+        "procedure_id",
+        "runway",
+        "exit_fix"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "CLEARED_ILS",
+      "category": "PROCEDURE",
+      "required_slots": [
+        "runway"
+      ],
+      "optional_slots": [
+        "approach_id"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "CLEARED_VISUAL_APPROACH",
+      "category": "PROCEDURE",
+      "required_slots": [
+        "runway"
+      ],
+      "optional_slots": [],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "GO_AROUND",
+      "category": "MISSED",
+      "required_slots": [],
+      "optional_slots": [
+        "reason"
+      ],
+      "readback_required": true,
+      "implementation_status": "future_contract"
+    },
+    {
+      "id": "FLY_MISSED_APPROACH",
+      "category": "MISSED",
+      "required_slots": [],
+      "optional_slots": [
+        "missed_approach_id"
+      ],
+      "readback_required": true,
+      "implementation_status": "future_contract"
+    },
+    {
+      "id": "HOLD_AT_FIX",
+      "category": "HOLD",
+      "required_slots": [
+        "fix_id"
+      ],
+      "optional_slots": [
+        "turn_direction",
+        "leg_time_minutes",
+        "altitude_ft",
+        "inbound_course_deg"
+      ],
+      "readback_required": true,
+      "implementation_status": "future_contract"
+    },
+    {
+      "id": "DESCEND_VIA",
+      "category": "PROCEDURE",
+      "required_slots": [],
+      "optional_slots": [
+        "procedure_id",
+        "cancel_level_restriction"
+      ],
+      "readback_required": true,
+      "implementation_status": "future_contract"
+    },
+    {
+      "id": "CANCEL_LEVEL_RESTRICTION",
+      "category": "PROCEDURE",
+      "required_slots": [],
+      "optional_slots": [
+        "fix_id",
+        "cancel_level_restriction"
+      ],
+      "readback_required": true,
+      "implementation_status": "future_contract"
+    },
+    {
+      "id": "CANCEL_SPEED_RESTRICTION",
+      "category": "PROCEDURE",
+      "required_slots": [],
+      "optional_slots": [
+        "fix_id",
+        "cancel_speed_restriction"
+      ],
+      "readback_required": true,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "FIRST_CONTACT_ACK",
+      "category": "COMM",
+      "required_slots": [],
+      "optional_slots": [
+        "unit",
+        "radar_contact"
+      ],
+      "readback_required": true,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "CONFIRM_CALLSIGN",
+      "category": "READBACK",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": false,
+      "implementation_status": "implemented"
+    },
+    {
+      "id": "AFFIRM",
+      "category": "READBACK",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": false,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "NEGATIVE",
+      "category": "READBACK",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": false,
+      "implementation_status": "existing_engine_candidate"
+    },
+    {
+      "id": "SAY_AGAIN",
+      "category": "READBACK",
+      "required_slots": [],
+      "optional_slots": [],
+      "readback_required": false,
+      "implementation_status": "future_contract"
+    },
+    {
+      "id": "PILOT_UNABLE",
+      "category": "UNABLE",
+      "required_slots": [],
+      "optional_slots": [
+        "reason"
+      ],
+      "readback_required": false,
+      "implementation_status": "future_contract"
+    }
+  ]
+}

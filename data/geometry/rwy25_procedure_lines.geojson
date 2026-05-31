@@ -1,0 +1,787 @@
+{
+  "type": "FeatureCollection",
+  "name": "rwy25_procedure_lines",
+  "metadata": {
+    "status": "coordinate_verified_procedure_overlay",
+    "description": "RWY 25 RNAV STAR/SID overlay. RWY31 is displayed with RWY25+31 mode.",
+    "included_route_count": 12,
+    "included_route_statuses": [
+      "coordinate_verified"
+    ],
+    "source_files": [
+      "data/reference/rkpc_procedures.json",
+      "data/reference/rkpc_airport.json"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_STAR_RNAV_DOTOL_2M",
+        "procedure_id": "RNAV_DOTOL_2M",
+        "procedure_name": "RNAV DOTOL 2M",
+        "procedure_type": "STAR",
+        "runway": "25",
+        "layer": "rwy25_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "DOTOL",
+          "PC761",
+          "PC762",
+          "VEKDI",
+          "DOKVU",
+          "PC682",
+          "PC683",
+          "PC684",
+          "PC685",
+          "LIDVO",
+          "DUKAL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV DOTOL 2M general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.610167,
+            34.254278
+          ],
+          [
+            126.582528,
+            33.988139
+          ],
+          [
+            126.819583,
+            33.965806
+          ],
+          [
+            126.919111,
+            33.956278
+          ],
+          [
+            127.005333,
+            33.913833
+          ],
+          [
+            127.076167,
+            33.854833
+          ],
+          [
+            127.127139,
+            33.783
+          ],
+          [
+            127.155083,
+            33.702861
+          ],
+          [
+            127.158361,
+            33.619417
+          ],
+          [
+            127.136806,
+            33.537889
+          ],
+          [
+            126.760778,
+            33.649611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_STAR_RNAV_UPGOS_2M",
+        "procedure_id": "RNAV_UPGOS_2M",
+        "procedure_name": "RNAV UPGOS 2M",
+        "procedure_type": "STAR",
+        "runway": "25",
+        "layer": "rwy25_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "UPGOS",
+          "KIBEK",
+          "PC763",
+          "DOKVU",
+          "PC682",
+          "PC683",
+          "PC684",
+          "PC685",
+          "LIDVO",
+          "DUKAL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV UPGOS 2M general information"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.331389,
+            33.95925
+          ],
+          [
+            127.167472,
+            34.056306
+          ],
+          [
+            127.012111,
+            34.056278
+          ],
+          [
+            127.005333,
+            33.913833
+          ],
+          [
+            127.076167,
+            33.854833
+          ],
+          [
+            127.127139,
+            33.783
+          ],
+          [
+            127.155083,
+            33.702861
+          ],
+          [
+            127.158361,
+            33.619417
+          ],
+          [
+            127.136806,
+            33.537889
+          ],
+          [
+            126.760778,
+            33.649611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_STAR_RNAV_TAMNA_2M",
+        "procedure_id": "RNAV_TAMNA_2M",
+        "procedure_name": "RNAV TAMNA 2M",
+        "procedure_type": "STAR",
+        "runway": "25",
+        "layer": "rwy25_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "TAMNA",
+          "PC764",
+          "PC735",
+          "PC767",
+          "DOKVU",
+          "PC682",
+          "PC683",
+          "PC684",
+          "PC685",
+          "LIDVO",
+          "DUKAL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV TAMNA 2M general information"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.331389,
+            33.470972
+          ],
+          [
+            126.860444,
+            33.413944
+          ],
+          [
+            126.658556,
+            33.556528
+          ],
+          [
+            126.856444,
+            33.881256
+          ],
+          [
+            127.005333,
+            33.913833
+          ],
+          [
+            127.076167,
+            33.854833
+          ],
+          [
+            127.127139,
+            33.783
+          ],
+          [
+            127.155083,
+            33.702861
+          ],
+          [
+            127.158361,
+            33.619417
+          ],
+          [
+            127.136806,
+            33.537889
+          ],
+          [
+            126.760778,
+            33.649611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_STAR_RNAV_TOSAN_2M",
+        "procedure_id": "RNAV_TOSAN_2M",
+        "procedure_name": "RNAV TOSAN 2M",
+        "procedure_type": "STAR",
+        "runway": "25",
+        "layer": "rwy25_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "TOSAN",
+          "NUSLO",
+          "CJU",
+          "PC735",
+          "PC767",
+          "DOKVU",
+          "PC682",
+          "PC683",
+          "PC684",
+          "PC685",
+          "LIDVO",
+          "DUKAL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV TOSAN 2M general information"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.771861,
+            33.003333
+          ],
+          [
+            126.669944,
+            33.266722
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.658556,
+            33.556528
+          ],
+          [
+            126.856444,
+            33.881256
+          ],
+          [
+            127.005333,
+            33.913833
+          ],
+          [
+            127.076167,
+            33.854833
+          ],
+          [
+            127.127139,
+            33.783
+          ],
+          [
+            127.155083,
+            33.702861
+          ],
+          [
+            127.158361,
+            33.619417
+          ],
+          [
+            127.136806,
+            33.537889
+          ],
+          [
+            126.760778,
+            33.649611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_STAR_RNAV_SOSDO_2M",
+        "procedure_id": "RNAV_SOSDO_2M",
+        "procedure_name": "RNAV SOSDO 2M",
+        "procedure_type": "STAR",
+        "runway": "25",
+        "layer": "rwy25_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "SOSDO",
+          "NUSLO",
+          "CJU",
+          "PC735",
+          "PC767",
+          "DOKVU",
+          "PC682",
+          "PC683",
+          "PC684",
+          "PC685",
+          "LIDVO",
+          "DUKAL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV SOSDO 2M general information"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.459722,
+            33.003333
+          ],
+          [
+            126.669944,
+            33.266722
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.658556,
+            33.556528
+          ],
+          [
+            126.856444,
+            33.881256
+          ],
+          [
+            127.005333,
+            33.913833
+          ],
+          [
+            127.076167,
+            33.854833
+          ],
+          [
+            127.127139,
+            33.783
+          ],
+          [
+            127.155083,
+            33.702861
+          ],
+          [
+            127.158361,
+            33.619417
+          ],
+          [
+            127.136806,
+            33.537889
+          ],
+          [
+            126.760778,
+            33.649611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_STAR_RNAV_LIMDI_2M",
+        "procedure_id": "RNAV_LIMDI_2M",
+        "procedure_name": "RNAV LIMDI 2M",
+        "procedure_type": "STAR",
+        "runway": "25",
+        "layer": "rwy25_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "LIMDI",
+          "LEDIN",
+          "PC765",
+          "PC735",
+          "PC767",
+          "DOKVU",
+          "PC682",
+          "PC683",
+          "PC684",
+          "PC685",
+          "LIDVO",
+          "DUKAL"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV LIMDI 2M general information"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            125.831389,
+            33.553694
+          ],
+          [
+            126.170806,
+            33.545028
+          ],
+          [
+            126.395167,
+            33.538778
+          ],
+          [
+            126.658556,
+            33.556528
+          ],
+          [
+            126.856444,
+            33.881256
+          ],
+          [
+            127.005333,
+            33.913833
+          ],
+          [
+            127.076167,
+            33.854833
+          ],
+          [
+            127.127139,
+            33.783
+          ],
+          [
+            127.155083,
+            33.702861
+          ],
+          [
+            127.158361,
+            33.619417
+          ],
+          [
+            127.136806,
+            33.537889
+          ],
+          [
+            126.760778,
+            33.649611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_SID_RNAV_KAMIT_1W",
+        "procedure_id": "RNAV_KAMIT_1W",
+        "procedure_name": "RNAV KAMIT 1W",
+        "procedure_type": "SID",
+        "runway": "25",
+        "layer": "rwy25_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY25_THR",
+          "MEXER",
+          "PC832",
+          "PC833",
+          "OLLEH",
+          "KAMIT"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV KAMIT 1W general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.386667,
+            33.457778
+          ],
+          [
+            126.231083,
+            33.679444
+          ],
+          [
+            126.512444,
+            33.835778
+          ],
+          [
+            126.740694,
+            33.961722
+          ],
+          [
+            126.771583,
+            34.253917
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_SID_RNAV_IPDAS_1W",
+        "procedure_id": "RNAV_IPDAS_1W",
+        "procedure_name": "RNAV IPDAS 1W",
+        "procedure_type": "SID",
+        "runway": "25",
+        "layer": "rwy25_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY25_THR",
+          "MEXER",
+          "PC832",
+          "PC833",
+          "PC834",
+          "IPDAS"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV IPDAS 1W general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.386667,
+            33.457778
+          ],
+          [
+            126.231083,
+            33.679444
+          ],
+          [
+            126.512444,
+            33.835778
+          ],
+          [
+            126.682139,
+            33.9295
+          ],
+          [
+            126.717056,
+            34.254083
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_SID_RNAV_AKPON_1W",
+        "procedure_id": "RNAV_AKPON_1W",
+        "procedure_name": "RNAV AKPON 1W",
+        "procedure_type": "SID",
+        "runway": "25",
+        "layer": "rwy25_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY25_THR",
+          "PC841",
+          "PC842",
+          "PC846",
+          "ATIMO",
+          "PAPLU",
+          "AKPON"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV AKPON 1W general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.329944,
+            33.428528
+          ],
+          [
+            126.354806,
+            33.293972
+          ],
+          [
+            126.591278,
+            33.321
+          ],
+          [
+            126.730889,
+            33.397917
+          ],
+          [
+            127.060139,
+            33.578139
+          ],
+          [
+            127.331389,
+            33.780444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_SID_RNAV_TAMNA_3W",
+        "procedure_id": "RNAV_TAMNA_3W",
+        "procedure_name": "RNAV TAMNA 3W",
+        "procedure_type": "SID",
+        "runway": "25",
+        "layer": "rwy25_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY25_THR",
+          "PC841",
+          "PC842",
+          "PC846",
+          "ATIMO",
+          "PC845",
+          "TAMNA"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV TAMNA 3W general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.329944,
+            33.428528
+          ],
+          [
+            126.354806,
+            33.293972
+          ],
+          [
+            126.591278,
+            33.321
+          ],
+          [
+            126.730889,
+            33.397917
+          ],
+          [
+            126.89,
+            33.417556
+          ],
+          [
+            127.331389,
+            33.470972
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_SID_RNAV_PANSI_2W",
+        "procedure_id": "RNAV_PANSI_2W",
+        "procedure_name": "RNAV PANSI 2W",
+        "procedure_type": "SID",
+        "runway": "25",
+        "layer": "rwy25_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY25_THR",
+          "PC841",
+          "PANSI"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV PANSI 2W general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.329944,
+            33.428528
+          ],
+          [
+            126.206972,
+            33.004
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY25_SID_RNAV_LIMDI_1W",
+        "procedure_id": "RNAV_LIMDI_1W",
+        "procedure_name": "RNAV LIMDI 1W",
+        "procedure_type": "SID",
+        "runway": "25",
+        "layer": "rwy25_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY25_THR",
+          "MEXER",
+          "LEDIN",
+          "LIMDI"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV LIMDI 1W general information and coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.386667,
+            33.457778
+          ],
+          [
+            126.170806,
+            33.545028
+          ],
+          [
+            125.831389,
+            33.553694
+          ]
+        ]
+      }
+    }
+  ]
+}

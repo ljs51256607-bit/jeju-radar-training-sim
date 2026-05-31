@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "id": "atc_command_test_cases_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "test_cases": [
+    {
+      "id": "tc_heading_left",
+      "phrase": "JJA123 TURN LEFT HEADING 270",
+      "expected_intent": "ASSIGN_HEADING",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "turn_direction": "LEFT",
+        "heading_deg": 270
+      }
+    },
+    {
+      "id": "tc_heading_basic",
+      "phrase": "KAL481 HEADING 090",
+      "expected_intent": "ASSIGN_HEADING",
+      "expected_slots": {
+        "callsign": "KAL481",
+        "heading_deg": 90
+      }
+    },
+    {
+      "id": "tc_heading_left_turn_alias",
+      "phrase": "JJA123 LEFT TURN HEADING 180",
+      "expected_intent": "ASSIGN_HEADING",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "turn_direction": "LEFT",
+        "heading_deg": 180
+      }
+    },
+    {
+      "id": "tc_speed_reduce",
+      "phrase": "JJA123 REDUCE SPEED 210",
+      "expected_intent": "ASSIGN_SPEED",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "speed_kt": 210
+      }
+    },
+    {
+      "id": "tc_speed_or_less_alias",
+      "phrase": "JJA123 SPEED 180 OR LESS",
+      "expected_intent": "MAINTAIN_SPEED_LIMIT",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "speed_kt": 180,
+        "speed_limit_direction": "or_less"
+      }
+    },
+    {
+      "id": "tc_speed_or_greater_alias",
+      "phrase": "JJA123 MAINTAIN 220 OR GREATER",
+      "expected_intent": "MAINTAIN_SPEED_LIMIT",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "speed_kt": 220,
+        "speed_limit_direction": "or_greater"
+      }
+    },
+    {
+      "id": "tc_resume_speed",
+      "phrase": "JJA123 RESUME NORMAL SPEED",
+      "expected_intent": "RESUME_NORMAL_SPEED",
+      "expected_slots": {
+        "callsign": "JJA123"
+      }
+    },
+    {
+      "id": "tc_minimum_speed",
+      "phrase": "JJA123 MINIMUM SPEED",
+      "expected_intent": "MINIMUM_SPEED",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "speed_kt": 155,
+        "speed_policy": {
+          "type": "minimum_practical_speed",
+          "speed_kt": 155,
+          "note": "controller command to reduce toward practical minimum speed, not an OR GREATER floor"
+        }
+      }
+    },
+    {
+      "id": "tc_speed_or_greater_until_passing_altitude",
+      "phrase": "JJA123 MAINTAIN 220 KNOTS OR GREATER UNTIL PASSING 10000",
+      "expected_intent": "MAINTAIN_SPEED_UNTIL",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "speed_kt": 220,
+        "altitude_ft": 10000
+      }
+    },
+    {
+      "id": "tc_speed_or_greater_until_fix",
+      "phrase": "JJA123 MAINTAIN 210 KNOTS OR GREATER UNTIL YUMIN",
+      "expected_intent": "MAINTAIN_SPEED_UNTIL",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "speed_kt": 210,
+        "fix_id": "YUMIN"
+      }
+    },
+    {
+      "id": "tc_descend",
+      "phrase": "JJA123 DESCEND 6000",
+      "expected_intent": "ASSIGN_ALTITUDE",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "altitude_ft": 6000
+      }
+    },
+    {
+      "id": "tc_direct",
+      "phrase": "JJA123 DIRECT YUMIN",
+      "expected_intent": "DIRECT_TO_FIX",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "YUMIN"
+      }
+    },
+    {
+      "id": "tc_direct_descend_cancel_level",
+      "phrase": "JJA123 DIRECT LIMSO DESCEND TO 11000 CANCEL LEVEL RESTRICTION",
+      "expected_intent": "DIRECT_TO_FIX",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "LIMSO",
+        "altitude_ft": 11000,
+        "cancel_level_restriction": {
+          "scope": "DIRECT_FIX",
+          "fix_id": "LIMSO",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_cancel_speed_restriction_at_fix",
+      "phrase": "JJA123 CANCEL SPEED RESTRICTION AT LIMSO",
+      "expected_intent": "CANCEL_SPEED_RESTRICTION",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "LIMSO",
+        "cancel_speed_restriction": {
+          "scope": "FIX",
+          "fix_id": "LIMSO",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_cancel_speed_restriction_active_next",
+      "phrase": "JJA123 CANCEL SPEED RESTRICTION",
+      "expected_intent": "CANCEL_SPEED_RESTRICTION",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "cancel_speed_restriction": {
+          "scope": "ACTIVE_NEXT",
+          "requires_confirmation": true
+        }
+      }
+    },
+    {
+      "id": "tc_cleared_ils",
+      "phrase": "JJA123 CLEARED ILS RUNWAY 07",
+      "expected_intent": "CLEARED_ILS",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "runway": "07"
+      }
+    },
+    {
+      "id": "tc_cleared_ils_z_rwy07",
+      "phrase": "JJA123 CLEARED ILS Z RUNWAY 07 APPROACH",
+      "expected_intent": "CLEARED_ILS",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "approach_variant": "Z",
+        "runway": "07"
+      }
+    },
+    {
+      "id": "tc_cleared_ils_z_rwy07_alias",
+      "phrase": "JJA123 CLEARED ILS Z RWY 07",
+      "expected_intent": "CLEARED_ILS",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "approach_variant": "Z",
+        "runway": "07"
+      }
+    },
+    {
+      "id": "tc_cleared_visual_approach_rwy07",
+      "phrase": "JJA123 CLEARED VISUAL APPROACH RUNWAY 07",
+      "expected_intent": "CLEARED_VISUAL_APPROACH",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "runway": "07"
+      }
+    },
+    {
+      "id": "tc_cleared_visual_rwy07_alias",
+      "phrase": "JJA123 CLEARED VISUAL RWY 07",
+      "expected_intent": "CLEARED_VISUAL_APPROACH",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "runway": "07"
+      }
+    },
+    {
+      "id": "tc_jeju_dotol_star",
+      "phrase": "JJA123 DOTOL STAR",
+      "expected_intent": "CLEARED_STAR",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "DOTOL"
+      }
+    },
+    {
+      "id": "tc_jeju_dotol_two_papa_arrival",
+      "phrase": "JJA123 CLEARED DOTOL TWO PAPA ARRIVAL",
+      "expected_intent": "CLEARED_STAR",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "DOTOL",
+        "procedure_number_word": "TWO",
+        "procedure_suffix_word": "PAPA"
+      }
+    },
+    {
+      "id": "tc_jeju_kamit_sid",
+      "phrase": "KAL481 KAMIT SID",
+      "expected_intent": "CLEARED_SID",
+      "expected_slots": {
+        "callsign": "KAL481",
+        "fix_id": "KAMIT"
+      }
+    },
+    {
+      "id": "tc_jeju_kamit_two_echo_departure",
+      "phrase": "KAL481 CLEARED KAMIT TWO ECHO DEPARTURE",
+      "expected_intent": "CLEARED_SID",
+      "expected_slots": {
+        "callsign": "KAL481",
+        "fix_id": "KAMIT",
+        "procedure_number_word": "TWO",
+        "procedure_suffix_word": "ECHO"
+      }
+    },
+    {
+      "id": "tc_jeju_left_direct_tokin",
+      "phrase": "JJA123 TURN LEFT DIRECT TOKIN",
+      "expected_intent": "DIRECT_TO_FIX",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "turn_direction": "LEFT",
+        "fix_id": "TOKIN"
+      }
+    },
+    {
+      "id": "tc_go_around",
+      "phrase": "JJA123 GO AROUND",
+      "expected_intent": "GO_AROUND",
+      "expected_slots": {
+        "callsign": "JJA123"
+      }
+    },
+    {
+      "id": "tc_hold",
+      "phrase": "JJA123 HOLD AT YUMIN LEFT TURNS 1 MINUTE LEGS",
+      "expected_intent": "HOLD_AT_FIX",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "YUMIN",
+        "turn_direction": "LEFT",
+        "leg_time_minutes": 1
+      }
+    },
+    {
+      "id": "tc_descend_via",
+      "phrase": "JJA123 DESCEND VIA",
+      "expected_intent": "DESCEND_VIA",
+      "expected_slots": {
+        "callsign": "JJA123"
+      }
+    },
+    {
+      "id": "tc_descend_via_dotol_2p_cancel_level_6000",
+      "phrase": "JJA123 DESCEND VIA DOTOL TWO PAPA ARRIVAL TO 6000 CANCEL LEVEL RESTRICTION",
+      "expected_intent": "DESCEND_VIA",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "DOTOL",
+        "procedure_number_word": "TWO",
+        "procedure_suffix_word": "PAPA",
+        "altitude_ft": 6000,
+        "cancel_level_restriction": {
+          "scope": "STAR",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_descend_via_dotol_2p_cancel_level_9000",
+      "phrase": "JJA123 DESCEND VIA DOTOL TWO PAPA ARRIVAL TO 9000 CANCEL LEVEL RESTRICTION",
+      "expected_intent": "DESCEND_VIA",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "DOTOL",
+        "procedure_number_word": "TWO",
+        "procedure_suffix_word": "PAPA",
+        "altitude_ft": 9000,
+        "cancel_level_restriction": {
+          "scope": "STAR",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_descend_via_dotol_2p_compact_cancel_level",
+      "phrase": "JJA123 DESCEND VIA DOTOL 2P TO 7000 CANCEL LEVEL",
+      "expected_intent": "DESCEND_VIA",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "DOTOL",
+        "procedure_compact": "2P",
+        "altitude_ft": 7000,
+        "cancel_level_restriction": {
+          "scope": "STAR",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_cancel_yumin_level_restriction",
+      "phrase": "JJA123 CANCEL YUMIN LEVEL RESTRICTION",
+      "expected_intent": "CANCEL_LEVEL_RESTRICTION",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "YUMIN",
+        "cancel_level_restriction": {
+          "scope": "APP_FIX",
+          "fix_id": "YUMIN",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_cancel_level_restriction_at_limso",
+      "phrase": "JJA123 CANCEL LEVEL RESTRICTION AT LIMSO",
+      "expected_intent": "CANCEL_LEVEL_RESTRICTION",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "fix_id": "LIMSO",
+        "cancel_level_restriction": {
+          "scope": "APP_FIX",
+          "fix_id": "LIMSO",
+          "requires_confirmation": false
+        }
+      }
+    },
+    {
+      "id": "tc_cancel_level_restriction_without_fix_requires_confirm",
+      "phrase": "JJA123 CANCEL LEVEL RESTRICTION",
+      "expected_intent": "CANCEL_LEVEL_RESTRICTION",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "cancel_level_restriction": {
+          "scope": "APP_ALL",
+          "requires_confirmation": true
+        },
+        "confirmation_required_reason": "missing fix scope for approach level restriction cancellation"
+      }
+    },
+    {
+      "id": "tc_first_contact_radar_contact",
+      "phrase": "JJA123 JEJU APPROACH RADAR CONTACT",
+      "expected_intent": "FIRST_CONTACT_ACK",
+      "expected_slots": {
+        "callsign": "JJA123"
+      }
+    },
+    {
+      "id": "tc_first_contact_radar_contact_with_heading",
+      "phrase": "JJA123 JEJU APPROACH RADAR CONTACT HEADING 230",
+      "expected_intent": "ASSIGN_HEADING",
+      "expected_slots": {
+        "callsign": "JJA123",
+        "heading_deg": 230
+      }
+    },
+    {
+      "id": "tc_first_contact_departure_go_ahead",
+      "phrase": "AAR432 JEJU DEPARTURE GO AHEAD",
+      "expected_intent": "FIRST_CONTACT_ACK",
+      "expected_slots": {
+        "callsign": "AAR432"
+      }
+    },
+    {
+      "id": "tc_first_contact_go_ahead",
+      "phrase": "JJA123 GO AHEAD",
+      "expected_intent": "FIRST_CONTACT_ACK",
+      "expected_slots": {
+        "callsign": "JJA123"
+      }
+    },
+    {
+      "id": "tc_radio_station_calling_say_again",
+      "phrase": "STATION CALLING SAY AGAIN",
+      "expected_intent": "CONFIRM_CALLSIGN",
+      "expected_slots": {
+        "callsign": null
+      }
+    },
+    {
+      "id": "tc_radio_who_called",
+      "phrase": "WHO CALLED",
+      "expected_intent": "CONFIRM_CALLSIGN",
+      "expected_slots": {
+        "callsign": null
+      }
+    },
+    {
+      "id": "tc_heading_continue_present",
+      "phrase": "JJA123 CONTINUE PRESENT HEADING",
+      "expected_intent": "MAINTAIN_PRESENT_HEADING",
+      "expected_slots": {
+        "callsign": "JJA123"
+      }
+    },
+    {
+      "id": "tc_affirm_confirmation_response",
+      "phrase": "AFFIRM",
+      "expected_intent": "AFFIRM",
+      "expected_slots": {
+        "callsign": null
+      }
+    },
+    {
+      "id": "tc_negative_confirmation_response",
+      "phrase": "NEGATIVE",
+      "expected_intent": "NEGATIVE",
+      "expected_slots": {
+        "callsign": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "id": "official_phrase_expansion_backlog_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_backlog"
+  },
+  "backlog": [
+    {
+      "category": "SPEED",
+      "target": "assign/reduce/maintain/resume normal speed phrase variants",
+      "priority": 1
+    },
+    {
+      "category": "ALTITUDE",
+      "target": "climb/descend/maintain/crossing altitude phrase variants",
+      "priority": 1
+    },
+    {
+      "category": "HEADING",
+      "target": "fly heading and explicit left/right turn phrase variants",
+      "priority": 1
+    },
+    {
+      "category": "DIRECT",
+      "target": "direct/proceed direct phrase variants",
+      "priority": 1
+    },
+    {
+      "category": "PROCEDURE",
+      "target": "cleared ILS/LOC/RNP/VOR approach, STAR, SID, descend via",
+      "priority": 2
+    },
+    {
+      "category": "HOLD",
+      "target": "hold at fix with turn direction, leg time, altitude",
+      "priority": 2
+    },
+    {
+      "category": "MISSED",
+      "target": "go around and missed approach phrase variants",
+      "priority": 2
+    },
+    {
+      "category": "READBACK",
+      "target": "say again, correction, confirm",
+      "priority": 3
+    },
+    {
+      "category": "UNABLE",
+      "target": "unable due performance/weather/traffic",
+      "priority": 3
+    }
+  ]
+}

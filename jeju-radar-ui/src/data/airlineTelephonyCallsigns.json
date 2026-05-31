@@ -1,0 +1,56 @@
+[
+  {
+    "icao": "KAL",
+    "airline": "Korean Air",
+    "telephony": "Korean Air",
+    "aliases": ["KOREAN AIR", "KOREANAIR", "KOREAN", "KOREA AIR", "KOREAN AREA", "KOREAN ERA"]
+  },
+  {
+    "icao": "AAR",
+    "airline": "Asiana Airlines",
+    "telephony": "Asiana",
+    "aliases": ["ASIANA", "ASIANA AIR", "ASIANA AIRLINES"]
+  },
+  {
+    "icao": "JJA",
+    "airline": "Jeju Air",
+    "telephony": "Jeju Air",
+    "aliases": ["JEJU AIR", "JEJUAIR", "JEJU", "JEJU A", "JEJU EIR", "JEJU CONTROL"]
+  },
+  {
+    "icao": "JNA",
+    "airline": "Jin Air",
+    "telephony": "Jin Air",
+    "aliases": ["JIN AIR", "JINAIR", "JIN", "GIN AIR", "JIN EIR"]
+  },
+  {
+    "icao": "TWB",
+    "airline": "T'way Air",
+    "telephony": "Teeway",
+    "aliases": ["TEEWAY", "TEEWAY AIR", "TEA WAY", "TEA WAY AIR", "T WAY", "TWAY", "TWAY AIR", "T'WAY"]
+  },
+  {
+    "icao": "ESR",
+    "airline": "Eastar Jet",
+    "telephony": "Eastar",
+    "aliases": ["EASTAR", "EASTAR JET", "EASTARJET", "EASTER", "EASTERN"]
+  },
+  {
+    "icao": "ABL",
+    "airline": "Air Busan",
+    "telephony": "Air Busan",
+    "aliases": ["AIR BUSAN", "AIRBUSAN", "BUSAN AIR"]
+  },
+  {
+    "icao": "ASV",
+    "airline": "Air Seoul",
+    "telephony": "Air Seoul",
+    "aliases": ["AIR SEOUL", "AIRSEOUL", "SEOUL AIR"]
+  },
+  {
+    "icao": "EOK",
+    "airline": "Aero K",
+    "telephony": "Aero Hanguk",
+    "aliases": ["AERO HANGUK", "AEROHANGUK", "AERO K", "AEROK", "AERO KOREA", "AEROKOREA", "AERO KAY"]
+  }
+]

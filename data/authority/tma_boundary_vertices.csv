@@ -1,0 +1,8 @@
+sequence,vertex_id,dms_lat,dms_lon,decimal_lat,decimal_lon,source_file,source_section,verification_state,notes
+1,TMA_VTX_001,"34°14'26""N","126°19'37""E",34.240556,126.326944,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 TMA 서북단 vertex.
+2,TMA_VTX_002,"34°11'03""N","127°21'41""E",34.184167,127.361389,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 TMA 북동단 vertex.
+3,TMA_VTX_003,"33°33'59""N","127°22'38""E",33.566389,127.377222,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 동측 상단 vertex.
+4,TMA_VTX_004,"33°16'10""N","127°20'07""E",33.269444,127.335278,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 동측 하단 vertex.
+5,TMA_VTX_005,"32°59'22""N","127°08'18""E",32.989444,127.138333,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 남동단 vertex.
+6,TMA_VTX_006,"32°56'41""N","126°02'37""E",32.944722,126.043611,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 남서단 vertex.
+7,TMA_VTX_007,"33°12'49""N","125°52'37""E",33.213611,125.876944,public_derived_training_dataset,Outer boundary vertex register,chart_vertex_verified,차트에 직접 표기된 서측 하단 vertex.

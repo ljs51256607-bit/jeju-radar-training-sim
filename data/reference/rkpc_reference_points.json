@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "name": "rkpc_reference_points",
+    "status": "coordinate_verified",
+    "description": "고정 기준점만 분리한 reference points document."
+  },
+  "reference_points": [
+    {
+      "id": "RADAR_SITE",
+      "type": "radar_site_center",
+      "raw_coordinate": "33°30'03.4\"N 126°28'59.8\"E",
+      "latitude": 33.500944,
+      "longitude": 126.483278,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "NOTE 2",
+      "source_text": "derived training source text redacted for public OSS dataset"
+    },
+    {
+      "id": "ARP",
+      "type": "airport_reference_point",
+      "reference_dataset": "rkpc_airport.json",
+      "reference_key": "airport_meta.arp",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.2"
+    },
+    {
+      "id": "YDM",
+      "type": "navigation_reference",
+      "reference_dataset": "rkpc_airport.json",
+      "reference_key": "navaids[YDM]",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RKPC AD 2.19"
+    }
+  ]
+}

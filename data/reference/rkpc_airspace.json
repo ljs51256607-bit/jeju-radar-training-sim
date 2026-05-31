@@ -1,0 +1,84 @@
+{
+  "controller_positions": [
+    {
+      "id": "CO_FMU",
+      "name": "조정석",
+      "abbreviation": "CO/FMU",
+      "responsibility_summary": "관련기관 및 관제석간 조정업무 수행, 팀 운영 총괄 보조",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제6조, 제38조",
+      "source_text": "derived training source text redacted for public OSS dataset"
+    },
+    {
+      "id": "AP",
+      "name": "접근관제석",
+      "abbreviation": "AP",
+      "responsibility_summary": "제주국제공항 접근관제업무 수행, STAR 기반 접근 구간 sequencing과 ARR 이양 전 traffic 정리",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제6조, 제39조, 제22조③",
+      "source_text": "derived training source text redacted for public OSS dataset"
+    },
+    {
+      "id": "AR",
+      "name": "도착관제석",
+      "abbreviation": "AR",
+      "responsibility_summary": "최종접근 구간 도착관제, visual approach 운용, tower 인계 전 final state 안정화",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제6조, 제40조",
+      "source_text": "derived training source text redacted for public OSS dataset"
+    },
+    {
+      "id": "DC",
+      "name": "출발관제석",
+      "abbreviation": "DC",
+      "responsibility_summary": "제주국제공항 출발관제업무 수행, SID traffic 정리 및 tower release 연계",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제6조, 제41조",
+      "source_text": "derived training source text redacted for public OSS dataset"
+    },
+    {
+      "id": "AS",
+      "name": "관제보조석",
+      "abbreviation": "AS",
+      "responsibility_summary": "인천·대구 ACC 및 정석관제탑과의 인수·인계 및 보조업무 수행",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제6조, 제42조",
+      "source_text": "derived training source text redacted for public OSS dataset"
+    }
+  ],
+  "handoff_points": [
+    {
+      "id": "APP_TO_ARR_NOMINAL",
+      "from_position": "AP",
+      "to_position": "AR",
+      "criteria_text": "중간접근픽스(IF) 기준 반경 20마일, 고도 10,000피트 이하 항공기 중 접근흐름 순서에 따른 항공기 이양을 표준으로 한다.",
+      "classification": "official",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제22조(관제책임의 이양)③"
+    },
+    {
+      "id": "VISUAL_TO_TWR",
+      "from_position": "AR",
+      "to_position": "TWR",
+      "criteria_text": "조종사가 공항 또는 선행 항공기를 육안으로 식별하였다는 보고를 한 경우 visual approach를 허가하며, 이 경우 레이더 유도를 종료하고 관제탑에 항공기를 이양한다.",
+      "classification": "official",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제32조(시각접근항공기)②"
+    },
+    {
+      "id": "ARR_TO_TWR_STABLE_FINAL",
+      "from_position": "AR",
+      "to_position": "TWR",
+      "criteria_text": "TWR가 추가적인 큰 개입 없이 최종접근 흐름을 이어갈 수 있는 안정 상태를 만든 뒤 이양한다.",
+      "classification": "training_rule",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "8-1, 8-2",
+      "notes": "법규 이양지점이 아니라 훈련용 평가 기준이다."
+    }
+  ],
+  "notes": [
+    "별표 7, 별표 8의 정확한 지점 geometry는 이번 단계에서 추출하지 않았다.",
+    "1차 데이터에서는 좌표형 handoff point가 아니라 기준 문장형 handoff rule만 저장한다.",
+    "MVA sector와 Hot Spot geometry는 2차 추출 단계로 미룬다."
+  ]
+}

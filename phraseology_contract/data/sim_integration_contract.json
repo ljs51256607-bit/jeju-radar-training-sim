@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "id": "sim_integration_contract_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract",
+    "scope": "Parser intent to Jeju radar simulator adapter mapping"
+  },
+  "adapter_boundary": {
+    "parser_outputs": [
+      "callsign",
+      "intent",
+      "category",
+      "slots",
+      "pattern_id"
+    ],
+    "parser_must_not_mutate": [
+      "aircraft_state",
+      "scenario_state",
+      "procedure_route"
+    ],
+    "engine_adapter_owns": [
+      "validation",
+      "state mutation",
+      "command delay",
+      "procedure queue construction"
+    ]
+  },
+  "intent_to_adapter": [
+    {
+      "intent": "ASSIGN_HEADING",
+      "adapter_action": "applyHeadingCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "explicit left/right turn direction"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_PRESENT_HEADING",
+      "adapter_action": "applyMaintainPresentHeadingCommand",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "semantics": {
+        "assigned_heading": "current_aircraft_heading",
+        "route_mode": "vector",
+        "scratchpad": "heading_token_from_current_magnetic_heading"
+      }
+    },
+    {
+      "intent": "ASSIGN_SPEED",
+      "adapter_action": "applySpeedCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "10000 ft predictive speed compliance"
+      ]
+    },
+    {
+      "intent": "MINIMUM_SPEED",
+      "adapter_action": "applyMinimumPracticalSpeedCommand",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "speed_policy": {
+        "type": "minimum_practical_speed",
+        "target_speed_kt": 155,
+        "typical_use_below_altitude_ft": 5000,
+        "meaning": "reduce as much as practical; not a minimum speed floor"
+      }
+    },
+    {
+      "intent": "MAINTAIN_SPEED_UNTIL",
+      "adapter_action": "applyConditionalMinimumSpeedCommand",
+      "existing_engine_candidate": false,
+      "missing": [
+        "conditional speed restriction state",
+        "release by altitude crossing",
+        "release by fix passage"
+      ],
+      "speed_policy": {
+        "type": "minimum_speed_floor",
+        "comparator": "or_greater",
+        "release_conditions": [
+          "passing_altitude_ft",
+          "passing_fix_id"
+        ]
+      }
+    },
+    {
+      "intent": "MAINTAIN_SPEED_LIMIT",
+      "adapter_action": "applyControllerSpeedPolicy",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "speed_policy": {
+        "or_less": "maximum_speed_ceiling",
+        "or_greater": "minimum_speed_floor",
+        "global_max_speed_kt": 310,
+        "below_10000_hard_cap_kt": 250,
+        "published_speed_restriction_conflict_prompt_nm": 5
+      }
+    },
+    {
+      "intent": "RESUME_NORMAL_SPEED",
+      "adapter_action": "clearControllerSpeedPolicyOnly",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "preserve": [
+        "published STAR/APP speed restrictions",
+        "10000ft/250kt hard cap"
+      ],
+      "clear": [
+        "minimum practical speed command"
+      ]
+    },
+    {
+      "intent": "ASSIGN_ALTITUDE",
+      "adapter_action": "applyAltitudeCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "descent crossing speed validation"
+      ]
+    },
+    {
+      "intent": "ASSIGN_VERTICAL_SPEED",
+      "adapter_action": "applyVerticalSpeedCommand",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "INCREASE_DESCENT_RATE",
+      "adapter_action": "setIncreaseDescentRateEnergyMode",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "INCREASE_CLIMB_RATE",
+      "adapter_action": "setIncreaseClimbRateEnergyMode",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "EXPEDITE_DESCENT",
+      "adapter_action": "setExpediteDescentEnergyMode",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "EXPEDITE_CLIMB",
+      "adapter_action": "setExpediteClimbEnergyMode",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "RESUME_NORMAL_CLIMB",
+      "adapter_action": "resumeNormalClimbProfile",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "RESUME_NORMAL_DESCENT",
+      "adapter_action": "resumeNormalDescentProfile",
+      "existing_engine_candidate": true,
+      "missing": []
+    },
+    {
+      "intent": "DIRECT_TO_FIX",
+      "adapter_action": "applyDirectToFixCommand",
+      "existing_engine_candidate": true,
+      "semantics": {
+        "route_mode": "direct",
+        "procedure_continuation": false,
+        "wind_drift_handling": "fix_navigation_track_correction",
+        "cancelled_state": [
+          "STAR",
+          "SID",
+          "APP",
+          "approach_phase",
+          "procedure_capture_transition"
+        ],
+        "with_altitude_ft": "set assigned target altitude",
+        "with_cancel_level_restriction": {
+          "scope": "DIRECT_FIX",
+          "altitude_restrictions": "cancel_previous_procedure_restrictions"
+        },
+        "procedure_rejoin_requires_new_clearance": true
+      },
+      "missing": [
+        "left/right direct-to-fix turn direction"
+      ]
+    },
+    {
+      "intent": "CLEARED_STAR",
+      "adapter_action": "applyStarProcedureCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "local fix token to runway-specific procedure resolution"
+      ]
+    },
+    {
+      "intent": "CLEARED_SID",
+      "adapter_action": "applySidProcedureCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "departure runway-specific procedure resolution"
+      ]
+    },
+    {
+      "intent": "CLEARED_ILS",
+      "adapter_action": "applyIlsProcedureCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "missed approach integration"
+      ]
+    },
+    {
+      "intent": "CLEARED_VISUAL_APPROACH",
+      "adapter_action": "applyVisualApproachClearanceCommand",
+      "existing_engine_candidate": true,
+      "missing": [
+        "base-to-final visual vectoring",
+        "visual traffic pattern automation"
+      ],
+      "scope": {
+        "route_mode": "keep vector unless aligned final capture is eligible",
+        "procedure_kind": "APP",
+        "scratchpad": "VIS",
+        "runway_required": true,
+        "final_capture": "RWY07 LIMSO-RW070 or RWY25 TOKIN-RW250 when heading/lateral/distance gates pass"
+      }
+    },
+    {
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "adapter_action": "cancelPublishedSpeedRestrictionAtFix",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "scope": {
+        "fix": "cancel named fix speed restriction",
+        "active_next": "cancel active 5NM conflict fix if present; otherwise confirm"
+      }
+    },
+    {
+      "intent": "FIRST_CONTACT_ACK",
+      "adapter_action": "acknowledgePilotFirstContact",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "semantics": {
+        "frequency_state": "on_frequency",
+        "aircraft_motion": "no_change",
+        "requires_pending_first_contact": true
+      }
+    },
+    {
+      "intent": "CONFIRM_CALLSIGN",
+      "adapter_action": "handleRadioJamCallsignRepeatOrConfirmation",
+      "existing_engine_candidate": true,
+      "missing": [],
+      "semantics": {
+        "aircraft_motion": "no_change",
+        "generic_jam_query": "one unresolved jammed aircraft repeats first contact in deterministic queue order",
+        "addressed_say_again": "only addressed unresolved jammed aircraft repeats first contact",
+        "confirm_callsign_only": "callsign-only confirmation without selecting every jammed aircraft"
+      }
+    },
+    {
+      "intent": "GO_AROUND",
+      "adapter_action": "startGoAround",
+      "existing_engine_candidate": false,
+      "missing": [
+        "missed approach profile",
+        "departure flow delay event"
+      ]
+    },
+    {
+      "intent": "FLY_MISSED_APPROACH",
+      "adapter_action": "startPublishedMissedApproach",
+      "existing_engine_candidate": false,
+      "missing": [
+        "published missed approach route queue"
+      ]
+    },
+    {
+      "intent": "HOLD_AT_FIX",
+      "adapter_action": "startHolding",
+      "existing_engine_candidate": false,
+      "missing": [
+        "hold state",
+        "entry algorithm",
+        "leg timer"
+      ]
+    },
+    {
+      "intent": "DESCEND_VIA",
+      "adapter_action": "startDescendVia",
+      "existing_engine_candidate": false,
+      "missing": [
+        "STAR constraints following"
+      ],
+      "constraint_policy": {
+        "default": {
+          "lateral_path": "follow",
+          "speed_restrictions": "follow",
+          "altitude_restrictions": "follow"
+        },
+        "with_cancel_level_restriction": {
+          "lateral_path": "follow",
+          "speed_restrictions": "follow",
+          "altitude_restrictions": {
+            "star": "cancel",
+            "app": "preserve",
+            "assigned_target_altitude": "preserve"
+          },
+          "cancel_level_restriction": {
+            "scope": "STAR"
+          },
+          "preserve": [
+            "MVA",
+            "assigned_target_altitude",
+            "terrain_safety_floor",
+            "approach_crossing_altitude"
+          ]
+        }
+      }
+    },
+    {
+      "intent": "CANCEL_LEVEL_RESTRICTION",
+      "adapter_action": "applyScopedLevelRestrictionCancellation",
+      "existing_engine_candidate": false,
+      "missing": [
+        "scoped APP altitude restriction override state"
+      ],
+      "constraint_policy": {
+        "app_fix": {
+          "scope": "APP_FIX",
+          "requires": [
+            "fix_id"
+          ],
+          "altitude_restrictions": {
+            "named_fix": "cancel",
+            "other_app_fixes": "preserve",
+            "final_glidepath": "preserve",
+            "assigned_target_altitude": "preserve"
+          }
+        },
+        "app_all": {
+          "scope": "APP_ALL",
+          "requires_confirmation": true,
+          "altitude_restrictions": {
+            "all_app_fixes": "cancel_if_confirmed",
+            "final_glidepath": "preserve",
+            "assigned_target_altitude": "preserve"
+          }
+        }
+      }
+    }
+  ]
+}

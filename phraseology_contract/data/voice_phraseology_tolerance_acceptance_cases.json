@@ -1,0 +1,866 @@
+{
+  "metadata": {
+    "id": "voice_phraseology_tolerance_acceptance_cases_v1",
+    "generated_at": "2026-05-25",
+    "status": "acceptance_contract",
+    "source_file": "public_derived_training_dataset",
+    "runtime_status": "normalize_to_semantic_chunks_connected",
+    "notes": [
+      "This corpus defines semantic tolerance expectations before parser/runtime implementation.",
+      "Existing exact grammar tests remain in atc_command_test_cases.json.",
+      "Do not mutate aircraft state unless the expected policy allows apply and deterministic validation passes."
+    ]
+  },
+  "policy_labels": {
+    "APPLY": "Apply after deterministic validation because intent and required slots are clear.",
+    "PARTIAL_APPLY": "Apply only chunks with clear required slots; ask again or confirm the uncertain chunks.",
+    "CONFIRM_BEFORE_APPLY": "Hold pending confirmation before aircraft state change.",
+    "READBACK_ONLY": "Generate pilot response without aircraft state change.",
+    "NO_STATE_CHANGE": "Do not change aircraft state."
+  },
+  "test_cases": [
+    {
+      "id": "vpt_hdg_turn_left_hdg",
+      "raw_phrase": "JJA117 turn left hdg 270",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "LEFT",
+            "heading_deg": 270
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_hdg_turn_right_hdg_spaced",
+      "raw_phrase": "JJA117 turn right hdg 090",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "RIGHT",
+            "heading_deg": 90
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_hdg_fly_present",
+      "raw_phrase": "JJA117 fly present hdg",
+      "expected_chunks": [
+        {
+          "intent": "MAINTAIN_PRESENT_HEADING",
+          "category": "HDG",
+          "required_slots": {},
+          "optional_slots": {
+            "alias": "FLY_PRESENT_HDG"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_hdg_maintain_hdg_ambiguous",
+      "raw_phrase": "JJA117 maintain hdg",
+      "expected_chunks": [
+        {
+          "intent": "MAINTAIN_PRESENT_HEADING",
+          "category": "HDG",
+          "required_slots": {},
+          "optional_slots": {
+            "ambiguous_alias": true
+          }
+        }
+      ],
+      "apply_policy": "CONFIRM_BEFORE_APPLY",
+      "readback_policy": "CONFIRM_INTENT",
+      "risk_level": "medium",
+      "notes": "In relaxed voice mode this may become APPLY; strict mode should confirm maintain present heading."
+    },
+    {
+      "id": "vpt_hdg_maintain_present",
+      "raw_phrase": "JJA117 maintain present hdg",
+      "expected_chunks": [
+        {
+          "intent": "MAINTAIN_PRESENT_HEADING",
+          "category": "HDG",
+          "required_slots": {},
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_hdg_left_one_circle",
+      "raw_phrase": "JJA117 turn left one circle hdg 270",
+      "expected_chunks": [
+        {
+          "intent": "ONE_CIRCLE_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "LEFT",
+            "heading_deg": 270
+          },
+          "optional_slots": {
+            "circle_count": 1
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_hdg_make_right_one_circle",
+      "raw_phrase": "JJA117 make right one circle hdg 180",
+      "expected_chunks": [
+        {
+          "intent": "ONE_CIRCLE_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "RIGHT",
+            "heading_deg": 180
+          },
+          "optional_slots": {
+            "circle_count": 1
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_reduce_to",
+      "raw_phrase": "JJA117 reduce speed to 180",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_SPEED",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 180
+          },
+          "optional_slots": {
+            "verb": "REDUCE"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_increase_to",
+      "raw_phrase": "JJA117 increase speed to 230",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_SPEED",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 230
+          },
+          "optional_slots": {
+            "verb": "INCREASE"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_maintain",
+      "raw_phrase": "JJA117 maintain speed 210",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_SPEED",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 210
+          },
+          "optional_slots": {
+            "verb": "MAINTAIN"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_reduce_until_fix",
+      "raw_phrase": "JJA117 reduce speed to 180 until YUMIN",
+      "expected_chunks": [
+        {
+          "intent": "SPEED_UNTIL_FIX",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 180,
+            "fix_id": "YUMIN"
+          },
+          "optional_slots": {
+            "verb": "REDUCE"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_increase_until_fix",
+      "raw_phrase": "JJA117 increase speed 250 until DAKPI",
+      "expected_chunks": [
+        {
+          "intent": "SPEED_UNTIL_FIX",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 250,
+            "fix_id": "DAKPI"
+          },
+          "optional_slots": {
+            "verb": "INCREASE"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_maintain_until_then_normal",
+      "raw_phrase": "JJA117 maintain speed 210 until LIMSO then normal speed",
+      "expected_chunks": [
+        {
+          "intent": "SPEED_UNTIL_FIX_THEN_NORMAL",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 210,
+            "fix_id": "LIMSO"
+          },
+          "optional_slots": {
+            "resume_after_fix": true
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_maximum_forward",
+      "raw_phrase": "JJA117 maintain maximum forward speed",
+      "expected_chunks": [
+        {
+          "intent": "MAXIMUM_FORWARD_SPEED",
+          "category": "SPD",
+          "required_slots": {},
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_minimum_speed",
+      "raw_phrase": "JJA117 minimum speed",
+      "expected_chunks": [
+        {
+          "intent": "MINIMUM_SPEED",
+          "category": "SPD",
+          "required_slots": {},
+          "optional_slots": {
+            "minimum_practical_speed": true
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_spd_reduce_minimun_misspell",
+      "raw_phrase": "JJA117 reduce speed to minimun",
+      "expected_chunks": [
+        {
+          "intent": "MINIMUM_SPEED",
+          "category": "SPD",
+          "required_slots": {},
+          "optional_slots": {
+            "misspelling": "MINIMUN"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_alt_descend_korean_alias",
+      "raw_phrase": "JJA117 디센 to 6000",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_ALTITUDE",
+          "category": "ALT",
+          "required_slots": {
+            "altitude_ft": 6000
+          },
+          "optional_slots": {
+            "verb": "DESCEND"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_alt_climb_korean_alias",
+      "raw_phrase": "JJA117 클라임 to 9000",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_ALTITUDE",
+          "category": "ALT",
+          "required_slots": {
+            "altitude_ft": 9000
+          },
+          "optional_slots": {
+            "verb": "CLIMB"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_alt_maintain",
+      "raw_phrase": "JJA117 maintain 7000",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_ALTITUDE",
+          "category": "ALT",
+          "required_slots": {
+            "altitude_ft": 7000
+          },
+          "optional_slots": {
+            "verb": "MAINTAIN"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_alt_expedite_descend",
+      "raw_phrase": "JJA117 expedite 디센",
+      "expected_chunks": [
+        {
+          "intent": "EXPEDITE_DESCENT",
+          "category": "ALT",
+          "required_slots": {},
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_alt_expedite_climb",
+      "raw_phrase": "JJA117 expedite 클라임",
+      "expected_chunks": [
+        {
+          "intent": "EXPEDITE_CLIMB",
+          "category": "ALT",
+          "required_slots": {},
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_alt_cross_at_or_below",
+      "raw_phrase": "JJA117 cross YUMIN at or below 7000",
+      "expected_chunks": [
+        {
+          "intent": "CROSS_FIX_RESTRICTION",
+          "category": "ALT",
+          "required_slots": {
+            "fix_id": "YUMIN",
+            "altitude_ft": 7000,
+            "restriction": "AT_OR_BELOW"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_alt_cross_below",
+      "raw_phrase": "JJA117 cross DAKPI below 8000",
+      "expected_chunks": [
+        {
+          "intent": "CROSS_FIX_RESTRICTION",
+          "category": "ALT",
+          "required_slots": {
+            "fix_id": "DAKPI",
+            "altitude_ft": 8000,
+            "restriction": "BELOW"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_app_cleared_ils_z_runway25",
+      "raw_phrase": "JJA117 cleared ils z runway25 approach",
+      "expected_chunks": [
+        {
+          "intent": "CLEARED_ILS",
+          "category": "APPROACH",
+          "required_slots": {
+            "approach_variant": "Z",
+            "runway": "25"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_app_cleared_ils_z_runway07",
+      "raw_phrase": "JJA117 cleared ils z runway 07",
+      "expected_chunks": [
+        {
+          "intent": "CLEARED_ILS",
+          "category": "APPROACH",
+          "required_slots": {
+            "approach_variant": "Z",
+            "runway": "07"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_direct_turn_left_direct",
+      "raw_phrase": "JJA117 turn left direct YUMIN",
+      "expected_chunks": [
+        {
+          "intent": "TURN_DIRECT_FIX",
+          "category": "DIRECT",
+          "required_slots": {
+            "turn_direction": "LEFT",
+            "fix_id": "YUMIN"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_direct_right_turn_direct",
+      "raw_phrase": "JJA117 right turn direct DAKPI",
+      "expected_chunks": [
+        {
+          "intent": "TURN_DIRECT_FIX",
+          "category": "DIRECT",
+          "required_slots": {
+            "turn_direction": "RIGHT",
+            "fix_id": "DAKPI"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_traffic_full_info",
+      "raw_phrase": "JJA117 traffic 2 o'clock 5 mile southwest bound passing 6000 for 7000 B738",
+      "expected_chunks": [
+        {
+          "intent": "TRAFFIC_INFORMATION",
+          "category": "TRAFFIC",
+          "required_slots": {
+            "clock_position": 2,
+            "distance_nm": 5,
+            "direction_bound": "SOUTHWEST",
+            "altitude_ft": 6000
+          },
+          "optional_slots": {
+            "target_altitude_ft": 7000,
+            "aircraft_type": "B738"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "TRAFFIC_RESPONSE",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_traffic_reordered_info",
+      "raw_phrase": "JJA117 traffic B738 southwestbound 5 mile 2 o'clock passing 6000 to 7000",
+      "expected_chunks": [
+        {
+          "intent": "TRAFFIC_INFORMATION",
+          "category": "TRAFFIC",
+          "required_slots": {
+            "clock_position": 2,
+            "distance_nm": 5,
+            "direction_bound": "SOUTHWEST",
+            "altitude_ft": 6000
+          },
+          "optional_slots": {
+            "target_altitude_ft": 7000,
+            "aircraft_type": "B738",
+            "order_insensitive": true
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "TRAFFIC_RESPONSE",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_missed_say_intentions",
+      "raw_phrase": "JJA117 say intentions",
+      "expected_chunks": [
+        {
+          "intent": "ASK_INTENTIONS",
+          "category": "MISSED",
+          "required_slots": {},
+          "optional_slots": {
+            "context": "MISSED_APPROACH"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "REQUEST_ONE_MORE_APPROACH",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_missed_typo_say_intension",
+      "raw_phrase": "JJA117 say intension",
+      "expected_chunks": [
+        {
+          "intent": "ASK_INTENTIONS",
+          "category": "MISSED",
+          "required_slots": {},
+          "optional_slots": {
+            "misspelling": "INTENSION",
+            "context": "MISSED_APPROACH"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "REQUEST_ONE_MORE_APPROACH",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_missed_confirm_one_more",
+      "raw_phrase": "JJA117 confirm one more approach",
+      "expected_chunks": [
+        {
+          "intent": "ASK_INTENTIONS",
+          "category": "MISSED",
+          "required_slots": {},
+          "optional_slots": {
+            "suggested_intention": "ONE_MORE_APPROACH"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "REQUEST_ONE_MORE_APPROACH",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_sequence_you_are_number",
+      "raw_phrase": "JJA117 you are number 2",
+      "expected_chunks": [
+        {
+          "intent": "SEQUENCE_NUMBER",
+          "category": "SEQUENCE",
+          "required_slots": {
+            "sequence_number": 2
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "SEQUENCE_READBACK",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_sequence_yorn_number_stt",
+      "raw_phrase": "JJA117 yorn number 3",
+      "expected_chunks": [
+        {
+          "intent": "SEQUENCE_NUMBER",
+          "category": "SEQUENCE",
+          "required_slots": {
+            "sequence_number": 3
+          },
+          "optional_slots": {
+            "stt_alias": "YORN_NUMBER"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "SEQUENCE_READBACK",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_sequence_korean",
+      "raw_phrase": "JJA117 시퀀스 넘버 2",
+      "expected_chunks": [
+        {
+          "intent": "SEQUENCE_NUMBER",
+          "category": "SEQUENCE",
+          "required_slots": {
+            "sequence_number": 2
+          },
+          "optional_slots": {
+            "language": "ko"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "SEQUENCE_READBACK",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_radio_station_calling_say_again",
+      "raw_phrase": "station calling say again",
+      "expected_chunks": [
+        {
+          "intent": "CONFIRM_CALLSIGN",
+          "category": "RADIO",
+          "required_slots": {},
+          "optional_slots": {
+            "query_type": "generic_jammed_station_repeat"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "RADIO_CALLSIGN_REPEAT",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_radio_who_called",
+      "raw_phrase": "who called",
+      "expected_chunks": [
+        {
+          "intent": "CONFIRM_CALLSIGN",
+          "category": "RADIO",
+          "required_slots": {},
+          "optional_slots": {
+            "query_type": "generic_jammed_station_repeat"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "RADIO_CALLSIGN_REPEAT",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_radio_korean_who_called",
+      "raw_phrase": "누가 불렀어",
+      "expected_chunks": [
+        {
+          "intent": "CONFIRM_CALLSIGN",
+          "category": "RADIO",
+          "required_slots": {},
+          "optional_slots": {
+            "query_type": "generic_jammed_station_repeat",
+            "language": "ko"
+          }
+        }
+      ],
+      "apply_policy": "READBACK_ONLY",
+      "readback_policy": "RADIO_CALLSIGN_REPEAT",
+      "risk_level": "low"
+    },
+    {
+      "id": "vpt_multi_hdg_spd_alt",
+      "raw_phrase": "JJA117 turn left heading 270 reduce speed to 180 descend 6000",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "LEFT",
+            "heading_deg": 270
+          },
+          "optional_slots": {}
+        },
+        {
+          "intent": "ASSIGN_SPEED",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 180
+          },
+          "optional_slots": {
+            "verb": "REDUCE"
+          }
+        },
+        {
+          "intent": "ASSIGN_ALTITUDE",
+          "category": "ALT",
+          "required_slots": {
+            "altitude_ft": 6000
+          },
+          "optional_slots": {
+            "verb": "DESCEND"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "MULTI_COMMAND_READBACK",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_partial_missing_cross_altitude",
+      "raw_phrase": "JJA117 turn left heading 270 reduce speed 180 cross YUMIN below",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "LEFT",
+            "heading_deg": 270
+          },
+          "optional_slots": {}
+        },
+        {
+          "intent": "ASSIGN_SPEED",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 180
+          },
+          "optional_slots": {}
+        },
+        {
+          "intent": "CROSS_FIX_RESTRICTION",
+          "category": "ALT",
+          "required_slots": {
+            "fix_id": "YUMIN",
+            "restriction": "BELOW"
+          },
+          "missing_slots": [
+            "altitude_ft"
+          ],
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "PARTIAL_APPLY",
+      "readback_policy": "READBACK_APPLIED_AND_SAY_AGAIN_MISSING_SLOT",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_confirm_ambiguous_altitude",
+      "raw_phrase": "JJA117 descend six thousand or sixteen thousand",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_ALTITUDE",
+          "category": "ALT",
+          "required_slots": {},
+          "ambiguous_slots": {
+            "altitude_ft": [
+              6000,
+              16000
+            ]
+          },
+          "optional_slots": {
+            "verb": "DESCEND"
+          }
+        }
+      ],
+      "apply_policy": "CONFIRM_BEFORE_APPLY",
+      "readback_policy": "CONFIRM_ALTITUDE",
+      "risk_level": "high"
+    },
+    {
+      "id": "vpt_degraded_stt_hdg_spd",
+      "raw_phrase": "JJA117 turn left hedging 270 reduce spit 180",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "turn_direction": "LEFT",
+            "heading_deg": 270
+          },
+          "optional_slots": {
+            "stt_alias": "HEDGING"
+          }
+        },
+        {
+          "intent": "ASSIGN_SPEED",
+          "category": "SPD",
+          "required_slots": {
+            "speed_kt": 180
+          },
+          "optional_slots": {
+            "stt_alias": "SPIT"
+          }
+        }
+      ],
+      "apply_policy": "APPLY",
+      "readback_policy": "MULTI_COMMAND_READBACK",
+      "risk_level": "medium"
+    },
+    {
+      "id": "vpt_no_callsign_no_selected_target",
+      "raw_phrase": "turn left heading 270",
+      "expected_chunks": [
+        {
+          "intent": "ASSIGN_HEADING",
+          "category": "HDG",
+          "required_slots": {
+            "heading_deg": 270,
+            "turn_direction": "LEFT"
+          },
+          "optional_slots": {}
+        }
+      ],
+      "apply_policy": "NO_STATE_CHANGE",
+      "readback_policy": "SILENT_OR_UI_WARNING",
+      "risk_level": "high",
+      "notes": "If a selected-aircraft voice mode is later added, this case may become CONFIRM_BEFORE_APPLY."
+    }
+  ]
+}

@@ -1,0 +1,1184 @@
+{
+  "metadata": {
+    "status": "training_sim_v1",
+    "effective_aip_basis": "KOCA eAIP 30 APR 2026, AIP AMDT 5/26",
+    "description": "Procedure altitude and speed constraints extracted from RKPC STAR and ILS/LOC chart text for simulator managed vertical guidance.",
+    "principles": [
+      "Only chart/text constraints currently present in rkpc_procedures.json are encoded here.",
+      "STAR at-or-above constraints protect a minimum altitude and do not command descent by themselves.",
+      "ILS/APP IAF/IF/FAF crossing altitudes are approach setup targets even when the chart wording is minimum-style.",
+      "At-or-below and at constraints can generate managed descent targets, but shall not create automatic climbs without a controller altitude instruction.",
+      "AIP '@' speed values are managed maintain targets unless a controller speed instruction is active.",
+      "AIP '-' altitude cells inside a STAR coding table carry forward the prior '@' altitude until the next explicit altitude constraint."
+    ]
+  },
+  "default_profile_id": "rkpc_vertical_training_default",
+  "profiles": [
+    {
+      "id": "rkpc_vertical_training_default",
+      "glide_path_ft_per_nm": 318,
+      "constraint_capture_ft": 150,
+      "min_descent_fpm": 500,
+      "max_descent_fpm": 2500,
+      "min_climb_fpm": 500,
+      "max_climb_fpm": 2200,
+      "procedure_constraints": [
+        {
+          "procedure_id": "RNAV_DOTOL_2P",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "PC726",
+              "type": "at_or_below",
+              "altitude_ft": 9000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV DOTOL 2P"
+            },
+            {
+              "fix_id": "BIROM",
+              "type": "at",
+              "altitude_ft": 7000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2P coding table"
+            },
+            {
+              "fix_id": "MANBA",
+              "type": "at",
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2P coding table"
+            },
+            {
+              "fix_id": "PIMIK",
+              "type": "at",
+              "altitude_ft": 7000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2P coding table"
+            },
+            {
+              "fix_id": "YUMIN",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV DOTOL 2P"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_UPGOS_1P",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "PC722",
+              "type": "at_or_above",
+              "altitude_ft": 13000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 1P coding table"
+            },
+            {
+              "fix_id": "BIROM",
+              "type": "at_or_above",
+              "altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 1P coding table"
+            },
+            {
+              "fix_id": "MANBA",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 1P coding table"
+            },
+            {
+              "fix_id": "PIMIK",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 1P coding table"
+            },
+            {
+              "fix_id": "YUMIN",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV UPGOS 1P"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_TAMNA_2P",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "CJU",
+              "type": "at_or_above",
+              "altitude_ft": 12000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2P coding table"
+            },
+            {
+              "fix_id": "PC723",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TAMNA 2P"
+            },
+            {
+              "fix_id": "PC724",
+              "type": "at_or_above",
+              "altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TAMNA 2P"
+            },
+            {
+              "fix_id": "MANBA",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TAMNA 2P"
+            },
+            {
+              "fix_id": "PIMIK",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2P coding table"
+            },
+            {
+              "fix_id": "YUMIN",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TAMNA 2P"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_TOSAN_2P",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "TOSAN",
+              "type": "at_or_above",
+              "altitude_ft": 15000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2P coding table"
+            },
+            {
+              "fix_id": "CJU",
+              "type": "at_or_above",
+              "altitude_ft": 12000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2P coding table"
+            },
+            {
+              "fix_id": "PC723",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2P coding table"
+            },
+            {
+              "fix_id": "PC724",
+              "type": "at_or_above",
+              "altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2P coding table"
+            },
+            {
+              "fix_id": "MANBA",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2P coding table"
+            },
+            {
+              "fix_id": "PIMIK",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2P coding table"
+            },
+            {
+              "fix_id": "YUMIN",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TOSAN 2P"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_SOSDO_2P",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "SOSDO",
+              "type": "at_or_above",
+              "altitude_ft": 15000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2P coding table"
+            },
+            {
+              "fix_id": "CJU",
+              "type": "at_or_above",
+              "altitude_ft": 12000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2P coding table"
+            },
+            {
+              "fix_id": "PC723",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2P coding table"
+            },
+            {
+              "fix_id": "PC724",
+              "type": "at_or_above",
+              "altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2P coding table"
+            },
+            {
+              "fix_id": "MANBA",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2P coding table"
+            },
+            {
+              "fix_id": "PIMIK",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2P coding table"
+            },
+            {
+              "fix_id": "YUMIN",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV SOSDO 2P"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_LIMDI_1P",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "PC727",
+              "type": "at_or_above",
+              "altitude_ft": 14000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1P"
+            },
+            {
+              "fix_id": "CJU",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1P"
+            },
+            {
+              "fix_id": "PC723",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 1P coding table"
+            },
+            {
+              "fix_id": "PC724",
+              "type": "at_or_above",
+              "altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1P"
+            },
+            {
+              "fix_id": "MANBA",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1P"
+            },
+            {
+              "fix_id": "PIMIK",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-18-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 1P coding table"
+            },
+            {
+              "fix_id": "YUMIN",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1P"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_DOTOL_2M",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "PC761",
+              "type": "at_or_below",
+              "altitude_ft": 11000,
+              "speed_kt": 250,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV DOTOL 2M"
+            },
+            {
+              "fix_id": "PC762",
+              "type": "at_or_below",
+              "altitude_ft": 8000,
+              "speed_kt": 250,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV DOTOL 2M"
+            },
+            {
+              "fix_id": "VEKDI",
+              "type": "at",
+              "altitude_ft": 7000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "DOKVU",
+              "type": "at",
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "PC682",
+              "type": "at",
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "PC683",
+              "type": "at",
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "PC684",
+              "type": "at",
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "PC685",
+              "type": "at",
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "LIDVO",
+              "type": "at",
+              "altitude_ft": 7000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            },
+            {
+              "fix_id": "DUKAL",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV DOTOL 2M coding table"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_UPGOS_2M",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "KIBEK",
+              "type": "at_or_below",
+              "altitude_ft": 13000,
+              "speed_kt": 250,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 2M coding table"
+            },
+            {
+              "fix_id": "PC763",
+              "type": "at_or_below",
+              "altitude_ft": 11000,
+              "speed_kt": 250,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 2M coding table"
+            },
+            {
+              "fix_id": "DOKVU",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 2M coding table"
+            },
+            {
+              "fix_id": "LIDVO",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 2M coding table"
+            },
+            {
+              "fix_id": "DUKAL",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-1, AIP AMDT 2/26",
+              "source_section": "RNAV UPGOS 2M coding table"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_TAMNA_2M",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "PC764",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2M coding table"
+            },
+            {
+              "fix_id": "PC735",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2M coding table"
+            },
+            {
+              "fix_id": "PC767",
+              "type": "at",
+              "altitude_ft": 10000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2M coding table"
+            },
+            {
+              "fix_id": "DOKVU",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2M coding table"
+            },
+            {
+              "fix_id": "LIDVO",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2M coding table"
+            },
+            {
+              "fix_id": "DUKAL",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TAMNA 2M coding table"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_TOSAN_2M",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "TOSAN",
+              "type": "at_or_above",
+              "altitude_ft": 15000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "NUSLO",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "CJU",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "PC735",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "PC767",
+              "type": "at",
+              "altitude_ft": 10000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "DOKVU",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "LIDVO",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            },
+            {
+              "fix_id": "DUKAL",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-2, AIP AMDT 2/26",
+              "source_section": "RNAV TOSAN 2M coding table"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_SOSDO_2M",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "SOSDO",
+              "type": "at_or_above",
+              "altitude_ft": 15000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "NUSLO",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "CJU",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "PC735",
+              "type": "at",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "PC767",
+              "type": "at",
+              "altitude_ft": 10000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "DOKVU",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "LIDVO",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            },
+            {
+              "fix_id": "DUKAL",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV SOSDO 2M coding table"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_LIMDI_2M",
+          "procedure_kind": "STAR",
+          "constraints": [
+            {
+              "fix_id": "LEDIN",
+              "type": "at_or_above",
+              "altitude_ft": 15000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            },
+            {
+              "fix_id": "PC765",
+              "type": "at_or_above",
+              "altitude_ft": 13000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            },
+            {
+              "fix_id": "PC735",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            },
+            {
+              "fix_id": "PC767",
+              "type": "at",
+              "altitude_ft": 10000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            },
+            {
+              "fix_id": "DOKVU",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            },
+            {
+              "fix_id": "LIDVO",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 220,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            },
+            {
+              "fix_id": "DUKAL",
+              "type": "at_or_above",
+              "altitude_ft": 4000,
+              "speed_kt": 195,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "KOCA eAIP RKPC AD CHART 2-19-3, AIP AMDT 2/26",
+              "source_section": "RNAV LIMDI 2M coding table"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_PANSI_2E",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 6.8,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV PANSI 2E procedure_level_constraints"
+            },
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 4.4,
+              "purpose": "obstacle_avoidance",
+              "required_until_altitude_ft": 8400,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV PANSI 2E procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC813",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 250,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV PANSI 2E constraints"
+            },
+            {
+              "fix_id": "PC814",
+              "type": "at_or_below",
+              "altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV PANSI 2E constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_LIMDI_1E",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 6.8,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV LIMDI 1E procedure_level_constraints"
+            },
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 4.4,
+              "purpose": "obstacle_avoidance",
+              "required_until_altitude_ft": 8400,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV LIMDI 1E procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC813",
+              "type": "at",
+              "altitude_ft": 9000,
+              "speed_kt": 250,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1E constraints"
+            },
+            {
+              "fix_id": "PC816",
+              "type": "at_or_above",
+              "altitude_ft": 15000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV LIMDI 1E constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_KAMIT_1W",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 6.5,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV KAMIT 1W procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC832",
+              "type": "window",
+              "min_altitude_ft": 8000,
+              "max_altitude_ft": 10000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 1W constraints"
+            },
+            {
+              "fix_id": "PC833",
+              "type": "at_or_above",
+              "altitude_ft": 13000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 1W constraints"
+            },
+            {
+              "fix_id": "OLLEH",
+              "type": "at_or_above",
+              "altitude_ft": 17000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 1W constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_IPDAS_1W",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 6.5,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV IPDAS 1W procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC833",
+              "type": "at",
+              "altitude_ft": 13000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV IPDAS 1W constraints"
+            },
+            {
+              "fix_id": "PC834",
+              "type": "at",
+              "altitude_ft": 13000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV IPDAS 1W constraints"
+            },
+            {
+              "fix_id": "IPDAS",
+              "type": "at",
+              "altitude_ft": 13000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV IPDAS 1W constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_AKPON_1W",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 7,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV AKPON 1W procedure_level_constraints"
+            },
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 5.7,
+              "purpose": "obstacle_avoidance",
+              "required_until_altitude_ft": 5300,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV AKPON 1W procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC846",
+              "type": "at_or_above",
+              "altitude_ft": 12000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV AKPON 1W constraints"
+            },
+            {
+              "fix_id": "PAPLU",
+              "type": "at_or_above",
+              "altitude_ft": 17000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV AKPON 1W constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_TAMNA_3W",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 7,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV TAMNA 3W procedure_level_constraints"
+            },
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 5.7,
+              "purpose": "obstacle_avoidance",
+              "required_until_altitude_ft": 5300,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV TAMNA 3W procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC846",
+              "type": "at_or_above",
+              "altitude_ft": 12000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TAMNA 3W constraints"
+            },
+            {
+              "fix_id": "PC845",
+              "type": "at_or_above",
+              "altitude_ft": 17000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV TAMNA 3W constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_KAMIT_2N",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 7,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV KAMIT 2N procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC871",
+              "type": "at_or_below",
+              "altitude_ft": 5000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 2N constraints"
+            },
+            {
+              "fix_id": "PC872",
+              "type": "at_or_below",
+              "altitude_ft": 8000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 2N constraints"
+            },
+            {
+              "fix_id": "TOREN",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 2N constraints"
+            },
+            {
+              "fix_id": "OLLEH",
+              "type": "at_or_below",
+              "altitude_ft": 12000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 2N constraints"
+            },
+            {
+              "fix_id": "KAMIT",
+              "type": "at_or_below",
+              "altitude_ft": 16000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV KAMIT 2N constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "RNAV_AKPON_1N",
+          "procedure_kind": "SID",
+          "procedure_level_constraints": [
+            {
+              "kind": "climb_gradient",
+              "climb_gradient_pct": 7,
+              "purpose": "ATC",
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedure_constraint_register.json",
+              "source_section": "RNAV AKPON 1N procedure_level_constraints"
+            }
+          ],
+          "constraints": [
+            {
+              "fix_id": "PC871",
+              "type": "at_or_below",
+              "altitude_ft": 5000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV AKPON 1N constraints"
+            },
+            {
+              "fix_id": "PC872",
+              "type": "at_or_below",
+              "altitude_ft": 8000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV AKPON 1N constraints"
+            },
+            {
+              "fix_id": "TOREN",
+              "type": "at_or_above",
+              "altitude_ft": 11000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "RNAV AKPON 1N constraints"
+            }
+          ]
+        },
+        {
+          "procedure_id": "ILS_Z_LOC_Z_RWY_07",
+          "procedure_kind": "APP",
+          "constraints": [
+            {
+              "fix_id": "YUMIN",
+              "type": "at",
+              "altitude_ft": 4000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "ILS Z or LOC Z RWY 07"
+            },
+            {
+              "fix_id": "LIMSO",
+              "type": "at",
+              "altitude_ft": 2900,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "ILS Z or LOC Z RWY 07"
+            }
+          ]
+        },
+        {
+          "procedure_id": "ILS_Z_LOC_Z_RWY_25",
+          "procedure_kind": "APP",
+          "constraints": [
+            {
+              "fix_id": "DUKAL",
+              "type": "at",
+              "altitude_ft": 4000,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "ILS Z or LOC Z RWY 25"
+            },
+            {
+              "fix_id": "TOKIN",
+              "type": "at",
+              "altitude_ft": 2900,
+              "source_text": "derived training source text redacted for public OSS dataset",
+              "source_file": "data/reference/rkpc_procedures.json",
+              "source_section": "ILS Z or LOC Z RWY 25"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "STAR coding-table '-' altitude cells are interpreted as carry-forward maintain from the prior '@' altitude row during DES VIA.",
+        "STAR '@' speed cells are interpreted as managed maintain targets unless controller speed mode is active.",
+        "Final ILS glidepath after LIMSO/TOKIN is computed by procedure guidance using the glide_path_ft_per_nm value."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "name": "rkpc_hotspot_descriptors",
+    "status": "descriptor_document",
+    "description": "별표 14 hotspot anchor descriptor document."
+  },
+  "hotspot_reference_zones": [
+    {
+      "id": "HS1",
+      "runway_group": "RWY07 north",
+      "anchor_refs": [
+        "PC811",
+        "OLLEH"
+      ],
+      "description": "KAMIT 출항경로와 UPGOS 입항경로(STAR·VECTOR) 간 수렴구역",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 14",
+      "geometry_status": "anchor_only"
+    },
+    {
+      "id": "HS2",
+      "runway_group": "RWY07 north",
+      "anchor_refs": [
+        "BIROM",
+        "MANBA"
+      ],
+      "description": "BIROM: DOTOL 2P, UPGOS 1P 입항경로 간 수렴구역 / MANBA: 모든 RWY 07 STAR의 Point Merge 시작점",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 14",
+      "geometry_status": "anchor_only"
+    },
+    {
+      "id": "HS3",
+      "runway_group": "RWY07 south",
+      "anchor_refs": [
+        "CJU"
+      ],
+      "description": "TAMNA 2P, SOSDO 2P, TOSAN 2P, LIMDI 1P 수렴구역 및 CJU 경유 SID/STAR 수렴구역",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 14",
+      "geometry_status": "anchor_only"
+    },
+    {
+      "id": "HS4",
+      "runway_group": "RWY25 north",
+      "anchor_refs": [
+        "OLLEH"
+      ],
+      "description": "KAMIT 방면 RWY 25 / RWY 31 SID 수렴구역",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 14",
+      "geometry_status": "anchor_only"
+    },
+    {
+      "id": "HS5",
+      "runway_group": "RWY25 north",
+      "anchor_refs": [
+        "GULBI"
+      ],
+      "description": "UPGOS 1T를 제외한 모든 RWY 25 STAR의 Point Merge 시작점",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 14",
+      "geometry_status": "anchor_only_and_fix_pending"
+    },
+    {
+      "id": "HS6",
+      "runway_group": "RWY25 south",
+      "anchor_refs": [
+        "NUSLO"
+      ],
+      "description": "SOSDO 3T, TOSAN 3T 수렴구역",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 14",
+      "geometry_status": "anchor_only"
+    }
+  ]
+}

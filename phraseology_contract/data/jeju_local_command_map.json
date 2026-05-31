@@ -1,0 +1,445 @@
+{
+  "metadata": {
+    "id": "jeju_local_command_map_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract",
+    "scope": "Jeju APP simulator local mapping for phraseology intents",
+    "aip_package_checked": "KOCA eAIP 2026-04-30 RKPC STAR/SID/INSTR APCH/RKPC-TEXT PDF HEAD 200",
+    "local_sources": [
+      "data/reference/rkpc_procedures.json",
+      "data/authority/rkpc_scenario_fix_role_register.json",
+      "data/reference/rkpc_transfer_rules.json",
+      "public_derived_training_dataset"
+    ]
+  },
+  "official_aip_urls": {
+    "star_pdf": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+    "sid_pdf": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+    "instrument_approach_pdf": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-21%29%20INSTR%20APCH%20CHART.pdf",
+    "text_pdf": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/RKPC-TEXT.pdf"
+  },
+  "arrival_entries": [
+    {
+      "fix_id": "DOTOL",
+      "role": "rnav_star_entry",
+      "runway_07_procedure": "RNAV_DOTOL_2P",
+      "runway_25_procedure": "RNAV_DOTOL_2M",
+      "transfer_altitude": "FL160",
+      "airway": "Y711"
+    },
+    {
+      "fix_id": "UPGOS",
+      "role": "rnav_star_entry",
+      "runway_07_procedure": "RNAV_UPGOS_1P",
+      "runway_25_procedure": "RNAV_UPGOS_2M",
+      "transfer_altitude": "FL160",
+      "airway": "Y572"
+    },
+    {
+      "fix_id": "TAMNA",
+      "role": "rnav_star_entry_and_sid_exit",
+      "runway_07_procedure": "RNAV_TAMNA_2P",
+      "runway_25_procedure": "RNAV_TAMNA_2M",
+      "transfer_altitude": "FL150",
+      "airway": "A595/Y677"
+    },
+    {
+      "fix_id": "TOSAN",
+      "role": "rnav_star_entry",
+      "runway_07_procedure": "RNAV_TOSAN_2P",
+      "runway_25_procedure": "RNAV_TOSAN_2M",
+      "transfer_altitude": "FL150",
+      "airway": "Y572/A586"
+    },
+    {
+      "fix_id": "SOSDO",
+      "role": "rnav_star_entry",
+      "runway_07_procedure": "RNAV_SOSDO_2P",
+      "runway_25_procedure": "RNAV_SOSDO_2M",
+      "transfer_altitude": "FL150",
+      "airway": "Y722"
+    },
+    {
+      "fix_id": "LIMDI",
+      "role": "rnav_star_entry_and_sid_exit",
+      "runway_07_procedure": "RNAV_LIMDI_1P",
+      "runway_25_procedure": "RNAV_LIMDI_2M",
+      "transfer_altitude": "FL150",
+      "airway": "Y677",
+      "special_note": "arrival offset 3 NM right of track before Jeju TMA"
+    },
+    {
+      "fix_id": "IPDAS",
+      "role": "conventional_gate",
+      "runway_07_procedure": null,
+      "runway_25_procedure": null,
+      "transfer_altitude": "12000FT",
+      "airway": "B576"
+    },
+    {
+      "fix_id": "MAKET",
+      "role": "conventional_gate",
+      "runway_07_procedure": null,
+      "runway_25_procedure": null,
+      "transfer_altitude": "10000FT",
+      "airway": "A586"
+    }
+  ],
+  "approaches": [
+    {
+      "runway": "07",
+      "procedure_id": "ILS_Z_LOC_Z_RWY_07",
+      "phrase_token": "ILS RUNWAY 07",
+      "initial_fix": "YUMIN",
+      "final_fix": "LIMSO",
+      "sim_route": [
+        "YUMIN",
+        "LIMSO",
+        "RW070"
+      ],
+      "missed_approach_anchor": [
+        "PC404",
+        "PETAA"
+      ],
+      "missed_approach_altitude_ft": 8000
+    },
+    {
+      "runway": "25",
+      "procedure_id": "ILS_Z_LOC_Z_RWY_25",
+      "phrase_token": "ILS RUNWAY 25",
+      "initial_fix": "DUKAL",
+      "final_fix": "TOKIN",
+      "sim_route": [
+        "DUKAL",
+        "TOKIN",
+        "RW250"
+      ],
+      "missed_approach_anchor": [
+        "PC403",
+        "LOTKA"
+      ],
+      "missed_approach_altitude_ft": 6000
+    }
+  ],
+  "reconciliation_notes": [
+    {
+      "id": "rwy25_ils_y_dme_reference_conflict",
+      "severity": "needs_review_before_runtime_use",
+      "summary": "RWY25 ILS Y final-fix/DME references may differ between rkpc_procedures.json and local APCH PDF-derived text.",
+      "current_json_value": "D10.8 YDM / D5.7 YDM / D1.5 YDM / RW250",
+      "local_pdf_derived_candidate": "D10.5 ICHE / D5.3 ICHE / D1.0 ICHE",
+      "contract_decision": "Do not use RWY25 ILS Y as a v0 local command map route until reconciled. Use ILS Z RWY25 DUKAL -> TOKIN -> RW250 simplified route for v0."
+    }
+  ],
+  "departure_exits": [
+    {
+      "fix_id": "KAMIT",
+      "runway_07_procedure": "RNAV_KAMIT_2E",
+      "runway_25_procedure": "RNAV_KAMIT_1W",
+      "runway_31_procedure": "RNAV_KAMIT_2N",
+      "transfer_altitude": "FL170",
+      "airway": "Y722"
+    },
+    {
+      "fix_id": "AKPON",
+      "runway_07_procedure": "RNAV_AKPON_1E",
+      "runway_25_procedure": "RNAV_AKPON_1W",
+      "runway_31_procedure": "RNAV_AKPON_1N",
+      "transfer_altitude": "FL170",
+      "airway": "Y571"
+    },
+    {
+      "fix_id": "TAMNA",
+      "runway_07_procedure": "RNAV_TAMNA_2E",
+      "runway_25_procedure": "RNAV_TAMNA_3W",
+      "runway_31_procedure": null,
+      "transfer_altitude": "FL160",
+      "airway": "Y677/A595"
+    },
+    {
+      "fix_id": "PANSI",
+      "runway_07_procedure": "RNAV_PANSI_2E",
+      "runway_25_procedure": "RNAV_PANSI_2W",
+      "runway_31_procedure": null,
+      "transfer_altitude": "FL160",
+      "airway": "Y711"
+    },
+    {
+      "fix_id": "LIMDI",
+      "runway_07_procedure": "RNAV_LIMDI_1E",
+      "runway_25_procedure": "RNAV_LIMDI_1W",
+      "runway_31_procedure": null,
+      "transfer_altitude": "FL160 / RWY25: 13000FT",
+      "airway": "Y677"
+    },
+    {
+      "fix_id": "IPDAS",
+      "runway_07_procedure": "IPDAS_4K",
+      "runway_25_procedure": "RNAV_IPDAS_1W / IPDAS_1L",
+      "runway_31_procedure": null,
+      "transfer_altitude": "13000FT",
+      "airway": "B576"
+    },
+    {
+      "fix_id": "MAKET",
+      "runway_07_procedure": "MAKET_4K",
+      "runway_25_procedure": null,
+      "runway_31_procedure": null,
+      "transfer_altitude": "9000FT",
+      "airway": "A586"
+    }
+  ],
+  "local_phrase_examples": [
+    {
+      "phrase": "JJA123 DOTOL STAR",
+      "intent": "CLEARED_STAR",
+      "runway_mode_resolution": {
+        "25": "RNAV_DOTOL_2M",
+        "07": "RNAV_DOTOL_2P"
+      }
+    },
+    {
+      "phrase": "JJA123 CLEARED DOTOL TWO PAPA ARRIVAL",
+      "intent": "CLEARED_STAR",
+      "procedure_id": "RNAV_DOTOL_2P"
+    },
+    {
+      "phrase": "JJA123 CLEARED LIMDI TWO MIKE ARRIVAL",
+      "intent": "CLEARED_STAR",
+      "procedure_id": "RNAV_LIMDI_2M"
+    },
+    {
+      "phrase": "JJA123 DIRECT YUMIN",
+      "intent": "DIRECT_TO_FIX",
+      "fix_id": "YUMIN"
+    },
+    {
+      "phrase": "JJA123 CLEARED ILS RUNWAY 07",
+      "intent": "CLEARED_ILS",
+      "procedure_id": "ILS_Z_LOC_Z_RWY_07"
+    },
+    {
+      "phrase": "JJA123 CLEARED ILS Z RUNWAY 07 APPROACH",
+      "intent": "CLEARED_ILS",
+      "procedure_id": "ILS_Z_LOC_Z_RWY_07"
+    },
+    {
+      "phrase": "JJA123 CLEARED ILS Z RWY 07",
+      "intent": "CLEARED_ILS",
+      "procedure_id": "ILS_Z_LOC_Z_RWY_07",
+      "alias_type": "accepted_alias"
+    },
+    {
+      "phrase": "JJA123 CLEARED VISUAL APPROACH RUNWAY 07",
+      "intent": "CLEARED_VISUAL_APPROACH",
+      "procedure_id": "VISUAL_APPROACH_RWY_07"
+    },
+    {
+      "phrase": "JJA123 CLEARED VISUAL RWY 07",
+      "intent": "CLEARED_VISUAL_APPROACH",
+      "procedure_id": "VISUAL_APPROACH_RWY_07",
+      "alias_type": "accepted_alias"
+    },
+    {
+      "phrase": "KAL481 KAMIT SID",
+      "intent": "CLEARED_SID",
+      "departure_runway_resolution": {
+        "25": "RNAV_KAMIT_1W",
+        "31": "RNAV_KAMIT_2N",
+        "07": "RNAV_KAMIT_2E"
+      }
+    },
+    {
+      "phrase": "KAL481 CLEARED KAMIT TWO ECHO DEPARTURE",
+      "intent": "CLEARED_SID",
+      "procedure_id": "RNAV_KAMIT_2E"
+    },
+    {
+      "phrase": "KAL481 CLEARED IPDAS ONE WHISKEY DEPARTURE",
+      "intent": "CLEARED_SID",
+      "procedure_id": "RNAV_IPDAS_1W"
+    },
+    {
+      "phrase": "JJA123 HOLD AT PETAA",
+      "intent": "HOLD_AT_FIX",
+      "fix_id": "PETAA"
+    },
+    {
+      "phrase": "JJA123 HOLD AT LOTKA",
+      "intent": "HOLD_AT_FIX",
+      "fix_id": "LOTKA"
+    },
+    {
+      "phrase": "JJA123 MAINTAIN 220 KNOTS OR GREATER UNTIL PASSING 10000",
+      "intent": "MAINTAIN_SPEED_UNTIL",
+      "speed_policy": "minimum_speed_floor",
+      "release_condition": "passing_altitude_ft"
+    },
+    {
+      "phrase": "JJA123 MAINTAIN 210 KNOTS OR GREATER UNTIL YUMIN",
+      "intent": "MAINTAIN_SPEED_UNTIL",
+      "speed_policy": "minimum_speed_floor",
+      "release_condition": "passing_fix_id"
+    },
+    {
+      "phrase": "JJA123 SPEED 180 OR LESS",
+      "intent": "MAINTAIN_SPEED_LIMIT",
+      "speed_policy": "maximum_speed_ceiling",
+      "alias_type": "accepted_alias"
+    },
+    {
+      "phrase": "JJA123 SPEED 180 OR GREATER",
+      "intent": "MAINTAIN_SPEED_LIMIT",
+      "speed_policy": "minimum_speed_floor",
+      "alias_type": "accepted_alias",
+      "note": "Used as a controller minimum speed floor. It is bounded by 10000ft/250kt, published procedure caps, and the simulator global max speed."
+    },
+    {
+      "phrase": "JJA123 MINIMUM SPEED",
+      "intent": "MINIMUM_SPEED",
+      "speed_policy": "minimum_practical_speed",
+      "target_speed_kt": 155,
+      "alias_type": "accepted_alias",
+      "note": "Used to reduce as much as practical, typically in the approach sequence. This is not an OR GREATER floor."
+    },
+    {
+      "phrase": "JJA123 LEFT TURN HEADING 180",
+      "intent": "ASSIGN_HEADING",
+      "turn_direction": "LEFT",
+      "alias_type": "accepted_alias"
+    },
+    {
+      "phrase": "JJA123 DESCEND VIA DOTOL TWO PAPA ARRIVAL TO {assigned_altitude_ft} CANCEL LEVEL RESTRICTION",
+      "example_phrase": "JJA123 DESCEND VIA DOTOL TWO PAPA ARRIVAL TO 6000 CANCEL LEVEL RESTRICTION",
+      "intent": "DESCEND_VIA",
+      "constraint_policy": {
+        "lateral_path": "follow",
+        "speed_restrictions": "follow",
+        "altitude_restrictions": "cancel"
+      },
+      "target_altitude_ft": "assigned_altitude_ft",
+      "example_target_altitude_ft": 6000,
+      "note": "The assigned altitude is variable. 4000 ft is not special."
+    },
+    {
+      "phrase": "JJA123 DESCEND VIA DOTOL 2P TO {assigned_altitude_ft} CANCEL LEVEL",
+      "example_phrase": "JJA123 DESCEND VIA DOTOL 2P TO 7000 CANCEL LEVEL",
+      "intent": "DESCEND_VIA",
+      "constraint_policy": {
+        "lateral_path": "follow",
+        "speed_restrictions": "follow",
+        "altitude_restrictions": "cancel"
+      },
+      "target_altitude_ft": "assigned_altitude_ft",
+      "alias_type": "accepted_alias"
+    },
+    {
+      "phrase": "JJA123 CANCEL {fix_id} LEVEL RESTRICTION",
+      "example_phrase": "JJA123 CANCEL YUMIN LEVEL RESTRICTION",
+      "intent": "CANCEL_LEVEL_RESTRICTION",
+      "cancel_level_restriction": {
+        "scope": "APP_FIX",
+        "fix_id": "fix_id",
+        "requires_confirmation": false
+      },
+      "note": "Only the named APP/ILS fix altitude restriction is cancelled. Other APP fix restrictions and final glidepath remain active."
+    },
+    {
+      "phrase": "JJA123 DIRECT {fix_id} DESCEND TO {assigned_altitude_ft} CANCEL LEVEL RESTRICTION",
+      "example_phrase": "JJA123 DIRECT LIMSO DESCEND TO 11000 CANCEL LEVEL RESTRICTION",
+      "intent": "DIRECT_TO_FIX",
+      "cancel_level_restriction": {
+        "scope": "DIRECT_FIX",
+        "fix_id": "fix_id",
+        "requires_confirmation": false
+      },
+      "constraint_policy": {
+        "lateral_path": "direct",
+        "procedure_continuation": false,
+        "altitude_restrictions": "cancel_previous_procedure_restrictions"
+      },
+      "target_altitude_ft": "assigned_altitude_ft",
+      "note": "Uses the fix as vector-like navigation. Existing STAR/SID/APP state is cancelled; rejoining a procedure requires a new clearance."
+    },
+    {
+      "phrase": "JJA123 CANCEL LEVEL RESTRICTION",
+      "example_phrase": "JJA123 CANCEL LEVEL RESTRICTION",
+      "intent": "CANCEL_LEVEL_RESTRICTION",
+      "cancel_level_restriction": {
+        "scope": "APP_ALL",
+        "requires_confirmation": true
+      },
+      "note": "Missing fix scope. Adapter must confirm before execution."
+    },
+    {
+      "phrase": "JJA123 CANCEL {fix_id} SPEED RESTRICTION",
+      "example_phrase": "JJA123 CANCEL LIMSO SPEED RESTRICTION",
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "cancel_speed_restriction": {
+        "scope": "FIX",
+        "fix_id": "fix_id",
+        "requires_confirmation": false
+      },
+      "note": "Cancels only the named STAR/APP fix speed restriction. Altitude restrictions remain active."
+    },
+    {
+      "phrase": "JJA123 CANCEL SPEED RESTRICTION",
+      "example_phrase": "JJA123 CANCEL SPEED RESTRICTION",
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "cancel_speed_restriction": {
+        "scope": "ACTIVE_NEXT",
+        "requires_confirmation": true
+      },
+      "note": "If a published speed cap conflict is active within 5 NM, adapter may apply it to that active restricted fix; otherwise it must confirm scope."
+    },
+    {
+      "phrase": "JJA123 GO AROUND",
+      "intent": "GO_AROUND",
+      "missed_anchor_by_runway": {
+        "25": [
+          "PC403",
+          "LOTKA"
+        ],
+        "07": [
+          "PC404",
+          "PETAA"
+        ]
+      }
+    }
+  ],
+  "future_local_intent_candidates": [
+    {
+      "phrase_family": "MAINTAIN {altitude} UNTIL {fix}",
+      "intent_candidate": "TRANSFER_ALTITUDE_CONSTRAINT",
+      "examples": [
+        "MAINTAIN FL160 UNTIL DOTOL",
+        "MAINTAIN FL150 UNTIL LIMDI"
+      ]
+    },
+    {
+      "phrase_family": "OFFSET 3NM RIGHT OF TRACK",
+      "intent_candidate": "OFFSET_RIGHT_OF_TRACK",
+      "examples": [
+        "OFFSET 3NM RIGHT OF TRACK"
+      ],
+      "local_scope": "LIMDI transfer special condition"
+    }
+  ],
+  "tacit_flow_notes": [
+    {
+      "id": "rwy07_dotol_priority",
+      "summary": "RWY07에서 DOTOL 계열 도착항공기가 연속 유입되면 UPGOS 계열은 겉보기 거리와 무관하게 후순위가 되기 쉽다.",
+      "source": "public_derived_training_dataset"
+    },
+    {
+      "id": "rwy25_wind_speed_effect",
+      "summary": "RWY25에서는 DOTOL/UPGOS 흐름의 wind effect가 actual speed와 sequencing 판단에 영향을 준다.",
+      "source": "public_derived_training_dataset"
+    },
+    {
+      "id": "usable_handoff",
+      "summary": "APP의 목표는 빠른 handoff가 아니라 ARR/TWR가 받을 수 있는 usable handoff다.",
+      "source": "public_derived_training_dataset"
+    }
+  ]
+}

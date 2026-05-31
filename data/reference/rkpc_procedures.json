@@ -1,0 +1,1618 @@
+{
+  "fixes": [
+    {
+      "id": "DOTOL",
+      "raw_coordinate": "34°15'15.4\"N 126°36'36.6\"E",
+      "latitude": 34.254278,
+      "longitude": 126.610167,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2P coding table"
+    },
+    {
+      "id": "CHUJA",
+      "raw_coordinate": "33°59'47.3\"N 126°35'00.2\"E",
+      "latitude": 33.996472,
+      "longitude": 126.583389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2P coding table"
+    },
+    {
+      "id": "BIROM",
+      "raw_coordinate": "33°47'33.9\"N 126°23'09.8\"E",
+      "latitude": 33.79275,
+      "longitude": 126.386056,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2P coding table"
+    },
+    {
+      "id": "MANBA",
+      "raw_coordinate": "33°43'39.9\"N 126°19'24.0\"E",
+      "latitude": 33.72775,
+      "longitude": 126.323333,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P / holding procedure"
+    },
+    {
+      "id": "PC621",
+      "raw_coordinate": "33°44'27.4\"N 126°13'28.9\"E",
+      "latitude": 33.740944,
+      "longitude": 126.224694,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC622",
+      "raw_coordinate": "33°43'46.4\"N 126°07'32.6\"E",
+      "latitude": 33.729556,
+      "longitude": 126.125722,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC623",
+      "raw_coordinate": "33°41'40.2\"N 126°02'06.2\"E",
+      "latitude": 33.6945,
+      "longitude": 126.035056,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC624",
+      "raw_coordinate": "33°38'19.9\"N 125°57'38.2\"E",
+      "latitude": 33.638861,
+      "longitude": 125.960611,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC625",
+      "raw_coordinate": "33°34'03.1\"N 125°54'31.8\"E",
+      "latitude": 33.567528,
+      "longitude": 125.908833,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC626",
+      "raw_coordinate": "33°29'11.9\"N 125°53'02.9\"E",
+      "latitude": 33.486639,
+      "longitude": 125.884139,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "DAKPI",
+      "raw_coordinate": "33°24'11.7\"N 125°53'19.1\"E",
+      "latitude": 33.40325,
+      "longitude": 125.888639,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC628",
+      "raw_coordinate": "33°19'28.4\"N 125°55'18.5\"E",
+      "latitude": 33.324556,
+      "longitude": 125.921806,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PIMIK",
+      "raw_coordinate": "33°15'26.4\"N 125°58'50.7\"E",
+      "latitude": 33.257333,
+      "longitude": 125.98075,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "YUMIN",
+      "raw_coordinate": "33°27'25.7\"N 126°13'15.5\"E",
+      "latitude": 33.457139,
+      "longitude": 126.220972,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "LIMDI",
+      "raw_coordinate": "33°33'13.3\"N 125°49'53.0\"E",
+      "latitude": 33.553694,
+      "longitude": 125.831389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC727",
+      "raw_coordinate": "33°24'23.2\"N 126°14'58.9\"E",
+      "latitude": 33.406444,
+      "longitude": 126.249694,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC725",
+      "raw_coordinate": "33°19'25.2\"N 126°28'56.9\"E",
+      "latitude": 33.323667,
+      "longitude": 126.482472,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "CJU",
+      "raw_coordinate": "33°23'04.6\"N 126°37'26.8\"E",
+      "latitude": 33.384611,
+      "longitude": 126.624111,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC723",
+      "raw_coordinate": "33°35'44.3\"N 126°29'41.9\"E",
+      "latitude": 33.595639,
+      "longitude": 126.494972,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "PC724",
+      "raw_coordinate": "33°42'52.0\"N 126°25'19.1\"E",
+      "latitude": 33.714444,
+      "longitude": 126.421972,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "DUKAL",
+      "raw_coordinate": "33°38'58.6\"N 126°45'38.8\"E",
+      "latitude": 33.649611,
+      "longitude": 126.760778,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z / RNP Z / RNP Y RWY 25"
+    },
+    {
+      "id": "TOKIN",
+      "raw_coordinate": "33°36'21.9\"N 126°40'32.2\"E",
+      "latitude": 33.606083,
+      "longitude": 126.675611,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z / RNP Z / RNP Y RWY 25"
+    },
+    {
+      "id": "OMKEL",
+      "raw_coordinate": "33°43'16.2\"N 126°41'08.0\"E",
+      "latitude": 33.721167,
+      "longitude": 126.685556,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Y / VOR RWY 25"
+    },
+    {
+      "id": "LIMSO",
+      "raw_coordinate": "33°25'03.0\"N 126°18'31.0\"E",
+      "latitude": 33.4175,
+      "longitude": 126.308611,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z / RNP Z / RNP Y RWY 07"
+    },
+    {
+      "id": "TEWOO",
+      "raw_coordinate": "33°27'15.3\"N 126°22'47.5\"E",
+      "latitude": 33.45425,
+      "longitude": 126.379861,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP Z / RNP Y RWY 07"
+    },
+    {
+      "id": "RW070",
+      "raw_coordinate": "33°29'59.57\"N 126°28'06.50\"E",
+      "latitude": 33.499881,
+      "longitude": 126.468472,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP Z / RNP Y RWY 07"
+    },
+    {
+      "id": "PC404",
+      "raw_coordinate": "33°32'42.3\"N 126°33'23.4\"E",
+      "latitude": 33.545083,
+      "longitude": 126.5565,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z / RNP Z / RNP Y RWY 07"
+    },
+    {
+      "id": "PETAA",
+      "raw_coordinate": "33°31'18.0\"N 126°55'34.0\"E",
+      "latitude": 33.521667,
+      "longitude": 126.926111,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z / RNP Z / RNP Y RWY 07"
+    },
+    {
+      "id": "MEXER",
+      "raw_coordinate": "33°27'28.0\"N 126°23'12.0\"E",
+      "latitude": 33.457778,
+      "longitude": 126.386667,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 1W / IPDAS 1W coding table"
+    },
+    {
+      "id": "PC832",
+      "raw_coordinate": "33°40'46.0\"N 126°13'51.9\"E",
+      "latitude": 33.679444,
+      "longitude": 126.231083,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 1W / IPDAS 1W coding table"
+    },
+    {
+      "id": "PC833",
+      "raw_coordinate": "33°50'08.8\"N 126°30'44.8\"E",
+      "latitude": 33.835778,
+      "longitude": 126.512444,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 1W / IPDAS 1W coding table"
+    },
+    {
+      "id": "PC834",
+      "raw_coordinate": "33°55'46.2\"N 126°40'55.7\"E",
+      "latitude": 33.9295,
+      "longitude": 126.682139,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV IPDAS 1W coding table"
+    },
+    {
+      "id": "IPDAS",
+      "raw_coordinate": "34°15'14.7\"N 126°43'01.4\"E",
+      "latitude": 34.254083,
+      "longitude": 126.717056,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV IPDAS 1W coding table"
+    },
+    {
+      "id": "OLLEH",
+      "raw_coordinate": "33°57'42.2\"N 126°44'26.5\"E",
+      "latitude": 33.961722,
+      "longitude": 126.740694,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 1W / KAMIT 2E coding table"
+    },
+    {
+      "id": "KAMIT",
+      "raw_coordinate": "34°15'14.1\"N 126°46'17.7\"E",
+      "latitude": 34.253917,
+      "longitude": 126.771583,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 1W / KAMIT 2E coding table"
+    },
+    {
+      "id": "PC841",
+      "raw_coordinate": "33°25'42.7\"N 126°19'47.8\"E",
+      "latitude": 33.428528,
+      "longitude": 126.329944,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W / PANSI 2W coding table"
+    },
+    {
+      "id": "PC842",
+      "raw_coordinate": "33°17'38.3\"N 126°21'17.3\"E",
+      "latitude": 33.293972,
+      "longitude": 126.354806,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W coding table"
+    },
+    {
+      "id": "PC846",
+      "raw_coordinate": "33°19'15.6\"N 126°35'28.6\"E",
+      "latitude": 33.321,
+      "longitude": 126.591278,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W coding table"
+    },
+    {
+      "id": "ATIMO",
+      "raw_coordinate": "33°23'52.5\"N 126°43'51.2\"E",
+      "latitude": 33.397917,
+      "longitude": 126.730889,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W coding table"
+    },
+    {
+      "id": "PAPLU",
+      "raw_coordinate": "33°34'41.3\"N 127°03'36.5\"E",
+      "latitude": 33.578139,
+      "longitude": 127.060139,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W coding table"
+    },
+    {
+      "id": "AKPON",
+      "raw_coordinate": "33°46'49.6\"N 127°19'53.0\"E",
+      "latitude": 33.780444,
+      "longitude": 127.331389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W / AKPON 1E coding table"
+    },
+    {
+      "id": "PC845",
+      "raw_coordinate": "33°25'03.2\"N 126°53'24.0\"E",
+      "latitude": 33.417556,
+      "longitude": 126.89,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 3W coding table"
+    },
+    {
+      "id": "TAMNA",
+      "raw_coordinate": "33°28'15.5\"N 127°19'53.0\"E",
+      "latitude": 33.470972,
+      "longitude": 127.331389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 2E / TAMNA 3W coding table"
+    },
+    {
+      "id": "PALRI",
+      "raw_coordinate": "33°38'27.2\"N 126°44'37.4\"E",
+      "latitude": 33.640889,
+      "longitude": 126.743722,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1E / TAMNA 2E / PANSI 2E / LIMDI 1E coding tables"
+    },
+    {
+      "id": "PC811",
+      "raw_coordinate": "33°42'12.1\"N 126°42'48.8\"E",
+      "latitude": 33.703361,
+      "longitude": 126.713556,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 2E coding table"
+    },
+    {
+      "id": "PC813",
+      "raw_coordinate": "33°29'55.5\"N 126°50'50.0\"E",
+      "latitude": 33.49875,
+      "longitude": 126.847222,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV PANSI 2E / LIMDI 1E coding tables"
+    },
+    {
+      "id": "PC814",
+      "raw_coordinate": "33°15'36.4\"N 126°29'13.5\"E",
+      "latitude": 33.260111,
+      "longitude": 126.487083,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV PANSI 2E coding table"
+    },
+    {
+      "id": "PC816",
+      "raw_coordinate": "33°26'56.5\"N 126°19'30.8\"E",
+      "latitude": 33.449028,
+      "longitude": 126.325222,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1E coding table"
+    },
+    {
+      "id": "PANSI",
+      "raw_coordinate": "33°00'14.4\"N 126°12'25.1\"E",
+      "latitude": 33.004,
+      "longitude": 126.206972,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV PANSI 2E / PANSI 2W coding table"
+    },
+    {
+      "id": "SOSDO",
+      "raw_coordinate": "33°00'12.0\"N 126°27'35.0\"E",
+      "latitude": 33.003333,
+      "longitude": 126.459722,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV SOSDO 2P / SOSDO 2M coding table"
+    },
+    {
+      "id": "TOSAN",
+      "raw_coordinate": "33°00'12.0\"N 126°46'18.7\"E",
+      "latitude": 33.003333,
+      "longitude": 126.771861,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TOSAN 2P / TOSAN 2M coding table"
+    },
+    {
+      "id": "NUSLO",
+      "raw_coordinate": "33°16'00.2\"N 126°40'11.8\"E",
+      "latitude": 33.266722,
+      "longitude": 126.669944,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV SOSDO 2M coding table"
+    },
+    {
+      "id": "LEDIN",
+      "raw_coordinate": "33°32'42.1\"N 126°10'14.9\"E",
+      "latitude": 33.545028,
+      "longitude": 126.170806,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1W coding table"
+    },
+    {
+      "id": "UPGOS",
+      "raw_coordinate": "33°57'33.3\"N 127°19'53.0\"E",
+      "latitude": 33.95925,
+      "longitude": 127.331389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV UPGOS 1P coding table"
+    },
+    {
+      "id": "MAKET",
+      "raw_coordinate": "33°54'52\"N 127°19'53\"E",
+      "latitude": 33.914444,
+      "longitude": 127.331389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "MAKET FOUR KILO DEPARTURE chart graphic",
+      "notes": "절차 코딩표가 아니라 chart graphic OCR 기반 1차 좌표다. 후속 검증 필요."
+    },
+    {
+      "id": "PC728",
+      "raw_coordinate": "33°54'53.8\"N 127°05'49.0\"E",
+      "latitude": 33.914944,
+      "longitude": 127.096944,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV UPGOS 1P coding table"
+    },
+    {
+      "id": "PC721",
+      "raw_coordinate": "33°54'53.3\"N 126°47'09.7\"E",
+      "latitude": 33.914806,
+      "longitude": 126.786028,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV UPGOS 1P coding table"
+    },
+    {
+      "id": "PC722",
+      "raw_coordinate": "33°52'02.9\"N 126°37'48.9\"E",
+      "latitude": 33.867472,
+      "longitude": 126.63025,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV UPGOS 1P coding table"
+    },
+    {
+      "id": "AKBIN",
+      "type": "arc_fix",
+      "reference_navaid_id": "YDM",
+      "distance_nm": 12,
+      "raw_coordinate": "33°31'21.5\"N 126°14'55.3\"E",
+      "latitude": 33.522639,
+      "longitude": 126.248694,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Y or LOC Y Approach to RWY 07 from AKBIN(IAF) / VOR Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D10.5 ICJU",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "ICJU",
+      "bearing_deg": 66.1,
+      "distance_nm": 10.5,
+      "raw_coordinate": "33°24'35.0\"N 126°17'36.8\"E",
+      "latitude": 33.409722,
+      "longitude": 126.293556,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Y or LOC Y Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D5.3 ICJU",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "ICJU",
+      "bearing_deg": 66.15,
+      "distance_nm": 5.31,
+      "raw_coordinate": "33°27'18.5\"N 126°22'53.6\"E",
+      "latitude": 33.455139,
+      "longitude": 126.381556,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z/ILS Y RWY 07 coding table"
+    },
+    {
+      "id": "D2.6 ICJU",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "ICJU",
+      "bearing_deg": 66.17,
+      "distance_nm": 2.6,
+      "raw_coordinate": "33°28'43.8\"N 126°25'39.3\"E",
+      "latitude": 33.478833,
+      "longitude": 126.427583,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z/ILS Y RWY 07 coding table"
+    },
+    {
+      "id": "D1.3 ICJU",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "ICJU",
+      "bearing_deg": 66.19,
+      "distance_nm": 1.3,
+      "raw_coordinate": "33°29'24.8\"N 126°26'58.8\"E",
+      "latitude": 33.490222,
+      "longitude": 126.449667,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z/ILS Y RWY 07 coding table"
+    },
+    {
+      "id": "D12.0 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 64.88,
+      "distance_nm": 12,
+      "raw_coordinate": "33°24'10.5\"N 126°17'12.1\"E",
+      "latitude": 33.402917,
+      "longitude": 126.286694,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D8.4 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 64.92,
+      "distance_nm": 8.4,
+      "raw_coordinate": "33°26'07.9\"N 126°20'48.9\"E",
+      "latitude": 33.435528,
+      "longitude": 126.346917,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D6.3 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 64.94,
+      "distance_nm": 6.3,
+      "raw_coordinate": "33°27'16.3\"N 126°22'55.4\"E",
+      "latitude": 33.454528,
+      "longitude": 126.382056,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D4.5 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 64.95,
+      "distance_nm": 4.5,
+      "raw_coordinate": "33°28'14.9\"N 126°24'43.9\"E",
+      "latitude": 33.470806,
+      "longitude": 126.412194,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D2.4 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 65.66,
+      "distance_nm": 2.4,
+      "raw_coordinate": "33°29'23.3\"N 126°26'50.6\"E",
+      "latitude": 33.489806,
+      "longitude": 126.447389,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 07 from AKBIN(IAF)"
+    },
+    {
+      "id": "D4.0 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 66.2,
+      "distance_nm": 4,
+      "raw_coordinate": "33°32'51.3\"N 126°33'16.9\"E",
+      "latitude": 33.547583,
+      "longitude": 126.554694,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Y or LOC Y RWY 07 coding table"
+    },
+    {
+      "id": "PC404",
+      "raw_coordinate": "33°32'42.3\"N 126°33'23.4\"E",
+      "latitude": 33.545083,
+      "longitude": 126.5565,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z/ILS Y/RNP RWY 07 coding table"
+    },
+    {
+      "id": "D10.8 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 247.09,
+      "distance_nm": 10.8,
+      "raw_coordinate": "33°36'12.8\"N 126°40'22.1\"E",
+      "latitude": 33.603556,
+      "longitude": 126.672806,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 25 from OMKEL(IAF) or PETAA(IAF)"
+    },
+    {
+      "id": "D5.7 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 247.05,
+      "distance_nm": 5.7,
+      "raw_coordinate": "33°33'36.4\"N 126°35'07.1\"E",
+      "latitude": 33.560111,
+      "longitude": 126.585306,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 25 from OMKEL(IAF) or PETAA(IAF)"
+    },
+    {
+      "id": "D1.5 YDM",
+      "type": "pseudo_fix",
+      "reference_navaid_id": "YDM",
+      "bearing_deg": 247.01,
+      "distance_nm": 1.5,
+      "raw_coordinate": "33°31'27.2\"N 126°30'47.4\"E",
+      "latitude": 33.524222,
+      "longitude": 126.513167,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR Approach to RWY 25 from OMKEL(IAF) or PETAA(IAF)"
+    },
+    {
+      "id": "PC403",
+      "raw_coordinate": "33°22'44.4\"N 126°14'03.0\"E",
+      "latitude": 33.379,
+      "longitude": 126.234167,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS/RNP RWY 25 coding table"
+    },
+    {
+      "id": "LOTKA",
+      "raw_coordinate": "33°21'11.1\"N 126°06'52.2\"E",
+      "latitude": 33.353083,
+      "longitude": 126.1145,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS/RNP/VOR RWY 25 coding table"
+    },
+    {
+      "id": "RW250",
+      "type": "runway_threshold_reference",
+      "raw_coordinate": "33°30'53.56\"N 126°29'51.51\"E",
+      "latitude": 33.514878,
+      "longitude": 126.497642,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP RWY 25 coding table",
+      "notes": "RNP RWY 25 table의 waypoint identifier를 threshold reference로 보존한다."
+    },
+    {
+      "id": "PC761",
+      "raw_coordinate": "33°59'17.3\"N 126°34'57.1\"E",
+      "latitude": 33.988139,
+      "longitude": 126.582528,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M coding table"
+    },
+    {
+      "id": "PC762",
+      "raw_coordinate": "33°57'56.9\"N 126°49'10.5\"E",
+      "latitude": 33.965806,
+      "longitude": 126.819583,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M coding table"
+    },
+    {
+      "id": "VEKDI",
+      "raw_coordinate": "33°57'22.6\"N 126°55'08.8\"E",
+      "latitude": 33.956278,
+      "longitude": 126.919111,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M coding table"
+    },
+    {
+      "id": "KIBEK",
+      "raw_coordinate": "34°03'22.7\"N 127°10'02.9\"E",
+      "latitude": 34.056306,
+      "longitude": 127.167472,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV UPGOS 2M coding table"
+    },
+    {
+      "id": "PC763",
+      "raw_coordinate": "34°03'22.6\"N 127°00'43.6\"E",
+      "latitude": 34.056278,
+      "longitude": 127.012111,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV UPGOS 2M coding table"
+    },
+    {
+      "id": "PC764",
+      "raw_coordinate": "33°24'50.2\"N 126°51'37.6\"E",
+      "latitude": 33.413944,
+      "longitude": 126.860444,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 2M coding table"
+    },
+    {
+      "id": "PC765",
+      "raw_coordinate": "33°32'19.6\"N 126°23'42.6\"E",
+      "latitude": 33.538778,
+      "longitude": 126.395167,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 2M coding table"
+    },
+    {
+      "id": "PC735",
+      "raw_coordinate": "33°33'23.5\"N 126°39'30.8\"E",
+      "latitude": 33.556528,
+      "longitude": 126.658556,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "PC767",
+      "raw_coordinate": "33°52'52.52\"N 126°51'23.2\"E",
+      "latitude": 33.881256,
+      "longitude": 126.856444,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "DOKVU",
+      "raw_coordinate": "33°54'49.8\"N 127°00'19.2\"E",
+      "latitude": 33.913833,
+      "longitude": 127.005333,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M / UPGOS 2M / TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "PC682",
+      "raw_coordinate": "33°51'17.4\"N 127°04'34.2\"E",
+      "latitude": 33.854833,
+      "longitude": 127.076167,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M / UPGOS 2M / TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "PC683",
+      "raw_coordinate": "33°46'58.8\"N 127°07'37.7\"E",
+      "latitude": 33.783,
+      "longitude": 127.127139,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M / UPGOS 2M / TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "PC684",
+      "raw_coordinate": "33°42'10.3\"N 127°09'18.3\"E",
+      "latitude": 33.702861,
+      "longitude": 127.155083,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M / UPGOS 2M / TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "PC685",
+      "raw_coordinate": "33°37'09.9\"N 127°09'30.1\"E",
+      "latitude": 33.619417,
+      "longitude": 127.158361,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M / UPGOS 2M / TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "LIDVO",
+      "raw_coordinate": "33°32'16.4\"N 127°08'12.5\"E",
+      "latitude": 33.537889,
+      "longitude": 127.136806,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV DOTOL 2M / UPGOS 2M / TAMNA 2M / TOSAN 2M / SOSDO 2M / LIMDI 2M coding table"
+    },
+    {
+      "id": "PC726",
+      "raw_coordinate": "33°54'32.2\"N 126°29'54.4\"E",
+      "latitude": 33.908944,
+      "longitude": 126.498444,
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18 RNAV DOTOL 2P coding table / current eAIP 30 APR 2026",
+      "notes": "Current chart retains PC726 in RNAV DOTOL 2P."
+    },
+    {
+      "id": "PC861",
+      "raw_coordinate": "33°33'43.8\"N 126°24'34.1\"E",
+      "latitude": 33.562167,
+      "longitude": 126.409472,
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV KAMIT 2N / AKPON 1N coding table"
+    },
+    {
+      "id": "PC871",
+      "raw_coordinate": "33°39'05.3\"N 126°24'32.0\"E",
+      "latitude": 33.651472,
+      "longitude": 126.408889,
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV KAMIT 2N / AKPON 1N coding table"
+    },
+    {
+      "id": "PC872",
+      "raw_coordinate": "33°43'16.9\"N 126°31'18.7\"E",
+      "latitude": 33.721361,
+      "longitude": 126.521861,
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV KAMIT 2N / AKPON 1N coding table"
+    },
+    {
+      "id": "TOREN",
+      "raw_coordinate": "33°48'36.8\"N 126°39'57.7\"E",
+      "latitude": 33.810222,
+      "longitude": 126.666028,
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV KAMIT 2N / AKPON 1N coding table"
+    },
+    {
+      "id": "PC874",
+      "raw_coordinate": "33°48'38.0\"N 127°11'08.8\"E",
+      "latitude": 33.810556,
+      "longitude": 127.185778,
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV AKPON 1N coding table"
+    }
+  ],
+  "stars": [
+    {
+      "id": "RNAV_DOTOL_2P",
+      "name": "RNAV DOTOL 2P",
+      "runway": "07",
+      "entry_fixes": [
+        "DOTOL"
+      ],
+      "route_text": "DOTOL - CHUJA - PC726 - BIROM - MANBA - PC621 - PC622 - PC623 - PC624 - PC625 - PC626 - DAKPI - PC628 - PIMIK - YUMIN",
+      "constraints": [
+        "PC726 at or below 9 000 ft",
+        "BIROM at 7 000 ft",
+        "MANBA to PIMIK at 220 kt IAS, bank angle 25°",
+        "PIMIK at 7 000 ft / 220 kt",
+        "YUMIN at or above 4 000 ft / 195 kt",
+        "YUMIN IAF, bank angle 25° segment ends before YUMIN"
+      ],
+      "holding": [
+        "MANBA hold: left turns, 1.5 min, +9 000 / -13 000, max 250 kt",
+        "YUMIN hold: left turns, 1.0 min, +4 000 / -7 000, max 230 kt"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18-1 RNAV DOTOL 2P coding table"
+    },
+    {
+      "id": "RNAV_UPGOS_1P",
+      "name": "RNAV UPGOS 1P",
+      "runway": "07",
+      "entry_fixes": [
+        "UPGOS"
+      ],
+      "route_text": "UPGOS - PC728 - PC721 - PC722 - BIROM - MANBA - PC621 - PC622 - PC623 - PC624 - PC625 - PC626 - DAKPI - PC628 - PIMIK - YUMIN",
+      "constraints": [
+        "PC722 at or above 13 000 ft",
+        "BIROM at or above 10 000 ft",
+        "MANBA at 9 000 ft / 220 kt",
+        "MANBA to PIMIK at 220 kt IAS, bank angle 25°",
+        "PIMIK at 9 000 ft / 220 kt",
+        "YUMIN at or above 4 000 ft / 195 kt"
+      ],
+      "holding": [
+        "MANBA max holding speed 250 kt",
+        "YUMIN max holding speed 230 kt"
+      ],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18-1 RNAV UPGOS 1P coding table"
+    },
+    {
+      "id": "RNAV_TAMNA_2P",
+      "name": "RNAV TAMNA 2P",
+      "runway": "07",
+      "entry_fixes": [
+        "TAMNA"
+      ],
+      "route_text": "TAMNA - CJU - PC723 - PC724 - MANBA - PC621 - PC622 - PC623 - PC624 - PC625 - PC626 - DAKPI - PC628 - PIMIK - YUMIN",
+      "constraints": [
+        "CJU at or above 12 000 ft",
+        "PC723 at or above 11 000 ft",
+        "PC724 at or above 10 000 ft",
+        "MANBA at 9 000 ft / 220 kt",
+        "MANBA to PIMIK at 220 kt IAS, bank angle 25°",
+        "PIMIK at 9 000 ft / 220 kt",
+        "YUMIN at or above 4 000 ft / 195 kt"
+      ],
+      "holding": [
+        "CJU hold: left turns, 1.5 min, +12 000 / -FL160, max 250 kt",
+        "MANBA hold: left turns, 1.5 min, +9 000 / -13 000, max 250 kt",
+        "YUMIN hold: left turns, 1.0 min, +4 000 / -7 000, max 230 kt"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18-2 RNAV TAMNA 2P coding table"
+    },
+    {
+      "id": "RNAV_TOSAN_2P",
+      "name": "RNAV TOSAN 2P",
+      "runway": "07",
+      "entry_fixes": [
+        "TOSAN"
+      ],
+      "route_text": "TOSAN - CJU - PC723 - PC724 - MANBA - PC621 - PC622 - PC623 - PC624 - PC625 - PC626 - DAKPI - PC628 - PIMIK - YUMIN",
+      "constraints": [
+        "TOSAN at or above FL150",
+        "CJU at or above 12 000 ft",
+        "PC723 at or above 11 000 ft",
+        "PC724 at or above 10 000 ft",
+        "MANBA at 9 000 ft / 220 kt",
+        "MANBA to PIMIK at 220 kt IAS, bank angle 25°",
+        "PIMIK at 9 000 ft / 220 kt",
+        "YUMIN at or above 4 000 ft / 195 kt"
+      ],
+      "holding": [
+        "CJU, MANBA, YUMIN hold patterns available per chart"
+      ],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18-2 RNAV TOSAN 2P coding table"
+    },
+    {
+      "id": "RNAV_SOSDO_2P",
+      "name": "RNAV SOSDO 2P",
+      "runway": "07",
+      "entry_fixes": [
+        "SOSDO"
+      ],
+      "route_text": "SOSDO - CJU - PC723 - PC724 - MANBA - PC621 - PC622 - PC623 - PC624 - PC625 - PC626 - DAKPI - PC628 - PIMIK - YUMIN",
+      "constraints": [
+        "SOSDO at or above FL150",
+        "CJU at or above 12 000 ft",
+        "PC723 at or above 11 000 ft",
+        "PC724 at or above 10 000 ft",
+        "MANBA at 9 000 ft / 220 kt",
+        "MANBA to PIMIK at 220 kt IAS, bank angle 25°",
+        "PIMIK at 9 000 ft / 220 kt",
+        "YUMIN at or above 4 000 ft / 195 kt"
+      ],
+      "holding": [
+        "CJU, MANBA, YUMIN hold patterns available per chart"
+      ],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18-3 RNAV SOSDO 2P coding table"
+    },
+    {
+      "id": "RNAV_LIMDI_1P",
+      "name": "RNAV LIMDI 1P",
+      "runway": "07",
+      "entry_fixes": [
+        "LIMDI"
+      ],
+      "route_text": "LIMDI - PC727 - PC725 - CJU - PC723 - PC724 - MANBA - PC621 - PC622 - PC623 - PC624 - PC625 - PC626 - DAKPI - PC628 - PIMIK - YUMIN",
+      "constraints": [
+        "PC727 at or above FL140",
+        "CJU at or above 11 000 ft",
+        "PC723 at or above 11 000 ft",
+        "PC724 at or above 10 000 ft",
+        "MANBA at 9 000 ft / 220 kt",
+        "MANBA to PIMIK at 220 kt IAS, bank angle 25°",
+        "PIMIK at 9 000 ft / 220 kt",
+        "YUMIN at or above 4 000 ft / 195 kt"
+      ],
+      "holding": [
+        "MANBA hold available",
+        "YUMIN hold available"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-18-3 RNAV LIMDI 1P coding table"
+    },
+    {
+      "id": "RNAV_DOTOL_2M",
+      "name": "RNAV DOTOL 2M",
+      "runway": "25",
+      "entry_fixes": [
+        "DOTOL"
+      ],
+      "route_text": "DOTOL - PC761 - PC762 - VEKDI - DOKVU - PC682 - PC683 - PC684 - PC685 - LIDVO - DUKAL",
+      "constraints": [
+        "PC761 at or below 11 000 ft / max 250 kt",
+        "PC762 at or below 8 000 ft / max 250 kt",
+        "VEKDI at 7 000 ft / 220 kt",
+        "DOKVU to PC685 at 220 kt",
+        "LIDVO at 7 000 ft / 220 kt",
+        "DUKAL at or above 4 000 ft / 195 kt",
+        "Bank angle 25° from VEKDI to DUKAL"
+      ],
+      "holding": [
+        "DUKAL/terminal hold data extraction deferred"
+      ],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-19-1 RNAV DOTOL 2M coding table"
+    },
+    {
+      "id": "RNAV_UPGOS_2M",
+      "name": "RNAV UPGOS 2M",
+      "runway": "25",
+      "entry_fixes": [
+        "UPGOS"
+      ],
+      "route_text": "UPGOS - KIBEK - PC763 - DOKVU - PC682 - PC683 - PC684 - PC685 - LIDVO - DUKAL",
+      "constraints": [
+        "KIBEK at or below 13 000 ft / max 250 kt",
+        "PC763 at or below 11 000 ft / max 250 kt",
+        "DOKVU at 9 000 ft / 220 kt",
+        "PC682 to PC685 at 220 kt",
+        "LIDVO at 9 000 ft / 220 kt",
+        "DUKAL at or above 4 000 ft / 195 kt",
+        "Bank angle 25° from KIBEK/PC763 and DOKVU to DUKAL"
+      ],
+      "holding": [],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-19-1 RNAV UPGOS 2M coding table"
+    },
+    {
+      "id": "RNAV_TAMNA_2M",
+      "name": "RNAV TAMNA 2M",
+      "runway": "25",
+      "entry_fixes": [
+        "TAMNA"
+      ],
+      "route_text": "TAMNA - PC764 - PC735 - PC767 - DOKVU - PC682 - PC683 - PC684 - PC685 - LIDVO - DUKAL",
+      "constraints": [
+        "PC764 at 11 000 ft",
+        "PC735 at 11 000 ft",
+        "PC767 at 10 000 ft / 220 kt",
+        "DOKVU at 9 000 ft / 220 kt",
+        "PC682 to PC685 at 220 kt",
+        "LIDVO at 9 000 ft / 220 kt",
+        "DUKAL at or above 4 000 ft / 195 kt",
+        "Bank angle 25° from DOKVU to DUKAL"
+      ],
+      "holding": [],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-19-2 RNAV TAMNA 2M coding table"
+    },
+    {
+      "id": "RNAV_TOSAN_2M",
+      "name": "RNAV TOSAN 2M",
+      "runway": "25",
+      "entry_fixes": [
+        "TOSAN"
+      ],
+      "route_text": "TOSAN - NUSLO - CJU - PC735 - PC767 - DOKVU - PC682 - PC683 - PC684 - PC685 - LIDVO - DUKAL",
+      "constraints": [
+        "TOSAN at or above FL150",
+        "NUSLO at 11 000 ft",
+        "CJU at 11 000 ft",
+        "PC735 at 11 000 ft",
+        "PC767 at 10 000 ft / 220 kt",
+        "DOKVU at 9 000 ft / 220 kt",
+        "PC682 to PC685 at 220 kt",
+        "LIDVO at 9 000 ft / 220 kt",
+        "DUKAL at or above 4 000 ft / 195 kt",
+        "Bank angle 25° from DOKVU to DUKAL"
+      ],
+      "holding": [],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-19-2 RNAV TOSAN 2M coding table"
+    },
+    {
+      "id": "RNAV_SOSDO_2M",
+      "name": "RNAV SOSDO 2M",
+      "runway": "25",
+      "entry_fixes": [
+        "SOSDO"
+      ],
+      "route_text": "SOSDO - NUSLO - CJU - PC735 - PC767 - DOKVU - PC682 - PC683 - PC684 - PC685 - LIDVO - DUKAL",
+      "constraints": [
+        "SOSDO at or above FL150",
+        "NUSLO at 11 000 ft",
+        "CJU at 11 000 ft",
+        "PC735 at 11 000 ft",
+        "PC767 at 10 000 ft / 220 kt",
+        "DOKVU at 9 000 ft / 220 kt",
+        "PC682 to PC685 at 220 kt",
+        "LIDVO at 9 000 ft / 220 kt",
+        "DUKAL at or above 4 000 ft / 195 kt",
+        "Bank angle 25° from DOKVU to DUKAL"
+      ],
+      "holding": [],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-19-3 RNAV SOSDO 2M coding table"
+    },
+    {
+      "id": "RNAV_LIMDI_2M",
+      "name": "RNAV LIMDI 2M",
+      "runway": "25",
+      "entry_fixes": [
+        "LIMDI"
+      ],
+      "route_text": "LIMDI - LEDIN - PC765 - PC735 - PC767 - DOKVU - PC682 - PC683 - PC684 - PC685 - LIDVO - DUKAL",
+      "constraints": [
+        "LEDIN at or above FL150",
+        "PC765 at or above 13 000 ft",
+        "PC735 at or above 11 000 ft",
+        "PC767 at 10 000 ft / 220 kt",
+        "DOKVU at 9 000 ft / 220 kt",
+        "PC682 to PC685 at 220 kt",
+        "LIDVO at 9 000 ft / 220 kt",
+        "DUKAL at or above 4 000 ft / 195 kt",
+        "Bank angle 25° from DOKVU to DUKAL"
+      ],
+      "holding": [],
+      "extraction_status": "detailed_current_aip_2026_02_05",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "source_section": "RKPC AD CHART 2-19-3 RNAV LIMDI 2M coding table"
+    }
+  ],
+  "sids": [
+    {
+      "id": "RNAV_KAMIT_2E",
+      "name": "RNAV KAMIT 2E",
+      "runway": "07",
+      "route_text": "1 000 ft - PC811 - OLLEH - KAMIT",
+      "constraints": [
+        "7.0% climb required for ATC purpose",
+        "Do not start turn before DER due to obstacle avoidance",
+        "PC811 left turn after 1 000 ft"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 2E general information and coding table"
+    },
+    {
+      "id": "RNAV_AKPON_1E",
+      "name": "RNAV AKPON 1E",
+      "runway": "07",
+      "route_text": "PALRI - AKPON",
+      "constraints": [
+        "6.8% climb required for ATC purpose"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1E general information and coding table"
+    },
+    {
+      "id": "RNAV_TAMNA_2E",
+      "name": "RNAV TAMNA 2E",
+      "runway": "07",
+      "route_text": "PALRI - TAMNA",
+      "constraints": [
+        "6.8% climb required for ATC purpose"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 2E general information and coding table"
+    },
+    {
+      "id": "RNAV_PANSI_2E",
+      "name": "RNAV PANSI 2E",
+      "runway": "07",
+      "route_text": "PALRI - PC813 - CJU - PC814 - PANSI",
+      "constraints": [
+        "6.8% climb required for ATC purpose",
+        "4.4% climb required until reaching 8 400 ft for obstacle avoidance",
+        "Departure turns limited to maximum 250 kt IAS until PC813",
+        "PC813 at 9 000 ft / 250 kt",
+        "PC814 at or below 10 000 ft"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV PANSI 2E general information and coding table"
+    },
+    {
+      "id": "RNAV_LIMDI_1E",
+      "name": "RNAV LIMDI 1E",
+      "runway": "07",
+      "route_text": "PALRI - PC813 - CJU - PC816 - LIMDI",
+      "constraints": [
+        "6.8% climb required for ATC purpose",
+        "4.4% climb required until reaching 8 400 ft for obstacle avoidance",
+        "Departure turns limited to maximum 250 kt IAS until PC813",
+        "PC813 at 9 000 ft / 250 kt",
+        "PC816 at or above FL150"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1E general information and coding table"
+    },
+    {
+      "id": "RNAV_KAMIT_1W",
+      "name": "RNAV KAMIT 1W",
+      "runway": "25",
+      "route_text": "MEXER - PC832 - PC833 - OLLEH - KAMIT",
+      "constraints": [
+        "6.5% climb required for ATC purpose",
+        "PC832 turn segment +8 000 / -10 000",
+        "PC833 at or above 13 000 ft",
+        "OLLEH at or above FL170"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV KAMIT 1W general information and coding table"
+    },
+    {
+      "id": "RNAV_IPDAS_1W",
+      "name": "RNAV IPDAS 1W",
+      "runway": "25",
+      "route_text": "MEXER - PC832 - PC833 - PC834 - IPDAS",
+      "constraints": [
+        "6.5% climb required for ATC purpose",
+        "PC833 at 13 000 ft",
+        "PC834 at 13 000 ft",
+        "IPDAS at 13 000 ft"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV IPDAS 1W general information and coding table"
+    },
+    {
+      "id": "RNAV_AKPON_1W",
+      "name": "RNAV AKPON 1W",
+      "runway": "25",
+      "route_text": "PC841 - PC842 - PC846 - ATIMO - PAPLU - AKPON",
+      "constraints": [
+        "7.0% climb required for ATC purpose",
+        "5.7% climb required until reaching 5 300 ft for obstacle avoidance",
+        "PC846 at or above 12 000 ft",
+        "PAPLU at or above FL170"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV AKPON 1W general information and coding table"
+    },
+    {
+      "id": "RNAV_TAMNA_3W",
+      "name": "RNAV TAMNA 3W",
+      "runway": "25",
+      "route_text": "PC841 - PC842 - PC846 - ATIMO - PC845 - TAMNA",
+      "constraints": [
+        "7.0% climb required for ATC purpose",
+        "5.7% climb required until reaching 5 300 ft for obstacle avoidance",
+        "PC846 at or above 12 000 ft",
+        "PC845 at or above FL170"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV TAMNA 3W general information and coding table"
+    },
+    {
+      "id": "RNAV_PANSI_2W",
+      "name": "RNAV PANSI 2W",
+      "runway": "25",
+      "route_text": "PC841 - PANSI",
+      "constraints": [
+        "6.5% climb required for ATC purpose"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV PANSI 2W general information and coding table"
+    },
+    {
+      "id": "RNAV_LIMDI_1W",
+      "name": "RNAV LIMDI 1W",
+      "runway": "25",
+      "route_text": "MEXER - LEDIN - LIMDI",
+      "constraints": [
+        "6.5% climb required for ATC purpose"
+      ],
+      "extraction_status": "detailed",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNAV LIMDI 1W general information and coding table"
+    },
+    {
+      "id": "RNAV_KAMIT_2N",
+      "name": "RNAV KAMIT 2N",
+      "runway": "31",
+      "paired_runway_mode": "25+31",
+      "route_text": "PC861 - PC871 - PC872 - TOREN - OLLEH - KAMIT",
+      "constraints": [
+        "7.0% climb required for ATC purpose",
+        "PC871 at or below 5 000 ft",
+        "PC872 at or below 8 000 ft",
+        "TOREN at or above 11 000 ft",
+        "OLLEH at or below 12 000 ft",
+        "KAMIT at or below FL160"
+      ],
+      "extraction_status": "coordinate_verified_current_aip_2026_04_30",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV KAMIT 2N coding table"
+    },
+    {
+      "id": "RNAV_AKPON_1N",
+      "name": "RNAV AKPON 1N",
+      "runway": "31",
+      "paired_runway_mode": "25+31",
+      "route_text": "PC861 - PC871 - PC872 - TOREN - PC874 - AKPON",
+      "constraints": [
+        "7.0% climb required for ATC purpose",
+        "PC871 at or below 5 000 ft",
+        "PC872 at or below 8 000 ft",
+        "TOREN at or above 11 000 ft"
+      ],
+      "extraction_status": "coordinate_verified_current_aip_2026_04_30",
+      "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+      "source_section": "RKPC AD CHART 2-16-1 RNAV AKPON 1N coding table"
+    }
+  ],
+  "approaches": [
+    {
+      "id": "ILS_Z_LOC_Z_RWY_07",
+      "name": "ILS Z or LOC Z RWY 07",
+      "runway": "07",
+      "approach_type": "ILS/LOC",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "YUMIN"
+      ],
+      "final_fixes": [
+        "LIMSO",
+        "D5.3 ICJU",
+        "D2.6 ICJU"
+      ],
+      "missed_approach": "Climb to 8 000 ft on track of 066° to PC404, then RIGHT turn on track of 102° to PETAA and hold.",
+      "constraints": [
+        "YUMIN at 4 000 ft",
+        "LIMSO at 2 900 ft",
+        "LOC only recommended profile from DME ICJU",
+        "Transition altitude 14 000 / transition level FL140"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z or LOC Z RWY 07"
+    },
+    {
+      "id": "ILS_Y_LOC_Y_RWY_07",
+      "name": "ILS Y or LOC Y RWY 07",
+      "runway": "07",
+      "approach_type": "ILS/LOC",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "AKBIN"
+      ],
+      "final_fixes": [
+        "D10.5 ICJU",
+        "D5.3 ICJU",
+        "D2.6 ICJU",
+        "D1.3 ICJU"
+      ],
+      "missed_approach": "Climb straight ahead until YDM D4 then RIGHT turn to intercept R 096 YDM to PETAA and hold at 8 000 ft.",
+      "constraints": [
+        "AKBIN is 12 DME ARC / 12.00 NM YDM",
+        "D10.5 ICJU IF",
+        "D5.3 ICJU FAF LOC only",
+        "D2.6 ICJU SDF LOC only",
+        "D1.3 ICJU MAPt LOC only"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Y or LOC Y RWY 07"
+    },
+    {
+      "id": "RNP_Z_RWY_07",
+      "name": "RNP Z RWY 07",
+      "runway": "07",
+      "approach_type": "RNP AR",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "YUMIN"
+      ],
+      "final_fixes": [
+        "LIMSO",
+        "TEWOO",
+        "RW070"
+      ],
+      "missed_approach": "Climb to 8 000 ft on track of 066° to PC404, then RIGHT turn on track of 102° to PETAA.",
+      "constraints": [
+        "RNP 0.5 required on initial and intermediate, RNP 0.11 final, RNP 0.15 missed approach",
+        "YUMIN at 4 000 ft",
+        "LIMSO at 2 900 ft",
+        "TEWOO at 1 800 ft"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP Z RWY 07(AR)"
+    },
+    {
+      "id": "RNP_Y_RWY_07",
+      "name": "RNP Y RWY 07",
+      "runway": "07",
+      "approach_type": "RNP",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "YUMIN"
+      ],
+      "final_fixes": [
+        "LIMSO",
+        "TEWOO",
+        "RW070"
+      ],
+      "missed_approach": "Climb to 8 000 ft on track of 066° to PC404, then RIGHT turn on track of 102° to PETAA and hold at 8 000 ft.",
+      "constraints": [
+        "YUMIN hold available +4 000 / -7 000, left turns, max 230 kt",
+        "YUMIN at 4 000 ft",
+        "LIMSO at 2 900 ft",
+        "TEWOO at 1 800 ft"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP Y RWY 07"
+    },
+    {
+      "id": "VOR_RWY_07",
+      "name": "VOR RWY 07",
+      "runway": "07",
+      "approach_type": "VOR",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "AKBIN"
+      ],
+      "final_fixes": [
+        "D12.0 YDM",
+        "D8.4 YDM",
+        "D6.3 YDM",
+        "D4.5 YDM",
+        "D2.4 YDM"
+      ],
+      "missed_approach": "Climb on R 065 YDM until 4 DME, then RIGHT turn to intercept R 096 YDM to PETAA and hold at 8 000 ft.",
+      "constraints": [
+        "AKBIN is 12 DME ARC / 12.00 NM YDM",
+        "D12.0 YDM IF",
+        "D6.3 YDM FAF",
+        "D2.4 YDM MAPt",
+        "Final approach descent angle 3.14°(FAF-SDF) / 3.02°(SDF-THR)"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR RWY 07"
+    },
+    {
+      "id": "ILS_Z_LOC_Z_RWY_25",
+      "name": "ILS Z or LOC Z RWY 25",
+      "runway": "25",
+      "approach_type": "ILS/LOC",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "DUKAL"
+      ],
+      "final_fixes": [
+        "TOKIN"
+      ],
+      "missed_approach": "Climb to 6 000 ft on track of 246° to PC403, then RIGHT turn on track of 263° to LOTKA and hold.",
+      "constraints": [
+        "DUKAL IAF 4 000 ft",
+        "TOKIN IF around 2 900 ft",
+        "Transition altitude 14 000 / transition level FL140"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Z or LOC Z RWY 25"
+    },
+    {
+      "id": "ILS_Y_LOC_Y_RWY_25",
+      "name": "ILS Y or LOC Y RWY 25",
+      "runway": "25",
+      "approach_type": "ILS/LOC",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "OMKEL",
+        "PETAA"
+      ],
+      "final_fixes": [
+        "D10.8 YDM",
+        "D5.7 YDM",
+        "D1.5 YDM",
+        "RW250"
+      ],
+      "missed_approach": "Climb to 6 000 ft then RIGHT turn HDG 263° to LOTKA and hold at 6 000 ft.",
+      "constraints": [
+        "OMKEL is 16 DME ARC / 16.00 NM YDM",
+        "PETAA is 22 DME ARC / 22.00 NM YDM",
+        "D10.8 YDM IF",
+        "D5.7 YDM FAF",
+        "D1.5 YDM MAPt",
+        "LOTKA 21 NM YDM",
+        "Missed approach turn limited to maximum 210 kt IAS"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "ILS Y or LOC Y RWY 25"
+    },
+    {
+      "id": "RNP_Z_RWY_25",
+      "name": "RNP Z RWY 25",
+      "runway": "25",
+      "approach_type": "RNP AR",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "DUKAL"
+      ],
+      "final_fixes": [
+        "TOKIN",
+        "RW250"
+      ],
+      "missed_approach": "Climb to 6 000 ft on track of 246° to PC403, then RIGHT turn on track of 263° to LOTKA.",
+      "constraints": [
+        "RNP 0.5 required on initial and intermediate, RNP 0.11 final, RNP 0.15 missed approach",
+        "DUKAL at 4 000 ft",
+        "TOKIN at 2 900 ft"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP Z RWY 25(AR)"
+    },
+    {
+      "id": "RNP_Y_RWY_25",
+      "name": "RNP Y RWY 25",
+      "runway": "25",
+      "approach_type": "RNP",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "DUKAL"
+      ],
+      "final_fixes": [
+        "TOKIN",
+        "RW250"
+      ],
+      "missed_approach": "Climb to 6 000 ft on track of 246° to PC403, then RIGHT turn on track of 263° to LOTKA.",
+      "constraints": [
+        "DUKAL at 4 000 ft",
+        "TOKIN at 2 900 ft",
+        "LOTKA hold +6 000 / -11 000, left turns, max 210 kt"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RNP Y RWY 25"
+    },
+    {
+      "id": "VOR_RWY_25",
+      "name": "VOR RWY 25",
+      "runway": "25",
+      "approach_type": "VOR",
+      "extraction_status": "detailed",
+      "initial_fixes": [
+        "OMKEL",
+        "PETAA"
+      ],
+      "final_fixes": [
+        "D10.8 YDM",
+        "D5.7 YDM",
+        "D1.5 YDM"
+      ],
+      "missed_approach": "Climb on R 247 YDM until 15 DME, then RIGHT turn HDG 261° to LOTKA and hold at 6 000 ft.",
+      "constraints": [
+        "OMKEL 16 DME arc / PETAA 22 DME arc",
+        "D10.8 YDM IF",
+        "D5.7 YDM FAF",
+        "D1.5 YDM MAPt"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VOR RWY 25"
+    }
+  ],
+  "visual_approach_rules": [
+    {
+      "id": "VISUAL_APPROACH_AIP_GENERAL",
+      "name": "AIP/Chart general visual approach gate",
+      "default_for_simulator": true,
+      "conditions": [
+        "Ceiling above 500 ft plus MVA",
+        "Visibility not less than 3 SM",
+        "Vectors may be initiated by ATC or approved upon pilot request on traffic permitting basis"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VISUAL APPROACH PROCEDURE"
+    },
+    {
+      "id": "RWY07_VISUAL_NOISE_ABATEMENT",
+      "name": "RWY 07 visual final alignment restriction",
+      "default_for_simulator": true,
+      "conditions": [
+        "When conducting visual approach RWY 07, all arriving aircraft shall align the final approach course outside YDM 6 DME"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "VISUAL APPROACH PROCEDURE remark"
+    },
+    {
+      "id": "VISUAL_APPROACH_local procedure reference_LOCAL_AR",
+      "name": "local procedure reference local ARR visual approach condition",
+      "default_for_simulator": false,
+      "conditions": [
+        "운고 2,500피트 이상",
+        "시정 5Km 이상",
+        "조종사 요청 또는 관제사 제안에 대한 조종사 수용",
+        "조종사가 공항 또는 활주로를 식별하였다고 보고",
+        "조종사가 선행 항공기를 육안식별 보고",
+        "선행기가 SUPER인 경우 visual approach 불가"
+      ],
+      "source_file": "public_derived_training_dataset",
+      "source_section": "제40조(도착관제석)②",
+      "notes": "Chart/manual 조건과 수치가 달라 local AR operating condition으로 별도 보존한다."
+    }
+  ],
+  "notes": [
+    "절차명은 최신 차트 표기를 우선 사용했다. local procedure reference의 RWY25 STAR 표기와 차트 표기 간 차이는 차트 우선으로 처리했다.",
+    "이번 패스에서 UPGOS 1P chain, RWY 07/25 pseudo-fix, missed-approach anchor를 추가했다.",
+    "2026-05-05: Current source is KOCA eAIP Package 2026-04-30, AIP AMDT 5/26, currently effective 30 APR 2026.",
+    "2026-05-05: PC726 is retained as current RNAV DOTOL 2P waypoint and is coordinate-verified from RKPC AD CHART 2-18.",
+    "2026-05-05: RWY31 RNAV KAMIT 2N and AKPON 1N are modeled as part of simulator RWY25+31 mode; common TMA/MVA/map layers remain runway-independent.",
+    "Normal route waypoints use coding-table Fly-over '-' as fly_by. HM holding rows with Fly-over 'Y' are recorded separately and are not active route legs yet."
+  ]
+}

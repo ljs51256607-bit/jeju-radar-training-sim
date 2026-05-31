@@ -1,0 +1,962 @@
+{
+  "metadata": {
+    "name": "ats_route_register",
+    "status": "official_aip_extracted",
+    "effective_package": "2026-04-15-AIRAC",
+    "description": "KAMIT/IPDAS/DOTOL/UPGOS/MAKET/AKPON/SOSDO/LIMDI/TAMNA/PANSI/TOSAN 관련 ATS route 추출본.",
+    "source_history_url": "https://aim.koca.go.kr/eaipPub/Package/history-en-GB.html",
+    "source_package_base_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP"
+  },
+  "requested_fix_index_enr_4_4": {
+    "AKPON": {
+      "coordinate_dms": "334650N 1271953E",
+      "longitude": 127.331389,
+      "latitude": 33.780556,
+      "ats_route_or_other_route": ""
+    },
+    "DOTOL": {
+      "coordinate_dms": "341515N 1263637E",
+      "longitude": 126.610278,
+      "latitude": 34.254167,
+      "ats_route_or_other_route": "Y711"
+    },
+    "IPDAS": {
+      "coordinate_dms": "341515N 1264301E",
+      "longitude": 126.716944,
+      "latitude": 34.254167,
+      "ats_route_or_other_route": "B576*"
+    },
+    "KAMIT": {
+      "coordinate_dms": "341514N 1264618E",
+      "longitude": 126.771667,
+      "latitude": 34.253889,
+      "ats_route_or_other_route": "Y722"
+    },
+    "LIMDI": {
+      "coordinate_dms": "333313N 1254953E",
+      "longitude": 125.831389,
+      "latitude": 33.553611,
+      "ats_route_or_other_route": "Y677"
+    },
+    "MAKET": {
+      "coordinate_dms": "335452N 1271953E",
+      "longitude": 127.331389,
+      "latitude": 33.914444,
+      "ats_route_or_other_route": "A586*"
+    },
+    "PANSI": {
+      "coordinate_dms": "330014N 1261225E",
+      "longitude": 126.206944,
+      "latitude": 33.003889,
+      "ats_route_or_other_route": "Y711 , Z82"
+    },
+    "SOSDO": {
+      "coordinate_dms": "330012N 1262735E",
+      "longitude": 126.459722,
+      "latitude": 33.003333,
+      "ats_route_or_other_route": "B576* , Y722 , Y571"
+    },
+    "TAMNA": {
+      "coordinate_dms": "332815N 1271953E",
+      "longitude": 127.331389,
+      "latitude": 33.470833,
+      "ats_route_or_other_route": "A595 , Y677"
+    },
+    "TOSAN": {
+      "coordinate_dms": "330012N 1264619E",
+      "longitude": 126.771944,
+      "latitude": 33.003333,
+      "ats_route_or_other_route": "A586* , Y572"
+    },
+    "UPGOS": {
+      "coordinate_dms": "335733N 1271953E",
+      "longitude": 127.331389,
+      "latitude": 33.959167,
+      "ats_route_or_other_route": ""
+    }
+  },
+  "routes": [
+    {
+      "route_id": "A586",
+      "raw_designator": "A586*",
+      "source_section": "ENR 3 1",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+      "requested_fixes_in_route": [
+        "MAKET",
+        "TOSAN"
+      ],
+      "points": [
+        {
+          "point_id": "TENAS",
+          "name": "TENAS",
+          "coordinate_dms": "373820N 1313427E",
+          "longitude": 131.574167,
+          "latitude": 37.638889,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "AGSUS",
+          "name": "AGSUS",
+          "coordinate_dms": "364521N 1304044E",
+          "longitude": 130.678889,
+          "latitude": 36.755833,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "DABIK",
+          "name": "DABIK",
+          "coordinate_dms": "361743N 1301143E",
+          "longitude": 130.195278,
+          "latitude": 36.295278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "BULGA",
+          "name": "BULGA",
+          "coordinate_dms": "355609N 1294924E",
+          "longitude": 129.823333,
+          "latitude": 35.935833,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "BEDOM",
+          "name": "BEDOM",
+          "coordinate_dms": "352513N 1291754E",
+          "longitude": 129.298333,
+          "latitude": 35.420278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PSN",
+          "name": "BUSAN VORTAC (PSN)",
+          "coordinate_dms": "350721N 1285958E",
+          "longitude": 128.999444,
+          "latitude": 35.1225,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "OMOTU",
+          "name": "OMOTU",
+          "coordinate_dms": "350033N 1285022E",
+          "longitude": 128.839444,
+          "latitude": 35.009167,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TOPAX",
+          "name": "TOPAX",
+          "coordinate_dms": "344555N 1282952E",
+          "longitude": 128.497778,
+          "latitude": 34.765278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "GOSBO",
+          "name": "GOSBO",
+          "coordinate_dms": "341517N 1274734E",
+          "longitude": 127.792778,
+          "latitude": 34.254722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "MAKET",
+          "name": "MAKET",
+          "coordinate_dms": "335452N 1271953E",
+          "longitude": 127.331389,
+          "latitude": 33.914444,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "ATINA",
+          "name": "ATINA",
+          "coordinate_dms": "334320N 1270423E",
+          "longitude": 127.073056,
+          "latitude": 33.722222,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "MANOL",
+          "name": "MANOL",
+          "coordinate_dms": "333629N 1265514E",
+          "longitude": 126.920556,
+          "latitude": 33.608056,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TOSAN",
+          "name": "TOSAN",
+          "coordinate_dms": "330012N 1264619E",
+          "longitude": 126.771944,
+          "latitude": 33.003333,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "RUGMA",
+          "name": "RUGMA(FIR BDRY)",
+          "coordinate_dms": "323012N 1265753E",
+          "longitude": 126.964722,
+          "latitude": 32.503333,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "A595",
+      "raw_designator": "A595",
+      "source_section": "ENR 3 1",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+      "requested_fixes_in_route": [
+        "TAMNA"
+      ],
+      "points": [
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TAMNA",
+          "name": "TAMNA",
+          "coordinate_dms": "332815N 1271953E",
+          "longitude": 127.331389,
+          "latitude": 33.470833,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "SAMDO",
+          "name": "SAMDO(FIR BDRY)",
+          "coordinate_dms": "333503N 1281857E",
+          "longitude": 128.315833,
+          "latitude": 33.584167,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "B576",
+      "raw_designator": "B576*",
+      "source_section": "ENR 3 1",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+      "requested_fixes_in_route": [
+        "IPDAS",
+        "SOSDO"
+      ],
+      "points": [
+        {
+          "point_id": "SEL",
+          "name": "ANYANG VORTAC (SEL)",
+          "coordinate_dms": "372449N 1265542E",
+          "longitude": 126.928333,
+          "latitude": 37.413611,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "POLEG",
+          "name": "POLEG",
+          "coordinate_dms": "371249N 1265935E",
+          "longitude": 126.993056,
+          "latitude": 37.213611,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "SOT",
+          "name": "SONGTAN VORTAC (SOT)",
+          "coordinate_dms": "370540N 1270154E",
+          "longitude": 127.031667,
+          "latitude": 37.094444,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "OLMEN",
+          "name": "OLMEN",
+          "coordinate_dms": "364413N 1265928E",
+          "longitude": 126.991111,
+          "latitude": 36.736944,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ENTEL",
+          "name": "ENTEL",
+          "coordinate_dms": "362311N 1265705E",
+          "longitude": 126.951389,
+          "latitude": 36.386389,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "RINBO",
+          "name": "RINBO",
+          "coordinate_dms": "355352N 1265349E",
+          "longitude": 126.896944,
+          "latitude": 35.897778,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "LINTA",
+          "name": "LINTA",
+          "coordinate_dms": "353116N 1265119E",
+          "longitude": 126.855278,
+          "latitude": 35.521111,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "KWA",
+          "name": "GWANGJU VOR/DME (KWA)",
+          "coordinate_dms": "350734N 1264844E",
+          "longitude": 126.812222,
+          "latitude": 35.126111,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "IPDAS",
+          "name": "IPDAS",
+          "coordinate_dms": "341515N 1264301E",
+          "longitude": 126.716944,
+          "latitude": 34.254167,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "SOSDO",
+          "name": "SOSDO",
+          "coordinate_dms": "330012N 1262735E",
+          "longitude": 126.459722,
+          "latitude": 33.003333,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "SAMLO",
+          "name": "SAMLO",
+          "coordinate_dms": "323223N 1261536E",
+          "longitude": 126.26,
+          "latitude": 32.539722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "NIRAT",
+          "name": "NIRAT",
+          "coordinate_dms": "320354N 1260329E",
+          "longitude": 126.058056,
+          "latitude": 32.065,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ELGEP",
+          "name": "ELGEP",
+          "coordinate_dms": "314653N 1255617E",
+          "longitude": 125.938056,
+          "latitude": 31.781389,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TESIM",
+          "name": "TESIM",
+          "coordinate_dms": "313526N 1255128E",
+          "longitude": 125.857778,
+          "latitude": 31.590556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ATOTI",
+          "name": "ATOTI(FIR BDRY)",
+          "coordinate_dms": "300013N 1251154E",
+          "longitude": 125.198333,
+          "latitude": 30.003611,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "Y571",
+      "raw_designator": "Y571",
+      "source_section": "ENR 3 3",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+      "requested_fixes_in_route": [
+        "SOSDO",
+        "AKPON"
+      ],
+      "points": [
+        {
+          "point_id": "SOSDO",
+          "name": "SOSDO",
+          "coordinate_dms": "330012N 1262735E",
+          "longitude": 126.459722,
+          "latitude": 33.003333,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "OMKIM",
+          "name": "OMKIM",
+          "coordinate_dms": "331320N 1264114E",
+          "longitude": 126.687222,
+          "latitude": 33.222222,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PAPLU",
+          "name": "PAPLU",
+          "coordinate_dms": "333441N 1270337E",
+          "longitude": 127.060278,
+          "latitude": 33.578056,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "AKPON",
+          "name": "AKPON",
+          "coordinate_dms": "334650N 1271953E",
+          "longitude": 127.331389,
+          "latitude": 33.780556,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "NISAV",
+          "name": "NISAV",
+          "coordinate_dms": "341519N 1275835E",
+          "longitude": 127.976389,
+          "latitude": 34.255278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ANROD",
+          "name": "ANROD",
+          "coordinate_dms": "343758N 1282952E",
+          "longitude": 128.497778,
+          "latitude": 34.632778,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "POVEM",
+          "name": "POVEM",
+          "coordinate_dms": "345523N 1285416E",
+          "longitude": 128.904444,
+          "latitude": 34.923056,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PSN",
+          "name": "BUSAN VORTAC VORTAC (PSN)",
+          "coordinate_dms": "350721N 1285958E",
+          "longitude": 128.999444,
+          "latitude": 35.1225,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "Y572",
+      "raw_designator": "Y572",
+      "source_section": "ENR 3 3",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+      "requested_fixes_in_route": [
+        "UPGOS",
+        "TOSAN"
+      ],
+      "points": [
+        {
+          "point_id": "PSN",
+          "name": "BUSAN VORTAC VORTAC (PSN)",
+          "coordinate_dms": "350721N 1285958E",
+          "longitude": 128.999444,
+          "latitude": 35.1225,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "OLMUD",
+          "name": "OLMUD",
+          "coordinate_dms": "350225N 1284916E",
+          "longitude": 128.821111,
+          "latitude": 35.040278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ENGOT",
+          "name": "ENGOT",
+          "coordinate_dms": "344834N 1282952E",
+          "longitude": 128.497778,
+          "latitude": 34.809444,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "POVOR",
+          "name": "POVOR",
+          "coordinate_dms": "341520N 1274400E",
+          "longitude": 127.733333,
+          "latitude": 34.255556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "UPGOS",
+          "name": "UPGOS",
+          "coordinate_dms": "335733N 1271953E",
+          "longitude": 127.331389,
+          "latitude": 33.959167,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "BILUM",
+          "name": "BILUM",
+          "coordinate_dms": "334613N 1270439E",
+          "longitude": 127.0775,
+          "latitude": 33.770278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "BEPKO",
+          "name": "BEPKO",
+          "coordinate_dms": "333910N 1265514E",
+          "longitude": 126.920556,
+          "latitude": 33.652778,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "OMKIM",
+          "name": "OMKIM",
+          "coordinate_dms": "331320N 1264114E",
+          "longitude": 126.687222,
+          "latitude": 33.222222,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TOSAN",
+          "name": "TOSAN",
+          "coordinate_dms": "330012N 1264619E",
+          "longitude": 126.771944,
+          "latitude": 33.003333,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "RUGMA",
+          "name": "RUGMA(FIR BDRY)",
+          "coordinate_dms": "323012N 1265753E",
+          "longitude": 126.964722,
+          "latitude": 32.503333,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "Y677",
+      "raw_designator": "Y677",
+      "source_section": "ENR 3 3",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+      "requested_fixes_in_route": [
+        "LIMDI",
+        "TAMNA"
+      ],
+      "points": [
+        {
+          "point_id": "TOLIS",
+          "name": "TOLIS",
+          "coordinate_dms": "335030N 1242453E",
+          "longitude": 124.414722,
+          "latitude": 33.841667,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "LIMDI",
+          "name": "LIMDI",
+          "coordinate_dms": "333313N 1254953E",
+          "longitude": 125.831389,
+          "latitude": 33.553611,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "REMOS",
+          "name": "REMOS",
+          "coordinate_dms": "332605N 1262329E",
+          "longitude": 126.391389,
+          "latitude": 33.434722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TAMNA",
+          "name": "TAMNA",
+          "coordinate_dms": "332815N 1271953E",
+          "longitude": 127.331389,
+          "latitude": 33.470833,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "SAMDO",
+          "name": "SAMDO(FIR BDRY)",
+          "coordinate_dms": "333503N 1281857E",
+          "longitude": 128.315833,
+          "latitude": 33.584167,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "Y711",
+      "raw_designator": "Y711",
+      "source_section": "ENR 3 3",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+      "requested_fixes_in_route": [
+        "DOTOL",
+        "PANSI"
+      ],
+      "points": [
+        {
+          "point_id": "MONSI",
+          "name": "MONSI",
+          "coordinate_dms": "371247N 1265015E",
+          "longitude": 126.8375,
+          "latitude": 37.213056,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "BULTI",
+          "name": "BULTI",
+          "coordinate_dms": "364322N 1264930E",
+          "longitude": 126.825,
+          "latitude": 36.722778,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "MEKIL",
+          "name": "MEKIL",
+          "coordinate_dms": "363322N 1264953E",
+          "longitude": 126.831389,
+          "latitude": 36.556111,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "GONAX",
+          "name": "GONAX",
+          "coordinate_dms": "362311N 1265016E",
+          "longitude": 126.837778,
+          "latitude": 36.386389,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "BEDES",
+          "name": "BEDES",
+          "coordinate_dms": "360905N 1264844E",
+          "longitude": 126.812222,
+          "latitude": 36.151389,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ELPOS",
+          "name": "ELPOS",
+          "coordinate_dms": "355410N 1264707E",
+          "longitude": 126.785278,
+          "latitude": 35.902778,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "MANGI",
+          "name": "MANGI",
+          "coordinate_dms": "353011N 1264432E",
+          "longitude": 126.742222,
+          "latitude": 35.503056,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "DALSU",
+          "name": "DALSU",
+          "coordinate_dms": "350731N 1264206E",
+          "longitude": 126.701667,
+          "latitude": 35.125278,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "NULDI",
+          "name": "NULDI",
+          "coordinate_dms": "342514N 1263739E",
+          "longitude": 126.6275,
+          "latitude": 34.420556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "DOTOL",
+          "name": "DOTOL",
+          "coordinate_dms": "341515N 1263637E",
+          "longitude": 126.610278,
+          "latitude": 34.254167,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "KIDOS",
+          "name": "KIDOS",
+          "coordinate_dms": "335028N 1263402E",
+          "longitude": 126.567222,
+          "latitude": 33.841111,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "REMOS",
+          "name": "REMOS",
+          "coordinate_dms": "332605N 1262329E",
+          "longitude": 126.391389,
+          "latitude": 33.434722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PANSI",
+          "name": "PANSI",
+          "coordinate_dms": "330014N 1261225E",
+          "longitude": 126.206944,
+          "latitude": 33.003889,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "DOMKO",
+          "name": "DOMKO",
+          "coordinate_dms": "322848N 1255859E",
+          "longitude": 125.983056,
+          "latitude": 32.48,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PONIK",
+          "name": "PONIK",
+          "coordinate_dms": "320021N 1254659E",
+          "longitude": 125.783056,
+          "latitude": 32.005833,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "IKEDO",
+          "name": "IKEDO",
+          "coordinate_dms": "314314N 1253948E",
+          "longitude": 125.663333,
+          "latitude": 31.720556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "KANKA",
+          "name": "KANKA",
+          "coordinate_dms": "313155N 1253504E",
+          "longitude": 125.584444,
+          "latitude": 31.531944,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "BONSO",
+          "name": "BONSO",
+          "coordinate_dms": "302840N 1250851E",
+          "longitude": 125.1475,
+          "latitude": 30.477778,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "MUGUS",
+          "name": "MUGUS",
+          "coordinate_dms": "300006N 1245712E",
+          "longitude": 124.953333,
+          "latitude": 30.001667,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "Y722",
+      "raw_designator": "Y722",
+      "source_section": "ENR 3 3",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+      "requested_fixes_in_route": [
+        "KAMIT",
+        "SOSDO"
+      ],
+      "points": [
+        {
+          "point_id": "SOT",
+          "name": "SONGTAN VORTAC VORTAC (SOT)",
+          "coordinate_dms": "370540N 1270154E",
+          "longitude": 127.031667,
+          "latitude": 37.094444,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "OLMEN",
+          "name": "OLMEN",
+          "coordinate_dms": "364413N 1265928E",
+          "longitude": 126.991111,
+          "latitude": 36.736944,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "GUNKU",
+          "name": "GUNKU",
+          "coordinate_dms": "363414N 1265949E",
+          "longitude": 126.996944,
+          "latitude": 36.570556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PEBRI",
+          "name": "PEBRI",
+          "coordinate_dms": "362311N 1270013E",
+          "longitude": 127.003611,
+          "latitude": 36.386389,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ATASO",
+          "name": "ATASO",
+          "coordinate_dms": "355344N 1265657E",
+          "longitude": 126.949167,
+          "latitude": 35.895556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "MAKSA",
+          "name": "MAKSA",
+          "coordinate_dms": "353011N 1265422E",
+          "longitude": 126.906111,
+          "latitude": 35.503056,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "SAMUL",
+          "name": "SAMUL",
+          "coordinate_dms": "350736N 1265154E",
+          "longitude": 126.865,
+          "latitude": 35.126667,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "KAMIT",
+          "name": "KAMIT",
+          "coordinate_dms": "341514N 1264618E",
+          "longitude": 126.771667,
+          "latitude": 34.253889,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "GUKSU",
+          "name": "GUKSU",
+          "coordinate_dms": "335251N 1264357E",
+          "longitude": 126.7325,
+          "latitude": 33.880833,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "LOSNI",
+          "name": "LOSNI",
+          "coordinate_dms": "333315N 1264153E",
+          "longitude": 126.698056,
+          "latitude": 33.554167,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "SOSDO",
+          "name": "SOSDO",
+          "coordinate_dms": "330012N 1262735E",
+          "longitude": 126.459722,
+          "latitude": 33.003333,
+          "is_requested_fix": true
+        },
+        {
+          "point_id": "SAMLO",
+          "name": "SAMLO",
+          "coordinate_dms": "323223N 1261536E",
+          "longitude": 126.26,
+          "latitude": 32.539722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "NIRAT",
+          "name": "NIRAT",
+          "coordinate_dms": "320354N 1260329E",
+          "longitude": 126.058056,
+          "latitude": 32.065,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ELGEP",
+          "name": "ELGEP",
+          "coordinate_dms": "314653N 1255617E",
+          "longitude": 125.938056,
+          "latitude": 31.781389,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "TESIM",
+          "name": "TESIM",
+          "coordinate_dms": "313526N 1255128E",
+          "longitude": 125.857778,
+          "latitude": 31.590556,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "ATOTI",
+          "name": "ATOTI(FIR BDRY)",
+          "coordinate_dms": "300013N 1251154E",
+          "longitude": 125.198333,
+          "latitude": 30.003611,
+          "is_requested_fix": false
+        }
+      ]
+    },
+    {
+      "route_id": "Z82",
+      "raw_designator": "Z82",
+      "source_section": "ENR 3 3",
+      "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+      "requested_fixes_in_route": [
+        "PANSI"
+      ],
+      "points": [
+        {
+          "point_id": "CJU",
+          "name": "JEJU VORTAC VORTAC (CJU)",
+          "coordinate_dms": "332305N 1263727E",
+          "longitude": 126.624167,
+          "latitude": 33.384722,
+          "is_requested_fix": false
+        },
+        {
+          "point_id": "PANSI",
+          "name": "PANSI",
+          "coordinate_dms": "330014N 1261225E",
+          "longitude": 126.206944,
+          "latitude": 33.003889,
+          "is_requested_fix": true
+        }
+      ]
+    }
+  ]
+}

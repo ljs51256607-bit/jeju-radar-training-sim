@@ -1,0 +1,96 @@
+{
+  "metadata": {
+    "name": "rkpc_conventional_radar_sid_exact_linework_audit",
+    "status": "pending_chart_linework_validation_v1",
+    "created_on": "2026-05-28",
+    "purpose": "Gate exact runtime route approval for conventional/RADAR SID procedures that have text-derived or mathematically derived geometry but still need source chart linework cross-check before being presented as exact routes.",
+    "source_registers": [
+      "data/authority/rkpc_conventional_radar_sid_derived_geometry.json",
+      "data/authority/rkpc_conventional_radar_sid_geometry_audit.json",
+      "data/authority/rkpc_sid_star_route_register.csv",
+      "public_derived_training_dataset",
+      "CONVENTIONAL_RADAR_SID_RUNTIME_POLICY.md"
+    ],
+    "rules": [
+      "Source text evidence can identify the intended route and page, but it does not validate chart-drawn linework.",
+      "Exact runtime route remains disabled until chart georeference, PDF vector/polyline extraction, and segment shape cross-checks are complete.",
+      "Training runtime paths may remain enabled only when explicitly marked training_runtime_path_allowed=true in derived geometry.",
+      "Candidate source chart linework may be used as reference overlay only; reference overlay geometry must not drive route queues or aircraft motion."
+    ]
+  },
+  "summary": {
+    "procedure_count": 1,
+    "source_page_verified_count": 1,
+    "linework_validated_count": 0,
+    "exact_runtime_route_allowed_count": 0
+  },
+  "procedures": [
+    {
+      "procedure_id": "IPDAS_4K",
+      "procedure_name": "IPDAS 4K",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radial_dme",
+      "exact_chart_validation_status": "pending_chart_linework_validation",
+      "exact_runtime_route_allowed": false,
+      "training_runtime_path_allowed": true,
+      "source_chart": {
+        "source_file": "public_derived_training_dataset",
+        "page": 3,
+        "chart_title": "JEJU/Jeju Intl(RKPC) RWY 07 IPDAS 4K, MAKET 4K, TAMNA 2K, CJU 5K",
+        "source_section": "IPDAS FOUR KILO DEPARTURE"
+      },
+      "source_text_evidence": [
+        "IPDAS FOUR KILO DEPARTURE",
+        "Climb on R 067 YDM until D6.5, then turn Left to intercept R 013 CJU then proceed direct to IPDAS.",
+        "* Cross R 013 CJU/D30.0 at 7 000 ft and Cross IPDAS at 9 000 ft unless otherwise directed by ATC."
+      ],
+      "derived_geometry_refs": [
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_YDM_R067_D6_5",
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_CJU_R013_INTERCEPT_D15",
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_CJU_R013_D30",
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_CJU_R013_D30_TO_IPDAS"
+      ],
+      "linework_candidate_refs": [
+        "data/authority/rkpc_sid_page3_ipdas_4k_candidate_audit.json",
+        "data/geometry/rkpc_sid_page3_ipdas_4k_candidates.json",
+        "data/authority/rkpc_sid_page3_ipdas_4k_centerline_audit.json",
+        "data/geometry/rkpc_sid_page3_ipdas_4k_centerline_candidates.json",
+        "data/authority/rkpc_sid_page3_grid_georeference_audit.json",
+        "data/authority/rkpc_sid_page3_ipdas_4k_linework_reconciliation_audit.json"
+      ],
+      "required_linework_checks": [
+        "source_page_identified",
+        "source_text_verified",
+        "chart_frame_tick_pairs_extracted",
+        "chart_georeference_vector_tick_candidate_established",
+        "chart_linework_geodetic_status_assessed_current_source_set",
+        "chart_linework_schematic_or_offset_assessed",
+        "published_polyline_candidates_identified",
+        "centerline_candidates_extracted",
+        "centerline_extraction_pending",
+        "radial_dme_projection_reconciliation_pending",
+        "d6_5_cutpoint_candidate_identified",
+        "d6_5_cutpoint_not_reconciled",
+        "d6_5_exact_cutpoint_pending",
+        "turn_shape_cross_check_pending",
+        "turn_shape_source_linework_missing",
+        "d30_to_ipdas_linework_cross_check_pending"
+      ],
+      "current_decision": {
+        "exact_runtime_route_allowed": false,
+        "training_runtime_path_allowed": true,
+        "reason": "The route text, derived radial/DME points, page 3 route-line candidates, centerline candidates, SVG frame-tick based chart grid candidate, and linework reconciliation audit are recorded. The selected chart line is nearly parallel to CJU R013 but remains laterally offset from D30/IPDAS by about 8 NM, and the D6.5 cutpoint plus turn/intercept source shape are not reconciled. The procedure must not be advertised as exact runtime routing."
+      },
+      "remaining_blockers": [
+        "Find a source that confirms whether the chart-drawn SID route line is schematic or intended as exact geodetic geometry.",
+        "Reconcile YDM R067/D6.5, CJU R013/D30.0, and IPDAS projected positions with an exact route centerline authority.",
+        "Refine the page-space centerline candidates into exact chart centerlines after exact chart georeference.",
+        "Audit the exact D6.5 cut point on the shared R067 YDM initial route segment before treating the shared chart line as IPDAS-only geometry.",
+        "Cross-check the published turn shape from YDM R067/D6.5 to CJU R013 against the constructed D15 intercept training path.",
+        "Cross-check the R013 CJU/D30.0 to IPDAS segment against the chart linework, not only the radial/DME math.",
+        "Only after those checks pass may exact_runtime_route_allowed become true."
+      ]
+    }
+  ]
+}

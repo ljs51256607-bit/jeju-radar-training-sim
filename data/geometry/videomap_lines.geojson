@@ -1,0 +1,410 @@
+{
+  "type": "FeatureCollection",
+  "name": "rkpc_videomap_lines",
+  "metadata": {
+    "status": "coordinate_verified_from_anchor_register_v1",
+    "description": "공식 runway/fix/procedure 좌표만 사용해 anchor register에서 재생성한 RKPC videomap 선형 세트.",
+    "source_register": "data/authority/videomap_anchor_register.csv",
+    "required_properties": [
+      "layer",
+      "feature_id",
+      "label",
+      "source"
+    ],
+    "notes": [
+      "모든 좌표는 videomap_anchor_register.csv를 통해 airport/procedure verified coordinate로 역참조된다.",
+      "chart 눈대중 line tracing은 사용하지 않았다."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "runway_centerlines",
+        "feature_id": "RWY_07_25_CENTERLINE",
+        "label": "RWY 07/25 centerline",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_airport.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.497642,
+            33.514878
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "runway_centerlines",
+        "feature_id": "RWY_13_31_CENTERLINE",
+        "label": "RWY 13/31 centerline",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_airport.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.487394,
+            33.515461
+          ],
+          [
+            126.504014,
+            33.505483
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "handoff_reference",
+        "feature_id": "ARR_25_DUKAL_TOKIN_WINDOW",
+        "label": "ARR 25 DUKAL-TOKIN handoff window",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.760778,
+            33.649611
+          ],
+          [
+            126.675611,
+            33.606083
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_07_FINAL_GUIDE",
+        "label": "RWY 07 final guide via LIMSO/TEWOO",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.308611,
+            33.4175
+          ],
+          [
+            126.379861,
+            33.45425
+          ],
+          [
+            126.468472,
+            33.499881
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_25_FINAL_GUIDE",
+        "label": "RWY 25 final guide via DUKAL/TOKIN",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.760778,
+            33.649611
+          ],
+          [
+            126.675611,
+            33.606083
+          ],
+          [
+            126.497642,
+            33.514878
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "SID_KAMIT_2E_INITIAL_GUIDE",
+        "label": "KAMIT 2E initial guide via PC811/OLLEH",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_airport.json",
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset",
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.713556,
+            33.703361
+          ],
+          [
+            126.740694,
+            33.961722
+          ],
+          [
+            126.771583,
+            34.253917
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_07_ILS_Y_GUIDE",
+        "label": "RWY 07 ILS Y/LOC Y guide via AKBIN",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.248694,
+            33.522639
+          ],
+          [
+            126.293556,
+            33.409722
+          ],
+          [
+            126.381556,
+            33.455139
+          ],
+          [
+            126.427583,
+            33.478833
+          ],
+          [
+            126.449667,
+            33.490222
+          ],
+          [
+            126.468472,
+            33.499881
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_07_VOR_GUIDE",
+        "label": "RWY 07 VOR guide via YDM DME fixes",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.248694,
+            33.522639
+          ],
+          [
+            126.286694,
+            33.402917
+          ],
+          [
+            126.346917,
+            33.435528
+          ],
+          [
+            126.382056,
+            33.454528
+          ],
+          [
+            126.412194,
+            33.470806
+          ],
+          [
+            126.447389,
+            33.489806
+          ],
+          [
+            126.468472,
+            33.499881
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_07_MISSED_APPROACH_GUIDE",
+        "label": "RWY 07 missed approach guide via PC404/PETAA",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.5565,
+            33.545083
+          ],
+          [
+            126.926111,
+            33.521667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_25_ILS_Y_VOR_GUIDE",
+        "label": "RWY 25 ILS Y/VOR guide via YDM DME fixes",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.672806,
+            33.603556
+          ],
+          [
+            126.585306,
+            33.560111
+          ],
+          [
+            126.513167,
+            33.524222
+          ],
+          [
+            126.497642,
+            33.514878
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer": "guide_routes",
+        "feature_id": "RWY_25_MISSED_APPROACH_GUIDE",
+        "label": "RWY 25 missed approach guide via PC403/LOTKA",
+        "source": "data/authority/videomap_anchor_register.csv",
+        "reference_sources": [
+          "data/reference/rkpc_procedures.json"
+        ],
+        "source_files": [
+          "public_derived_training_dataset"
+        ],
+        "authority": "coordinate_verified"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.497642,
+            33.514878
+          ],
+          [
+            126.234167,
+            33.379
+          ],
+          [
+            126.1145,
+            33.353083
+          ]
+        ]
+      }
+    }
+  ]
+}

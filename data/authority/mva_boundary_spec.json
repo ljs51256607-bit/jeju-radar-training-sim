@@ -1,0 +1,515 @@
+{
+  "metadata": {
+    "name": "rkpc_mva_boundary_spec",
+    "status": "superseded_by_official_pdf_vector_linework",
+    "description": "제주 MVA sector boundary 수동 spec. 2026-04-25부터 화면 표시는 official PDF vector linework 추출 결과를 사용하며, 이 파일은 polygonization 참고용으로만 보존한다.",
+    "radar_origin_ref": "reference:RADAR_SITE",
+    "bearing_reference": "chart magnetic annotations are documentary only; geometry is generated from certified coordinate anchors",
+    "source_files": [
+      "public_derived_training_dataset",
+      "tmp/pdfs/jeju_mva_chart.png",
+      "data/authority/mva_pdf_vector_extraction_audit.json"
+    ]
+  },
+  "sector_specs": [
+    {
+      "sector_id": "MVA_FINAL_07_CORE_2000",
+      "segments": [
+        {
+          "from": "register:MVA_FINAL_07_CORE_2000#1",
+          "to": "register:MVA_FINAL_07_CORE_2000#2",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 12,
+          "direction": "cw"
+        },
+        {
+          "from": "register:MVA_FINAL_07_CORE_2000#2",
+          "to": "register:MVA_FINAL_07_CORE_2000#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_FINAL_07_CORE_2000#3",
+          "to": "reference:RADAR_SITE",
+          "kind": "line"
+        },
+        {
+          "from": "reference:RADAR_SITE",
+          "to": "register:MVA_FINAL_07_CORE_2000#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_FINAL_25_EAST_3300",
+      "segments": [
+        {
+          "from": "register:MVA_FINAL_25_EAST_3300#1",
+          "to": "register:MVA_FINAL_25_EAST_3300#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_FINAL_25_EAST_3300#2",
+          "to": "register:MVA_FINAL_25_EAST_3300#3",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 93
+        },
+        {
+          "from": "register:MVA_FINAL_25_EAST_3300#3",
+          "to": "register:MVA_FINAL_25_EAST_3300#4",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 45,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_FINAL_25_EAST_3300#4",
+          "to": "register:MVA_FINAL_25_EAST_3300#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_MOUNTAIN_CORE_9000",
+      "segments": [
+        {
+          "from": "register:MVA_MOUNTAIN_CORE_9000#1",
+          "to": "register:MVA_MOUNTAIN_CORE_9000#2",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 184
+        },
+        {
+          "from": "register:MVA_MOUNTAIN_CORE_9000#2",
+          "to": "register:MVA_MOUNTAIN_CORE_9000#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_MOUNTAIN_CORE_9000#3",
+          "to": "register:MVA_MOUNTAIN_CORE_9000#4",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 15,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_MOUNTAIN_CORE_9000#4",
+          "to": "register:MVA_MOUNTAIN_CORE_9000#5",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 15,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_MOUNTAIN_CORE_9000#5",
+          "to": "register:MVA_MOUNTAIN_CORE_9000#6",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 119
+        },
+        {
+          "from": "register:MVA_MOUNTAIN_CORE_9000#6",
+          "to": "register:MVA_MOUNTAIN_CORE_9000#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_NORTHWEST_SHOULDER_2200",
+      "segments": [
+        {
+          "from": "register:MVA_NORTHWEST_SHOULDER_2200#1",
+          "to": "register:MVA_NORTHWEST_SHOULDER_2200#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTHWEST_SHOULDER_2200#2",
+          "to": "register:MVA_NORTHWEST_SHOULDER_2200#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTHWEST_SHOULDER_2200#3",
+          "to": "register:MVA_NORTHWEST_SHOULDER_2200#4",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 57
+        },
+        {
+          "from": "register:MVA_NORTHWEST_SHOULDER_2200#4",
+          "to": "register:MVA_NORTHWEST_SHOULDER_2200#5",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 12,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_NORTHWEST_SHOULDER_2200#5",
+          "to": "register:MVA_NORTHWEST_SHOULDER_2200#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_NORTH_INBOUND_2700",
+      "segments": [
+        {
+          "from": "register:MVA_NORTH_INBOUND_2700#1",
+          "to": "register:MVA_NORTH_INBOUND_2700#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_INBOUND_2700#2",
+          "to": "register:MVA_NORTH_INBOUND_2700#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_INBOUND_2700#3",
+          "to": "register:MVA_NORTH_INBOUND_2700#4",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 45,
+          "direction": "cw"
+        },
+        {
+          "from": "register:MVA_NORTH_INBOUND_2700#4",
+          "to": "register:MVA_NORTH_INBOUND_2700#5",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_INBOUND_2700#5",
+          "to": "register:MVA_NORTH_INBOUND_2700#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_NORTH_OUTER_4000",
+      "segments": [
+        {
+          "from": "register:MVA_NORTH_OUTER_4000#1",
+          "to": "register:MVA_NORTH_OUTER_4000#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_OUTER_4000#2",
+          "to": "register:MVA_NORTH_OUTER_4000#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_OUTER_4000#3",
+          "to": "register:MVA_NORTH_OUTER_4000#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_OUTER_4000#4",
+          "to": "register:MVA_NORTH_OUTER_4000#5",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_NORTH_OUTER_4000#5",
+          "to": "register:MVA_NORTH_OUTER_4000#1",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 45,
+          "direction": "cw"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTHEAST_INNER_4600",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTHEAST_INNER_4600#1",
+          "to": "register:MVA_SOUTHEAST_INNER_4600#2",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 3,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_INNER_4600#2",
+          "to": "register:MVA_SOUTHEAST_INNER_4600#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_INNER_4600#3",
+          "to": "register:MVA_SOUTHEAST_INNER_4600#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_INNER_4600#4",
+          "to": "register:MVA_SOUTHEAST_INNER_4600#5",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 119
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_INNER_4600#5",
+          "to": "register:MVA_SOUTHEAST_INNER_4600#6",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_INNER_4600#6",
+          "to": "register:MVA_SOUTHEAST_INNER_4600#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTHEAST_MID_7500",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTHEAST_MID_7500#1",
+          "to": "register:MVA_SOUTHEAST_MID_7500#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_MID_7500#2",
+          "to": "register:MVA_SOUTHEAST_MID_7500#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_MID_7500#3",
+          "to": "register:MVA_SOUTHEAST_MID_7500#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_MID_7500#4",
+          "to": "register:MVA_SOUTHEAST_MID_7500#1",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 45,
+          "direction": "ccw"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTHEAST_OUTER_10000",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTHEAST_MID_7500#2",
+          "to": "register:MVA_SOUTHEAST_OUTER_10000#2",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 108
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_OUTER_10000#2",
+          "to": "register:MVA_SOUTHEAST_OUTER_10000#3",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 60,
+          "direction": "cw"
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_OUTER_10000#3",
+          "to": "register:MVA_SOUTHEAST_OUTER_10000#1",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 119
+        },
+        {
+          "from": "register:MVA_SOUTHEAST_OUTER_10000#1",
+          "to": "register:MVA_SOUTHEAST_MID_7500#2",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 45,
+          "direction": "ccw"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTHWEST_ESCAPE_5000",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTHWEST_ESCAPE_5000#1",
+          "to": "register:MVA_SOUTHWEST_ESCAPE_5000#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_ESCAPE_5000#2",
+          "to": "register:MVA_SOUTHWEST_ESCAPE_5000#3",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 225
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_ESCAPE_5000#3",
+          "to": "register:MVA_SOUTHWEST_ESCAPE_5000#4",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 17,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_ESCAPE_5000#4",
+          "to": "register:MVA_SOUTHWEST_ESCAPE_5000#5",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_ESCAPE_5000#5",
+          "to": "register:MVA_SOUTHWEST_ESCAPE_5000#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTHWEST_OUTER_7000",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTHWEST_OUTER_7000#1",
+          "to": "register:MVA_SOUTHWEST_OUTER_7000#2",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 241
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_OUTER_7000#2",
+          "to": "register:MVA_SOUTHWEST_OUTER_7000#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_OUTER_7000#3",
+          "to": "register:MVA_SOUTHWEST_OUTER_7000#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_OUTER_7000#4",
+          "to": "register:MVA_SOUTHWEST_OUTER_7000#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTHWEST_TRANSITION_4000",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTHWEST_TRANSITION_4000#1",
+          "to": "register:MVA_SOUTHWEST_TRANSITION_4000#2",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 241
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_TRANSITION_4000#2",
+          "to": "register:MVA_SOUTHWEST_TRANSITION_4000#3",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 30,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_TRANSITION_4000#3",
+          "to": "register:MVA_SOUTHWEST_TRANSITION_4000#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTHWEST_TRANSITION_4000#4",
+          "to": "register:MVA_SOUTHWEST_TRANSITION_4000#1",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 35,
+          "direction": "cw"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTH_CENTER_OUTER_8000",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTH_CENTER_OUTER_8000#1",
+          "to": "register:MVA_SOUTH_CENTER_OUTER_8000#2",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 40,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTH_CENTER_OUTER_8000#2",
+          "to": "register:MVA_SOUTH_CENTER_OUTER_8000#3",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 40,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTH_CENTER_OUTER_8000#3",
+          "to": "register:MVA_SOUTH_CENTER_OUTER_8000#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_SOUTH_CENTER_OUTER_8000#4",
+          "to": "register:MVA_SOUTH_CENTER_OUTER_8000#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_SOUTH_DEEP_12500",
+      "segments": [
+        {
+          "from": "register:MVA_SOUTH_DEEP_12500#1",
+          "to": "register:MVA_SOUTH_DEEP_12500#2",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 40,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTH_DEEP_12500#2",
+          "to": "register:MVA_SOUTH_DEEP_12500#3",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 40,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTH_DEEP_12500#3",
+          "to": "register:MVA_SOUTH_DEEP_12500#4",
+          "kind": "radial",
+          "center_ref": "reference:RADAR_SITE",
+          "bearing_mag_deg": 151
+        },
+        {
+          "from": "register:MVA_SOUTH_DEEP_12500#4",
+          "to": "register:MVA_SOUTH_DEEP_12500#5",
+          "kind": "arc",
+          "center_ref": "reference:RADAR_SITE",
+          "radius_nm": 45,
+          "direction": "ccw"
+        },
+        {
+          "from": "register:MVA_SOUTH_DEEP_12500#5",
+          "to": "register:MVA_SOUTH_DEEP_12500#1",
+          "kind": "line"
+        }
+      ]
+    },
+    {
+      "sector_id": "MVA_WEST_INBOUND_2900",
+      "segments": [
+        {
+          "from": "register:MVA_WEST_INBOUND_2900#1",
+          "to": "register:MVA_WEST_INBOUND_2900#2",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_WEST_INBOUND_2900#2",
+          "to": "register:MVA_WEST_INBOUND_2900#3",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_WEST_INBOUND_2900#3",
+          "to": "register:MVA_WEST_INBOUND_2900#4",
+          "kind": "line"
+        },
+        {
+          "from": "register:MVA_WEST_INBOUND_2900#4",
+          "to": "register:MVA_WEST_INBOUND_2900#1",
+          "kind": "line"
+        }
+      ]
+    }
+  ]
+}

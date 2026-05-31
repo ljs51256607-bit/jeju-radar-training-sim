@@ -1,0 +1,459 @@
+{
+  "type": "FeatureCollection",
+  "name": "rkpc_related_special_use_airspace",
+  "metadata": {
+    "status": "official_aip_extracted_display_source",
+    "effective_package": "2026-04-15-AIRAC",
+    "source_register": "data/authority/special_use_airspace_register.json",
+    "area_count": 9,
+    "area_ids": [
+      "MOA_24",
+      "MOA_25L",
+      "MOA_25H",
+      "MOA_29",
+      "MOA_39",
+      "MOA_40",
+      "MOA_41",
+      "CATA_3",
+      "CATA_6"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_24",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_24",
+        "area_type": "MOA",
+        "display_label": "MOA 24",
+        "vertical_limits": "FL 400 / 10 000 ft AMSL FL 500 / 10 000 ft AMSL",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 126.054167,
+        "label_latitude": 34.208403
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              125.603611,
+              34.416944
+            ],
+            [
+              126.526111,
+              34.416667
+            ],
+            [
+              126.483056,
+              34.0
+            ],
+            [
+              125.603889,
+              34.0
+            ],
+            [
+              125.603611,
+              34.416944
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_25L",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_25L",
+        "area_type": "MOA",
+        "display_label": "MOA 25L",
+        "vertical_limits": "9 000 ft AMSL / 3 000 ft AGL",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 127.095833,
+        "label_latitude": 34.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.933333,
+              34.75
+            ],
+            [
+              127.283333,
+              34.75
+            ],
+            [
+              127.283333,
+              34.25
+            ],
+            [
+              126.883333,
+              34.25
+            ],
+            [
+              126.933333,
+              34.75
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_25H",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_25H",
+        "area_type": "MOA",
+        "display_label": "MOA 25H",
+        "vertical_limits": "FL 400 / 10 000 ft AMSL",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 127.097889,
+        "label_latitude": 34.429278
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.953333,
+              35.0
+            ],
+            [
+              127.303889,
+              35.0
+            ],
+            [
+              127.303611,
+              34.146389
+            ],
+            [
+              127.083333,
+              34.0
+            ],
+            [
+              126.845278,
+              34.0
+            ],
+            [
+              126.953333,
+              35.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_29",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_29",
+        "area_type": "MOA",
+        "display_label": "MOA 29",
+        "vertical_limits": "FL 400 / 3 000 ft AGL",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 127.695,
+        "label_latitude": 33.805957
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.316667,
+              33.716667
+            ],
+            [
+              128.0,
+              34.233333
+            ],
+            [
+              127.356111,
+              33.687222
+            ],
+            [
+              128.0,
+              34.161389
+            ],
+            [
+              128.0,
+              33.916667
+            ],
+            [
+              127.666667,
+              33.65
+            ],
+            [
+              128.0,
+              33.666667
+            ],
+            [
+              127.465556,
+              33.605
+            ],
+            [
+              127.45,
+              33.616667
+            ],
+            [
+              127.316667,
+              33.716667
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_39",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_39",
+        "area_type": "MOA",
+        "display_label": "MOA 39",
+        "vertical_limits": "5 000 ft AMSL / SFC",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 127.179167,
+        "label_latitude": 33.483333
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.866667,
+              33.45
+            ],
+            [
+              127.25,
+              33.75
+            ],
+            [
+              127.533333,
+              33.55
+            ],
+            [
+              127.066667,
+              33.183333
+            ],
+            [
+              126.866667,
+              33.45
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_40",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_40",
+        "area_type": "MOA",
+        "display_label": "MOA 40",
+        "vertical_limits": "5 000 ft AMSL / SFC",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 125.25,
+        "label_latitude": 34.041667
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              124.5,
+              34.333333
+            ],
+            [
+              126.0,
+              34.333333
+            ],
+            [
+              126.0,
+              33.75
+            ],
+            [
+              124.5,
+              33.75
+            ],
+            [
+              124.5,
+              34.333333
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "MOA_41",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "MOA_41",
+        "area_type": "MOA",
+        "display_label": "MOA 41",
+        "vertical_limits": "5 000 ft AMSL / SFC",
+        "active_time": "",
+        "source_section": "ENR 5 2",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "label_longitude": 125.25,
+        "label_latitude": 33.458333
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              124.5,
+              33.75
+            ],
+            [
+              126.0,
+              33.75
+            ],
+            [
+              126.0,
+              33.166667
+            ],
+            [
+              124.5,
+              33.166667
+            ],
+            [
+              124.5,
+              33.75
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "CATA_3",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "CATA_3",
+        "area_type": "CATA",
+        "display_label": "CATA 3",
+        "vertical_limits": "7 000 ft AMSL / SFC",
+        "active_time": "2100-1300 UTC",
+        "source_section": "ENR 5 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.3-en-GB.html",
+        "label_longitude": 126.797619,
+        "label_latitude": 33.183333
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.65,
+              33.466667
+            ],
+            [
+              126.866667,
+              33.45
+            ],
+            [
+              127.1,
+              33.133333
+            ],
+            [
+              127.0,
+              33.033333
+            ],
+            [
+              126.733333,
+              33.033333
+            ],
+            [
+              126.733333,
+              33.083333
+            ],
+            [
+              126.5,
+              33.083333
+            ],
+            [
+              126.65,
+              33.466667
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "CATA_6",
+        "layer": "special_use_airspace",
+        "authority": "official_koca_aip_enr_table",
+        "area_id": "CATA_6",
+        "area_type": "CATA",
+        "display_label": "CATA 6",
+        "vertical_limits": "7 000 ft AMSL / 4 000 ft AMSL",
+        "active_time": "2100-1300 UTC",
+        "source_section": "ENR 5 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.3-en-GB.html",
+        "label_longitude": 126.433333,
+        "label_latitude": 33.13
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.3,
+              33.25
+            ],
+            [
+              126.566667,
+              33.25
+            ],
+            [
+              126.5,
+              33.083333
+            ],
+            [
+              126.5,
+              33.033333
+            ],
+            [
+              126.3,
+              33.033333
+            ],
+            [
+              126.3,
+              33.25
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

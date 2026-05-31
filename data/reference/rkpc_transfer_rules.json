@@ -1,0 +1,153 @@
+{
+  "metadata": {
+    "name": "rkpc_transfer_rules",
+    "status": "rule_document",
+    "description": "ACC-APP/DC transfer rule document."
+  },
+  "interfacility_transfer_anchors": {
+    "arrivals_into_jeju_tma": [
+      {
+        "airway": "Y711",
+        "fix_id": "DOTOL",
+        "default_altitude_text": "FL160",
+        "runway_25_variant_text": "RWY25 : DOTOL 10마일 전 FL160",
+        "from_unit": "Incheon ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y722",
+        "fix_id": "SOSDO",
+        "default_altitude_text": "FL150",
+        "from_unit": "Incheon ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "B576",
+        "fix_id": "IPDAS",
+        "default_altitude_text": "12,000FT",
+        "from_unit": "Incheon ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y572/A586",
+        "fix_id": "TOSAN",
+        "default_altitude_text": "FL150",
+        "from_unit": "Incheon ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "A586",
+        "fix_id": "MAKET",
+        "default_altitude_text": "10,000FT",
+        "from_unit": "Daegu ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y572",
+        "fix_id": "UPGOS",
+        "default_altitude_text": "FL160",
+        "runway_25_variant_text": "RWY25 : UPGOS 10마일 전 FL160",
+        "from_unit": "Daegu ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "A595/Y677",
+        "fix_id": "TAMNA",
+        "default_altitude_text": "FL150",
+        "from_unit": "Incheon ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y677",
+        "fix_id": "LIMDI",
+        "default_altitude_text": "FL150",
+        "special_condition_text": "제주 TMA 진입전 OFFSET 3NM RIGHT OF TRACK 상태로 관제권 이양",
+        "from_unit": "Incheon ACC",
+        "to_unit": "Jeju APP",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      }
+    ],
+    "departures_and_overflights_out_of_jeju_tma": [
+      {
+        "airway": "Y711",
+        "fix_id": "PANSI",
+        "default_altitude_text": "FL160",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Incheon ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y722",
+        "fix_id": "KAMIT",
+        "default_altitude_text": "FL170",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Incheon ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "B576",
+        "fix_id": "IPDAS",
+        "default_altitude_text": "13,000FT",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Incheon ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "A586",
+        "fix_name": "MAKET",
+        "default_altitude_text": "9,000FT",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Daegu ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7",
+        "geometry_status": "fix_coordinate_pending"
+      },
+      {
+        "airway": "Y571",
+        "fix_id": "AKPON",
+        "default_altitude_text": "FL170",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Daegu ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y677/A595",
+        "fix_id": "TAMNA",
+        "default_altitude_text": "FL160",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Incheon ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      },
+      {
+        "airway": "Y677",
+        "fix_id": "LIMDI",
+        "default_altitude_text": "FL160 / RWY25: 13,000FT",
+        "special_condition_text": "제주 TMA 내에서 OFFSET 3NM RIGHT OF TRACK 상태로 관제권 이양",
+        "from_unit": "Jeju APP/DC",
+        "to_unit": "Incheon ACC",
+        "source_file": "public_derived_training_dataset",
+        "source_section": "별표 7"
+      }
+    ]
+  }
+}

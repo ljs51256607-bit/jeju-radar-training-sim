@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "id": "pilot_response_policy_test_cases_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "active_callsigns": [
+    "JJA123",
+    "KAL481"
+  ],
+  "test_cases": [
+    {
+      "id": "rp_missing_callsign",
+      "phrase": "DESCEND 6000",
+      "expected_condition": "MISSING_CALLSIGN",
+      "expected_response_action": "SILENT_NO_RESPONSE",
+      "expected_engine_action": "NO_STATE_CHANGE"
+    },
+    {
+      "id": "rp_unknown_callsign",
+      "phrase": "XXX999 DESCEND 6000",
+      "expected_condition": "UNKNOWN_CALLSIGN",
+      "expected_response_action": "SILENT_NO_RESPONSE",
+      "expected_engine_action": "NO_STATE_CHANGE"
+    },
+    {
+      "id": "rp_no_pattern_with_callsign",
+      "phrase": "JJA123 BLAH BLAH",
+      "expected_condition": "NO_PATTERN_MATCH_WITH_CALLSIGN",
+      "expected_response_action": "SAY_AGAIN",
+      "expected_engine_action": "NO_STATE_CHANGE"
+    },
+    {
+      "id": "rp_ambiguous_left_180",
+      "phrase": "JJA123 LEFT 180",
+      "expected_condition": "AMBIGUOUS_ALIAS",
+      "expected_response_action": "CONFIRM_INTENT",
+      "expected_engine_action": "HOLD_PENDING_CONFIRMATION"
+    },
+    {
+      "id": "rp_invalid_speed",
+      "phrase": "JJA123 SPEED 900",
+      "expected_condition": "INVALID_SLOT",
+      "expected_response_action": "UNABLE_OR_CONFIRM",
+      "expected_engine_action": "NO_STATE_CHANGE"
+    },
+    {
+      "id": "rp_validated_command",
+      "phrase": "JJA123 DESCEND 6000",
+      "expected_condition": "VALIDATED_COMMAND",
+      "expected_response_action": "READBACK",
+      "expected_engine_action": "APPLY_AFTER_VALIDATION"
+    },
+    {
+      "id": "rp_minimum_speed_validated",
+      "phrase": "JJA123 MINIMUM SPEED",
+      "expected_condition": "VALIDATED_COMMAND",
+      "expected_response_action": "READBACK",
+      "expected_engine_action": "APPLY_AFTER_VALIDATION"
+    },
+    {
+      "id": "rp_cancel_level_without_fix_requires_confirm",
+      "phrase": "JJA123 CANCEL LEVEL RESTRICTION",
+      "expected_condition": "REQUIRES_CONFIRMATION",
+      "expected_response_action": "CONFIRM_INTENT",
+      "expected_engine_action": "HOLD_PENDING_CONFIRMATION"
+    },
+    {
+      "id": "rp_cancel_yumin_level_validated",
+      "phrase": "JJA123 CANCEL YUMIN LEVEL RESTRICTION",
+      "expected_condition": "VALIDATED_COMMAND",
+      "expected_response_action": "READBACK",
+      "expected_engine_action": "APPLY_AFTER_VALIDATION"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "type": "FeatureCollection",
+  "name": "rwy31_procedure_lines",
+  "metadata": {
+    "status": "coordinate_verified_procedure_overlay",
+    "description": "RWY 31 RNAV STAR/SID overlay. RWY31 is displayed with RWY25+31 mode.",
+    "included_route_count": 2,
+    "included_route_statuses": [
+      "coordinate_verified"
+    ],
+    "source_files": [
+      "data/reference/rkpc_procedures.json",
+      "data/reference/rkpc_airport.json"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY31_SID_RNAV_KAMIT_2N",
+        "procedure_id": "RNAV_KAMIT_2N",
+        "procedure_name": "RNAV KAMIT 2N",
+        "procedure_type": "SID",
+        "runway": "31",
+        "layer": "rwy31_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY31_THR",
+          "PC861",
+          "PC871",
+          "PC872",
+          "TOREN",
+          "OLLEH",
+          "KAMIT"
+        ],
+        "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+        "source_section": "RKPC AD CHART 2-16-1 RNAV KAMIT 2N coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.504014,
+            33.505483
+          ],
+          [
+            126.409472,
+            33.562167
+          ],
+          [
+            126.408889,
+            33.651472
+          ],
+          [
+            126.521861,
+            33.721361
+          ],
+          [
+            126.666028,
+            33.810222
+          ],
+          [
+            126.740694,
+            33.961722
+          ],
+          [
+            126.771583,
+            34.253917
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY31_SID_RNAV_AKPON_1N",
+        "procedure_id": "RNAV_AKPON_1N",
+        "procedure_name": "RNAV AKPON 1N",
+        "procedure_type": "SID",
+        "runway": "31",
+        "layer": "rwy31_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "RWY31_THR",
+          "PC861",
+          "PC871",
+          "PC872",
+          "TOREN",
+          "PC874",
+          "AKPON"
+        ],
+        "source_file": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf",
+        "source_section": "RKPC AD CHART 2-16-1 RNAV AKPON 1N coding table"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.504014,
+            33.505483
+          ],
+          [
+            126.409472,
+            33.562167
+          ],
+          [
+            126.408889,
+            33.651472
+          ],
+          [
+            126.521861,
+            33.721361
+          ],
+          [
+            126.666028,
+            33.810222
+          ],
+          [
+            127.185778,
+            33.810556
+          ],
+          [
+            127.331389,
+            33.780444
+          ]
+        ]
+      }
+    }
+  ]
+}

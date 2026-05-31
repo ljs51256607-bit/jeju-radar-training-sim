@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "name": "rkpc_published_holding_patterns",
+    "status": "source_of_truth_candidate_v1",
+    "created_on": "2026-05-21",
+    "purpose": "Machine-readable source ledger for RKPC published holding patterns used by the radar simulator.",
+    "authority_basis": {
+      "effective_date": "2026-04-30",
+      "publication_date": "2026-04-30",
+      "package": "AIP AMDT 5/26",
+      "star_pdf": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+      "approach_pdf_basis": "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/html/eAIP/KR-AD-2.RKPC-en-GB.html"
+    },
+    "rules": [
+      "This ledger records published holding geometry and limits only.",
+      "Controller-assigned altitude and speed remain aircraft state commands and do not rewrite published holding geometry.",
+      "Inbound true course is the simulator heading source; magnetic inbound/outbound courses are preserved as chart evidence.",
+      "Outbound course is the reciprocal of inbound course."
+    ]
+  },
+  "patterns": [
+    {
+      "pattern_id": "HOLD_STAR_RNAV_DOTOL_2P_MANBA",
+      "kind": "star",
+      "fix_id": "MANBA",
+      "procedure_id": "RNAV_DOTOL_2P",
+      "runway": "07",
+      "inbound_course_magnetic_deg": 47,
+      "inbound_course_true_deg": 38.9,
+      "outbound_course_magnetic_deg": 227,
+      "outbound_course_true_deg": 218.9,
+      "turn_direction": "left",
+      "leg_time_min": 1.5,
+      "altitude_min_ft": 9000,
+      "altitude_max_ft": 13000,
+      "speed_max_kt": 250,
+      "source": {
+        "source_file": "AIP AMDT 5/26 RKPC STAR PDF",
+        "source_section": "RNAV DOTOL 2P STAR HM row",
+        "source_text": "derived training source text redacted for public OSS dataset"
+      }
+    },
+    {
+      "pattern_id": "HOLD_STAR_RNAV_DOTOL_2P_YUMIN",
+      "kind": "star",
+      "fix_id": "YUMIN",
+      "procedure_id": "RNAV_DOTOL_2P",
+      "runway": "07",
+      "inbound_course_magnetic_deg": 126,
+      "inbound_course_true_deg": 118.3,
+      "outbound_course_magnetic_deg": 306,
+      "outbound_course_true_deg": 298.3,
+      "turn_direction": "left",
+      "leg_time_min": 1,
+      "altitude_min_ft": 4000,
+      "altitude_max_ft": 7000,
+      "speed_max_kt": 230,
+      "source": {
+        "source_file": "AIP AMDT 5/26 RKPC STAR PDF",
+        "source_section": "RNAV DOTOL 2P STAR HM row",
+        "source_text": "derived training source text redacted for public OSS dataset"
+      }
+    },
+    {
+      "pattern_id": "HOLD_STAR_RNAV_TAMNA_2P_CJU",
+      "kind": "star",
+      "fix_id": "CJU",
+      "procedure_id": "RNAV_TAMNA_2P",
+      "runway": "07",
+      "inbound_course_magnetic_deg": 269,
+      "inbound_course_true_deg": 261.9,
+      "outbound_course_magnetic_deg": 89,
+      "outbound_course_true_deg": 81.9,
+      "turn_direction": "left",
+      "leg_time_min": 1.5,
+      "altitude_min_ft": 12000,
+      "altitude_max_ft": 16000,
+      "speed_max_kt": 250,
+      "source": {
+        "source_file": "AIP AMDT 5/26 RKPC STAR PDF",
+        "source_section": "RNAV TAMNA 2P STAR HM row",
+        "source_text": "derived training source text redacted for public OSS dataset"
+      }
+    },
+    {
+      "pattern_id": "HOLD_MISSED_ILS_Z_RWY_07_PETAA",
+      "kind": "missed",
+      "fix_id": "PETAA",
+      "procedure_id": "MISSED_APPROACH_ILS_Z_RWY_07",
+      "runway": "07",
+      "inbound_course_magnetic_deg": 276,
+      "inbound_course_true_deg": 268.2,
+      "outbound_course_magnetic_deg": 96,
+      "outbound_course_true_deg": 88.2,
+      "turn_direction": "right",
+      "leg_time_min": 1,
+      "altitude_min_ft": 8000,
+      "altitude_max_ft": 9000,
+      "speed_max_kt": 230,
+      "source": {
+        "source_file": "AIP AMDT 5/26 RKPC INSTR APCH CHART",
+        "source_section": "ILS Z RWY 07 missed approach holding at PETAA",
+        "source_text": "derived training source text redacted for public OSS dataset"
+      }
+    },
+    {
+      "pattern_id": "HOLD_MISSED_ILS_Z_RWY_25_LOTKA",
+      "kind": "missed",
+      "fix_id": "LOTKA",
+      "procedure_id": "MISSED_APPROACH_ILS_Z_RWY_25",
+      "runway": "25",
+      "inbound_course_magnetic_deg": 71,
+      "inbound_course_true_deg": 63.2,
+      "outbound_course_magnetic_deg": 251,
+      "outbound_course_true_deg": 243.2,
+      "turn_direction": "left",
+      "leg_time_min": 1,
+      "altitude_min_ft": 6000,
+      "altitude_max_ft": 11000,
+      "speed_max_kt": 210,
+      "source": {
+        "source_file": "AIP AMDT 5/26 RKPC INSTR APCH CHART",
+        "source_section": "ILS Z RWY 25 missed approach holding at LOTKA",
+        "source_text": "derived training source text redacted for public OSS dataset"
+      }
+    }
+  ]
+}

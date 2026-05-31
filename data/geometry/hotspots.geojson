@@ -1,0 +1,13 @@
+{
+  "type": "FeatureCollection",
+  "name": "rkpc_hotspots",
+  "metadata": {
+    "status": "template",
+    "description": "제주 Hot Spot polygon 템플릿",
+    "required_properties": ["hotspot_id", "runway_group", "description", "source_section"],
+    "source_files": [
+      "public_derived_training_dataset"
+    ]
+  },
+  "features": []
+}

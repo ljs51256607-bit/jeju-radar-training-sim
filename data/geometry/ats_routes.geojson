@@ -1,0 +1,598 @@
+{
+  "type": "FeatureCollection",
+  "name": "rkpc_related_ats_routes",
+  "metadata": {
+    "status": "official_aip_extracted_display_source",
+    "effective_package": "2026-04-15-AIRAC",
+    "source_register": "data/authority/ats_route_register.json",
+    "route_count": 9,
+    "route_ids": [
+      "A586",
+      "A595",
+      "B576",
+      "Y571",
+      "Y572",
+      "Y677",
+      "Y711",
+      "Y722",
+      "Z82"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_A586",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "A586",
+        "raw_designator": "A586*",
+        "source_section": "ENR 3 1",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+        "requested_fixes_in_route": [
+          "MAKET",
+          "TOSAN"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            131.574167,
+            37.638889
+          ],
+          [
+            130.678889,
+            36.755833
+          ],
+          [
+            130.195278,
+            36.295278
+          ],
+          [
+            129.823333,
+            35.935833
+          ],
+          [
+            129.298333,
+            35.420278
+          ],
+          [
+            128.999444,
+            35.1225
+          ],
+          [
+            128.839444,
+            35.009167
+          ],
+          [
+            128.497778,
+            34.765278
+          ],
+          [
+            127.792778,
+            34.254722
+          ],
+          [
+            127.331389,
+            33.914444
+          ],
+          [
+            127.073056,
+            33.722222
+          ],
+          [
+            126.920556,
+            33.608056
+          ],
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            126.771944,
+            33.003333
+          ],
+          [
+            126.964722,
+            32.503333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_A595",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "A595",
+        "raw_designator": "A595",
+        "source_section": "ENR 3 1",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+        "requested_fixes_in_route": [
+          "TAMNA"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            127.331389,
+            33.470833
+          ],
+          [
+            128.315833,
+            33.584167
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_B576",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "B576",
+        "raw_designator": "B576*",
+        "source_section": "ENR 3 1",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+        "requested_fixes_in_route": [
+          "IPDAS",
+          "SOSDO"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.928333,
+            37.413611
+          ],
+          [
+            126.993056,
+            37.213611
+          ],
+          [
+            127.031667,
+            37.094444
+          ],
+          [
+            126.991111,
+            36.736944
+          ],
+          [
+            126.951389,
+            36.386389
+          ],
+          [
+            126.896944,
+            35.897778
+          ],
+          [
+            126.855278,
+            35.521111
+          ],
+          [
+            126.812222,
+            35.126111
+          ],
+          [
+            126.716944,
+            34.254167
+          ],
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            126.459722,
+            33.003333
+          ],
+          [
+            126.26,
+            32.539722
+          ],
+          [
+            126.058056,
+            32.065
+          ],
+          [
+            125.938056,
+            31.781389
+          ],
+          [
+            125.857778,
+            31.590556
+          ],
+          [
+            125.198333,
+            30.003611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_Y571",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "Y571",
+        "raw_designator": "Y571",
+        "source_section": "ENR 3 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "requested_fixes_in_route": [
+          "SOSDO",
+          "AKPON"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.459722,
+            33.003333
+          ],
+          [
+            126.687222,
+            33.222222
+          ],
+          [
+            127.060278,
+            33.578056
+          ],
+          [
+            127.331389,
+            33.780556
+          ],
+          [
+            127.976389,
+            34.255278
+          ],
+          [
+            128.497778,
+            34.632778
+          ],
+          [
+            128.904444,
+            34.923056
+          ],
+          [
+            128.999444,
+            35.1225
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_Y572",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "Y572",
+        "raw_designator": "Y572",
+        "source_section": "ENR 3 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "requested_fixes_in_route": [
+          "UPGOS",
+          "TOSAN"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            128.999444,
+            35.1225
+          ],
+          [
+            128.821111,
+            35.040278
+          ],
+          [
+            128.497778,
+            34.809444
+          ],
+          [
+            127.733333,
+            34.255556
+          ],
+          [
+            127.331389,
+            33.959167
+          ],
+          [
+            127.0775,
+            33.770278
+          ],
+          [
+            126.920556,
+            33.652778
+          ],
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            126.687222,
+            33.222222
+          ],
+          [
+            126.771944,
+            33.003333
+          ],
+          [
+            126.964722,
+            32.503333
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_Y677",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "Y677",
+        "raw_designator": "Y677",
+        "source_section": "ENR 3 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "requested_fixes_in_route": [
+          "LIMDI",
+          "TAMNA"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            124.414722,
+            33.841667
+          ],
+          [
+            125.831389,
+            33.553611
+          ],
+          [
+            126.391389,
+            33.434722
+          ],
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            127.331389,
+            33.470833
+          ],
+          [
+            128.315833,
+            33.584167
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_Y711",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "Y711",
+        "raw_designator": "Y711",
+        "source_section": "ENR 3 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "requested_fixes_in_route": [
+          "DOTOL",
+          "PANSI"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.8375,
+            37.213056
+          ],
+          [
+            126.825,
+            36.722778
+          ],
+          [
+            126.831389,
+            36.556111
+          ],
+          [
+            126.837778,
+            36.386389
+          ],
+          [
+            126.812222,
+            36.151389
+          ],
+          [
+            126.785278,
+            35.902778
+          ],
+          [
+            126.742222,
+            35.503056
+          ],
+          [
+            126.701667,
+            35.125278
+          ],
+          [
+            126.6275,
+            34.420556
+          ],
+          [
+            126.610278,
+            34.254167
+          ],
+          [
+            126.567222,
+            33.841111
+          ],
+          [
+            126.391389,
+            33.434722
+          ],
+          [
+            126.206944,
+            33.003889
+          ],
+          [
+            125.983056,
+            32.48
+          ],
+          [
+            125.783056,
+            32.005833
+          ],
+          [
+            125.663333,
+            31.720556
+          ],
+          [
+            125.584444,
+            31.531944
+          ],
+          [
+            125.1475,
+            30.477778
+          ],
+          [
+            124.953333,
+            30.001667
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_Y722",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "Y722",
+        "raw_designator": "Y722",
+        "source_section": "ENR 3 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "requested_fixes_in_route": [
+          "KAMIT",
+          "SOSDO"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.031667,
+            37.094444
+          ],
+          [
+            126.991111,
+            36.736944
+          ],
+          [
+            126.996944,
+            36.570556
+          ],
+          [
+            127.003611,
+            36.386389
+          ],
+          [
+            126.949167,
+            35.895556
+          ],
+          [
+            126.906111,
+            35.503056
+          ],
+          [
+            126.865,
+            35.126667
+          ],
+          [
+            126.771667,
+            34.253889
+          ],
+          [
+            126.7325,
+            33.880833
+          ],
+          [
+            126.698056,
+            33.554167
+          ],
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            126.459722,
+            33.003333
+          ],
+          [
+            126.26,
+            32.539722
+          ],
+          [
+            126.058056,
+            32.065
+          ],
+          [
+            125.938056,
+            31.781389
+          ],
+          [
+            125.857778,
+            31.590556
+          ],
+          [
+            125.198333,
+            30.003611
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "ATS_ROUTE_Z82",
+        "layer": "ats_route",
+        "authority": "official_koca_aip_enr_table",
+        "route_id": "Z82",
+        "raw_designator": "Z82",
+        "source_section": "ENR 3 3",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "requested_fixes_in_route": [
+          "PANSI"
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.624167,
+            33.384722
+          ],
+          [
+            126.206944,
+            33.003889
+          ]
+        ]
+      }
+    }
+  ]
+}

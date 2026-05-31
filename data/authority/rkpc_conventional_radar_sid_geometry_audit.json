@@ -1,0 +1,199 @@
+{
+  "metadata": {
+    "name": "rkpc_conventional_radar_sid_geometry_audit",
+    "status": "pending_geometry_derivation_v1",
+    "created_on": "2026-05-28",
+    "purpose": "Pre-automation geometry derivation ledger for RKPC conventional and RADAR SID procedures that are cataloged but not yet safe for runtime route guidance.",
+    "source_registers": [
+      "data/authority/rkpc_sid_star_route_register.csv",
+      "data/reference/rkpc_procedure_constraint_register.json"
+    ],
+    "rules": [
+      "Every conventional/radar SID in the SID/STAR route register must have one item here.",
+      "Every item remains runtime_route_allowed=false until radial, DME, arc, or vector geometry is derived from source charts and independently verified.",
+      "This file describes required derivation work only; it does not authorize procedure autopilot routing."
+    ]
+  },
+  "summary": {
+    "procedure_count": 9,
+    "by_route_definition_type": {
+      "radial_dme": 4,
+      "radial_dme_arc": 2,
+      "radar_vector": 3
+    },
+    "audit_status": "pending_geometry_derivation",
+    "automation_status": "blocked_pending_geometry_derivation"
+  },
+  "procedures": [
+    {
+      "procedure_id": "IPDAS_4K",
+      "procedure_name": "IPDAS 4K",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radial_dme",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "radial_track",
+        "turn_or_intercept_geometry"
+      ],
+      "derived_geometry_refs": [
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_YDM_R067_D6_5",
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_CJU_R013_D30",
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_CJU_R013_D30_TO_IPDAS",
+        "data/authority/rkpc_conventional_radar_sid_derived_geometry.json#IPDAS_4K_turn_capture_model"
+      ],
+      "route_text": "Climb on R 067 YDM until D6.5, then turn left to intercept R 013 CJU, then proceed direct to IPDAS.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "IPDAS FOUR KILO DEPARTURE chart text",
+      "blocking_reason": "YDM R067 D6.5, CJU R013/D30.0, D30.0-to-IPDAS continuation, turn-capture tolerance, and a training runtime path are validated, but exact full chart linework still must be checked before it can become an exact route queue."
+    },
+    {
+      "procedure_id": "MAKET_4K",
+      "procedure_name": "MAKET 4K",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radial_dme",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "radial_track",
+        "turn_or_intercept_geometry"
+      ],
+      "route_text": "Climb on R 067 YDM, then proceed direct to MAKET.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "MAKET FOUR KILO DEPARTURE chart text",
+      "blocking_reason": "Requires YDM radial track and release/direct-to-MAKET geometry before it can become a route queue."
+    },
+    {
+      "procedure_id": "TAMNA_2K",
+      "procedure_name": "TAMNA 2K",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radial_dme",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "radial_track",
+        "turn_or_intercept_geometry"
+      ],
+      "route_text": "Climb on R 067 YDM until D13.5, then right heading 169 to intercept R 101 YDM, then direct TAMNA.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "TAMNA TWO KILO DEPARTURE chart text",
+      "blocking_reason": "Requires generated YDM D13.5 point, heading leg, and R101 intercept geometry before it can become a route queue."
+    },
+    {
+      "procedure_id": "CJU_5K",
+      "procedure_name": "CJU 5K",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radial_dme",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "radial_track",
+        "turn_or_intercept_geometry"
+      ],
+      "route_text": "Climb on R 067 YDM until D13.5, then right heading 169 to intercept R 073 CJU, then direct CJU.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "JEJU FIVE KILO DEPARTURE chart text",
+      "blocking_reason": "Requires generated YDM D13.5 point, heading leg, and CJU radial intercept geometry before it can become a route queue."
+    },
+    {
+      "procedure_id": "CJU_3L",
+      "procedure_name": "CJU 3L",
+      "procedure_type": "SID",
+      "runway": "25",
+      "route_definition_type": "radial_dme_arc",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "radial_track",
+        "dme_arc",
+        "arc_join_or_exit"
+      ],
+      "route_text": "Climb on R 245 YDM until D9.0, then right via YDM D9.0 arc to R 326 YDM, then via R 326 YDM to YDM, then direct CJU via R 146 YDM.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "JEJU THREE LIMA DEPARTURE chart text",
+      "blocking_reason": "Requires radial track, YDM D9.0 arc, arc exit, and downstream radial/direct segment geometry before it can become a route queue."
+    },
+    {
+      "procedure_id": "IPDAS_1L",
+      "procedure_name": "IPDAS 1L",
+      "procedure_type": "SID",
+      "runway": "25",
+      "route_definition_type": "radial_dme_arc",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "radial_track",
+        "dme_arc",
+        "arc_join_or_exit"
+      ],
+      "route_text": "Climb on R 245 YDM until D9.0, then right via YDM D9.0 arc to R 008 YDM, then left on R 008 YDM until D18.6 to join R 353 CJU and proceed via CJU D27.0 arc to R 013 CJU, then via R 013 CJU to IPDAS.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "IPDAS ONE LIMA DEPARTURE chart text",
+      "blocking_reason": "Requires multiple YDM/CJU radial tracks, DME arc endpoints, and arc join/exit geometry before it can become a route queue."
+    },
+    {
+      "procedure_id": "RADAR_2E",
+      "procedure_name": "RADAR 2E",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radar_vector",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "runway_heading_vector",
+        "release_altitude"
+      ],
+      "route_text": "Take off RWY 07: climb on runway heading until reaching 2 200 ft for radar vector.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RADAR TWO ECHO DEPARTURE chart text",
+      "blocking_reason": "Requires runway-heading vector behavior and radar release altitude handling before it can become a runtime SID mode."
+    },
+    {
+      "procedure_id": "RADAR_3W",
+      "procedure_name": "RADAR 3W",
+      "procedure_type": "SID",
+      "runway": "25",
+      "route_definition_type": "radar_vector",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "runway_heading_vector",
+        "release_altitude"
+      ],
+      "route_text": "Take off RWY 25: climb on runway heading until reaching 3 000 ft for radar vector.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RADAR THREE WHISKEY DEPARTURE chart text",
+      "blocking_reason": "Requires runway-heading vector behavior and radar release altitude handling before it can become a runtime SID mode."
+    },
+    {
+      "procedure_id": "RADAR_1N",
+      "procedure_name": "RADAR 1N",
+      "procedure_type": "SID",
+      "runway": "31",
+      "route_definition_type": "radar_vector",
+      "audit_status": "pending_geometry_derivation",
+      "automation_status": "blocked_pending_geometry_derivation",
+      "runtime_route_allowed": false,
+      "required_geometry_derivations": [
+        "runway_heading_vector",
+        "release_altitude"
+      ],
+      "route_text": "Take off RWY 31: climb on runway heading until reaching 2 200 ft for radar vector.",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "RADAR ONE NOVEMBER DEPARTURE chart text",
+      "blocking_reason": "Requires runway-heading vector behavior and radar release altitude handling before it can become a runtime SID mode."
+    }
+  ]
+}

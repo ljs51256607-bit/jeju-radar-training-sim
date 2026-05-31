@@ -1,0 +1,407 @@
+{
+  "metadata": {
+    "name": "rkpc_scenario_fix_role_register",
+    "updated_on": "2026-05-05",
+    "purpose": "Scenario-generation role register for Jeju arrival entry fixes, departure exit fixes, and conventional bidirectional gates.",
+    "source_registers": [
+      "data/authority/rkpc_terminal_fix_register.csv",
+      "data/authority/rkpc_sid_star_route_register.csv"
+    ],
+    "rules": [
+      "STAR entry fix is the first named fix of a STAR route.",
+      "SID exit fix is the final major outbound fix of an RNAV SID route, not the first SID fix.",
+      "IPDAS and MAKET are conventional bidirectional gates and may be used for both inbound and outbound scenario traffic.",
+      "LIMDI, TAMNA, IPDAS, and MAKET are overlapping gates and must keep both arrival/departure roles where applicable.",
+      "RWY31 RNAV departure procedures are available only inside simulator RWY25+31 mode.",
+      "For duplicated exit fixes in RWY25+31 mode, the runway-specific SID should be selected by procedure/runway context; exit-fix role remains common."
+    ]
+  },
+  "fixes": [
+    {
+      "fix_id": "DOTOL",
+      "latitude": 34.254278,
+      "longitude": 126.610167,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_star_entry"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "STAR_FIRST_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_DOTOL_2P",
+          "RNAV_DOTOL_2M"
+        ]
+      },
+      "departure": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "notes": "RNAV STAR entry only."
+    },
+    {
+      "fix_id": "UPGOS",
+      "latitude": 33.95925,
+      "longitude": 127.331389,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_star_entry"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "STAR_FIRST_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_UPGOS_1P",
+          "RNAV_UPGOS_2M"
+        ]
+      },
+      "departure": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "notes": "RNAV STAR entry only."
+    },
+    {
+      "fix_id": "TAMNA",
+      "latitude": 33.470972,
+      "longitude": 127.331389,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry",
+        "departure_exit"
+      ],
+      "overlap_gate": true,
+      "route_family": [
+        "rnav_star_entry",
+        "rnav_sid_exit",
+        "conventional_radar_sid"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "STAR_FIRST_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_TAMNA_2P",
+          "RNAV_TAMNA_2M"
+        ]
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "SID_EXIT_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_TAMNA_2E",
+          "RNAV_TAMNA_3W",
+          "TAMNA_2K"
+        ]
+      },
+      "notes": "Overlapping gate: arrival STAR entry and departure SID exit."
+    },
+    {
+      "fix_id": "TOSAN",
+      "latitude": 33.003333,
+      "longitude": 126.771861,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_star_entry"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "STAR_FIRST_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_TOSAN_2P",
+          "RNAV_TOSAN_2M"
+        ]
+      },
+      "departure": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "notes": "RNAV STAR entry only."
+    },
+    {
+      "fix_id": "SOSDO",
+      "latitude": 33.003333,
+      "longitude": 126.459722,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_star_entry"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "STAR_FIRST_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_SOSDO_2P",
+          "RNAV_SOSDO_2M"
+        ]
+      },
+      "departure": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "notes": "RNAV STAR entry only."
+    },
+    {
+      "fix_id": "LIMDI",
+      "latitude": 33.553694,
+      "longitude": 125.831389,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry",
+        "departure_exit"
+      ],
+      "overlap_gate": true,
+      "route_family": [
+        "rnav_star_entry",
+        "rnav_sid_exit"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "STAR_FIRST_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_LIMDI_1P",
+          "RNAV_LIMDI_2M"
+        ]
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "SID_EXIT_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_LIMDI_1E",
+          "RNAV_LIMDI_1W"
+        ]
+      },
+      "notes": "Overlapping gate: arrival STAR entry and departure SID exit."
+    },
+    {
+      "fix_id": "KAMIT",
+      "latitude": 34.253917,
+      "longitude": 126.771583,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "departure_exit"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_sid_exit"
+      ],
+      "arrival": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "SID_EXIT_FIX",
+        "runways": [
+          "07",
+          "25",
+          "31"
+        ],
+        "procedures": [
+          "RNAV_KAMIT_2E",
+          "RNAV_KAMIT_1W",
+          "RNAV_KAMIT_2N"
+        ]
+      },
+      "notes": "RNAV SID exit fix. RWY31 procedure is paired with RWY25+31 simulator mode."
+    },
+    {
+      "fix_id": "AKPON",
+      "latitude": 33.780444,
+      "longitude": 127.331389,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "departure_exit"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_sid_exit"
+      ],
+      "arrival": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "SID_EXIT_FIX",
+        "runways": [
+          "07",
+          "25",
+          "31"
+        ],
+        "procedures": [
+          "RNAV_AKPON_1E",
+          "RNAV_AKPON_1W",
+          "RNAV_AKPON_1N"
+        ]
+      },
+      "notes": "RNAV SID exit fix. RWY31 procedure is paired with RWY25+31 simulator mode."
+    },
+    {
+      "fix_id": "PANSI",
+      "latitude": 33.004,
+      "longitude": 126.206972,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "departure_exit"
+      ],
+      "overlap_gate": false,
+      "route_family": [
+        "rnav_sid_exit"
+      ],
+      "arrival": {
+        "enabled": false,
+        "basis": null,
+        "runways": [],
+        "procedures": []
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "SID_EXIT_FIX",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "RNAV_PANSI_2E",
+          "RNAV_PANSI_2W"
+        ]
+      },
+      "notes": "RNAV SID exit only."
+    },
+    {
+      "fix_id": "IPDAS",
+      "latitude": 34.254083,
+      "longitude": 126.717056,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry",
+        "departure_exit",
+        "conventional_gate"
+      ],
+      "overlap_gate": true,
+      "route_family": [
+        "conventional_gate",
+        "rnav_sid_exit",
+        "conventional_radar_sid"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "CONVENTIONAL_GATE",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": []
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "SID_EXIT_FIX_OR_CONVENTIONAL_GATE",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": [
+          "IPDAS_4K",
+          "RNAV_IPDAS_1W",
+          "IPDAS_1L"
+        ]
+      },
+      "notes": "Overlapping gate: conventional inbound/outbound gate and SID exit. Arrival use is conventional-gate scenario logic, not current RNAV STAR entry."
+    },
+    {
+      "fix_id": "MAKET",
+      "latitude": 33.914444,
+      "longitude": 127.331389,
+      "coordinate_status": "coordinate_verified",
+      "scenario_roles": [
+        "arrival_entry",
+        "departure_exit",
+        "conventional_gate"
+      ],
+      "overlap_gate": true,
+      "route_family": [
+        "conventional_gate",
+        "conventional_radar_sid"
+      ],
+      "arrival": {
+        "enabled": true,
+        "basis": "CONVENTIONAL_GATE",
+        "runways": [
+          "07",
+          "25"
+        ],
+        "procedures": []
+      },
+      "departure": {
+        "enabled": true,
+        "basis": "CONVENTIONAL_GATE",
+        "runways": [
+          "07"
+        ],
+        "procedures": [
+          "MAKET_4K"
+        ]
+      },
+      "notes": "Overlapping conventional gate. Arrival use is conventional-gate scenario logic, not current RNAV STAR entry."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "type": "FeatureCollection",
+  "name": "rkpc_conventional_sid_reference_overlays",
+  "metadata": {
+    "status": "conventional_sid_reference_overlay_candidate_v1",
+    "authority_level": "reference_overlay_only",
+    "runtime_role": "reference_overlay",
+    "motion_authority": "none",
+    "source_chart_linework_may_drive_motion": false,
+    "exact_runtime_route_allowed": false,
+    "training_runtime_path_allowed": false,
+    "candidate_overlay_label": "REF/CAND",
+    "coordinate_space": "WGS84_lon_lat_inverse_page_georeference_candidate",
+    "source_centerline_file": "data/geometry/rkpc_sid_page3_ipdas_4k_centerline_candidates.json",
+    "source_georeference_file": "data/authority/rkpc_sid_page3_grid_georeference_audit.json",
+    "source_pdf": "public_derived_training_dataset",
+    "source_pdf_page": 3,
+    "limitations": [
+      "This overlay is a visual reference candidate derived from page-space chart centerlines.",
+      "The IPDAS 4K chart linework remains offset from radial/DME derived geometry.",
+      "The overlay is disabled on exact surface and must never drive aircraft motion."
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "REF_CAND_IPDAS_4K_R013_TO_IPDAS",
+        "layer": "conventional_sid_reference_overlay",
+        "procedure_id": "IPDAS_4K",
+        "procedure_leg": "R013_CJU_TO_IPDAS",
+        "runway": "07",
+        "authority_level": "reference_overlay_only",
+        "runtime_role": "reference_overlay",
+        "motion_authority": "none",
+        "source_chart_linework_may_drive_motion": false,
+        "exact_runtime_route_allowed": false,
+        "training_runtime_path_allowed": false,
+        "candidate_overlay_label": "REF/CAND",
+        "source_centerline_id": "IPDAS_4K_R013_TO_IPDAS_CENTERLINE_CANDIDATE",
+        "source_candidate_ids": [
+          "SID_PAGE3_FILLED_ROUTE_CANDIDATE_001",
+          "SID_PAGE3_FILLED_ROUTE_CANDIDATE_002"
+        ],
+        "source_coordinate_space": "pdf_svg_page_points",
+        "georeference_status": "sid_page3_grid_georeference_vector_tick_candidate_v2",
+        "centerline_status": "candidate_centerline_from_paired_filled_polygons",
+        "page_track_deg": 5.27,
+        "interpretation": "Centerline candidate for the tall filled IPDAS 4K R013 CJU to IPDAS published chart line.",
+        "limitations": [
+          "Inverse-georeferenced chart linework candidate only.",
+          "Not approved for exact procedure automation.",
+          "Must not drive aircraft motion."
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.493749,
+            33.728289
+          ],
+          [
+            126.558297,
+            34.312428
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "REF_CAND_IPDAS_4K_R067_YDM_SHARED",
+        "layer": "conventional_sid_reference_overlay",
+        "procedure_id": "IPDAS_4K",
+        "procedure_leg": "R067_YDM_SHARED_INITIAL",
+        "runway": "07",
+        "authority_level": "reference_overlay_only",
+        "runtime_role": "reference_overlay",
+        "motion_authority": "none",
+        "source_chart_linework_may_drive_motion": false,
+        "exact_runtime_route_allowed": false,
+        "training_runtime_path_allowed": false,
+        "candidate_overlay_label": "REF/CAND",
+        "source_centerline_id": "IPDAS_4K_R067_YDM_SHARED_CENTERLINE_CANDIDATE",
+        "source_candidate_ids": [
+          "SID_PAGE3_FILLED_ROUTE_CANDIDATE_018",
+          "SID_PAGE3_FILLED_ROUTE_CANDIDATE_019"
+        ],
+        "source_coordinate_space": "pdf_svg_page_points",
+        "georeference_status": "sid_page3_grid_georeference_vector_tick_candidate_v2",
+        "centerline_status": "candidate_centerline_from_paired_filled_polygons",
+        "page_track_deg": 60.3,
+        "interpretation": "Centerline candidate for the shared R067 YDM route segment near the IPDAS 4K D6.5 split area.",
+        "limitations": [
+          "Inverse-georeferenced chart linework candidate only.",
+          "Not approved for exact procedure automation.",
+          "Must not drive aircraft motion."
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.387516,
+            33.54348
+          ],
+          [
+            126.699337,
+            33.69193
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "status": "training_sim_v1",
+    "description": "Default managed flight profile rules for Jeju APP simulator. Values are training-simulation defaults, not certified aircraft performance data.",
+    "principles": [
+      "Arrival procedure speeds are treated as maximum restrictions, not acceleration targets.",
+      "ARR/APP RESUME NORMAL SPEED releases controller-assigned speed and does not command acceleration.",
+      "DEP RESUME NORMAL SPEED returns to the climb speed schedule.",
+      "Arrival descent below 10000 ft is gated until IAS is at or below 250 kt.",
+      "DES VIA to a below-10000-ft constraint uses A100/250 first when the aircraft is still fast.",
+      "Minimum speed is a controller command to reduce toward 155 kt, not an automatic below-5000-ft floor.",
+      "ILS final speed schedule is IAF 195 kt, IF 180 kt, 5 NM 160 kt, then aircraft-type landing speed inside 5 NM."
+    ]
+  },
+  "default_profile_id": "rkpc_training_default",
+  "profiles": [
+    {
+      "id": "rkpc_training_default",
+      "global_max_speed_kt": 310,
+      "arrival": {
+        "entry_speed_kt": {
+          "min": 280,
+          "max": 300
+        },
+        "speed_gate": {
+          "altitude_ft": 10000,
+          "max_speed_kt": 250,
+          "release_margin_kt": 1
+        },
+        "minimum_speed_command": {
+          "target_speed_kt": 155,
+          "typical_below_altitude_ft": 5000
+        },
+        "approach_landing_speed": {
+          "threshold_distance_nm": 5,
+          "default_speed_kt": 145,
+          "by_aircraft_type": {
+            "B737": 145,
+            "B738": 145,
+            "A320": 135,
+            "A321": 135
+          }
+        },
+        "default_descent_fpm": 1500,
+        "default_climb_fpm": 1800,
+        "procedure_speed_max_kt": {
+          "MANBA": 220,
+          "YUMIN": 195,
+          "DUKAL": 195,
+          "LIMSO": 180,
+          "TOKIN": 180,
+          "RW070": 160,
+          "RW250": 160
+        },
+        "approach_phase_speed_max_kt": {
+          "initial": 195,
+          "intermediate": 180,
+          "final": 160
+        }
+      },
+      "departure": {
+        "below_10000_speed_kt": 250,
+        "above_10000_speed_kt": 300,
+        "speed_transition_altitude_ft": 10000,
+        "initial_climb_fpm": 2200,
+        "mid_climb_fpm": 1800,
+        "default_descent_fpm": 1500
+      },
+      "notes": [
+        "APP/ARR speed restrictions cap speed only; they do not cause speed-up after RESUME NORMAL SPEED.",
+        "MANBA/YUMIN/DUKAL/LIMSO/TOKIN/RWY speed values are v1 training defaults aligned to the current modeled STAR/ILS flow.",
+        "MINIMUM SPEED uses minimum_speed_command.target_speed_kt as a practical deceleration target. It is not the same as SPEED OR GREATER."
+      ]
+    }
+  ]
+}

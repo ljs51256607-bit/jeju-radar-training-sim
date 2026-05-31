@@ -1,0 +1,954 @@
+{
+  "type": "FeatureCollection",
+  "name": "rwy07_procedure_lines",
+  "metadata": {
+    "status": "coordinate_verified_rwy07_overlay_subset",
+    "description": "RWY 07-only SID/STAR overlay and simplified ILS RWY 07 final approach line.",
+    "included_route_count": 11,
+    "included_route_statuses": [
+      "coordinate_verified"
+    ],
+    "excluded_routes": [
+      {
+        "procedure_id": "IPDAS_4K",
+        "procedure_type": "SID",
+        "coordinate_status": "requires_radial_dme_derivation",
+        "reason": "not_coordinate_verified_for_rwy07_overlay"
+      },
+      {
+        "procedure_id": "MAKET_4K",
+        "procedure_type": "SID",
+        "coordinate_status": "requires_radial_dme_derivation",
+        "reason": "not_coordinate_verified_for_rwy07_overlay"
+      },
+      {
+        "procedure_id": "TAMNA_2K",
+        "procedure_type": "SID",
+        "coordinate_status": "requires_radial_dme_derivation",
+        "reason": "not_coordinate_verified_for_rwy07_overlay"
+      },
+      {
+        "procedure_id": "CJU_5K",
+        "procedure_type": "SID",
+        "coordinate_status": "requires_radial_dme_derivation",
+        "reason": "not_coordinate_verified_for_rwy07_overlay"
+      },
+      {
+        "procedure_id": "RADAR_2E",
+        "procedure_type": "SID",
+        "coordinate_status": "vector_only_no_fix_sequence",
+        "reason": "not_coordinate_verified_for_rwy07_overlay"
+      }
+    ],
+    "revision_notes": [
+      "RNAV DOTOL 2P includes PC726 as a coordinate-verified current fix based on KOCA eAIP RKPC AD CHART 2-18.",
+      "PC726 remains visible in the radar overlay as part of the current DOTOL 2P route."
+    ],
+    "source_files": [
+      "data/authority/rkpc_sid_star_route_register.csv",
+      "data/authority/rkpc_terminal_fix_register.csv",
+      "data/reference/rkpc_procedures.json",
+      "data/reference/rkpc_airport.json"
+    ],
+    "approach_roles": {
+      "YUMIN": "IAF",
+      "LIMSO": "IF",
+      "D5.3 ICJU": "FINAL_APP_FIX",
+      "RWY07_THR": "THRESHOLD"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_STAR_RNAV_DOTOL_2P",
+        "procedure_id": "RNAV_DOTOL_2P",
+        "procedure_name": "RNAV DOTOL 2P",
+        "procedure_type": "STAR",
+        "runway": "07",
+        "layer": "rwy07_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "DOTOL",
+          "CHUJA",
+          "PC726",
+          "BIROM",
+          "MANBA",
+          "PC621",
+          "PC622",
+          "PC623",
+          "PC624",
+          "PC625",
+          "PC626",
+          "DAKPI",
+          "PC628",
+          "PIMIK",
+          "YUMIN"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV DOTOL 2P general information and coding table",
+        "notes": [
+          "PC726 is retained as a coordinate-verified DOTOL 2P fix. KOCA eAIP RKPC AD 2.24 links STAR to RKPC AD CHART 2-18, and that chart's RNAV DOTOL 2P general information and coding table include PC726."
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.610167,
+            34.254278
+          ],
+          [
+            126.583389,
+            33.996472
+          ],
+          [
+            126.498444,
+            33.908944
+          ],
+          [
+            126.386056,
+            33.79275
+          ],
+          [
+            126.323333,
+            33.72775
+          ],
+          [
+            126.224694,
+            33.740944
+          ],
+          [
+            126.125722,
+            33.729556
+          ],
+          [
+            126.035056,
+            33.6945
+          ],
+          [
+            125.960611,
+            33.638861
+          ],
+          [
+            125.908833,
+            33.567528
+          ],
+          [
+            125.884139,
+            33.486639
+          ],
+          [
+            125.888639,
+            33.40325
+          ],
+          [
+            125.921806,
+            33.324556
+          ],
+          [
+            125.98075,
+            33.257333
+          ],
+          [
+            126.220972,
+            33.457139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_STAR_RNAV_UPGOS_1P",
+        "procedure_id": "RNAV_UPGOS_1P",
+        "procedure_name": "RNAV UPGOS 1P",
+        "procedure_type": "STAR",
+        "runway": "07",
+        "layer": "rwy07_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "UPGOS",
+          "PC728",
+          "PC721",
+          "PC722",
+          "BIROM",
+          "MANBA",
+          "PC621",
+          "PC622",
+          "PC623",
+          "PC624",
+          "PC625",
+          "PC626",
+          "DAKPI",
+          "PC628",
+          "PIMIK",
+          "YUMIN"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV UPGOS 1P general information",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.331389,
+            33.95925
+          ],
+          [
+            127.096944,
+            33.914944
+          ],
+          [
+            126.786028,
+            33.914806
+          ],
+          [
+            126.63025,
+            33.867472
+          ],
+          [
+            126.386056,
+            33.79275
+          ],
+          [
+            126.323333,
+            33.72775
+          ],
+          [
+            126.224694,
+            33.740944
+          ],
+          [
+            126.125722,
+            33.729556
+          ],
+          [
+            126.035056,
+            33.6945
+          ],
+          [
+            125.960611,
+            33.638861
+          ],
+          [
+            125.908833,
+            33.567528
+          ],
+          [
+            125.884139,
+            33.486639
+          ],
+          [
+            125.888639,
+            33.40325
+          ],
+          [
+            125.921806,
+            33.324556
+          ],
+          [
+            125.98075,
+            33.257333
+          ],
+          [
+            126.220972,
+            33.457139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_STAR_RNAV_TAMNA_2P",
+        "procedure_id": "RNAV_TAMNA_2P",
+        "procedure_name": "RNAV TAMNA 2P",
+        "procedure_type": "STAR",
+        "runway": "07",
+        "layer": "rwy07_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "TAMNA",
+          "CJU",
+          "PC723",
+          "PC724",
+          "MANBA",
+          "PC621",
+          "PC622",
+          "PC623",
+          "PC624",
+          "PC625",
+          "PC626",
+          "DAKPI",
+          "PC628",
+          "PIMIK",
+          "YUMIN"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV TAMNA 2P general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.331389,
+            33.470972
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.494972,
+            33.595639
+          ],
+          [
+            126.421972,
+            33.714444
+          ],
+          [
+            126.323333,
+            33.72775
+          ],
+          [
+            126.224694,
+            33.740944
+          ],
+          [
+            126.125722,
+            33.729556
+          ],
+          [
+            126.035056,
+            33.6945
+          ],
+          [
+            125.960611,
+            33.638861
+          ],
+          [
+            125.908833,
+            33.567528
+          ],
+          [
+            125.884139,
+            33.486639
+          ],
+          [
+            125.888639,
+            33.40325
+          ],
+          [
+            125.921806,
+            33.324556
+          ],
+          [
+            125.98075,
+            33.257333
+          ],
+          [
+            126.220972,
+            33.457139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_STAR_RNAV_TOSAN_2P",
+        "procedure_id": "RNAV_TOSAN_2P",
+        "procedure_name": "RNAV TOSAN 2P",
+        "procedure_type": "STAR",
+        "runway": "07",
+        "layer": "rwy07_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "TOSAN",
+          "CJU",
+          "PC723",
+          "PC724",
+          "MANBA",
+          "PC621",
+          "PC622",
+          "PC623",
+          "PC624",
+          "PC625",
+          "PC626",
+          "DAKPI",
+          "PC628",
+          "PIMIK",
+          "YUMIN"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV TOSAN 2P general information",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.771861,
+            33.003333
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.494972,
+            33.595639
+          ],
+          [
+            126.421972,
+            33.714444
+          ],
+          [
+            126.323333,
+            33.72775
+          ],
+          [
+            126.224694,
+            33.740944
+          ],
+          [
+            126.125722,
+            33.729556
+          ],
+          [
+            126.035056,
+            33.6945
+          ],
+          [
+            125.960611,
+            33.638861
+          ],
+          [
+            125.908833,
+            33.567528
+          ],
+          [
+            125.884139,
+            33.486639
+          ],
+          [
+            125.888639,
+            33.40325
+          ],
+          [
+            125.921806,
+            33.324556
+          ],
+          [
+            125.98075,
+            33.257333
+          ],
+          [
+            126.220972,
+            33.457139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_STAR_RNAV_SOSDO_2P",
+        "procedure_id": "RNAV_SOSDO_2P",
+        "procedure_name": "RNAV SOSDO 2P",
+        "procedure_type": "STAR",
+        "runway": "07",
+        "layer": "rwy07_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "SOSDO",
+          "CJU",
+          "PC723",
+          "PC724",
+          "MANBA",
+          "PC621",
+          "PC622",
+          "PC623",
+          "PC624",
+          "PC625",
+          "PC626",
+          "DAKPI",
+          "PC628",
+          "PIMIK",
+          "YUMIN"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV SOSDO 2P general information",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.459722,
+            33.003333
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.494972,
+            33.595639
+          ],
+          [
+            126.421972,
+            33.714444
+          ],
+          [
+            126.323333,
+            33.72775
+          ],
+          [
+            126.224694,
+            33.740944
+          ],
+          [
+            126.125722,
+            33.729556
+          ],
+          [
+            126.035056,
+            33.6945
+          ],
+          [
+            125.960611,
+            33.638861
+          ],
+          [
+            125.908833,
+            33.567528
+          ],
+          [
+            125.884139,
+            33.486639
+          ],
+          [
+            125.888639,
+            33.40325
+          ],
+          [
+            125.921806,
+            33.324556
+          ],
+          [
+            125.98075,
+            33.257333
+          ],
+          [
+            126.220972,
+            33.457139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_STAR_RNAV_LIMDI_1P",
+        "procedure_id": "RNAV_LIMDI_1P",
+        "procedure_name": "RNAV LIMDI 1P",
+        "procedure_type": "STAR",
+        "runway": "07",
+        "layer": "rwy07_star",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "LIMDI",
+          "PC727",
+          "PC725",
+          "CJU",
+          "PC723",
+          "PC724",
+          "MANBA",
+          "PC621",
+          "PC622",
+          "PC623",
+          "PC624",
+          "PC625",
+          "PC626",
+          "DAKPI",
+          "PC628",
+          "PIMIK",
+          "YUMIN"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV LIMDI 1P general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            125.831389,
+            33.553694
+          ],
+          [
+            126.249694,
+            33.406444
+          ],
+          [
+            126.482472,
+            33.323667
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.494972,
+            33.595639
+          ],
+          [
+            126.421972,
+            33.714444
+          ],
+          [
+            126.323333,
+            33.72775
+          ],
+          [
+            126.224694,
+            33.740944
+          ],
+          [
+            126.125722,
+            33.729556
+          ],
+          [
+            126.035056,
+            33.6945
+          ],
+          [
+            125.960611,
+            33.638861
+          ],
+          [
+            125.908833,
+            33.567528
+          ],
+          [
+            125.884139,
+            33.486639
+          ],
+          [
+            125.888639,
+            33.40325
+          ],
+          [
+            125.921806,
+            33.324556
+          ],
+          [
+            125.98075,
+            33.257333
+          ],
+          [
+            126.220972,
+            33.457139
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_SID_RNAV_KAMIT_2E",
+        "procedure_id": "RNAV_KAMIT_2E",
+        "procedure_name": "RNAV KAMIT 2E",
+        "procedure_type": "SID",
+        "runway": "07",
+        "layer": "rwy07_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "RWY07_THR",
+          "PC811",
+          "OLLEH",
+          "KAMIT"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV KAMIT 2E general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.713556,
+            33.703361
+          ],
+          [
+            126.740694,
+            33.961722
+          ],
+          [
+            126.771583,
+            34.253917
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_SID_RNAV_AKPON_1E",
+        "procedure_id": "RNAV_AKPON_1E",
+        "procedure_name": "RNAV AKPON 1E",
+        "procedure_type": "SID",
+        "runway": "07",
+        "layer": "rwy07_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "RWY07_THR",
+          "PALRI",
+          "AKPON"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV AKPON 1E general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.743722,
+            33.640889
+          ],
+          [
+            127.331389,
+            33.780444
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_SID_RNAV_TAMNA_2E",
+        "procedure_id": "RNAV_TAMNA_2E",
+        "procedure_name": "RNAV TAMNA 2E",
+        "procedure_type": "SID",
+        "runway": "07",
+        "layer": "rwy07_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "RWY07_THR",
+          "PALRI",
+          "TAMNA"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV TAMNA 2E general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.743722,
+            33.640889
+          ],
+          [
+            127.331389,
+            33.470972
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_SID_RNAV_PANSI_2E",
+        "procedure_id": "RNAV_PANSI_2E",
+        "procedure_name": "RNAV PANSI 2E",
+        "procedure_type": "SID",
+        "runway": "07",
+        "layer": "rwy07_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "RWY07_THR",
+          "PALRI",
+          "PC813",
+          "CJU",
+          "PC814",
+          "PANSI"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV PANSI 2E general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.743722,
+            33.640889
+          ],
+          [
+            126.847222,
+            33.49875
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.487083,
+            33.260111
+          ],
+          [
+            126.206972,
+            33.004
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_SID_RNAV_LIMDI_1E",
+        "procedure_id": "RNAV_LIMDI_1E",
+        "procedure_name": "RNAV LIMDI 1E",
+        "procedure_type": "SID",
+        "runway": "07",
+        "layer": "rwy07_sid",
+        "authority": "coordinate_verified",
+        "route_source": "data/authority/rkpc_sid_star_route_register.csv",
+        "fix_sequence": [
+          "RWY07_THR",
+          "PALRI",
+          "PC813",
+          "CJU",
+          "PC816",
+          "LIMDI"
+        ],
+        "source_file": "public_derived_training_dataset",
+        "source_section": "RNAV LIMDI 1E general information and coding table",
+        "notes": []
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.468472,
+            33.499881
+          ],
+          [
+            126.743722,
+            33.640889
+          ],
+          [
+            126.847222,
+            33.49875
+          ],
+          [
+            126.624111,
+            33.384611
+          ],
+          [
+            126.325222,
+            33.449028
+          ],
+          [
+            125.831389,
+            33.553694
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_ILS_FINAL_APPROACH_LINE",
+        "procedure_id": "ILS_Z_LOC_Z_RWY_07",
+        "procedure_name": "ILS Z or LOC Z RWY 07",
+        "procedure_type": "APPROACH",
+        "runway": "07",
+        "layer": "rwy07_final_approach",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json",
+        "fix_sequence": [
+          "YUMIN",
+          "LIMSO",
+          "RWY07_THR"
+        ],
+        "roles": {
+          "YUMIN": "IAF",
+          "LIMSO": "IF",
+          "D5.3 ICJU": "FINAL_APP_FIX",
+          "RWY07_THR": "THRESHOLD"
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.220972,
+            33.457139
+          ],
+          [
+            126.308611,
+            33.4175
+          ],
+          [
+            126.468472,
+            33.499881
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "RWY07_FINAL_APP_FIX_D53_ICJU",
+        "fix_id": "D5.3 ICJU",
+        "procedure_id": "ILS_Z_LOC_Z_RWY_07",
+        "procedure_type": "APPROACH",
+        "runway": "07",
+        "layer": "final_app_fix",
+        "marker": "x",
+        "authority": "coordinate_verified",
+        "route_source": "data/reference/rkpc_procedures.json"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.381556,
+          33.455139
+        ]
+      }
+    }
+  ]
+}

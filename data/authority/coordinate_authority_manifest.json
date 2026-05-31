@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "name": "jeju_coordinate_authority_manifest",
+    "updated_on": "2026-05-05",
+    "policy_file": "COORDINATE_AUTHORITY_POLICY.md",
+    "description": "Coordinate authority inventory for exact-mode gating. The purpose is to separate verified coordinate layers from prototype-only layers."
+  },
+  "layers": [
+    {
+      "layer_id": "RKPC_AIRPORT_CORE",
+      "path": "data/reference/rkpc_airport.json",
+      "check_profile": "airport_core",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_FIX_CATALOG",
+      "path": "data/reference/rkpc_procedures.json",
+      "check_profile": "procedure_fixes",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "public_derived_training_dataset",
+        "public_derived_training_dataset",
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_REFERENCE_POINTS",
+      "path": "data/reference/rkpc_reference_points.json",
+      "check_profile": "reference_points_document",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "public_derived_training_dataset",
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_CHART_PRIMITIVES",
+      "path": "data/reference/rkpc_chart_primitives.json",
+      "check_profile": "chart_primitives_document",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "data/reference/rkpc_reference_points.json",
+        "public_derived_training_dataset",
+        "public_derived_training_dataset",
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_VIDEOMAP_LINES",
+      "path": "data/geometry/videomap_lines.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "data/authority/videomap_anchor_register.csv",
+        "data/reference/rkpc_airport.json",
+        "data/reference/rkpc_procedures.json"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_VIDEOMAP_LABELS",
+      "path": "data/geometry/videomap_labels.json",
+      "check_profile": "labels_document",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "data/authority/videomap_anchor_register.csv",
+        "data/reference/rkpc_airport.json",
+        "data/reference/rkpc_procedures.json"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_TMA_AIRSPACE",
+      "path": "data/geometry/jeju_tma_airspace.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "data/authority/rkpc_tma_airspace_register.csv",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-02-18-AIRAC/html/eAIP/KR-ENR-2.1-en-GB.html"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_SURVEILLANCE_REFERENCE_BOUNDARY",
+      "path": "data/geometry/tma_boundary.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/authority/tma_boundary_vertices.csv",
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_MVA_BOUNDARY_SPEC",
+      "path": "data/authority/mva_boundary_spec.json",
+      "check_profile": "mva_boundary_spec",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "data/authority/mva_sector_vertex_register.csv",
+        "data/reference/rkpc_reference_points.json",
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_MVA_SECTORS",
+      "path": "data/geometry/mva_sectors.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "data/authority/mva_sector_vertex_register.csv",
+        "data/authority/mva_boundary_spec.json",
+        "data/reference/rkpc_reference_points.json",
+        "public_derived_training_dataset"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_COASTLINE_SOURCE",
+      "path": "data/authority/coastline_source_manifest.json",
+      "check_profile": "coastline_source_manifest",
+      "current_authority": "coordinate_verified",
+      "target_authority": "coordinate_verified",
+      "exact_mode_blocking": true,
+      "source_files": [
+        "tmp/coastline/khoa_coastline_2025/2025년 전국 해안선/2025년 전국 해안선.shp",
+        "https://www.data.go.kr/data/15083948/fileData.do"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_COASTLINE_UI",
+      "path": "data/geometry/coastline_lines_ui.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "display_background_simplified_public_dataset",
+      "target_authority": "display_background_simplified_public_dataset",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "https://naturalearth.s3.amazonaws.com/10m_physical/ne_10m_coastline.zip"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_ATS_ROUTES",
+      "path": "data/geometry/ats_routes.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "official_aip_extracted",
+      "target_authority": "official_aip_extracted",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/authority/ats_route_register.json",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.1-en-GB.html",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-3.3-en-GB.html",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-4.4-en-GB.html"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_SPECIAL_USE_AIRSPACE",
+      "path": "data/geometry/special_use_airspace.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "official_aip_extracted",
+      "target_authority": "official_aip_extracted",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/authority/special_use_airspace_register.json",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.2-en-GB.html",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-15-AIRAC/html/eAIP/KR-ENR-5.3-en-GB.html"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_RWY07_PROCEDURE_LINES",
+      "path": "data/geometry/rwy07_procedure_lines.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified_subset",
+      "target_authority": "coordinate_verified_subset",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/authority/rkpc_sid_star_route_register.csv",
+        "data/authority/rkpc_terminal_fix_register.csv",
+        "data/reference/rkpc_procedures.json",
+        "data/reference/rkpc_airport.json"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_RWY25_PROCEDURE_LINES",
+      "path": "data/geometry/rwy25_procedure_lines.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified_subset",
+      "target_authority": "coordinate_verified_subset",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/reference/rkpc_procedures.json",
+        "data/reference/rkpc_airport.json",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-18%29%20STAR.pdf",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_RWY31_PROCEDURE_LINES",
+      "path": "data/geometry/rwy31_procedure_lines.geojson",
+      "check_profile": "feature_collection",
+      "current_authority": "coordinate_verified_subset",
+      "target_authority": "coordinate_verified_subset",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/reference/rkpc_procedures.json",
+        "data/reference/rkpc_airport.json",
+        "https://aim.koca.go.kr/eaipPub/Package/2026-04-30/pdf/AD/RKPC/%282-12%29%20SID.pdf"
+      ],
+      "blocking_reason": null
+    },
+    {
+      "layer_id": "RKPC_TRAFFIC_SEED",
+      "path": "data/scenarios/traffic_seed.json",
+      "check_profile": "scenario_seed",
+      "current_authority": "derived_coordinate",
+      "target_authority": "derived_coordinate",
+      "exact_mode_blocking": false,
+      "source_files": [
+        "data/scenarios/traffic_seed.json"
+      ],
+      "blocking_reason": null
+    }
+  ]
+}

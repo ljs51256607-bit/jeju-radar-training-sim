@@ -1,0 +1,69 @@
+{
+  "type": "FeatureCollection",
+  "name": "jeju_tma_airspace_display",
+  "metadata": {
+    "status": "display_union_from_coordinate_verified_tma_airspace",
+    "description": "Screen display union of Jeju TMA T23/T43. Source polygons remain in jeju_tma_airspace.geojson.",
+    "source_geometry": "data/geometry/jeju_tma_airspace.geojson",
+    "source_register": "data/authority/rkpc_tma_airspace_register.csv",
+    "display_rule": "Remove shared T23/T43 internal edge and render one outer TMA outline.",
+    "source_feature_ids": [
+      "JEJU_TMA_T23_AIRSPACE",
+      "JEJU_TMA_T43_AIRSPACE"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "JEJU_TMA_DISPLAY_UNION",
+        "name": "Jeju TMA display union",
+        "authority": "display_union_from_coordinate_verified_source",
+        "source": "data/geometry/jeju_tma_airspace.geojson",
+        "source_feature_ids": [
+          "JEJU_TMA_T23_AIRSPACE",
+          "JEJU_TMA_T43_AIRSPACE"
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              125.831389,
+              33.003333
+            ],
+            [
+              125.831389,
+              34.253056
+            ],
+            [
+              125.998056,
+              34.253056
+            ],
+            [
+              127.331389,
+              34.253333
+            ],
+            [
+              127.331389,
+              33.27
+            ],
+            [
+              126.998056,
+              33.003333
+            ],
+            [
+              125.998056,
+              33.003333
+            ],
+            [
+              125.831389,
+              33.003333
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

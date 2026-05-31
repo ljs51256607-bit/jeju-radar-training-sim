@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "id": "pilot_readback_templates_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "templates": [
+    {
+      "intent": "ASSIGN_HEADING",
+      "template_id": "assign_heading_basic",
+      "template": "{heading_instruction}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "heading_deg"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_PRESENT_HEADING",
+      "template_id": "maintain_present_heading",
+      "template": "Present heading, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "ASSIGN_SPEED",
+      "template_id": "assign_speed_basic",
+      "template": "{speed_instruction}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "speed_kt"
+      ]
+    },
+    {
+      "intent": "RESUME_NORMAL_SPEED",
+      "template_id": "resume_normal_speed",
+      "template": "Resume normal speed, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "MINIMUM_SPEED",
+      "template_id": "minimum_speed_practical",
+      "template": "Minimum speed, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_SPEED_UNTIL",
+      "template_id": "maintain_speed_until",
+      "template": "Maintain {speed_kt} knots or greater until {release_condition_text}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "speed_kt",
+        "release_condition_text"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_SPEED_LIMIT",
+      "template_id": "maintain_speed_limit",
+      "template": "Maintain {speed_kt} knots {speed_limit_direction}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "speed_kt",
+        "speed_limit_direction"
+      ]
+    },
+    {
+      "intent": "ASSIGN_ALTITUDE",
+      "template_id": "assign_altitude_basic",
+      "template": "{altitude_instruction}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "altitude_ft"
+      ]
+    },
+    {
+      "intent": "ASSIGN_VERTICAL_SPEED",
+      "template_id": "assign_vertical_speed_basic",
+      "template": "{vertical_speed_instruction}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "vertical_rate_fpm"
+      ]
+    },
+    {
+      "intent": "INCREASE_DESCENT_RATE",
+      "template_id": "increase_descent_rate",
+      "template": "Increase descent rate, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "INCREASE_CLIMB_RATE",
+      "template_id": "increase_climb_rate",
+      "template": "Increase climb rate, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "EXPEDITE_DESCENT",
+      "template_id": "expedite_descent",
+      "template": "Expedite descent, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "EXPEDITE_CLIMB",
+      "template_id": "expedite_climb",
+      "template": "Expedite climb, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "RESUME_NORMAL_CLIMB",
+      "template_id": "resume_normal_climb",
+      "template": "Resume normal climb, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "RESUME_NORMAL_DESCENT",
+      "template_id": "resume_normal_descent",
+      "template": "Resume normal descent, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "DIRECT_TO_FIX",
+      "template_id": "direct_to_fix_basic",
+      "template": "Direct {fix_id}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "fix_id"
+      ]
+    },
+    {
+      "intent": "DIRECT_TO_FIX",
+      "template_id": "direct_to_fix_descend_cancel_level",
+      "template": "Direct {fix_id}, descend {altitude_ft} feet, cancel level restriction, {callsign}",
+      "required_slots": [
+        "callsign",
+        "fix_id",
+        "altitude_ft",
+        "cancel_level_restriction"
+      ]
+    },
+    {
+      "intent": "CLEARED_STAR",
+      "template_id": "cleared_star_basic",
+      "template": "Cleared STAR, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "CLEARED_SID",
+      "template_id": "cleared_sid_basic",
+      "template": "Cleared SID, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "CLEARED_ILS",
+      "template_id": "cleared_ils_basic",
+      "template": "Cleared ILS runway {runway}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "runway"
+      ]
+    },
+    {
+      "intent": "CLEARED_VISUAL_APPROACH",
+      "template_id": "cleared_visual_approach_basic",
+      "template": "Cleared visual approach runway {runway}, {callsign}",
+      "required_slots": [
+        "callsign",
+        "runway"
+      ]
+    },
+    {
+      "intent": "GO_AROUND",
+      "template_id": "go_around_basic",
+      "template": "Going around, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "FLY_MISSED_APPROACH",
+      "template_id": "fly_missed_approach_basic",
+      "template": "Flying missed approach, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "HOLD_AT_FIX",
+      "template_id": "hold_at_fix_basic",
+      "template": "Hold at {fix_id}, {turn_direction} turns, {leg_time_minutes} minute legs, {callsign}",
+      "required_slots": [
+        "callsign",
+        "fix_id"
+      ]
+    },
+    {
+      "intent": "DESCEND_VIA",
+      "template_id": "descend_via_basic",
+      "template": "Descend via, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "CANCEL_LEVEL_RESTRICTION",
+      "template_id": "cancel_level_restriction_fix",
+      "template": "Cancel {fix_id} level restriction, {callsign}",
+      "required_slots": [
+        "callsign",
+        "fix_id"
+      ]
+    },
+    {
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "template_id": "cancel_speed_restriction_basic",
+      "template": "Cancel speed restriction, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "template_id": "cancel_speed_restriction_fix",
+      "template": "Cancel {fix_id} speed restriction, {callsign}",
+      "required_slots": [
+        "callsign",
+        "fix_id"
+      ]
+    },
+    {
+      "intent": "FIRST_CONTACT_ACK",
+      "template_id": "first_contact_radar_contact",
+      "template": "Radar contact, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "FIRST_CONTACT_ACK",
+      "template_id": "first_contact_go_ahead",
+      "template": "Go ahead, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "AFFIRM",
+      "template_id": "affirm_basic",
+      "template": "Affirm",
+      "required_slots": []
+    },
+    {
+      "intent": "NEGATIVE",
+      "template_id": "negative_basic",
+      "template": "Negative",
+      "required_slots": []
+    },
+    {
+      "intent": "SAY_AGAIN",
+      "template_id": "say_again_basic",
+      "template": "Say again, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    },
+    {
+      "intent": "PILOT_UNABLE",
+      "template_id": "unable_basic",
+      "template": "Unable, {callsign}",
+      "required_slots": [
+        "callsign"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "type": "FeatureCollection",
+  "name": "jeju_tma_airspace",
+  "metadata": {
+    "status": "coordinate_verified_from_aip_enr_2_1",
+    "description": "Jeju Terminal Control Area airspace polygons from official eAIP ENR 2.1 coordinates. This is the primary TMA boundary layer.",
+    "source_register": "data/authority/rkpc_tma_airspace_register.csv",
+    "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-02-18-AIRAC/html/eAIP/KR-ENR-2.1-en-GB.html",
+    "important_note": "data/geometry/tma_boundary.geojson is a surveillance/MVA chart reference boundary and must not be treated as the primary TMA airspace boundary.",
+    "required_properties": [
+      "feature_id",
+      "area_id",
+      "upper_limit",
+      "lower_limit",
+      "airspace_class",
+      "source_register"
+    ]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "JEJU_TMA_T23_AIRSPACE",
+        "area_id": "JEJU_TMA_T23",
+        "name": "Jeju Terminal Control Area T23",
+        "upper_limit": "FL 165",
+        "lower_limit": "1 000 ft AGL",
+        "airspace_class": "B/D/E",
+        "authority": "coordinate_verified",
+        "source_name": "Official eAIP ENR 2.1",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-02-18-AIRAC/html/eAIP/KR-ENR-2.1-en-GB.html",
+        "source_register": "data/authority/rkpc_tma_airspace_register.csv",
+        "label_latitude": 33.556611,
+        "label_longitude": 126.731389,
+        "vertex_ids": [
+          "JEJU_TMA_T23_V01",
+          "JEJU_TMA_T23_V02",
+          "JEJU_TMA_T23_V03",
+          "JEJU_TMA_T23_V04",
+          "JEJU_TMA_T23_V05"
+        ],
+        "raw_vertices": [
+          {
+            "vertex_id": "JEJU_TMA_T23_V01",
+            "sequence": 1,
+            "raw_lat": "330012N",
+            "raw_lon": "1255953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T23_V02",
+            "sequence": 2,
+            "raw_lat": "341511N",
+            "raw_lon": "1255953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T23_V03",
+            "sequence": 3,
+            "raw_lat": "341512N",
+            "raw_lon": "1271953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T23_V04",
+            "sequence": 4,
+            "raw_lat": "331612N",
+            "raw_lon": "1271953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T23_V05",
+            "sequence": 5,
+            "raw_lat": "330012N",
+            "raw_lon": "1265953E"
+          }
+        ],
+        "notes": [
+          "ENR 2.1 lower limit note: 1 000 ft AMSL over territorial waters and 5 500 ft AMSL over high seas."
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              125.998056,
+              33.003333
+            ],
+            [
+              125.998056,
+              34.253056
+            ],
+            [
+              127.331389,
+              34.253333
+            ],
+            [
+              127.331389,
+              33.27
+            ],
+            [
+              126.998056,
+              33.003333
+            ],
+            [
+              125.998056,
+              33.003333
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "feature_id": "JEJU_TMA_T43_AIRSPACE",
+        "area_id": "JEJU_TMA_T43",
+        "name": "Jeju Terminal Control Area T43",
+        "upper_limit": "FL 165",
+        "lower_limit": "6 000 ft AMSL",
+        "airspace_class": "E",
+        "authority": "coordinate_verified",
+        "source_name": "Official eAIP ENR 2.1",
+        "source_url": "https://aim.koca.go.kr/eaipPub/Package/2026-02-18-AIRAC/html/eAIP/KR-ENR-2.1-en-GB.html",
+        "source_register": "data/authority/rkpc_tma_airspace_register.csv",
+        "label_latitude": 33.628194,
+        "label_longitude": 125.914723,
+        "vertex_ids": [
+          "JEJU_TMA_T43_V01",
+          "JEJU_TMA_T43_V02",
+          "JEJU_TMA_T43_V03",
+          "JEJU_TMA_T43_V04"
+        ],
+        "raw_vertices": [
+          {
+            "vertex_id": "JEJU_TMA_T43_V01",
+            "sequence": 1,
+            "raw_lat": "330012N",
+            "raw_lon": "1254953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T43_V02",
+            "sequence": 2,
+            "raw_lat": "341511N",
+            "raw_lon": "1254953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T43_V03",
+            "sequence": 3,
+            "raw_lat": "341511N",
+            "raw_lon": "1255953E"
+          },
+          {
+            "vertex_id": "JEJU_TMA_T43_V04",
+            "sequence": 4,
+            "raw_lat": "330012N",
+            "raw_lon": "1255953E"
+          }
+        ],
+        "notes": [
+          "West-side adjoining Jeju TMA block from ENR 2.1."
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              125.831389,
+              33.003333
+            ],
+            [
+              125.831389,
+              34.253056
+            ],
+            [
+              125.998056,
+              34.253056
+            ],
+            [
+              125.998056,
+              33.003333
+            ],
+            [
+              125.831389,
+              33.003333
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

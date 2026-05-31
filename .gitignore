@@ -1,0 +1,36 @@
+node_modules/
+dist/
+build/
+tmp/
+output/
+public/
+docs/internal/
+
+.runtime/
+.playwright-mcp/
+.codex-run/
+.vite/
+.dev-server/
+
+.*-verify/
+.*-verify-*/
+.*-build/
+.*-build-*/
+.tmp-*
+tmp-*
+
+*.log
+*.pyc
+__pycache__/
+
+.env
+.env.*
+*API KEY*
+*SECRET*
+*TOKEN*
+
+data/geometry/coastline_lines.geojson
+data/authority/sid_star_coverage_audit.json
+tools/
+public-test/
+제주 접근관제소 관련 정보/

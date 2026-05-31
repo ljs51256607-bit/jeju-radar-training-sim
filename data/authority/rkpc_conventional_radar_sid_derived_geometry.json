@@ -1,0 +1,182 @@
+{
+  "metadata": {
+    "name": "rkpc_conventional_radar_sid_derived_geometry",
+    "status": "partial_derived_geometry_v1",
+    "created_on": "2026-05-28",
+    "purpose": "Verified derived geometry for selected RKPC conventional/RADAR SID legs. Entries in this file do not authorize runtime procedure routing unless runtime_route_allowed is explicitly true.",
+    "source_registers": [
+      "data/authority/rkpc_sid_star_route_register.csv",
+      "data/authority/rkpc_conventional_radar_sid_geometry_audit.json",
+      "data/reference/rkpc_airport.json",
+      "data/authority/rkpc_terminal_fix_register.csv",
+      "data/reference/aircraft_performance_profiles.json"
+    ],
+    "rules": [
+      "Magnetic radials use the project RKPC conversion true_heading = magnetic_heading - 8.",
+      "Derived points preserve their source navaid, magnetic radial, true bearing, and DME distance.",
+      "Named terminal fixes are validated from the terminal fix register instead of being duplicated as derived points.",
+      "Turn capture models define capture tolerances only; they do not authorize runtime path following by themselves.",
+      "Partial derived geometry remains blocked for route automation until every required leg and intercept is audited."
+    ]
+  },
+  "summary": {
+    "procedure_count": 1,
+    "derived_point_count": 2,
+    "validated_terminal_fix_count": 1,
+    "turn_capture_model_count": 1,
+    "training_runtime_path_count": 1,
+    "runtime_route_allowed_count": 0
+  },
+  "procedures": [
+    {
+      "procedure_id": "IPDAS_4K",
+      "procedure_name": "IPDAS 4K",
+      "procedure_type": "SID",
+      "runway": "07",
+      "route_definition_type": "radial_dme",
+      "derivation_status": "training_runtime_path_constructed",
+      "runtime_route_allowed": false,
+      "automation_status": "blocked_pending_exact_chart_validation",
+      "magnetic_to_true_offset_deg": -8,
+      "source_file": "public_derived_training_dataset",
+      "source_section": "IPDAS FOUR KILO DEPARTURE chart text",
+      "route_text": "Climb on R 067 YDM until D6.5, then turn left to intercept R 013 CJU, then proceed direct to IPDAS.",
+      "derived_points": [
+        {
+          "point_id": "IPDAS_4K_YDM_R067_D6_5",
+          "label": "YDM R067 D6.5",
+          "source_navaid": "YDM",
+          "radial_magnetic_deg": 67,
+          "bearing_true_deg": 59,
+          "distance_nm": 6.5,
+          "latitude": 33.56718,
+          "longitude": 126.59898,
+          "derivation_method": "great_circle_destination_from_YDM_using_project_mag_var",
+          "source_text": "derived training source text redacted for public OSS dataset"
+        },
+        {
+          "point_id": "IPDAS_4K_CJU_R013_D30",
+          "label": "CJU R013 D30.0",
+          "source_navaid": "CJU",
+          "radial_magnetic_deg": 13,
+          "bearing_true_deg": 5,
+          "distance_nm": 30,
+          "crossing_altitude_ft": 7000,
+          "latitude": 33.882362,
+          "longitude": 126.676567,
+          "derivation_method": "great_circle_destination_from_CJU_using_project_mag_var",
+          "source_text": "derived training source text redacted for public OSS dataset"
+        }
+      ],
+      "derived_segments": [
+        {
+          "segment_id": "IPDAS_4K_D6_5_TO_CJU_R013_D30",
+          "from_point_id": "IPDAS_4K_YDM_R067_D6_5",
+          "to_point_id": "IPDAS_4K_CJU_R013_D30",
+          "routing_basis": "left_turn_to_intercept_CJU_R013",
+          "runtime_leg_allowed": false,
+          "blocking_reason": "Segment endpoints, capture tolerance, and training runtime path are modeled, but exact chart linework validation is not yet modeled."
+        },
+        {
+          "segment_id": "IPDAS_4K_CJU_R013_D30_TO_IPDAS",
+          "from_point_id": "IPDAS_4K_CJU_R013_D30",
+          "to_fix_id": "IPDAS",
+          "source_fix_register": "data/authority/rkpc_terminal_fix_register.csv#IPDAS",
+          "routing_basis": "continue_CJU_R013_to_IPDAS",
+          "radial_magnetic_deg": 13,
+          "bearing_true_deg": 5,
+          "distance_nm": 22.4,
+          "endpoint_cju_dme_nm": 52.3,
+          "endpoint_crossing_altitude_ft": 9000,
+          "source_text": "derived training source text redacted for public OSS dataset",
+          "runtime_leg_allowed": false,
+          "blocking_reason": "Continuation is validated and included in the training runtime path, but exact chart validation is still pending."
+        }
+      ],
+      "turn_capture_model": {
+        "model_status": "tolerance_model_only_not_runtime_path",
+        "turn_start_point_id": "IPDAS_4K_YDM_R067_D6_5",
+        "turn_direction": "left",
+        "initial_track_true_deg": 59,
+        "target_radial_source_navaid": "CJU",
+        "target_radial_magnetic_deg": 13,
+        "target_course_true_deg": 5,
+        "turn_angle_deg": 54,
+        "design_ground_speed_kt": 250,
+        "normal_bank_deg": 25,
+        "max_bank_deg": 30,
+        "nominal_turn_rate_deg_sec": 2.03,
+        "nominal_turn_radius_nm": 1.96,
+        "capture_tolerance": {
+          "cross_track_nm": 0.5,
+          "heading_error_deg": 10,
+          "min_cju_dme_nm": 10,
+          "max_cju_dme_nm": 30
+        },
+        "direct_course_turn_intersects_target_radial": false,
+        "requires_intercept_heading_model": true,
+        "runtime_path_allowed": false,
+        "blocking_reason": "A nominal 250kt/25deg continuous left turn from YDM R067 D6.5 to course 005 does not itself intersect CJU R013. Runtime guidance needs an explicit intercept-heading/path construction before this SID can be enabled."
+      },
+      "runtime_path": {
+        "path_id": "IPDAS_4K_training_runtime_path_v1",
+        "path_status": "training_runtime_path_constructed",
+        "runtime_class": "training_runtime_route",
+        "motion_authority": "text_radial_dme_derived_training_path",
+        "training_runtime_path_allowed": true,
+        "exact_runtime_route_allowed": false,
+        "reference_overlay_policy": {
+          "published_chart_linework_role": "reference_overlay_only",
+          "source_chart_linework_may_drive_motion": false,
+          "exact_overlay_allowed": false,
+          "candidate_overlay_label": "REF/CAND"
+        },
+        "route": [
+          {
+            "kind": "derived_point",
+            "point_id": "IPDAS_4K_YDM_R067_D6_5",
+            "label": "YDM R067 D6.5",
+            "source_text": "derived training source text redacted for public OSS dataset"
+          },
+          {
+            "kind": "constructed_intercept",
+            "point_id": "IPDAS_4K_CJU_R013_INTERCEPT_D15",
+            "label": "CJU R013 D15.0 intercept",
+            "source_navaid": "CJU",
+            "radial_magnetic_deg": 13,
+            "cju_dme_nm": 15,
+            "latitude": 33.633489,
+            "longitude": 126.650263,
+            "inbound_from_point_id": "IPDAS_4K_YDM_R067_D6_5",
+            "inbound_heading_true_deg": 32.77,
+            "outbound_course_true_deg": 5,
+            "intercept_angle_deg": 27.77,
+            "source_text": "derived training source text redacted for public OSS dataset"
+          },
+          {
+            "kind": "derived_point",
+            "point_id": "IPDAS_4K_CJU_R013_D30",
+            "label": "CJU R013 D30.0",
+            "crossing_altitude_ft": 7000,
+            "source_text": "derived training source text redacted for public OSS dataset"
+          },
+          {
+            "kind": "terminal_fix",
+            "fix_id": "IPDAS",
+            "label": "IPDAS",
+            "crossing_altitude_ft": 9000,
+            "source_text": "derived training source text redacted for public OSS dataset"
+          }
+        ],
+        "notes": [
+          "This route replaces the old YDM-CJU-IPDAS shortcut for training runtime guidance.",
+          "Exact published route automation remains disabled until chart linework validation is complete.",
+          "Published chart linework remains reference overlay material only and must not drive this training runtime path."
+        ]
+      },
+      "remaining_blockers": [
+        "cross-check full IPDAS 4K linework against source chart before enabling runtime route"
+      ]
+    }
+  ]
+}

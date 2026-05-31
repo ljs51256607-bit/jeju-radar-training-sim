@@ -1,0 +1,100 @@
+feature_id,layer,anchor_type,reference_source,reference_key,sequence,latitude,longitude,source_file,verification_state,notes
+RWY_07_25_CENTERLINE,runway_centerlines,runway_threshold_pair,data/reference/rkpc_airport.json,runways[07],1,33.499881,126.468472,public_derived_training_dataset,coordinate_verified,활주로 threshold pair에서 직접 생성.
+RWY_07_25_CENTERLINE,runway_centerlines,runway_threshold_pair,data/reference/rkpc_airport.json,runways[25],2,33.514878,126.497642,public_derived_training_dataset,coordinate_verified,활주로 threshold pair에서 직접 생성.
+RWY_13_31_CENTERLINE,runway_centerlines,runway_threshold_pair,data/reference/rkpc_airport.json,runways[13],1,33.515461,126.487394,public_derived_training_dataset,coordinate_verified,활주로 threshold pair에서 직접 생성.
+RWY_13_31_CENTERLINE,runway_centerlines,runway_threshold_pair,data/reference/rkpc_airport.json,runways[31],2,33.505483,126.504014,public_derived_training_dataset,coordinate_verified,활주로 threshold pair에서 직접 생성.
+ARR_25_DUKAL_TOKIN_WINDOW,handoff_reference,fix_segment,data/reference/rkpc_procedures.json,DUKAL,1,33.649611,126.760778,public_derived_training_dataset,coordinate_verified,공식 fix 좌표를 사용하는 handoff segment.
+ARR_25_DUKAL_TOKIN_WINDOW,handoff_reference,fix_segment,data/reference/rkpc_procedures.json,TOKIN,2,33.606083,126.675611,public_derived_training_dataset,coordinate_verified,공식 fix 좌표를 사용하는 handoff segment.
+RWY_07_FINAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,LIMSO,1,33.417500,126.308611,public_derived_training_dataset,coordinate_verified,RNP/ILS final path 핵심 anchor만 사용.
+RWY_07_FINAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,TEWOO,2,33.454250,126.379861,public_derived_training_dataset,coordinate_verified,RNP/ILS final path 핵심 anchor만 사용.
+RWY_07_FINAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW070,3,33.499881,126.468472,public_derived_training_dataset,coordinate_verified,RNP/ILS final path 핵심 anchor만 사용.
+RWY_25_FINAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,DUKAL,1,33.649611,126.760778,public_derived_training_dataset,coordinate_verified,25 도착 final path anchor.
+RWY_25_FINAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,TOKIN,2,33.606083,126.675611,public_derived_training_dataset,coordinate_verified,25 도착 final path anchor.
+RWY_25_FINAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW250,3,33.514878,126.497642,public_derived_training_dataset,coordinate_verified,25 도착 final path anchor.
+SID_KAMIT_2E_INITIAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_airport.json,runways[07],1,33.499881,126.468472,public_derived_training_dataset,coordinate_verified,07 출발 initial guide.
+SID_KAMIT_2E_INITIAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,PC811,2,33.703361,126.713556,public_derived_training_dataset,coordinate_verified,07 출발 initial guide.
+SID_KAMIT_2E_INITIAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,OLLEH,3,33.961722,126.740694,public_derived_training_dataset,coordinate_verified,07 출발 initial guide.
+SID_KAMIT_2E_INITIAL_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,KAMIT,4,34.253917,126.771583,public_derived_training_dataset,coordinate_verified,07 출발 initial guide.
+RWY_07_ILS_Y_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,AKBIN,1,33.522639,126.248694,public_derived_training_dataset,coordinate_verified,ILS Y/LOC Y final fixes.
+RWY_07_ILS_Y_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D10.5 ICJU,2,33.409722,126.293556,public_derived_training_dataset,coordinate_verified,ILS Y/LOC Y final fixes.
+RWY_07_ILS_Y_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D5.3 ICJU,3,33.455139,126.381556,public_derived_training_dataset,coordinate_verified,ILS Y/LOC Y final fixes.
+RWY_07_ILS_Y_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D2.6 ICJU,4,33.478833,126.427583,public_derived_training_dataset,coordinate_verified,ILS Y/LOC Y final fixes.
+RWY_07_ILS_Y_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D1.3 ICJU,5,33.490222,126.449667,public_derived_training_dataset,coordinate_verified,ILS Y/LOC Y final fixes.
+RWY_07_ILS_Y_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW070,6,33.499881,126.468472,public_derived_training_dataset,coordinate_verified,ILS Y/LOC Y final fixes.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,AKBIN,1,33.522639,126.248694,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D12.0 YDM,2,33.402917,126.286694,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D8.4 YDM,3,33.435528,126.346917,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D6.3 YDM,4,33.454528,126.382056,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D4.5 YDM,5,33.470806,126.412194,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D2.4 YDM,6,33.489806,126.447389,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW070,7,33.499881,126.468472,public_derived_training_dataset,coordinate_verified,VOR RWY 07 DME sequence.
+RWY_07_MISSED_APPROACH_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW070,1,33.499881,126.468472,public_derived_training_dataset,coordinate_verified,Missed approach published path.
+RWY_07_MISSED_APPROACH_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,PC404,2,33.545083,126.556500,public_derived_training_dataset,coordinate_verified,Missed approach published path.
+RWY_07_MISSED_APPROACH_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,PETAA,3,33.521667,126.926111,public_derived_training_dataset,coordinate_verified,Missed approach published path.
+RWY_25_ILS_Y_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D10.8 YDM,1,33.603556,126.672806,public_derived_training_dataset,coordinate_verified,ILS Y/VOR RWY 25 final sequence.
+RWY_25_ILS_Y_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D5.7 YDM,2,33.560111,126.585306,public_derived_training_dataset,coordinate_verified,ILS Y/VOR RWY 25 final sequence.
+RWY_25_ILS_Y_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,D1.5 YDM,3,33.524222,126.513167,public_derived_training_dataset,coordinate_verified,ILS Y/VOR RWY 25 final sequence.
+RWY_25_ILS_Y_VOR_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW250,4,33.514878,126.497642,public_derived_training_dataset,coordinate_verified,ILS Y/VOR RWY 25 final sequence.
+RWY_25_MISSED_APPROACH_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,RW250,1,33.514878,126.497642,public_derived_training_dataset,coordinate_verified,Missed approach published path.
+RWY_25_MISSED_APPROACH_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,PC403,2,33.379000,126.234167,public_derived_training_dataset,coordinate_verified,Missed approach published path.
+RWY_25_MISSED_APPROACH_GUIDE,guide_routes,procedure_polyline,data/reference/rkpc_procedures.json,LOTKA,3,33.353083,126.114500,public_derived_training_dataset,coordinate_verified,Missed approach published path.
+LBL_YDM,navaid,label_anchor,data/reference/rkpc_airport.json,YDM,1,33.511472,126.487611,public_derived_training_dataset,coordinate_verified,공식 navaid 좌표 기반 label anchor.
+LBL_CJU,navaid,label_anchor,data/reference/rkpc_airport.json,CJU,1,33.384611,126.624111,public_derived_training_dataset,coordinate_verified,공식 navaid 좌표 기반 label anchor.
+LBL_LIMSO,handoff_reference,label_anchor,data/reference/rkpc_procedures.json,LIMSO,1,33.417500,126.308611,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_DUKAL,handoff_reference,label_anchor,data/reference/rkpc_procedures.json,DUKAL,1,33.649611,126.760778,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_TOKIN,handoff_reference,label_anchor,data/reference/rkpc_procedures.json,TOKIN,1,33.606083,126.675611,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_YUMIN,fix_major,label_anchor,data/reference/rkpc_procedures.json,YUMIN,1,33.457139,126.220972,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_MANBA,fix_major,label_anchor,data/reference/rkpc_procedures.json,MANBA,1,33.727750,126.323333,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_OLLEH,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,OLLEH,1,33.961722,126.740694,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_DOTOL,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,DOTOL,1,34.254278,126.610167,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_UPGOS,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,UPGOS,1,33.959250,127.331389,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_TAMNA,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,TAMNA,1,33.470972,127.331389,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_AKPON,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,AKPON,1,33.780444,127.331389,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_MAKET,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,MAKET,1,33.914444,127.331389,public_derived_training_dataset,coordinate_verified,RWY 07 MAKET 4K named endpoint coordinate.
+LBL_KAMIT,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,KAMIT,1,34.253917,126.771583,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_IPDAS,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,IPDAS,1,34.254083,126.717056,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_SOSDO,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,SOSDO,1,33.003333,126.459722,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_TOSAN,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,TOSAN,1,33.003333,126.771861,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_LIMDI,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,LIMDI,1,33.553694,125.831389,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_PANSI,entry_exit_fix,label_anchor,data/reference/rkpc_procedures.json,PANSI,1,33.004000,126.206972,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_PALRI,fix_major,label_anchor,data/reference/rkpc_procedures.json,PALRI,1,33.640889,126.743722,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_PC811,rwy07_sid_fix,label_anchor,data/reference/rkpc_procedures.json,PC811,1,33.703361,126.713556,public_derived_training_dataset,coordinate_verified,RWY 07 SID coordinate-verified fix.
+LBL_CHUJA,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,CHUJA,1,33.996472,126.583389,public_derived_training_dataset,coordinate_verified,RWY 07 DOTOL 2P coordinate-verified fix.
+LBL_PC726,rwy07_star_fix,label_anchor,data/authority/rkpc_terminal_fix_register.csv,PC726,1,33.908944,126.498444,https://aim.koca.go.kr/eaipPub/Package/2026-02-05/pdf/AD/RKPC/%282-18%29%20STAR.pdf,coordinate_verified,RNAV DOTOL 2P coordinate-verified fix retained by current KOCA eAIP RKPC AD CHART 2-18.
+LBL_PC728,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC728,1,33.914944,127.096944,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC721,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC721,1,33.914806,126.786028,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC722,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC722,1,33.867472,126.630250,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_BIROM,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,BIROM,1,33.792750,126.386056,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC621,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC621,1,33.740944,126.224694,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC622,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC622,1,33.729556,126.125722,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC623,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC623,1,33.694500,126.035056,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC624,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC624,1,33.638861,125.960611,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC625,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC625,1,33.567528,125.908833,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC626,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC626,1,33.486639,125.884139,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_DAKPI,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,DAKPI,1,33.403250,125.888639,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC628,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC628,1,33.324556,125.921806,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PIMIK,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PIMIK,1,33.257333,125.980750,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC723,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC723,1,33.595639,126.494972,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC724,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC724,1,33.714444,126.421972,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC727,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC727,1,33.406444,126.249694,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC725,rwy07_star_fix,label_anchor,data/reference/rkpc_procedures.json,PC725,1,33.323667,126.482472,public_derived_training_dataset,coordinate_verified,RWY 07 STAR coordinate-verified fix.
+LBL_PC813,rwy07_sid_fix,label_anchor,data/reference/rkpc_procedures.json,PC813,1,33.498750,126.847222,public_derived_training_dataset,coordinate_verified,RWY 07 SID coordinate-verified fix.
+LBL_PC814,rwy07_sid_fix,label_anchor,data/reference/rkpc_procedures.json,PC814,1,33.260111,126.487083,public_derived_training_dataset,coordinate_verified,RWY 07 SID coordinate-verified fix.
+LBL_PC816,rwy07_sid_fix,label_anchor,data/reference/rkpc_procedures.json,PC816,1,33.449028,126.325222,public_derived_training_dataset,coordinate_verified,RWY 07 SID coordinate-verified fix.
+LBL_TEWOO,approach_reference,label_anchor,data/reference/rkpc_procedures.json,TEWOO,1,33.454250,126.379861,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_AKBIN,approach_reference,label_anchor,data/reference/rkpc_procedures.json,AKBIN,1,33.522639,126.248694,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_PC404,approach_reference,label_anchor,data/reference/rkpc_procedures.json,PC404,1,33.545083,126.556500,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_PETAA,approach_reference,label_anchor,data/reference/rkpc_procedures.json,PETAA,1,33.521667,126.926111,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_LOTKA,approach_reference,label_anchor,data/reference/rkpc_procedures.json,LOTKA,1,33.353083,126.114500,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D10_5_ICJU,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D10.5 ICJU,1,33.409722,126.293556,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D5_3_ICJU,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D5.3 ICJU,1,33.455139,126.381556,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D2_6_ICJU,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D2.6 ICJU,1,33.478833,126.427583,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D1_3_ICJU,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D1.3 ICJU,1,33.490222,126.449667,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D12_0_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D12.0 YDM,1,33.402917,126.286694,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D8_4_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D8.4 YDM,1,33.435528,126.346917,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D6_3_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D6.3 YDM,1,33.454528,126.382056,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D4_5_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D4.5 YDM,1,33.470806,126.412194,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D2_4_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D2.4 YDM,1,33.489806,126.447389,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D10_8_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D10.8 YDM,1,33.603556,126.672806,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D5_7_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D5.7 YDM,1,33.560111,126.585306,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.
+LBL_D1_5_YDM,approach_reference,label_anchor,data/reference/rkpc_procedures.json,D1.5 YDM,1,33.524222,126.513167,public_derived_training_dataset,coordinate_verified,공식 fix 좌표 기반 label anchor.

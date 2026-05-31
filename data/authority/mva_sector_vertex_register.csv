@@ -1,0 +1,70 @@
+sector_id,sequence,dms_lat,dms_lon,decimal_lat,decimal_lon,distance_nm_from_radar,bearing_deg_from_radar,ring_nm_from_radar,certified_segment_to_next,source_file,source_section,verification_state,notes
+MVA_FINAL_07_CORE_2000,1,"33°29'51""N","126°14'39""E",33.497500,126.244167,11.97,269.1,12,arc,public_derived_training_dataset,Final 07 core 2000 sector,chart_labeled_vertex,북서측 arc anchor.
+MVA_FINAL_07_CORE_2000,2,"33°36'39""N","126°41'00""E",33.610833,126.683333,11.99,56.6,12,line,public_derived_training_dataset,Final 07 core 2000 sector,chart_labeled_vertex,북동측 labeled vertex.
+MVA_FINAL_07_CORE_2000,3,"33°33'60""N","126°46'19""E",33.566667,126.771944,14.98,74.6,15,line,public_derived_training_dataset,Final 07 core 2000 sector,chart_labeled_vertex,동측 labeled vertex.
+MVA_FINAL_07_CORE_2000,4,"33°30'03""N","126°28'60""E",33.500833,126.483333,0.01,157.6,,,public_derived_training_dataset,Final 07 core 2000 sector,chart_labeled_vertex,레이더 사이트 인접 anchor.
+MVA_FINAL_25_EAST_3300,1,"33°33'60""N","126°46'19""E",33.566667,126.771944,14.98,74.6,15,line,public_derived_training_dataset,Final 25 east 3300 sector,chart_labeled_vertex,서측 labeled vertex.
+MVA_FINAL_25_EAST_3300,2,"33°27'27""N","126°49'05""E",33.457500,126.818056,16.97,98.8,17,radial,public_derived_training_dataset,Final 25 east 3300 sector,chart_labeled_vertex,내측 labeled vertex.
+MVA_FINAL_25_EAST_3300,3,"33°27'44""N","127°22'44""E",33.462222,127.378889,44.91,92.7,45,arc,public_derived_training_dataset,Final 25 east 3300 sector,chart_labeled_vertex,동측 상단 vertex.
+MVA_FINAL_25_EAST_3300,4,"33°33'59""N","127°22'38""E",33.566389,127.377222,44.91,84.7,45,line,public_derived_training_dataset,Final 25 east 3300 sector,chart_labeled_vertex,TMA 공용 vertex.
+MVA_MOUNTAIN_CORE_9000,1,"33°15'04""N","126°27'50""E",33.251111,126.463889,15.03,183.7,15,radial,public_derived_training_dataset,Mountain core 9000 sector,chart_labeled_vertex,서측 labeled vertex.
+MVA_MOUNTAIN_CORE_9000,2,"33°13'04""N","126°27'41""E",33.217778,126.461389,17.04,183.7,17,line,public_derived_training_dataset,Mountain core 9000 sector,chart_labeled_vertex,서남측 labeled vertex.
+MVA_MOUNTAIN_CORE_9000,3,"33°16'57""N","126°37'45""E",33.282500,126.629167,15.02,150.8,15,arc,public_derived_training_dataset,Mountain core 9000 sector,chart_labeled_vertex,남동측 labeled vertex.
+MVA_MOUNTAIN_CORE_9000,4,"33°19'51""N","126°42'09""E",33.330833,126.702500,15.00,132.9,15,arc,public_derived_training_dataset,Mountain core 9000 sector,chart_labeled_vertex,동측 labeled vertex.
+MVA_MOUNTAIN_CORE_9000,5,"33°22'49""N","126°44'42""E",33.380278,126.745000,14.98,118.8,15,radial,public_derived_training_dataset,Mountain core 9000 sector,chart_labeled_vertex,북동측 labeled vertex.
+MVA_MOUNTAIN_CORE_9000,6,"33°21'51""N","126°46'48""E",33.364167,126.780000,16.98,118.8,17,line,public_derived_training_dataset,Mountain core 9000 sector,chart_labeled_vertex,북동측 labeled vertex.
+MVA_NORTHWEST_SHOULDER_2200,1,"34°10'55""N","126°06'10""E",34.181944,126.102778,45.08,335.2,45,line,public_derived_training_dataset,North-west shoulder 2200 sector,chart_labeled_vertex,차트에 직접 표기된 sector vertex subset.
+MVA_NORTHWEST_SHOULDER_2200,2,"33°56'09""N","126°55'12""E",33.935833,126.920000,34.02,39.8,34,line,public_derived_training_dataset,North-west shoulder 2200 sector,chart_labeled_vertex,차트에 직접 표기된 sector vertex subset.
+MVA_NORTHWEST_SHOULDER_2200,3,"33°44'51""N","126°56'04""E",33.747500,126.934444,26.98,56.6,27,radial,public_derived_training_dataset,North-west shoulder 2200 sector,chart_labeled_vertex,차트에 직접 표기된 sector vertex subset.
+MVA_NORTHWEST_SHOULDER_2200,4,"33°36'39""N","126°41'00""E",33.610833,126.683333,11.99,56.6,12,arc,public_derived_training_dataset,North-west shoulder 2200 sector,chart_labeled_vertex,차트에 직접 표기된 sector vertex subset.
+MVA_NORTHWEST_SHOULDER_2200,5,"33°29'51""N","126°14'39""E",33.497500,126.244167,11.97,269.1,12,line,public_derived_training_dataset,North-west shoulder 2200 sector,chart_labeled_vertex,남측 경계는 chart arc와 연결된다.
+MVA_NORTH_INBOUND_2700,1,"34°10'55""N","126°06'10""E",34.181944,126.102778,45.08,335.2,45,line,public_derived_training_dataset,North inbound 2700 sector top edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_INBOUND_2700,2,"34°03'34""N","126°21'55""E",34.059444,126.365278,34.05,350.1,34,line,public_derived_training_dataset,North inbound 2700 sector top edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_INBOUND_2700,3,"34°04'32""N","127°03'46""E",34.075556,127.062778,45.02,39.8,45,arc,public_derived_training_dataset,North inbound 2700 sector eastern edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_INBOUND_2700,4,"34°00'48""N","127°08'28""E",34.013333,127.141111,45.00,46.7,45,line,public_derived_training_dataset,North inbound 2700 sector eastern edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_INBOUND_2700,5,"33°56'09""N","126°55'12""E",33.935833,126.920000,34.02,39.8,34,line,public_derived_training_dataset,North inbound 2700 sector lower edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_OUTER_4000,1,"34°14'26""N","126°19'37""E",34.240556,126.326944,45.09,350.1,45,line,public_derived_training_dataset,North outer 4000 sector boundary,chart_labeled_vertex,차트에 직접 표기된 sector/TMA vertex.
+MVA_NORTH_OUTER_4000,2,"34°11'03""N","127°21'41""E",34.184167,127.361389,60.00,46.6,60,line,public_derived_training_dataset,North outer 4000 sector boundary,chart_labeled_vertex,차트에 직접 표기된 sector/TMA vertex.
+MVA_NORTH_OUTER_4000,3,"34°04'32""N","127°03'46""E",34.075556,127.062778,45.02,39.8,45,line,public_derived_training_dataset,North outer 4000 sector lower edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_OUTER_4000,4,"34°03'34""N","126°21'55""E",34.059444,126.365278,34.05,350.1,34,line,public_derived_training_dataset,North outer 4000 sector lower edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_NORTH_OUTER_4000,5,"34°10'55""N","126°06'10""E",34.181944,126.102778,45.08,335.2,45,arc,public_derived_training_dataset,North outer 4000 sector lower edge,chart_labeled_vertex,차트에 직접 표기된 sector vertex.
+MVA_SOUTHEAST_INNER_4600,1,"33°27'43""N","126°26'45""E",33.461944,126.445833,3.00,218.7,3,arc,public_derived_training_dataset,South-east inner 4600 sector,chart_labeled_vertex,서측 labeled vertex.
+MVA_SOUTHEAST_INNER_4600,2,"33°28'37""N","126°32'09""E",33.476944,126.535833,3.00,118.7,3,line,public_derived_training_dataset,South-east inner 4600 sector,chart_labeled_vertex,서측 upper vertex.
+MVA_SOUTHEAST_INNER_4600,3,"33°27'27""N","126°49'05""E",33.457500,126.818056,16.97,98.8,17,line,public_derived_training_dataset,South-east inner 4600 sector,chart_labeled_vertex,동측 upper vertex.
+MVA_SOUTHEAST_INNER_4600,4,"33°22'49""N","126°44'42""E",33.380278,126.745000,14.98,118.8,15,radial,public_derived_training_dataset,South-east inner 4600 sector,chart_labeled_vertex,동측 inner vertex.
+MVA_SOUTHEAST_INNER_4600,5,"33°21'51""N","126°46'48""E",33.364167,126.780000,16.98,118.8,17,line,public_derived_training_dataset,South-east inner 4600 sector,chart_labeled_vertex,동측 inner vertex.
+MVA_SOUTHEAST_INNER_4600,6,"33°19'51""N","126°42'09""E",33.330833,126.702500,15.00,132.9,15,line,public_derived_training_dataset,South-east inner 4600 sector,chart_labeled_vertex,남서측 vertex.
+MVA_SOUTHEAST_MID_7500,1,"33°23'02""N","127°22'07""E",33.383889,127.368611,44.91,98.8,45,line,public_derived_training_dataset,South-east mid 7500 sector,chart_labeled_vertex,북측 vertex.
+MVA_SOUTHEAST_MID_7500,2,"33°16'10""N","127°20'07""E",33.269444,127.335278,44.92,107.8,45,radial,public_derived_training_dataset,South-east mid 7500 sector,chart_labeled_vertex,TMA 공용 vertex.
+MVA_SOUTHEAST_MID_7500,3,"33°08'15""N","127°15'60""E",33.137500,127.266667,44.95,118.8,45,line,public_derived_training_dataset,South-east mid 7500 sector,chart_labeled_vertex,남동측 labeled vertex.
+MVA_SOUTHEAST_MID_7500,4,"32°59'22""N","127°08'18""E",32.989444,127.138333,45.00,132.9,45,arc,public_derived_training_dataset,South-east mid 7500 sector,chart_labeled_vertex,남측 TMA 공용 vertex.
+MVA_SOUTHEAST_OUTER_10000,1,"33°08'15""N","127°15'60""E",33.137500,127.266667,44.95,118.8,45,arc,public_derived_training_dataset,South-east outer 10000 sector,chart_labeled_vertex,서측 labeled vertex.
+MVA_SOUTHEAST_OUTER_10000,2,"33°11'27""N","127°37'06""E",33.190833,127.618333,59.90,107.8,60,arc,public_derived_training_dataset,South-east outer 10000 sector,chart_labeled_vertex,동측 labeled vertex.
+MVA_SOUTHEAST_OUTER_10000,3,"33°00'55""N","127°31'35""E",33.015278,127.526389,59.94,118.8,60,radial,public_derived_training_dataset,South-east outer 10000 sector,chart_labeled_vertex,남동측 labeled vertex.
+MVA_SOUTHEAST_OUTER_10000,4,"32°59'22""N","127°08'18""E",32.989444,127.138333,45.00,132.9,45,,public_derived_training_dataset,South-east outer 10000 sector,chart_labeled_vertex,남서측 TMA 공용 vertex.
+MVA_SOUTHWEST_ESCAPE_5000,1,"33°12'38""N","125°59'49""E",33.210556,125.996944,29.98,234.6,30,line,public_derived_training_dataset,South-west escape 5000 sector,chart_labeled_vertex,북측 labeled vertex.
+MVA_SOUTHWEST_ESCAPE_5000,2,"33°15'48""N","126°12'13""E",33.263333,126.203611,20.00,224.6,20,radial,public_derived_training_dataset,South-west escape 5000 sector,chart_labeled_vertex,상단 labeled vertex.
+MVA_SOUTHWEST_ESCAPE_5000,3,"33°17'57""N","126°14'44""E",33.299167,126.245556,16.99,224.6,17,arc,public_derived_training_dataset,South-west escape 5000 sector,chart_labeled_vertex,동측 upper vertex.
+MVA_SOUTHWEST_ESCAPE_5000,4,"33°16'46""N","126°16'19""E",33.279444,126.271944,17.00,218.6,17,line,public_derived_training_dataset,South-west escape 5000 sector,chart_labeled_vertex,동측 vertex.
+MVA_SOUTHWEST_ESCAPE_5000,5,"33°05'05""N","125°59'41""E",33.084722,125.994722,35.01,224.6,35,line,public_derived_training_dataset,South-west escape 5000 sector,chart_labeled_vertex,남측 vertex.
+MVA_SOUTHWEST_OUTER_7000,1,"33°12'49""N","125°52'37""E",33.213611,125.876944,34.96,240.6,35,radial,public_derived_training_dataset,South-west outer 7000 sector,chart_labeled_vertex,북동측 vertex.
+MVA_SOUTHWEST_OUTER_7000,2,"33°07'52""N","125°42'16""E",33.131111,125.704444,44.94,240.6,45,line,public_derived_training_dataset,South-west outer 7000 sector,chart_labeled_vertex,서측 vertex.
+MVA_SOUTHWEST_OUTER_7000,3,"32°54'21""N","125°47'13""E",32.905833,125.786944,50.00,224.6,50,line,public_derived_training_dataset,South-west outer 7000 sector,chart_labeled_vertex,남서측 vertex.
+MVA_SOUTHWEST_OUTER_7000,4,"32°56'41""N","126°02'37""E",32.944722,126.043611,40.04,213.6,40,line,public_derived_training_dataset,South-west outer 7000 sector,chart_labeled_vertex,TMA 공용 vertex.
+MVA_SOUTHWEST_TRANSITION_4000,1,"33°12'49""N","125°52'37""E",33.213611,125.876944,34.96,240.6,35,radial,public_derived_training_dataset,South-west transition 4000 sector,chart_labeled_vertex,좌측 transition vertex.
+MVA_SOUTHWEST_TRANSITION_4000,2,"33°15'18""N","125°57'48""E",33.255000,125.963333,29.96,240.6,30,arc,public_derived_training_dataset,South-west transition 4000 sector,chart_labeled_vertex,상단 labeled vertex.
+MVA_SOUTHWEST_TRANSITION_4000,3,"33°12'38""N","125°59'49""E",33.210556,125.996944,29.98,234.6,30,line,public_derived_training_dataset,South-west transition 4000 sector,chart_labeled_vertex,우측 upper vertex.
+MVA_SOUTHWEST_TRANSITION_4000,4,"33°05'05""N","125°59'41""E",33.084722,125.994722,35.01,224.6,35,arc,public_derived_training_dataset,South-west transition 4000 sector,chart_labeled_vertex,남단 vertex.
+MVA_SOUTH_CENTER_OUTER_8000,1,"32°56'41""N","126°02'37""E",32.944722,126.043611,40.04,213.6,40,arc,public_derived_training_dataset,South center outer 8000 sector,chart_labeled_vertex,서측 공용 vertex.
+MVA_SOUTH_CENTER_OUTER_8000,2,"32°50'04""N","126°25'55""E",32.834444,126.431944,40.10,183.7,40,arc,public_derived_training_dataset,South center outer 8000 sector,chart_labeled_vertex,남측 labeled vertex.
+MVA_SOUTH_CENTER_OUTER_8000,3,"32°55'04""N","126°52'14""E",32.917778,126.870556,40.06,150.8,40,line,public_derived_training_dataset,South center outer 8000 sector,chart_labeled_vertex,동남측 labeled vertex.
+MVA_SOUTH_CENTER_OUTER_8000,4,"32°59'22""N","127°08'18""E",32.989444,127.138333,45.00,132.9,45,line,public_derived_training_dataset,South center outer 8000 sector,chart_labeled_vertex,동측 TMA 공용 vertex.
+MVA_SOUTH_DEEP_12500,1,"32°56'41""N","126°02'37""E",32.944722,126.043611,40.04,213.6,40,arc,public_derived_training_dataset,South deep 12500 sector,chart_labeled_vertex,서측 TMA 공용 vertex.
+MVA_SOUTH_DEEP_12500,2,"32°50'04""N","126°25'55""E",32.834444,126.431944,40.10,183.7,40,arc,public_derived_training_dataset,South deep 12500 sector,chart_labeled_vertex,북서측 labeled vertex.
+MVA_SOUTH_DEEP_12500,3,"32°55'04""N","126°52'14""E",32.917778,126.870556,40.06,150.8,40,radial,public_derived_training_dataset,South deep 12500 sector,chart_labeled_vertex,북동측 labeled vertex.
+MVA_SOUTH_DEEP_12500,4,"32°50'41""N","126°55'07""E",32.844722,126.918611,45.07,150.8,45,arc,public_derived_training_dataset,South deep 12500 sector,chart_labeled_vertex,동측 labeled vertex.
+MVA_SOUTH_DEEP_12500,5,"32°59'22""N","127°08'18""E",32.989444,127.138333,45.00,132.9,45,line,public_derived_training_dataset,South deep 12500 sector,chart_labeled_vertex,동측 TMA 공용 vertex.
+MVA_WEST_INBOUND_2900,1,"33°29'51""N","125°56'43""E",33.497500,125.945278,26.94,269.7,27,line,public_derived_training_dataset,West inbound 2900 corridor,chart_labeled_vertex,좌측 inbound corridor 상단.
+MVA_WEST_INBOUND_2900,2,"33°12'49""N","125°52'37""E",33.213611,125.876944,34.96,240.6,35,line,public_derived_training_dataset,West inbound 2900 corridor,chart_labeled_vertex,좌측 corridor 남서측.
+MVA_WEST_INBOUND_2900,3,"33°12'38""N","125°59'49""E",33.210556,125.996944,29.98,234.6,30,line,public_derived_training_dataset,West inbound 2900 corridor,chart_labeled_vertex,좌측 corridor 남측 내부꺾임.
+MVA_WEST_INBOUND_2900,4,"33°05'05""N","125°59'41""E",33.084722,125.994722,35.01,224.6,35,line,public_derived_training_dataset,West inbound 2900 corridor,chart_labeled_vertex,좌측 corridor 남단.

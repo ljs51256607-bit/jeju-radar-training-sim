@@ -1,0 +1,120 @@
+{
+  "metadata": {
+    "id": "pilot_response_policy_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract",
+    "core_rule": "No validated intent, no aircraft state change",
+    "llm_boundary": "LLM receives pilot_response_payload and may only speak or polish speakable_text"
+  },
+  "policies": [
+    {
+      "condition": "MISSING_CALLSIGN",
+      "response_action": "SILENT_NO_RESPONSE",
+      "engine_action": "NO_STATE_CHANGE",
+      "log_level": "debug"
+    },
+    {
+      "condition": "UNKNOWN_CALLSIGN",
+      "response_action": "SILENT_NO_RESPONSE",
+      "engine_action": "NO_STATE_CHANGE",
+      "log_level": "debug"
+    },
+    {
+      "condition": "NO_PATTERN_MATCH_WITH_CALLSIGN",
+      "response_action": "SAY_AGAIN",
+      "engine_action": "NO_STATE_CHANGE",
+      "template": "{callsign}, say again."
+    },
+    {
+      "condition": "AMBIGUOUS_ALIAS",
+      "response_action": "CONFIRM_INTENT",
+      "engine_action": "HOLD_PENDING_CONFIRMATION",
+      "template": "{callsign}, confirm {candidate_instruction}?"
+    },
+    {
+      "condition": "REQUIRES_CONFIRMATION",
+      "response_action": "CONFIRM_INTENT",
+      "engine_action": "HOLD_PENDING_CONFIRMATION",
+      "template": "{callsign}, confirm {candidate_instruction}?"
+    },
+    {
+      "condition": "PUBLISHED_SPEED_RESTRICTION_CONFLICT_WITHIN_5NM",
+      "response_action": "CONFIRM_CANCEL_SPEED_RESTRICTION",
+      "engine_action": "HOLD_PENDING_CONFIRMATION",
+      "template": "{callsign}, confirm cancel speed restriction?"
+    },
+    {
+      "condition": "INVALID_SLOT",
+      "response_action": "UNABLE_OR_CONFIRM",
+      "engine_action": "NO_STATE_CHANGE",
+      "template": "{callsign}, unable {invalid_instruction}."
+    },
+    {
+      "condition": "UNKNOWN_FIX_OR_PROCEDURE",
+      "response_action": "SAY_AGAIN_OR_UNABLE",
+      "engine_action": "NO_STATE_CHANGE",
+      "template": "{callsign}, say again fix or procedure."
+    },
+    {
+      "condition": "RULE_CONFLICT",
+      "response_action": "UNABLE",
+      "engine_action": "NO_STATE_CHANGE",
+      "template": "{callsign}, unable."
+    },
+    {
+      "condition": "VALIDATED_COMMAND",
+      "response_action": "READBACK",
+      "engine_action": "APPLY_AFTER_VALIDATION"
+    }
+  ],
+  "pilot_response_payload": {
+    "required_fields": [
+      "condition",
+      "response_action",
+      "engine_action",
+      "speakable_text"
+    ],
+    "llm_allowed_actions": [
+      "say_text",
+      "polish_phraseology"
+    ],
+    "llm_forbidden_actions": [
+      "mutate_aircraft_state",
+      "invent_clearance",
+      "change_validation_result",
+      "apply_engine_effect"
+    ]
+  },
+  "pilot_voice_runtime": {
+    "input_boundary": "pilot_response_payload only",
+    "output_boundary": "voice text only",
+    "api_failure_policy": "fallback_to_speakable_text",
+    "silent_policy": "do_not_call_llm_for_silent_response",
+    "secret_policy": "OpenAI API key remains server-side only"
+  },
+  "ambiguous_aliases": [
+    {
+      "pattern": "{turn_direction} {heading_deg}",
+      "example": "LEFT 180",
+      "candidate_intent": "ASSIGN_HEADING",
+      "candidate_instruction_template": "turn {turn_direction} heading {heading_deg}"
+    }
+  ],
+  "slot_validation": {
+    "speed_kt": {
+      "min": 0,
+      "max": 310,
+      "invalid_response": "UNABLE_OR_CONFIRM"
+    },
+    "heading_deg": {
+      "min": 1,
+      "max": 360,
+      "invalid_response": "UNABLE_OR_CONFIRM"
+    },
+    "altitude_ft": {
+      "min": 0,
+      "max": 60000,
+      "invalid_response": "UNABLE_OR_CONFIRM"
+    }
+  }
+}

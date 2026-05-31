@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "id": "atc_command_effects_v0",
+    "generated_at": "2026-05-09",
+    "status": "draft_contract"
+  },
+  "effects": [
+    {
+      "intent": "ASSIGN_HEADING",
+      "state_changes": [
+        "set assigned.heading_true_deg from magnetic slot",
+        "store requested turn_direction when provided",
+        "clear direct/procedure guidance",
+        "set route_mode to vector"
+      ],
+      "validation": [
+        "heading_deg must be 001-360"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_PRESENT_HEADING",
+      "state_changes": [
+        "set assigned.heading_true_deg to current aircraft heading",
+        "clear direct/procedure guidance",
+        "set route_mode to vector",
+        "write heading scratchpad token from current magnetic heading"
+      ],
+      "validation": [
+        "aircraft must have a current heading"
+      ]
+    },
+    {
+      "intent": "ASSIGN_SPEED",
+      "state_changes": [
+        "set controller speed policy type target",
+        "mark speed as explicit controller assignment"
+      ],
+      "validation": [
+        "speed_kt must be positive",
+        "speed_kt must not exceed global max 310 kt",
+        "if aircraft is at or below 10000 ft, target speed must not exceed 250 kt",
+        "if target speed conflicts with a published STAR/APP speed cap within 5 NM of the restricted fix, ask confirm cancel speed restriction before applying"
+      ]
+    },
+    {
+      "intent": "RESUME_NORMAL_SPEED",
+      "state_changes": [
+        "clear controller speed target",
+        "clear controller minimum speed floor",
+        "clear controller maximum speed ceiling",
+        "clear controller minimum practical speed command"
+      ],
+      "validation": [
+        "published STAR/APP speed restrictions remain active",
+        "10000 ft / 250 kt hard cap remains active",
+        "minimum speed 155 kt is not an automatic below-5000-ft floor"
+      ]
+    },
+    {
+      "intent": "MINIMUM_SPEED",
+      "state_changes": [
+        "set controller speed policy type minimum_practical",
+        "command practical deceleration toward 155 kt",
+        "do not treat the command as an OR GREATER floor",
+        "allow ILS landing speed profile to continue below 155 kt inside 5 NM"
+      ],
+      "validation": [
+        "aircraft should be an arrival aircraft",
+        "published STAR/APP speed caps and 10000 ft / 250 kt hard cap remain active"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_SPEED_UNTIL",
+      "state_changes": [
+        "set conditional speed restriction",
+        "set speed floor from speed_kt",
+        "release restriction when passing altitude_ft or passing fix_id",
+        "after release, resume explicit assigned speed if present, otherwise phase default speed"
+      ],
+      "validation": [
+        "speed_kt must be positive",
+        "exactly one release condition must be provided: altitude_ft or fix_id",
+        "speed floor must not conflict with 10000 ft / 250 kt rule unless an approval/exception flag exists"
+      ]
+    },
+    {
+      "intent": "MAINTAIN_SPEED_LIMIT",
+      "state_changes": [
+        "set speed limit policy",
+        "OR LESS sets maximum speed ceiling",
+        "OR GREATER sets minimum speed floor",
+        "restriction remains active until cancelled, superseded, or released by resume normal speed"
+      ],
+      "validation": [
+        "speed_kt must be positive",
+        "speed_limit_direction must be or_less or or_greater",
+        "speed_kt must not exceed global max 310 kt",
+        "or_greater above 250 kt is not valid at or below 10000 ft",
+        "if target/minimum floor conflicts with a published STAR/APP speed cap within 5 NM of the restricted fix, ask confirm cancel speed restriction before applying",
+        "OR GREATER is a true speed floor and is separate from MINIMUM SPEED"
+      ]
+    },
+    {
+      "intent": "ASSIGN_ALTITUDE",
+      "state_changes": [
+        "set assigned.altitude_ft",
+        "use default climb/descent rate unless vertical rate is explicit"
+      ],
+      "validation": [
+        "altitude_ft must be usable in current sector",
+        "apply 10000 ft speed compliance before descent crossing"
+      ]
+    },
+    {
+      "intent": "ASSIGN_VERTICAL_SPEED",
+      "state_changes": [
+        "set assigned.vertical_rate_fpm"
+      ],
+      "validation": [
+        "vertical_rate_fpm must not exceed aircraft profile envelope"
+      ]
+    },
+    {
+      "intent": "INCREASE_DESCENT_RATE",
+      "state_changes": [
+        "set managed vertical energy mode to increase_descent_rate"
+      ],
+      "validation": [
+        "aircraft must be descending or have lower assigned altitude"
+      ]
+    },
+    {
+      "intent": "INCREASE_CLIMB_RATE",
+      "state_changes": [
+        "set managed vertical energy mode to increase_climb_rate"
+      ],
+      "validation": [
+        "aircraft must be climbing or have higher assigned altitude"
+      ]
+    },
+    {
+      "intent": "EXPEDITE_DESCENT",
+      "state_changes": [
+        "set managed vertical energy mode to expedite_descent"
+      ],
+      "validation": [
+        "aircraft must be descending or have lower assigned altitude"
+      ]
+    },
+    {
+      "intent": "EXPEDITE_CLIMB",
+      "state_changes": [
+        "set managed vertical energy mode to expedite_climb"
+      ],
+      "validation": [
+        "aircraft must be climbing or have higher assigned altitude"
+      ]
+    },
+    {
+      "intent": "RESUME_NORMAL_CLIMB",
+      "state_changes": [
+        "set managed vertical energy mode to normal",
+        "resume climb profile default"
+      ],
+      "validation": [
+        "aircraft must be climbing or have higher assigned altitude"
+      ]
+    },
+    {
+      "intent": "RESUME_NORMAL_DESCENT",
+      "state_changes": [
+        "set managed vertical energy mode to normal",
+        "resume descent profile default"
+      ],
+      "validation": [
+        "aircraft must be descending or have lower assigned altitude"
+      ]
+    },
+    {
+      "intent": "DIRECT_TO_FIX",
+      "state_changes": [
+        "set route_mode to direct",
+        "set next_fix",
+        "cancel STAR/SID/APP procedure state",
+        "clear managed procedure altitude/speed targets",
+        "clear approach phase and procedure capture transition",
+        "merge direct token into scratchpad",
+        "if altitude_ft is present, set assigned target altitude",
+        "if cancel_level_restriction.scope is DIRECT_FIX, do not preserve previous procedure altitude restrictions"
+      ],
+      "validation": [
+        "fix_id must resolve in radar dataset"
+      ]
+    },
+    {
+      "intent": "CLEARED_STAR",
+      "state_changes": [
+        "set route_mode to procedure",
+        "set procedure_kind to STAR",
+        "build STAR route queue"
+      ],
+      "validation": [
+        "active target must be on matched STAR route"
+      ]
+    },
+    {
+      "intent": "CLEARED_SID",
+      "state_changes": [
+        "set route_mode to procedure",
+        "set procedure_kind to SID",
+        "build SID route queue"
+      ],
+      "validation": [
+        "departure_runway and exit_fix must match available SID"
+      ]
+    },
+    {
+      "intent": "CLEARED_ILS",
+      "state_changes": [
+        "set route_mode to procedure",
+        "set procedure_kind to APP",
+        "build ILS/final route queue"
+      ],
+      "validation": [
+        "runway must match current runway mode or aircraft target_runway"
+      ]
+    },
+    {
+      "intent": "CLEARED_VISUAL_APPROACH",
+      "state_changes": [
+        "keep route_mode as vector unless aligned final capture is eligible",
+        "set procedure_kind to APP",
+        "mark visual approach phase",
+        "set scratchpad to VIS",
+        "set final route to runway threshold when aligned"
+      ],
+      "validation": [
+        "runway must be a supported visual approach runway",
+        "aircraft must be an APP arrival",
+        "final capture requires heading, lateral, and threshold-distance gates"
+      ]
+    },
+    {
+      "intent": "GO_AROUND",
+      "state_changes": [
+        "cancel landing/final state",
+        "start missed approach profile",
+        "emit scenario go_around event"
+      ],
+      "validation": [
+        "aircraft must be approach/landing candidate"
+      ]
+    },
+    {
+      "intent": "FLY_MISSED_APPROACH",
+      "state_changes": [
+        "start missed approach route from procedure data"
+      ],
+      "validation": [
+        "missed approach data must exist for active approach/runway"
+      ]
+    },
+    {
+      "intent": "HOLD_AT_FIX",
+      "state_changes": [
+        "set route_mode to hold",
+        "set hold fix/turn/leg/altitude state"
+      ],
+      "validation": [
+        "fix_id must resolve",
+        "hold entry algorithm must be available"
+      ]
+    },
+    {
+      "intent": "DESCEND_VIA",
+      "state_changes": [
+        "enable procedure lateral path following",
+        "enable procedure speed restriction following",
+        "enable procedure altitude restriction following by default",
+        "when cancel_level_restriction.scope is STAR, cancel published STAR altitude restrictions only",
+        "when target_altitude_ft is provided, set assigned target altitude",
+        "always preserve MVA and safety floor"
+      ],
+      "validation": [
+        "active STAR or provided arrival procedure constraints must exist",
+        "target_altitude_ft must be compatible with MVA/safety floor",
+        "cancel_level_restriction.scope must be STAR for DESCEND_VIA",
+        "cancel_level_restriction must not cancel approach clearance crossing altitude unless explicitly scoped to an approach fix"
+      ]
+    },
+    {
+      "intent": "CANCEL_LEVEL_RESTRICTION",
+      "state_changes": [
+        "if scope is APP_FIX, cancel only the named approach fix altitude restriction",
+        "preserve other approach fix restrictions",
+        "preserve final glidepath and assigned target altitude",
+        "if scope is APP_ALL, require confirmation before adapter mutation"
+      ],
+      "validation": [
+        "scope must be APP_FIX or APP_ALL for standalone cancellation",
+        "APP_FIX scope requires fix_id",
+        "APP_ALL must produce a confirm-before-execute response"
+      ]
+    },
+    {
+      "intent": "CANCEL_SPEED_RESTRICTION",
+      "state_changes": [
+        "if fix_id is provided, add that fix to cancelled_speed_restriction_fixes",
+        "if fix_id is omitted but an active 5 NM speed restriction conflict exists, cancel the active restricted fix",
+        "preserve 10000 ft / 250 kt hard cap",
+        "preserve global max 310 kt",
+        "do not create or preserve an automatic 155 kt floor"
+      ],
+      "validation": [
+        "fix_id must be on the active procedure route when provided",
+        "unscoped cancellation requires an active speed restriction conflict or confirmation",
+        "cancel speed restriction does not cancel altitude restrictions"
+      ]
+    },
+    {
+      "intent": "FIRST_CONTACT_ACK",
+      "state_changes": [
+        "complete pending pilot first-contact handshake",
+        "mark aircraft on frequency",
+        "do not mutate aircraft position, speed, altitude, heading, or route"
+      ],
+      "validation": [
+        "callsign must resolve to an aircraft",
+        "aircraft should be in first-contacted or awaiting-controller-response state"
+      ]
+    },
+    {
+      "intent": "CONFIRM_CALLSIGN",
+      "state_changes": [],
+      "validation": [
+        "if addressed to a callsign after a jam, request only that aircraft to repeat the first-contact call",
+        "if no callsign and phrase requests the calling station to repeat, select one unresolved jammed aircraft in deterministic queue order",
+        "if phrase is only confirm callsign, keep callsign-only confirmation behavior"
+      ]
+    },
+    {
+      "intent": "AFFIRM",
+      "state_changes": [
+        "execute the currently pending confirm-before-execute action",
+        "if the pending action is a speed restriction conflict, cancel the pending restricted fix and then apply the original speed command"
+      ],
+      "validation": [
+        "a pending confirmation must exist",
+        "affirm without pending confirmation produces no aircraft state change"
+      ]
+    },
+    {
+      "intent": "NEGATIVE",
+      "state_changes": [
+        "clear the currently pending confirm-before-execute action without changing aircraft state"
+      ],
+      "validation": [
+        "a pending confirmation may exist",
+        "negative never applies the pending engine effect"
+      ]
+    },
+    {
+      "intent": "SAY_AGAIN",
+      "state_changes": [],
+      "validation": []
+    },
+    {
+      "intent": "PILOT_UNABLE",
+      "state_changes": [],
+      "validation": []
+    }
+  ]
+}

@@ -1,0 +1,3095 @@
+:root {
+  color-scheme: dark;
+  --bg: #061117;
+  --bg-2: #09181f;
+  --panel: rgba(7, 18, 24, 0.92);
+  --panel-strong: rgba(5, 14, 19, 0.96);
+  --panel-border: rgba(111, 232, 226, 0.16);
+  --panel-border-strong: rgba(111, 232, 226, 0.28);
+  --text: #e5fff9;
+  --muted: #89b8b0;
+  --accent: #72ffe7;
+  --accent-2: #d6ff7d;
+  --danger: #ff9e9e;
+  --runway-07: #79ffeb;
+  --runway-25: #ffe38c;
+  --departure: #a6ff7d;
+  --handoff: #cad0ff;
+  --grid: rgba(132, 255, 234, 0.1);
+  --ring: rgba(137, 252, 255, 0.16);
+  --boundary: rgba(255, 255, 255, 0.66);
+  --shadow: 0 18px 64px rgba(0, 0, 0, 0.28);
+  font-family: "Bahnschrift", "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(70, 227, 220, 0.16), transparent 26%),
+    radial-gradient(circle at top right, rgba(122, 255, 164, 0.08), transparent 22%),
+    linear-gradient(180deg, #081117 0%, #041015 100%);
+  color: var(--text);
+  overflow: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.scope-page {
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+  padding: 14px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+}
+
+.radar-first-page {
+  min-height: 0;
+  padding: 8px;
+  display: block;
+}
+
+.radar-stage {
+  position: relative;
+  height: calc(100vh - 16px);
+  min-height: 0;
+}
+
+.radar-stage .radar-shell {
+  height: 100%;
+  border-radius: 18px;
+}
+
+.scope-overlay-controls {
+  position: absolute;
+  top: 12px;
+  left: 72px;
+  right: 12px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  background: rgba(5, 15, 20, 0.78);
+  border: 1px solid rgba(111, 232, 226, 0.18);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(14px);
+}
+
+.scope-chrome-toggle {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 6;
+  width: 48px;
+  min-height: 34px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(114, 255, 231, 0.18);
+  background: rgba(5, 15, 20, 0.72);
+  color: rgba(229, 255, 249, 0.86);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  backdrop-filter: blur(10px);
+}
+
+.scope-chrome-toggle.active {
+  background: rgba(114, 255, 231, 0.16);
+  border-color: rgba(114, 255, 231, 0.34);
+  color: var(--text);
+}
+
+.scope-radar-pause {
+  position: absolute;
+  top: 54px;
+  left: 12px;
+  z-index: 6;
+  width: 70px;
+  min-height: 32px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(214, 255, 125, 0.22);
+  background: rgba(5, 15, 20, 0.72);
+  color: rgba(214, 255, 125, 0.9);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(10px);
+}
+
+.scope-radar-pause.paused {
+  border-color: rgba(255, 158, 158, 0.38);
+  color: #ffb7b7;
+}
+
+.scope-speed-control {
+  position: absolute;
+  top: 54px;
+  left: 88px;
+  z-index: 6;
+  display: inline-flex;
+  gap: 3px;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  background: rgba(5, 15, 20, 0.66);
+  backdrop-filter: blur(10px);
+}
+
+.scope-speed-chip {
+  min-width: 30px;
+  min-height: 24px;
+  padding: 4px 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(114, 255, 231, 0.14);
+  background: rgba(4, 18, 23, 0.76);
+  color: rgba(229, 255, 249, 0.66);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+}
+
+.scope-speed-chip.active {
+  border-color: rgba(214, 255, 125, 0.54);
+  background: rgba(214, 255, 125, 0.16);
+  color: #e7ff9a;
+}
+
+.scope-command-strip {
+  position: absolute;
+  top: 12px;
+  left: 72px;
+  right: 110px;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto auto minmax(92px, auto) auto;
+  align-items: center;
+  gap: 6px;
+  max-width: 880px;
+  min-height: 36px;
+  padding: 5px 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(111, 232, 226, 0.18);
+  background: rgba(5, 15, 20, 0.74);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.scope-command-status {
+  min-width: 38px;
+  padding: 6px 7px;
+  border-radius: 8px;
+  color: rgba(214, 255, 125, 0.92);
+  text-align: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.scope-command-status.applied {
+  color: rgba(114, 255, 231, 0.94);
+}
+
+.scope-command-status.error {
+  color: #ffb7b7;
+}
+
+.scope-command-strip input {
+  width: 100%;
+  min-width: 0;
+  height: 28px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(0, 30, 34, 0.52);
+  color: var(--text);
+  padding: 0 9px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0;
+}
+
+.scope-command-strip button {
+  min-height: 28px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(214, 255, 125, 0.24);
+  background: rgba(214, 255, 125, 0.1);
+  color: rgba(239, 255, 211, 0.96);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.scope-command-strip button:disabled {
+  cursor: default;
+  opacity: 0.46;
+}
+
+.scope-command-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 24px);
+  gap: 4px;
+}
+
+.scope-command-fields button {
+  min-width: 24px;
+  padding: 5px 0;
+  border-color: rgba(114, 255, 231, 0.18);
+  background: rgba(114, 255, 231, 0.06);
+  color: rgba(229, 255, 249, 0.82);
+}
+
+.scope-command-ptt {
+  border-color: rgba(114, 255, 231, 0.18);
+  background: rgba(114, 255, 231, 0.06);
+  color: rgba(229, 255, 249, 0.78);
+}
+
+.scope-command-ptt.recording {
+  border-color: rgba(255, 118, 92, 0.48);
+  background: rgba(255, 118, 92, 0.15);
+  color: #ffb59f;
+}
+
+.scope-traffic-toggle {
+  position: absolute;
+  top: 94px;
+  left: 12px;
+  z-index: 6;
+  width: 78px;
+  min-height: 32px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(36, 243, 255, 0.24);
+  background: rgba(5, 15, 20, 0.72);
+  color: rgba(36, 243, 255, 0.92);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(10px);
+}
+
+.scope-traffic-toggle.active {
+  background: rgba(36, 243, 255, 0.14);
+  border-color: rgba(36, 243, 255, 0.46);
+  color: #8dfcff;
+}
+
+.scope-scenario-toggle {
+  position: absolute;
+  top: 94px;
+  left: 96px;
+  z-index: 6;
+  width: 64px;
+  min-height: 32px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 213, 124, 0.24);
+  background: rgba(5, 15, 20, 0.72);
+  color: rgba(255, 225, 148, 0.9);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(10px);
+}
+
+.scope-scenario-toggle.active {
+  background: rgba(255, 205, 92, 0.13);
+  border-color: rgba(255, 213, 124, 0.46);
+  color: #ffe098;
+}
+
+.scope-wind-toggle {
+  position: absolute;
+  top: 94px;
+  left: 166px;
+  z-index: 6;
+  width: 64px;
+  min-height: 32px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(160, 222, 255, 0.24);
+  background: rgba(5, 15, 20, 0.72);
+  color: rgba(176, 232, 255, 0.9);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(10px);
+}
+
+.scope-wind-toggle.active {
+  background: rgba(91, 186, 255, 0.13);
+  border-color: rgba(160, 222, 255, 0.46);
+  color: #bdeeff;
+}
+
+.atc-mic-hud {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 9;
+  display: grid;
+  grid-template-columns: auto minmax(54px, auto) 82px;
+  align-items: center;
+  gap: 8px;
+  width: 190px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(114, 255, 231, 0.18);
+  background: rgba(4, 15, 19, 0.76);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.26);
+  backdrop-filter: blur(12px);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  pointer-events: none;
+}
+
+.atc-mic-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(137, 184, 176, 0.66);
+  box-shadow: 0 0 0 3px rgba(137, 184, 176, 0.08);
+}
+
+.atc-mic-copy {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.atc-mic-copy strong {
+  color: rgba(229, 255, 249, 0.9);
+  font-size: 0.66rem;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.atc-mic-copy span {
+  color: rgba(137, 184, 176, 0.78);
+  font-size: 0.55rem;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.atc-mic-bars {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: end;
+  gap: 2px;
+  height: 20px;
+  min-width: 0;
+}
+
+.atc-mic-bars span {
+  width: 100%;
+  min-height: 3px;
+  border-radius: 2px 2px 0 0;
+  background: rgba(114, 255, 231, 0.12);
+  transition: background 100ms ease, opacity 100ms ease;
+}
+
+.atc-mic-bars span.active {
+  background: rgba(114, 255, 231, 0.84);
+  box-shadow: 0 0 8px rgba(114, 255, 231, 0.22);
+}
+
+.atc-mic-hud.recording {
+  border-color: rgba(255, 118, 92, 0.46);
+  background: rgba(38, 19, 16, 0.82);
+}
+
+.atc-mic-hud.recording .atc-mic-dot {
+  background: #ff765c;
+  box-shadow: 0 0 0 3px rgba(255, 118, 92, 0.14), 0 0 16px rgba(255, 118, 92, 0.3);
+}
+
+.atc-mic-hud.recording .atc-mic-bars span.active {
+  background: #ffb59f;
+  box-shadow: 0 0 8px rgba(255, 118, 92, 0.26);
+}
+
+.atc-mic-hud.low .atc-mic-copy span {
+  color: rgba(255, 224, 92, 0.9);
+}
+
+.atc-mic-hud.transcribing,
+.atc-mic-hud.applied {
+  border-color: rgba(36, 243, 255, 0.38);
+}
+
+.atc-mic-hud.transcribing .atc-mic-dot,
+.atc-mic-hud.applied .atc-mic-dot {
+  background: #8dfcff;
+  box-shadow: 0 0 0 3px rgba(36, 243, 255, 0.12), 0 0 16px rgba(36, 243, 255, 0.24);
+}
+
+.atc-mic-hud.error,
+.atc-mic-hud.unsupported {
+  border-color: rgba(255, 118, 92, 0.42);
+}
+
+.atc-mic-hud.error .atc-mic-dot,
+.atc-mic-hud.unsupported .atc-mic-dot {
+  background: var(--danger);
+  box-shadow: 0 0 0 3px rgba(255, 158, 158, 0.12);
+}
+
+.scope-compact-extent {
+  position: absolute;
+  top: 12px;
+  left: 72px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 14px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  background: rgba(5, 15, 20, 0.68);
+  backdrop-filter: blur(10px);
+}
+
+.scope-compact-extent .scope-chip {
+  min-height: 26px;
+  padding: 5px 9px;
+  border-radius: 10px;
+  font-size: 0.65rem;
+}
+
+.aircraft-control-panel {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 7;
+  width: 304px;
+  max-width: calc(100vw - 28px);
+  max-height: calc(100vh - 28px);
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(114, 255, 231, 0.2);
+  background: rgba(3, 13, 17, 0.82);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.aircraft-create-panel {
+  position: absolute;
+  top: 134px;
+  left: 12px;
+  z-index: 8;
+  width: 286px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(36, 243, 255, 0.22);
+  background: rgba(3, 13, 17, 0.84);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.scenario-stream-panel {
+  position: absolute;
+  top: 134px;
+  left: 12px;
+  z-index: 8;
+  width: 430px;
+  max-width: calc(100vw - 28px);
+  max-height: calc(100vh - 154px);
+  overflow: auto;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(214, 255, 125, 0.2);
+  background: rgba(3, 13, 17, 0.86);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(12px);
+  color: var(--text);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.scenario-storage-panel {
+  width: 380px;
+  border-color: rgba(255, 213, 124, 0.24);
+}
+
+.wind-settings-panel {
+  width: 360px;
+  border-color: rgba(160, 222, 255, 0.24);
+}
+
+.wind-enable-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(160, 222, 255, 0.16);
+  background: rgba(1, 8, 11, 0.42);
+  color: rgba(229, 255, 249, 0.82);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.wind-enable-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.wind-layer-table {
+  display: grid;
+  gap: 4px;
+}
+
+.wind-layer-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 1fr;
+  gap: 6px;
+  align-items: center;
+}
+
+.wind-layer-row span {
+  color: rgba(139, 209, 200, 0.82);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.wind-layer-head span {
+  color: rgba(229, 255, 249, 0.66);
+  font-size: 0.58rem;
+}
+
+.wind-layer-row input {
+  width: 100%;
+  min-width: 0;
+  padding: 6px 7px;
+  border-radius: 8px;
+  border: 1px solid rgba(160, 222, 255, 0.15);
+  background: rgba(1, 8, 11, 0.62);
+  color: rgba(238, 255, 249, 0.95);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.72rem;
+  outline: none;
+}
+
+.wind-layer-row input:focus {
+  border-color: rgba(160, 222, 255, 0.48);
+}
+
+.wind-sample-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  margin-top: 10px;
+  color: rgba(189, 238, 255, 0.9);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.aircraft-control-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+
+.aircraft-control-header div {
+  display: grid;
+  gap: 2px;
+}
+
+.aircraft-control-header span {
+  color: #a7ff54;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.aircraft-control-header strong {
+  color: rgba(229, 255, 249, 0.78);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.aircraft-control-close {
+  width: 26px;
+  height: 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(229, 255, 249, 0.14);
+  background: rgba(229, 255, 249, 0.04);
+  color: rgba(229, 255, 249, 0.7);
+  cursor: pointer;
+  font-size: 0.72rem;
+}
+
+.aircraft-control-state {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 8px;
+  margin-bottom: 10px;
+  color: rgba(139, 209, 200, 0.8);
+  font-size: 0.62rem;
+  letter-spacing: 0.04em;
+}
+
+.aircraft-control-state span:last-child {
+  grid-column: 1 / -1;
+}
+
+.aircraft-profile-panel {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 209, 200, 0.18);
+  background: rgba(1, 8, 11, 0.42);
+}
+
+.aircraft-profile-header,
+.aircraft-profile-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.aircraft-profile-header span,
+.aircraft-profile-row span {
+  flex: 0 0 auto;
+  color: rgba(139, 209, 200, 0.78);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.aircraft-profile-header strong {
+  min-width: 0;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(167, 255, 84, 0.28);
+  background: rgba(167, 255, 84, 0.09);
+  color: #cfff8a;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-align: right;
+}
+
+.aircraft-profile-grid {
+  display: grid;
+  gap: 4px;
+}
+
+.aircraft-profile-row strong {
+  min-width: 0;
+  color: rgba(238, 255, 249, 0.92);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.aircraft-profile-warning {
+  border-color: rgba(255, 224, 92, 0.28);
+}
+
+.aircraft-profile-warning .aircraft-profile-header strong {
+  border-color: rgba(255, 224, 92, 0.38);
+  background: rgba(255, 224, 92, 0.12);
+  color: #ffe05c;
+}
+
+.aircraft-profile-critical {
+  border-color: rgba(255, 118, 92, 0.34);
+}
+
+.aircraft-profile-critical .aircraft-profile-header strong {
+  border-color: rgba(255, 118, 92, 0.46);
+  background: rgba(255, 118, 92, 0.13);
+  color: #ff765c;
+}
+
+.aircraft-radio-row {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr repeat(3, 44px);
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(114, 255, 231, 0.18);
+  background: rgba(1, 8, 11, 0.48);
+}
+
+.aircraft-radio-row span,
+.aircraft-radio-row strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.aircraft-radio-row span {
+  color: rgba(139, 209, 200, 0.86);
+}
+
+.aircraft-radio-row strong {
+  color: rgba(238, 255, 249, 0.88);
+}
+
+.aircraft-radio-row button {
+  min-height: 25px;
+  border-radius: 8px;
+  border: 1px solid rgba(114, 255, 231, 0.2);
+  background: rgba(1, 8, 11, 0.62);
+  color: #8dfcff;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.aircraft-radio-row button:hover {
+  border-color: rgba(114, 255, 231, 0.5);
+  background: rgba(114, 255, 231, 0.1);
+}
+
+.aircraft-radio-row.jam {
+  border-color: rgba(255, 224, 92, 0.28);
+}
+
+.aircraft-radio-row.sby {
+  border-color: rgba(167, 255, 84, 0.28);
+}
+
+.aircraft-control-grid,
+.aircraft-create-grid,
+.scenario-stream-grid,
+.scenario-storage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.aircraft-control-grid label,
+.aircraft-control-scratchpad,
+.aircraft-create-grid label,
+.aircraft-create-wide,
+.scenario-stream-grid label,
+.scenario-storage-grid label {
+  display: grid;
+  gap: 4px;
+  color: rgba(229, 255, 249, 0.66);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+}
+
+.aircraft-control-grid input,
+.aircraft-control-scratchpad input,
+.aircraft-create-grid input,
+.aircraft-create-grid select,
+.aircraft-create-wide input,
+.aircraft-create-wide select,
+.scenario-stream-grid input,
+.scenario-stream-grid select,
+.scenario-storage-grid input,
+.scenario-storage-grid select {
+  width: 100%;
+  height: 29px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(114, 255, 231, 0.18);
+  background: rgba(1, 8, 11, 0.7);
+  color: rgba(238, 255, 249, 0.94);
+  outline: none;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+.aircraft-control-grid input:focus,
+.aircraft-control-scratchpad input:focus,
+.aircraft-create-grid input:focus,
+.aircraft-create-grid select:focus,
+.aircraft-create-wide input:focus,
+.aircraft-create-wide select:focus,
+.scenario-stream-grid input:focus,
+.scenario-stream-grid select:focus,
+.scenario-storage-grid input:focus,
+.scenario-storage-grid select:focus {
+  border-color: rgba(114, 255, 231, 0.46);
+  box-shadow: 0 0 0 2px rgba(114, 255, 231, 0.08);
+}
+
+.aircraft-control-scratchpad,
+.aircraft-create-wide {
+  margin-top: 8px;
+}
+
+.aircraft-resume-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.aircraft-resume-row button {
+  min-height: 28px;
+  border-radius: 9px;
+  border: 1px solid rgba(214, 255, 125, 0.2);
+  background: rgba(1, 8, 11, 0.58);
+  color: #d7ff7f;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+}
+
+.aircraft-resume-row button:hover {
+  border-color: rgba(214, 255, 125, 0.48);
+  background: rgba(214, 255, 125, 0.1);
+}
+
+.traffic-mode-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.traffic-mode-row button,
+.aircraft-map-pick-row button {
+  min-height: 28px;
+  border-radius: 9px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  background: rgba(1, 8, 11, 0.58);
+  color: rgba(238, 255, 249, 0.7);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.traffic-mode-row button.active,
+.aircraft-map-pick-row button.active {
+  border-color: rgba(36, 243, 255, 0.46);
+  background: rgba(36, 243, 255, 0.12);
+  color: #8dfcff;
+}
+
+.aircraft-map-pick-row {
+  display: grid;
+  grid-template-columns: 0.56fr 1fr;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.aircraft-map-pick-row span,
+.aircraft-create-hint {
+  color: rgba(139, 209, 200, 0.78);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
+.aircraft-create-hint {
+  margin-top: 7px;
+}
+
+.aircraft-control-error {
+  margin-top: 8px;
+  color: #ffb7b7;
+  font-size: 0.62rem;
+}
+
+.aircraft-control-apply {
+  width: 100%;
+  margin-top: 10px;
+  min-height: 31px;
+  border-radius: 10px;
+  border: 1px solid rgba(214, 255, 125, 0.34);
+  background: rgba(214, 255, 125, 0.12);
+  color: #d6ff7d;
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.scenario-stream-section {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(229, 255, 249, 0.08);
+  background: rgba(229, 255, 249, 0.035);
+}
+
+.scenario-stream-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.scenario-stream-title strong {
+  color: #d6ff7d;
+  font-size: 0.76rem;
+  letter-spacing: 0.07em;
+}
+
+.scenario-stream-title span {
+  color: rgba(229, 255, 249, 0.48);
+  font-size: 0.58rem;
+  letter-spacing: 0.04em;
+}
+
+.scenario-stream-actions {
+  display: grid;
+  grid-template-columns: 1fr 0.46fr;
+  gap: 8px;
+}
+
+.scenario-stream-actions.three {
+  grid-template-columns: 1fr 0.78fr 0.56fr;
+}
+
+.scenario-stream-actions.two {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+}
+
+.scenario-stream-status {
+  display: grid;
+  place-items: center;
+  min-height: 31px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 213, 124, 0.18);
+  color: rgba(255, 225, 148, 0.86);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.scenario-stream-actions.four {
+  grid-template-columns: 1fr 0.78fr 0.56fr 0.62fr;
+}
+
+.scenario-stream-actions.departure {
+  grid-template-columns: 1fr 0.5fr 0.58fr;
+}
+
+.scenario-storage-actions {
+  margin-top: 10px;
+}
+
+.scenario-storage-actions .scenario-stream-secondary {
+  margin-top: 0;
+}
+
+.scenario-storage-import-input {
+  display: none;
+}
+
+.scenario-storage-message {
+  color: rgba(255, 225, 148, 0.92);
+}
+
+.scenario-stream-secondary {
+  margin-top: 10px;
+  min-height: 31px;
+  border-radius: 10px;
+  border: 1px solid rgba(36, 243, 255, 0.3);
+  background: rgba(36, 243, 255, 0.08);
+  color: #8dfcff;
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.scenario-stream-clear {
+  margin-top: 10px;
+  min-height: 31px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 183, 183, 0.3);
+  background: rgba(255, 183, 183, 0.08);
+  color: #ffb7b7;
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.scenario-stream-danger {
+  margin-top: 10px;
+  min-height: 31px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 128, 98, 0.34);
+  background: rgba(255, 128, 98, 0.1);
+  color: #ffb19d;
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.scenario-stream-danger:hover {
+  border-color: rgba(255, 128, 98, 0.58);
+  color: #ffd1c7;
+}
+
+.scenario-stream-active {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  color: rgba(214, 255, 125, 0.82);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+}
+
+.scope-mini-brand,
+.scope-mini-status,
+.scope-control-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.scope-mini-brand {
+  min-width: 260px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scope-mini-brand strong {
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+.scope-mini-brand span,
+.scope-mini-status span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.atc-command-console {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) auto auto auto auto minmax(220px, auto);
+  align-items: stretch;
+  gap: 6px;
+  min-width: min(760px, 100%);
+  flex: 1 1 760px;
+}
+
+.atc-command-console label {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 5px 8px;
+  border: 1px solid rgba(114, 255, 231, 0.14);
+  background: rgba(0, 30, 34, 0.52);
+  border-radius: 8px;
+  color: rgba(214, 255, 125, 0.92);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.atc-command-console input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.76rem;
+  letter-spacing: 0;
+}
+
+.atc-command-console button {
+  min-height: 32px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(214, 255, 125, 0.24);
+  background: rgba(214, 255, 125, 0.1);
+  color: rgba(239, 255, 211, 0.96);
+  cursor: pointer;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.atc-command-console .pilot-voice-toggle,
+.atc-command-console .pilot-speech-toggle,
+.atc-command-console .atc-ptt-toggle {
+  min-width: 44px;
+  border-color: rgba(114, 255, 231, 0.18);
+  background: rgba(114, 255, 231, 0.06);
+  color: rgba(229, 255, 249, 0.78);
+}
+
+.atc-command-console .pilot-voice-toggle.active,
+.atc-command-console .pilot-speech-toggle.active {
+  border-color: rgba(214, 255, 125, 0.44);
+  background: rgba(214, 255, 125, 0.14);
+  color: rgba(239, 255, 211, 0.96);
+}
+
+.atc-command-console .atc-ptt-toggle.recording {
+  border-color: rgba(255, 118, 92, 0.48);
+  background: rgba(255, 118, 92, 0.15);
+  color: #ffb59f;
+}
+
+.atc-command-console .atc-ptt-toggle.transcribing,
+.atc-command-console .atc-ptt-toggle.applied {
+  border-color: rgba(36, 243, 255, 0.4);
+  background: rgba(36, 243, 255, 0.12);
+  color: #8dfcff;
+}
+
+.atc-command-console .atc-ptt-toggle.error,
+.atc-command-console .atc-ptt-toggle.unsupported {
+  border-color: rgba(255, 118, 92, 0.42);
+  color: #ffb59f;
+}
+
+.atc-command-result {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(114, 255, 231, 0.12);
+  background: rgba(2, 18, 23, 0.62);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  text-transform: uppercase;
+}
+
+.atc-command-result strong {
+  color: rgba(229, 255, 249, 0.92);
+  font-size: 0.68rem;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  overflow-wrap: anywhere;
+}
+
+.atc-command-result span {
+  color: var(--muted);
+  font-size: 0.58rem;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  overflow-wrap: anywhere;
+}
+
+.atc-command-result .pilot-voice-status {
+  color: rgba(214, 255, 125, 0.8);
+}
+
+.atc-command-result .atc-speech-status,
+.atc-command-result .pilot-speech-status {
+  color: rgba(132, 226, 255, 0.82);
+}
+
+.atc-command-result .atc-normalization-status {
+  color: rgba(173, 213, 207, 0.76);
+}
+
+.atc-command-result .atc-normalization-status.raw {
+  color: rgba(137, 184, 176, 0.68);
+}
+
+.atc-command-result .atc-normalization-status.changed {
+  color: rgba(214, 255, 125, 0.84);
+}
+
+.atc-command-result .atc-normalization-status.reason {
+  color: rgba(255, 224, 92, 0.78);
+}
+
+.atc-command-result .atc-normalization-status.hint {
+  color: rgba(132, 226, 255, 0.72);
+}
+
+.atc-command-result .atc-normalization-status.split {
+  color: rgba(214, 255, 125, 0.84);
+}
+
+.atc-command-result .atc-normalization-status.parsed {
+  color: rgba(196, 245, 255, 0.82);
+}
+
+.atc-command-result .atc-normalization-status.applied {
+  color: rgba(214, 255, 125, 0.84);
+}
+
+.atc-command-result .atc-normalization-status.applied.say_again,
+.atc-command-result .atc-normalization-status.applied.unable {
+  color: rgba(255, 224, 92, 0.84);
+}
+
+.atc-command-result .atc-normalization-status.applied.silent {
+  color: rgba(137, 184, 176, 0.72);
+}
+
+.atc-command-result .atc-normalization-status.latency {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.atc-command-result .atc-speech-status.recording {
+  color: #ffb59f;
+}
+
+.atc-command-result .atc-speech-status.error,
+.atc-command-result .atc-speech-status.unsupported,
+.atc-command-result .pilot-speech-status.error {
+  color: rgba(255, 158, 158, 0.9);
+}
+
+.atc-command-result .pilot-speech-status.speaking {
+  color: rgba(214, 255, 125, 0.86);
+}
+
+.atc-command-result .pilot-speech-status.muted {
+  color: rgba(137, 184, 176, 0.68);
+}
+
+.atc-command-result .pilot-voice-status.fallback {
+  color: rgba(255, 224, 92, 0.82);
+}
+
+.atc-command-result .pilot-voice-status.openai {
+  color: rgba(114, 255, 231, 0.86);
+}
+
+.radio-queue-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  margin-top: 3px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(114, 255, 231, 0.1);
+}
+
+.radio-queue-title,
+.radio-queue-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+  min-width: 0;
+  border-radius: 5px;
+  font-size: 0.52rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.radio-queue-title {
+  color: rgba(132, 226, 255, 0.74);
+}
+
+.radio-queue-chip {
+  gap: 4px;
+  max-width: 100%;
+  padding: 2px 3px 2px 5px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  background: rgba(114, 255, 231, 0.055);
+  color: rgba(229, 255, 249, 0.82);
+}
+
+.radio-queue-chip strong,
+.radio-queue-chip span,
+.radio-queue-chip em {
+  min-width: 0;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.radio-queue-chip strong {
+  color: rgba(229, 255, 249, 0.96);
+  font-size: 0.52rem;
+}
+
+.radio-queue-chip span,
+.radio-queue-chip em {
+  color: rgba(173, 213, 207, 0.82);
+  font-size: 0.52rem;
+}
+
+.radio-queue-chip em {
+  font-style: normal;
+}
+
+.atc-command-console .radio-queue-chip button {
+  min-height: 16px;
+  min-width: 24px;
+  padding: 1px 4px;
+  border-radius: 4px;
+  border-color: rgba(114, 255, 231, 0.18);
+  background: rgba(2, 18, 23, 0.52);
+  color: rgba(229, 255, 249, 0.86);
+  font-size: 0.48rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.atc-command-console .radio-queue-chip button:hover {
+  border-color: rgba(214, 255, 125, 0.38);
+  background: rgba(214, 255, 125, 0.1);
+  color: rgba(239, 255, 211, 0.96);
+}
+
+.radio-queue-chip.jam {
+  border-color: rgba(255, 224, 92, 0.34);
+  background: rgba(255, 224, 92, 0.09);
+}
+
+.radio-queue-chip.jam strong {
+  color: rgba(255, 224, 92, 0.94);
+}
+
+.radio-queue-chip.call {
+  border-color: rgba(114, 255, 231, 0.24);
+  background: rgba(114, 255, 231, 0.075);
+}
+
+.radio-queue-chip.call strong {
+  color: rgba(132, 226, 255, 0.94);
+}
+
+.radio-queue-chip.sby {
+  border-color: rgba(214, 255, 125, 0.28);
+  background: rgba(214, 255, 125, 0.08);
+}
+
+.radio-queue-chip.sby strong {
+  color: rgba(214, 255, 125, 0.94);
+}
+
+.atc-command-result.readback {
+  border-color: rgba(114, 255, 231, 0.28);
+}
+
+.atc-command-result.confirm,
+.atc-command-result.say_again {
+  border-color: rgba(255, 224, 92, 0.36);
+}
+
+.atc-command-result.unable {
+  border-color: rgba(255, 118, 92, 0.42);
+}
+
+.atc-command-result.silent {
+  opacity: 0.74;
+}
+
+.ptt-trace-panel {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(114, 255, 231, 0.12);
+}
+
+.ptt-live-session {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ptt-live-session span {
+  display: inline-grid;
+  place-items: center;
+  min-height: 18px;
+  padding: 2px 6px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  border-radius: 6px;
+  background: rgba(114, 255, 231, 0.055);
+  color: rgba(229, 255, 249, 0.78);
+  font-size: 0.52rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.ptt-live-session.labeling span:nth-child(3) {
+  border-color: rgba(255, 224, 92, 0.26);
+  background: rgba(255, 224, 92, 0.08);
+  color: rgba(255, 224, 92, 0.86);
+}
+
+.ptt-live-session.export_ready span:nth-child(3) {
+  border-color: rgba(214, 255, 125, 0.34);
+  background: rgba(214, 255, 125, 0.1);
+  color: rgba(214, 255, 125, 0.9);
+}
+
+.ptt-live-sample-prompt {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 5px;
+  align-items: center;
+  min-width: 0;
+  padding: 3px 6px;
+  border: 1px solid rgba(214, 255, 125, 0.18);
+  border-radius: 6px;
+  background: rgba(214, 255, 125, 0.055);
+}
+
+.ptt-live-sample-prompt span,
+.ptt-live-sample-prompt strong {
+  min-width: 0;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.ptt-live-sample-prompt span {
+  color: rgba(132, 226, 255, 0.76);
+  font-size: 0.52rem;
+}
+
+.ptt-live-sample-prompt strong {
+  color: rgba(239, 255, 211, 0.96);
+  font-size: 0.58rem;
+  overflow-wrap: anywhere;
+}
+
+.atc-command-result .ptt-trace-summary {
+  color: rgba(132, 226, 255, 0.8);
+}
+
+.atc-command-result .ptt-trace-latest {
+  color: rgba(214, 255, 125, 0.82);
+}
+
+.atc-command-result .ptt-trace-latest.say_again,
+.atc-command-result .ptt-trace-latest.unable {
+  color: rgba(255, 224, 92, 0.86);
+}
+
+.atc-command-result .ptt-trace-latest.silent,
+.atc-command-result .ptt-trace-latest.error {
+  color: rgba(255, 158, 158, 0.86);
+}
+
+.ptt-trace-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.ptt-trace-actions button {
+  min-height: 22px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(114, 255, 231, 0.16);
+  background: rgba(114, 255, 231, 0.06);
+  color: rgba(229, 255, 249, 0.78);
+  font-size: 0.53rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.ptt-trace-actions button:disabled {
+  opacity: 0.38;
+}
+
+.scope-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(114, 255, 231, 0.14);
+  background: rgba(114, 255, 231, 0.05);
+  color: rgba(229, 255, 249, 0.82);
+  cursor: pointer;
+  font-size: 0.74rem;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scope-chip.active {
+  background: rgba(114, 255, 231, 0.18);
+  border-color: rgba(114, 255, 231, 0.34);
+  color: var(--text);
+}
+
+.scope-chip.toggle {
+  cursor: default;
+}
+
+.scope-chip input {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.scope-chip.disabled {
+  opacity: 0.45;
+}
+
+.scope-mini-status {
+  margin-left: auto;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.radar-stage .scope-hud.top-left,
+.radar-stage .scope-hud.top-right {
+  top: 74px;
+}
+
+.radar-stage .scope-map-tools {
+  top: 128px;
+}
+
+.radar-stage.chrome-hidden .scope-map-tools {
+  top: 12px;
+}
+
+.scope-topbar,
+.scope-toolbar,
+.scope-sidebar,
+.dock-panel,
+.loading-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.scope-topbar {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(520px, 0.9fr) minmax(360px, 0.72fr);
+  gap: 14px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 20px;
+}
+
+.scope-brand h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.4vw, 2.25rem);
+  line-height: 0.95;
+}
+
+.scope-kicker {
+  margin: 0 0 5px;
+  color: var(--accent-2);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.scope-subtitle {
+  margin: 7px 0 0;
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.scope-mode-cluster {
+  display: flex;
+  flex-direction: row;
+  gap: 8px 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.runway-switch,
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.control-label,
+.toolbar-label {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.segmented {
+  display: inline-flex;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 999px;
+  background: rgba(114, 255, 231, 0.08);
+}
+
+.segmented button {
+  border: 0;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.segmented button.active {
+  background: linear-gradient(135deg, rgba(114, 255, 231, 0.2), rgba(214, 255, 125, 0.18));
+  color: var(--text);
+}
+
+.mode-pill-row {
+  display: none;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mode-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mode-pill.exact {
+  background: rgba(114, 255, 231, 0.1);
+  border-color: rgba(114, 255, 231, 0.24);
+  color: var(--accent);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.status-cell {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-cell span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.status-cell strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.94rem;
+}
+
+.scope-layout {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 12px;
+}
+
+.scope-main {
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) minmax(0, 160px);
+  gap: 12px;
+}
+
+.scope-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 18px;
+}
+
+.surface-notice {
+  margin-top: -4px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: rgba(114, 255, 231, 0.05);
+  border: 1px solid rgba(114, 255, 231, 0.12);
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.scope-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(114, 255, 231, 0.05);
+  border: 1px solid rgba(114, 255, 231, 0.12);
+  color: var(--text);
+}
+
+.scope-toggle.support {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.scope-toggle input {
+  accent-color: var(--accent);
+}
+
+.scope-toggle.disabled {
+  opacity: 0.46;
+}
+
+.scope-toggle.disabled input,
+.scope-toggle.disabled span {
+  cursor: not-allowed;
+}
+
+.radar-shell {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(111, 232, 226, 0.2);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.radar-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: linear-gradient(180deg, #169099 0%, #0f5962 100%);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.radar-map text {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.radar-map.dragging {
+  cursor: grabbing;
+}
+
+.radar-map.picking-spawn {
+  cursor: crosshair;
+}
+
+.scope-hud {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(5, 15, 20, 0.74);
+  border: 1px solid rgba(111, 232, 226, 0.16);
+  color: rgba(232, 255, 248, 0.84);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.scope-hud.top-left {
+  top: 14px;
+  left: 14px;
+}
+
+.scope-hud.top-right {
+  top: 14px;
+  right: 14px;
+}
+
+.scope-hud.bottom-left {
+  bottom: 14px;
+  left: 14px;
+  max-width: 48%;
+}
+
+.scope-hud.bottom-right {
+  bottom: 14px;
+  right: 14px;
+}
+
+.scope-map-tools {
+  position: absolute;
+  top: 68px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.map-tool-button,
+.map-tool-readout {
+  min-width: 76px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(5, 15, 20, 0.82);
+  border: 1px solid rgba(111, 232, 226, 0.16);
+  color: var(--text);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.map-tool-button {
+  cursor: pointer;
+}
+
+.map-tool-button.reset {
+  font-size: 0.78rem;
+}
+
+.map-tool-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.map-tool-readout span {
+  white-space: nowrap;
+}
+
+.map-tool-scale-readout {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+  padding-top: 4px;
+  border-top: 1px solid rgba(111, 232, 226, 0.16);
+  color: var(--text);
+}
+
+.map-tool-scale-bar {
+  display: block;
+  height: 8px;
+  min-width: 24px;
+  max-width: 132px;
+  border-right: 1px solid rgba(232, 255, 248, 0.76);
+  border-bottom: 2px solid rgba(232, 255, 248, 0.76);
+  border-left: 1px solid rgba(232, 255, 248, 0.76);
+}
+
+.scope-dock {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  min-height: 0;
+}
+
+.dock-panel {
+  padding: 16px;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.dock-panel-emphasis {
+  border-color: var(--panel-border-strong);
+  background:
+    linear-gradient(180deg, rgba(114, 255, 231, 0.08), transparent 70%),
+    var(--panel);
+}
+
+.dock-heading,
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dock-heading h3,
+.panel-heading h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.dock-heading span,
+.panel-heading span {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.target-cell {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.target-cell span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.target-cell strong {
+  display: block;
+  line-height: 1.4;
+}
+
+.command-contract-strip {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.command-block {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.command-block span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.command-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.command-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(214, 255, 125, 0.08);
+  border: 1px solid rgba(214, 255, 125, 0.16);
+  color: var(--text);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.8rem;
+}
+
+.dock-list,
+.inspector-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dock-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.dock-row:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.dock-row strong {
+  min-width: 94px;
+  font-size: 0.88rem;
+}
+
+.dock-row span,
+.empty-copy,
+.inspector-row span,
+.inspector-row p,
+.inspector-hero p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.scope-sidebar {
+  min-height: 0;
+  overflow: auto;
+  border-radius: 24px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inspector-section {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inspector-hero {
+  background:
+    linear-gradient(180deg, rgba(114, 255, 231, 0.09), transparent 65%),
+    rgba(255, 255, 255, 0.03);
+  border-color: rgba(114, 255, 231, 0.16);
+}
+
+.inspector-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.inspector-badges span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-size: 0.78rem;
+}
+
+.inspector-row {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inspector-row.tight {
+  padding: 10px 12px;
+}
+
+.inspector-row strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.inspector-row p {
+  margin: 6px 0 0;
+}
+
+.loading-card {
+  max-width: 720px;
+  margin: 14vh auto 0;
+  padding: 28px;
+  border-radius: 24px;
+}
+
+.loading-card h1,
+.loading-card p,
+.error-card code {
+  margin: 0 0 12px;
+}
+
+.error-card code {
+  display: block;
+  color: var(--danger);
+  white-space: pre-wrap;
+}
+
+.radar-bg {
+  fill: #07999f;
+}
+
+.radar-overlay {
+  fill: rgba(0, 33, 38, 0.05);
+}
+
+.radar-gridline {
+  stroke: rgba(118, 255, 225, 0.08);
+  stroke-width: 0.45;
+}
+
+.radar-graticule {
+  stroke: rgba(112, 255, 221, 0.18);
+  stroke-width: 0.5;
+}
+
+.radar-graticule-label {
+  fill: rgba(210, 255, 239, 0.34);
+  font-size: 11px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.radar-ring {
+  fill: none;
+  stroke: rgba(106, 243, 255, 0.22);
+  stroke-width: 0.65;
+  stroke-dasharray: 5 7;
+}
+
+.radar-ring-label,
+.radar-site-label {
+  fill: rgba(222, 255, 254, 0.55);
+  font-size: 18px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+
+.radar-tma-airspace,
+.radar-boundary {
+  fill: none;
+  stroke: rgba(246, 255, 255, 0.9);
+  stroke-width: 2.2;
+  stroke-dasharray: none;
+}
+
+.radar-surveillance-boundary {
+  fill: none;
+  stroke: rgba(237, 255, 255, 0.34);
+  stroke-width: 0.75;
+  stroke-dasharray: 7 9;
+}
+
+.radar-mva-sector {
+  fill: none;
+  stroke: rgba(126, 255, 170, 0.34);
+  stroke-width: 0.52;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-mva-label text {
+  fill: rgba(255, 186, 155, 0.58);
+  stroke: rgba(0, 40, 45, 0.58);
+  stroke-width: 0.72px;
+  paint-order: stroke fill;
+  font-size: 8.4px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-weight: 600;
+  text-anchor: middle;
+  letter-spacing: 0;
+}
+
+.radar-special-use-airspace {
+  fill: none;
+  stroke-width: 0.72;
+  stroke-linejoin: round;
+  stroke-dasharray: 9 8;
+}
+
+.radar-special-use-airspace.moa {
+  stroke: rgba(178, 255, 122, 0.42);
+}
+
+.radar-special-use-airspace.cata {
+  stroke: rgba(132, 226, 255, 0.44);
+  stroke-dasharray: 5 7;
+}
+
+.special-use-label {
+  stroke: rgba(2, 13, 17, 0.86);
+  stroke-width: 2.4;
+  paint-order: stroke fill;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.special-use-label.moa {
+  fill: rgba(211, 255, 145, 0.74);
+}
+
+.special-use-label.cata {
+  fill: rgba(156, 232, 255, 0.76);
+}
+
+.radar-guide {
+  fill: none;
+  stroke-width: 1.05;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-procedure {
+  fill: none;
+  stroke-width: 1.05;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.procedure-star {
+  stroke: rgba(146, 244, 255, 0.42);
+  stroke-dasharray: 2 7;
+}
+
+.procedure-sid {
+  stroke: rgba(183, 255, 210, 0.38);
+  stroke-dasharray: 2 7;
+}
+
+.procedure-sid-reference {
+  stroke: rgba(255, 230, 150, 0.52);
+  stroke-width: 0.86;
+  stroke-dasharray: 10 7 2 7;
+}
+
+.procedure-ils-final {
+  stroke: rgba(255, 250, 203, 0.78);
+  stroke-width: 1.2;
+  stroke-dasharray: none;
+}
+
+.radar-holding-pattern path {
+  fill: none;
+  stroke: rgba(255, 224, 92, 0.62);
+  stroke-width: 1.05;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 7 5;
+  pointer-events: none;
+}
+
+.radar-holding-pattern.holding-missed path {
+  stroke: rgba(255, 184, 111, 0.7);
+}
+
+.radar-holding-pattern text {
+  fill: rgba(255, 238, 157, 0.78);
+  stroke: rgba(2, 13, 17, 0.82);
+  stroke-width: 2.4;
+  paint-order: stroke fill;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 8.4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+.radar-faf-marker line {
+  stroke: rgba(255, 255, 255, 0.96);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.radar-runway-bar-shadow {
+  stroke: rgba(5, 14, 17, 0.78);
+  stroke-width: 5.6;
+  stroke-linecap: square;
+}
+
+.radar-runway-bar-core {
+  stroke: rgba(241, 255, 252, 0.92);
+  stroke-width: 2.8;
+  stroke-linecap: square;
+}
+
+.guide-07 {
+  stroke: var(--runway-07);
+}
+
+.guide-25 {
+  stroke: var(--runway-25);
+}
+
+.guide-departure {
+  stroke: rgba(178, 255, 205, 0.5);
+  stroke-dasharray: 2 7;
+}
+
+.guide-handoff {
+  stroke: rgba(238, 255, 255, 0.5);
+  stroke-dasharray: 2 7;
+}
+
+.guide-coastline {
+  stroke: rgba(4, 18, 24, 0.82);
+  stroke-width: 1.05;
+}
+
+.guide-airway {
+  stroke: rgba(248, 255, 212, 0.24);
+  stroke-width: 0.62;
+  stroke-dasharray: 18 13;
+}
+
+.guide-neutral {
+  stroke: rgba(255, 255, 255, 0.72);
+}
+
+.airway-route-label {
+  fill: rgba(248, 255, 212, 0.48);
+  stroke: rgba(2, 13, 17, 0.82);
+  stroke-width: 2.4;
+  paint-order: stroke fill;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 8.6px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.radar-navaid {
+  fill: #f4fff1;
+  stroke: #0c232b;
+  stroke-width: 0.9;
+}
+
+.radar-site {
+  fill: var(--accent-2);
+  stroke: rgba(0, 0, 0, 0.4);
+  stroke-width: 1.2;
+}
+
+.radar-aircraft {
+  cursor: pointer;
+}
+
+.radar-aircraft-track {
+  fill: none;
+  stroke: rgba(4, 14, 18, 0.72);
+  stroke-width: 0.95;
+  stroke-dasharray: 2 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-aircraft-leader {
+  fill: none;
+  stroke: rgba(4, 14, 18, 0.72);
+  stroke-width: 0.72;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-aircraft-symbol {
+  fill: rgba(5, 13, 17, 0.9);
+  stroke: rgba(238, 255, 249, 0.88);
+  stroke-width: 1.05;
+}
+
+.radar-aircraft-core {
+  fill: rgba(238, 255, 249, 0.94);
+  cursor: crosshair;
+  pointer-events: all;
+}
+
+.radar-aircraft-measure-hitbox {
+  fill: transparent;
+  stroke: none;
+  cursor: crosshair;
+  pointer-events: all;
+}
+
+.radar-aircraft-snap-cursor {
+  pointer-events: none;
+}
+
+.radar-aircraft-snap-cursor circle,
+.radar-aircraft-snap-cursor line {
+  fill: none;
+  stroke: rgba(255, 246, 190, 0.72);
+  stroke-width: 0.75;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-aircraft-snap-cursor circle {
+  stroke-dasharray: 2 2;
+}
+
+.radar-measure-line {
+  pointer-events: auto;
+}
+
+.radar-measure-label-group {
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.radar-measure-line-core {
+  fill: none;
+  stroke: rgba(255, 236, 176, 0.86);
+  stroke-width: 0.92;
+  stroke-dasharray: 5 4;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.radar-measure-line.active .radar-measure-line-core {
+  stroke: rgba(255, 246, 190, 0.96);
+}
+
+.radar-measure-chain-anchor {
+  fill: rgba(255, 246, 190, 0.28);
+  stroke: rgba(255, 246, 190, 0.9);
+  stroke-width: 0.75;
+  cursor: crosshair;
+  pointer-events: all;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-measure-chain-hitbox {
+  fill: transparent;
+  stroke: none;
+  cursor: crosshair;
+  pointer-events: all;
+}
+
+.radar-measure-chain-anchor:hover {
+  fill: rgba(255, 246, 190, 0.45);
+  stroke: rgba(255, 250, 210, 0.98);
+}
+
+.radar-measure-label-bg {
+  fill: rgba(0, 17, 21, 0.46);
+  stroke: rgba(255, 236, 176, 0.42);
+  stroke-width: 0.55;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.radar-measure-label-hitbox {
+  fill: transparent;
+  stroke: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.radar-measure-delete-overlay {
+  pointer-events: all;
+}
+
+.radar-measure-delete-hitbox {
+  fill: rgba(255, 255, 255, 0.001);
+  stroke: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.radar-measure-delete-line-hitbox {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.001);
+  stroke-width: 18;
+  cursor: pointer;
+  pointer-events: stroke;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-measure-delete-foreign-object {
+  overflow: visible;
+  pointer-events: all;
+}
+
+.radar-measure-delete-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.radar-measure-html-delete-button {
+  position: absolute;
+  z-index: 4;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.radar-text-menu {
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 142px;
+  padding: 5px;
+  border: 1px solid rgba(206, 255, 245, 0.36);
+  border-radius: 6px;
+  background: rgba(0, 20, 24, 0.84);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.24);
+}
+
+.radar-text-menu button,
+.radar-text-menu input {
+  border: 1px solid rgba(190, 255, 247, 0.28);
+  border-radius: 4px;
+  background: rgba(0, 45, 52, 0.84);
+  color: rgba(238, 255, 249, 0.96);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.radar-text-menu button {
+  padding: 4px 6px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.radar-text-menu button:hover {
+  border-color: rgba(167, 255, 84, 0.52);
+  color: #d9ff7a;
+}
+
+.radar-text-menu .radar-text-menu-danger {
+  border-color: rgba(255, 128, 98, 0.38);
+  background: rgba(72, 20, 16, 0.86);
+  color: #ffb19d;
+}
+
+.radar-text-menu .radar-text-menu-danger:hover {
+  border-color: rgba(255, 128, 98, 0.66);
+  color: #ffd1c7;
+}
+
+.radar-text-menu-procedures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  padding-top: 3px;
+  border-top: 1px solid rgba(190, 255, 247, 0.16);
+}
+
+.radar-text-menu-procedures button {
+  color: #8dfcff;
+  text-align: center;
+}
+
+.radar-command-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.radar-command-grid button {
+  color: #d9ff7a;
+}
+
+.radar-command-grid-text {
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3px;
+  border-top: 1px solid rgba(190, 255, 247, 0.16);
+}
+
+.radar-command-grid-hold {
+  grid-template-columns: 1fr;
+  padding-top: 3px;
+  border-top: 1px solid rgba(255, 224, 92, 0.2);
+}
+
+.radar-command-grid-hold button {
+  color: rgba(255, 238, 157, 0.94);
+  border-color: rgba(255, 224, 92, 0.34);
+}
+
+.radar-text-menu form {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.radar-text-menu form span {
+  min-width: 26px;
+  color: #d9ff7a;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.radar-text-menu input {
+  width: 118px;
+  padding: 4px 5px;
+  outline: none;
+}
+
+.radar-command-entry input {
+  width: 72px;
+}
+
+.radar-hold-published-entry {
+  min-width: 224px;
+}
+
+.radar-hold-published-entry span {
+  min-width: 76px;
+}
+
+.radar-hold-published-entry input {
+  width: 58px;
+}
+
+.radar-text-menu input:focus {
+  border-color: rgba(255, 243, 161, 0.68);
+}
+
+.radar-measure-label {
+  fill: rgba(255, 243, 178, 0.96);
+  stroke: rgba(0, 20, 24, 0.9);
+  stroke-width: 1.25px;
+  paint-order: stroke fill;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 9.6px;
+  font-weight: 550;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}
+
+.radar-aircraft-app .radar-aircraft-symbol {
+  stroke: #a7ff54;
+}
+
+.radar-aircraft-app .radar-aircraft-core {
+  fill: #a7ff54;
+}
+
+.radar-aircraft-app .radar-aircraft-track {
+  stroke: rgba(167, 255, 84, 0.64);
+}
+
+.radar-aircraft-app .radar-aircraft-leader {
+  stroke: rgba(167, 255, 84, 0.74);
+}
+
+.radar-aircraft-dep .radar-aircraft-symbol {
+  stroke: #24f3ff;
+}
+
+.radar-aircraft-dep .radar-aircraft-core {
+  fill: #24f3ff;
+}
+
+.radar-aircraft-dep .radar-aircraft-track {
+  stroke: rgba(36, 243, 255, 0.66);
+}
+
+.radar-aircraft-dep .radar-aircraft-leader {
+  stroke: rgba(36, 243, 255, 0.78);
+}
+
+.radar-aircraft-datablock {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.radar-aircraft-datablock.dragging {
+  cursor: grabbing;
+}
+
+.radar-aircraft-datablock-hitbox {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  transition:
+    fill 120ms ease,
+    stroke 120ms ease;
+}
+
+.radar-aircraft-datablock:hover .radar-aircraft-datablock-hitbox,
+.radar-aircraft-datablock.dragging .radar-aircraft-datablock-hitbox {
+  fill: rgba(0, 18, 22, 0.32);
+  stroke: rgba(223, 255, 249, 0.34);
+  stroke-width: 0.75px;
+}
+
+.radar-aircraft-app .radar-aircraft-datablock:hover .radar-aircraft-datablock-hitbox,
+.radar-aircraft-app .radar-aircraft-datablock.dragging .radar-aircraft-datablock-hitbox {
+  stroke: rgba(167, 255, 84, 0.38);
+}
+
+.radar-aircraft-dep .radar-aircraft-datablock:hover .radar-aircraft-datablock-hitbox,
+.radar-aircraft-dep .radar-aircraft-datablock.dragging .radar-aircraft-datablock-hitbox {
+  stroke: rgba(36, 243, 255, 0.42);
+}
+
+.radar-aircraft-call,
+.radar-aircraft-state,
+.radar-aircraft-trend,
+.radar-aircraft-scratchpad,
+.radar-aircraft-frequency-status,
+.radar-aircraft-guidance-status {
+  fill: rgba(238, 255, 249, 0.96);
+  stroke: rgba(0, 20, 24, 0.92);
+  stroke-width: 1.05px;
+  paint-order: stroke fill;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 10.2px;
+  font-weight: 600;
+  letter-spacing: 0.08px;
+}
+
+.radar-aircraft-call {
+  font-size: 10.7px;
+  font-weight: 650;
+  cursor: pointer;
+  pointer-events: visiblePainted;
+}
+
+.radar-aircraft-call-hitbox {
+  fill: transparent;
+  stroke: none;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.radar-aircraft-trend {
+  font-size: 9.6px;
+  font-weight: 600;
+}
+
+.radar-aircraft-right-column {
+  text-anchor: end;
+}
+
+.radar-aircraft-scratchpad {
+  fill: rgba(255, 236, 176, 0.94);
+}
+
+.radar-aircraft-guidance-status {
+  text-anchor: end;
+  font-size: 9.6px;
+  font-weight: 700;
+}
+
+.radar-aircraft-frequency-status {
+  text-anchor: end;
+  font-size: 9.2px;
+  font-weight: 750;
+}
+
+.radar-aircraft-guidance-warning {
+  fill: rgba(255, 224, 92, 0.98);
+}
+
+.radar-aircraft-guidance-critical {
+  fill: rgba(255, 118, 92, 0.98);
+}
+
+.radar-aircraft-app .radar-aircraft-call,
+.radar-aircraft-app .radar-aircraft-state,
+.radar-aircraft-app .radar-aircraft-trend {
+  fill: #a7ff54;
+}
+
+.radar-aircraft-app .radar-aircraft-scratchpad {
+  fill: #d9ff7a;
+}
+
+.radar-aircraft-dep .radar-aircraft-call,
+.radar-aircraft-dep .radar-aircraft-state,
+.radar-aircraft-dep .radar-aircraft-trend {
+  fill: #24f3ff;
+}
+
+.radar-aircraft-dep .radar-aircraft-scratchpad {
+  fill: #8dfcff;
+}
+
+.radar-aircraft-frequency-off {
+  fill: rgba(255, 224, 92, 0.98);
+}
+
+.radar-aircraft-frequency-call {
+  fill: rgba(255, 255, 255, 0.98);
+}
+
+.radar-aircraft-frequency-standby {
+  fill: rgba(255, 224, 92, 0.98);
+}
+
+.radar-aircraft-frequency-jammed {
+  fill: rgba(255, 118, 92, 0.98);
+}
+
+.radar-aircraft.selected .radar-aircraft-symbol,
+.radar-aircraft.selected .radar-aircraft-core {
+  stroke: #ffffff;
+}
+
+.radar-aircraft.selected .radar-aircraft-track,
+.radar-aircraft.selected .radar-aircraft-leader {
+  stroke-opacity: 1;
+}
+
+.radar-fix-symbol,
+.radar-fix-cross {
+  stroke: rgba(246, 255, 254, 0.68);
+  fill: none;
+  stroke-width: 0.72;
+  vector-effect: non-scaling-stroke;
+}
+
+.radar-fix-group.directable,
+.radar-fix-group.spawn-pickable {
+  cursor: crosshair;
+}
+
+.radar-direct-fix-hitbox {
+  fill: rgba(255, 255, 255, 0.001);
+  stroke: none;
+  pointer-events: all;
+}
+
+.radar-direct-label-hitbox {
+  fill: rgba(255, 255, 255, 0.001);
+  stroke: none;
+  cursor: crosshair;
+  pointer-events: all;
+}
+
+.radar-fix-group.directable .radar-fix-symbol,
+.radar-fix-group.directable .radar-fix-cross,
+.radar-fix-group.directable .radar-label,
+.radar-fix-group.spawn-pickable .radar-fix-symbol,
+.radar-fix-group.spawn-pickable .radar-fix-cross,
+.radar-fix-group.spawn-pickable .radar-label {
+  pointer-events: visiblePainted;
+}
+
+.radar-fix-symbol.procedure-fix,
+.radar-fix-cross.procedure-fix {
+  stroke: rgba(238, 255, 254, 0.48);
+  stroke-width: 0.65;
+}
+
+.radar-fix-symbol.active {
+  stroke: #ffffff;
+  fill: none;
+}
+
+.radar-label.active {
+  fill: #ffffff;
+  stroke: rgba(0, 34, 39, 0.88);
+}
+
+.radar-fix-group.direct-target .radar-fix-symbol,
+.radar-fix-group.direct-target .radar-fix-cross {
+  stroke: #fff3a1;
+  stroke-width: 1.25;
+}
+
+.radar-fix-group.direct-target .radar-label {
+  fill: #fff3a1;
+  stroke: rgba(0, 34, 39, 0.96);
+}
+
+.radar-spawn-pick {
+  pointer-events: none;
+}
+
+.radar-spawn-pick circle,
+.radar-spawn-pick line {
+  fill: none;
+  stroke: rgba(255, 243, 161, 0.95);
+  stroke-width: 1.1px;
+}
+
+.radar-spawn-pick text {
+  fill: rgba(255, 243, 161, 0.95);
+  stroke: rgba(0, 20, 24, 0.92);
+  stroke-width: 1.6px;
+  paint-order: stroke fill;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 8.4px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.radar-label {
+  fill: rgba(245, 255, 252, 0.74);
+  stroke: rgba(0, 34, 39, 0.82);
+  stroke-width: 2.1px;
+  paint-order: stroke fill;
+  font-size: 12.5px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+
+.radar-label.procedure-fix {
+  fill: rgba(239, 255, 252, 0.62);
+  font-size: 11.2px;
+  letter-spacing: 0.01em;
+}
+
+.radar-label.numbered-fix {
+  fill: rgba(237, 255, 252, 0.54);
+  font-size: 10.2px;
+}
+
+@media (max-width: 1560px) {
+  .scope-topbar {
+    grid-template-columns: minmax(240px, 1fr);
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .scope-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1120px) {
+  body {
+    overflow: auto;
+  }
+
+  .scope-page {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding: 12px;
+  }
+
+  .scope-toolbar,
+  .runway-switch,
+  .toolbar-group,
+  .atc-command-console {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .atc-command-console {
+    grid-template-columns: 1fr;
+    flex-basis: 100%;
+  }
+
+  .status-grid,
+  .scope-dock,
+  .target-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .radar-map {
+    min-height: 520px;
+  }
+
+  .scope-map-tools {
+    top: auto;
+    bottom: 64px;
+  }
+
+  .scope-command-strip {
+    top: 104px;
+    left: 12px;
+    right: 12px;
+    grid-template-columns: auto minmax(120px, 1fr) auto auto;
+  }
+
+  .scope-command-fields,
+  .scope-command-selected {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .scope-page {
+    padding: 10px;
+  }
+
+  .scope-topbar,
+  .scope-toolbar,
+  .scope-sidebar,
+  .dock-panel {
+    border-radius: 18px;
+  }
+
+  .scope-hud {
+    font-size: 0.68rem;
+    gap: 6px;
+  }
+}

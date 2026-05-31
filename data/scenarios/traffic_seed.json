@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "status": "app_dep_datablock_seed_v1",
+    "description": "Arrival and departure targets for validating the locked APP/DEP 4-line datablock contract."
+  },
+  "aircraft": [
+    {
+      "id": "SIM001",
+      "callsign": "JJA117",
+      "aircraft_type": "B738",
+      "flight_phase": "arrival",
+      "latitude": 33.475,
+      "longitude": 126.905,
+      "heading_true_deg": 247,
+      "ground_speed_kt": 360,
+      "altitude_ft": 12000,
+      "vertical_rate_fpm": -700,
+      "route_mode": "vector",
+      "next_fix": "DOTOL",
+      "target_runway": "07",
+      "assigned": {
+        "heading_true_deg": 235,
+        "speed_kt": 190,
+        "altitude_ft": 8000
+      },
+      "owner_position": "APP",
+      "arrival_airport": "RKPC",
+      "squawk": "7214",
+      "scratchpad": "YM",
+      "remark": "Arrival datablock validation target."
+    },
+    {
+      "id": "SIM002",
+      "callsign": "KAL123",
+      "aircraft_type": "A321",
+      "flight_phase": "departure",
+      "latitude": 33.535,
+      "longitude": 126.56,
+      "heading_true_deg": 65,
+      "ground_speed_kt": 250,
+      "altitude_ft": 5000,
+      "vertical_rate_fpm": 1600,
+      "route_mode": "procedure",
+      "next_fix": "KAMIT",
+      "target_runway": "07",
+      "assigned": {
+        "heading_true_deg": 65,
+        "speed_kt": 250,
+        "altitude_ft": 18000
+      },
+      "owner_position": "DEP",
+      "destination_airport": "RKSS",
+      "squawk": "4231",
+      "scratchpad": "KAMIT",
+      "remark": "Departure datablock validation target."
+    }
+  ]
+}

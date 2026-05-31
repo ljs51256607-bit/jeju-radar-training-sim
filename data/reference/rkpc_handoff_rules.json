@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "name": "rkpc_handoff_rules",
+    "status": "rule_document",
+    "description": "APP/ARR/TWR handoff rule document."
+  },
+  "tower_handoff_reference_geometry": [
+    {
+      "id": "ARR_07_LIMSO_HANDOFF",
+      "type": "point_reference",
+      "applicable_procedures": [
+        "ILS Z RWY 07",
+        "RNP Z RWY 07",
+        "RNP Y RWY 07"
+      ],
+      "fix_id": "LIMSO",
+      "reference_dataset": "rkpc_procedures.json",
+      "handoff_flow": "APP/ARR -> TWR",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 8"
+    },
+    {
+      "id": "ARR_07_10NM_FINAL_WINDOW",
+      "type": "distance_reference",
+      "applicable_procedures": [
+        "ILS Y RWY 07",
+        "VOR RWY 07"
+      ],
+      "reference_runway": "07",
+      "distance_from_threshold_nm": 10,
+      "distance_tolerance_text": "활주로 시단 기준 약 10마일 전후",
+      "handoff_flow": "APP/ARR -> TWR",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 8"
+    },
+    {
+      "id": "ARR_25_DUKAL_TOKIN_WINDOW",
+      "type": "segment_reference",
+      "applicable_procedures": [
+        "ILS Z RWY 25",
+        "RNP Z RWY 25",
+        "RNP Y RWY 25"
+      ],
+      "start_fix_id": "DUKAL",
+      "end_fix_id": "TOKIN",
+      "reference_dataset": "rkpc_procedures.json",
+      "handoff_flow": "APP/ARR -> TWR",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 8"
+    },
+    {
+      "id": "ARR_25_10NM_FINAL_WINDOW",
+      "type": "distance_reference",
+      "applicable_procedures": [
+        "ILS Y RWY 25",
+        "VOR RWY 25"
+      ],
+      "reference_runway": "25",
+      "distance_from_threshold_nm": 10,
+      "distance_tolerance_text": "활주로 시단 기준 약 10마일 전후",
+      "handoff_flow": "APP/ARR -> TWR",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 8"
+    },
+    {
+      "id": "DEP_TWR_TO_APP_0_5NM",
+      "type": "distance_reference",
+      "applicable_procedures": [
+        "SID",
+        "RDR",
+        "VFR departure"
+      ],
+      "distance_from_departure_end_nm": 0.5,
+      "distance_tolerance_text": "활주로 종단으로부터 대략 1/2마일 통과 시",
+      "handoff_flow": "TWR -> APP/DC",
+      "source_file": "public_derived_training_dataset",
+      "source_section": "별표 8"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "id": "phraseology_sources_v0",
+    "generated_at": "2026-05-09",
+    "purpose": "Source priority register for Jeju APP simulator phraseology contract",
+    "status": "draft_contract"
+  },
+  "authority_order": [
+    {
+      "id": "kr_ats_ops_management_rule",
+      "priority": 1,
+      "title": "항공교통업무 운영 및 관리규정",
+      "type": "Korea MOLIT administrative rule",
+      "effective_date": "2023-08-02",
+      "citation": "국토교통부고시 제2023-458호",
+      "url": "https://law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000227474",
+      "contract_role": "Defines standard phraseology source priority and fallback order"
+    },
+    {
+      "id": "kr_atc_procedures",
+      "priority": 2,
+      "title": "항공교통관제절차",
+      "type": "Korea MOLIT administrative rule",
+      "effective_date": "2022-09-22",
+      "citation": "국토교통부고시 제2022-534호",
+      "url": "https://law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000214619",
+      "contract_role": "Primary domestic ATC procedures and phraseology source"
+    },
+    {
+      "id": "kr_radiotelephony_manual",
+      "priority": 3,
+      "title": "무선통신매뉴얼",
+      "type": "Korea MOLIT administrative rule",
+      "effective_date": "2021-10-07",
+      "citation": "국토교통부고시 제2021-1140호",
+      "url": "https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000205196",
+      "contract_role": "Radio communication, readback, callsign, and standard words source"
+    },
+    {
+      "id": "icao_doc_4444",
+      "priority": 4,
+      "title": "ICAO Doc 4444 PANS-ATM",
+      "type": "ICAO procedure document",
+      "effective_date": null,
+      "citation": "Procedures for Air Navigation Services - Air Traffic Management",
+      "url": "https://applications.icao.int/tools/ATMiKIT/story_content/external_files/story_content/external_files/DOC%204444_PANS%20ATM_en.pdf",
+      "contract_role": "International fallback for ATC procedures and phraseology"
+    },
+    {
+      "id": "icao_doc_9432",
+      "priority": 5,
+      "title": "ICAO Doc 9432 Manual of Radiotelephony",
+      "type": "ICAO manual",
+      "effective_date": "2007",
+      "citation": "Doc 9432, 4th Edition",
+      "url": "https://store.icao.int/en/manual-of-radiotelephony-doc-9432",
+      "contract_role": "International fallback for radiotelephony phraseology"
+    },
+    {
+      "id": "faa_jo_7110_65",
+      "priority": 6,
+      "title": "FAA JO 7110.65 Air Traffic Control",
+      "type": "FAA order",
+      "effective_date": "2025-02-20",
+      "citation": "JO 7110.65BB",
+      "url": "https://www.faa.gov/regulations_policies/orders_notices/index.cfm/go/document.current%20/documentNumber/7110.65",
+      "contract_role": "Last-resort fallback when domestic and ICAO sources do not resolve a command"
+    },
+    {
+      "id": "jeju_local_sop",
+      "priority": 7,
+      "title": "public_derived_training_dataset",
+      "type": "local supplement",
+      "effective_date": null,
+      "citation": "local project source set",
+      "url": null,
+      "contract_role": "Local phrase/use supplement; never overrides higher-priority sources"
+    }
+  ],
+  "operational_rules": [
+    {
+      "id": "kr_speed_limit_below_10000",
+      "title": "항공안전법 시행규칙 제169조 비행속도의 유지 등",
+      "url": "https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000601592",
+      "rule_summary": "IAS 250 kt limit below 10000 ft MSL above 2500 ft AGL, with ATC approval and minimum safe speed exceptions",
+      "contract_use": "Speed compliance and predictive deceleration before descending through 10000 ft"
+    }
+  ]
+}
