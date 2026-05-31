@@ -23,6 +23,10 @@ tmp-*
 *.pyc
 __pycache__/
 
+ptt-voice-traces-*.json
+*ptt-voice-trace*.json
+ptt-live-sample-session/
+
 .env
 .env.*
 *API KEY*

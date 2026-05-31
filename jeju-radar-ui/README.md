@@ -35,3 +35,5 @@ npm run verify:secret-scan
 ```
 
 Voice/PTT proxy experiments and private-source corpus checks are not part of the public verification set.
+
+The UI can keep developer PTT/STT traces in browser localStorage and export them as JSON. Treat those exports as local evidence: do not commit `ptt-voice-traces-*.json` or private sample-session payloads.

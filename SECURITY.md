@@ -14,6 +14,7 @@ This repository is currently in OSS staging. Security handling is focused on sec
 - Non-redistributable training manuals
 - Local-only evidence folders
 - Generated logs containing sensitive data
+- Exported voice/PTT traces containing user-spoken transcripts
 
 ## Secret Handling
 

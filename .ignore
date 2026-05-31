@@ -18,5 +18,8 @@ tmp-*
 *.log
 *.pyc
 __pycache__/
+ptt-voice-traces-*.json
+*ptt-voice-trace*.json
+ptt-live-sample-session/
 data/geometry/coastline_lines.geojson
 data/authority/sid_star_coverage_audit.json

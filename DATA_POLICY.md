@@ -62,6 +62,12 @@ Reference-only data may be displayed for context, but it must not control aircra
 
 The public repository should prefer verification commands that run without private source files. Commands that require local PDFs or private evidence belong in maintainer-local notes, not in the default public verification path.
 
+## Local Voice/PTT Traces
+
+The browser UI may create local PTT/STT trace exports for developer testing. These traces can contain user-spoken microphone transcripts, parser debug text, latency values, and local labels.
+
+Voice/PTT traces are local evidence, not source data. Do not commit exported trace JSON, live sample-session payloads, or private voice/PTT corpus material to this repository.
+
 ## Source Text Handling
 
 Short source identifiers, section labels, and provenance fields are acceptable when needed for traceability.
