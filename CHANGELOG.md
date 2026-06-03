@@ -13,6 +13,7 @@ Initial public release candidate for Jeju Radar Training Simulator.
 - Phraseology contract, parser checks, pilot response policy checks, and voice tolerance cases.
 - Data policy, data licensing boundary, disclaimer, security policy, and public documentation.
 - GitHub Actions workflow for repeatable public verification.
+- README screenshot showing the public radar training scope.
 
 ### Explicitly Excluded
 
