@@ -69,6 +69,7 @@ export interface AtcCommandConsoleProps {
   pilotSpeechStatus: PilotSpeechUiStatus;
   pilotVoiceMode: PilotVoiceMode;
   pilotVoiceStatus: PilotVoiceUiStatus;
+  publicDemoMode?: boolean;
   pttLiveSamplePrompt: PttLiveSamplePrompt | null;
   pttTraceExportStatus: string | null;
   pttVoiceTraceSummary: PttVoiceTraceSummary;
@@ -100,6 +101,7 @@ export default function AtcCommandConsole({
   pilotSpeechStatus,
   pilotVoiceMode,
   pilotVoiceStatus,
+  publicDemoMode = false,
   pttLiveSamplePrompt,
   pttTraceExportStatus,
   pttVoiceTraceSummary,
@@ -131,8 +133,9 @@ export default function AtcCommandConsole({
       <button
         className={`atc-ptt-toggle ${atcSpeechStatus.state}`}
         data-testid="atc-ptt-toggle"
+        disabled={publicDemoMode}
         onClick={onTogglePushToTalkRecording}
-        title="Hold Ctrl, or click to start/stop push-to-talk"
+        title={publicDemoMode ? "Public demo uses text commands only" : "Hold Ctrl, or click to start/stop push-to-talk"}
         type="button"
       >
         {atcSpeechStatus.state === "recording" ? "REC" : "PTT"}
@@ -140,8 +143,9 @@ export default function AtcCommandConsole({
       <button
         className={pilotVoiceMode === "llm" ? "pilot-voice-toggle active" : "pilot-voice-toggle"}
         data-testid="pilot-voice-toggle"
+        disabled={publicDemoMode}
         onClick={onTogglePilotVoiceMode}
-        title="Pilot readback voice mode"
+        title={publicDemoMode ? "Public demo uses deterministic pilot responses only" : "Pilot readback voice mode"}
         type="button"
       >
         {pilotVoiceMode === "llm" ? "LLM" : "DET"}
@@ -149,8 +153,9 @@ export default function AtcCommandConsole({
       <button
         className={pilotSpeechEnabled ? "pilot-speech-toggle active" : "pilot-speech-toggle"}
         data-testid="pilot-speech-toggle"
+        disabled={publicDemoMode}
         onClick={onCyclePilotSpeechMode}
-        title="Pilot speech playback: FAST local, SPK OpenAI, MUTE off"
+        title={publicDemoMode ? "Public demo does not call speech services" : "Pilot speech playback: FAST local, SPK OpenAI, MUTE off"}
         type="button"
       >
         {!pilotSpeechEnabled ? "MUTE" : pilotSpeechFastMode ? "FAST" : "SPK"}
@@ -162,6 +167,9 @@ export default function AtcCommandConsole({
           MIC {atcSpeechStatus.detail}
           {atcSpeechStatus.text ? ` ${atcSpeechStatus.text}` : ""}
         </span>
+        {publicDemoMode ? (
+          <span className="atc-normalization-status hint">STATIC DEMO TEXT COMMANDS ONLY</span>
+        ) : null}
         {lastSttContextDisplay ? (
           <span className="atc-normalization-status hint">HINT {lastSttContextDisplay}</span>
         ) : null}

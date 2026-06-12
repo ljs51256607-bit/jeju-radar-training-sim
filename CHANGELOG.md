@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.2.0 Public Demo
+
+Public demo release for the training-only radar simulator UI.
+
+### Included
+
+- GitHub Pages deployment workflow.
+- Vite base-path support for the GitHub Pages project URL.
+- Public data fetches that respect the Vite base path.
+- Visible training-only safety boundary in the simulator UI.
+- Public demo mode that disables PTT/microphone and LLM pilot voice controls.
+- Public demo documentation and README demo link.
+
+### Explicitly Preserved
+
+- No operational ATC, navigation, dispatch, certification, or safety-critical claim.
+- No API key in the browser bundle.
+- AI pilot runtime remains deferred to `v0.3.0`.
+
 ## v0.1.1 Maintainer Operations
 
 Maintainer operations release for the public OSS repository.

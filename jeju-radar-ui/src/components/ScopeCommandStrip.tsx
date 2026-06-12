@@ -25,6 +25,7 @@ interface ScopeCommandStripProps {
   onOpenControlPanel: () => void;
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
   onTogglePushToTalkRecording: () => void;
+  publicDemoMode?: boolean;
   selectedAircraftLabel: string | null;
 }
 
@@ -39,6 +40,7 @@ export default function ScopeCommandStrip({
   onOpenControlPanel,
   onSubmit,
   onTogglePushToTalkRecording,
+  publicDemoMode = false,
   selectedAircraftLabel
 }: ScopeCommandStripProps) {
   return (
@@ -59,7 +61,9 @@ export default function ScopeCommandStrip({
       <button
         className={`scope-command-ptt ${atcSpeechState}`}
         data-testid="scope-command-strip-ptt"
+        disabled={publicDemoMode}
         onClick={onTogglePushToTalkRecording}
+        title={publicDemoMode ? "Public demo uses text commands only" : "Push-to-talk"}
         type="button"
       >
         {atcSpeechState === "recording" ? "REC" : "PTT"}

@@ -1,0 +1,78 @@
+name: Deploy Demo
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      VITE_BASE_PATH: /jeju-radar-training-sim/
+      VITE_PUBLIC_DEMO: "true"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: jeju-radar-ui/package-lock.json
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install UI dependencies
+        working-directory: jeju-radar-ui
+        run: npm ci
+
+      - name: Audit UI dependencies
+        working-directory: jeju-radar-ui
+        run: npm audit --audit-level=moderate
+
+      - name: Build public demo
+        working-directory: jeju-radar-ui
+        run: npm run build
+
+      - name: Verify public UI contracts
+        working-directory: jeju-radar-ui
+        run: npm run verify:public
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: jeju-radar-ui/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

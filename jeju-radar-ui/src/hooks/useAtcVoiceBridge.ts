@@ -39,6 +39,7 @@ interface UseAtcVoiceBridgeOptions {
   atcConsoleResult: AtcConsoleResult;
   dataset: RadarDataset | null;
   liveSample: PttLiveSample | null;
+  publicDemoMode?: boolean;
   recordPttVoiceTrace: (
     debug: AtcCommandDebugState,
     consoleResult: AtcConsoleResult,
@@ -60,6 +61,7 @@ export function useAtcVoiceBridge({
   atcConsoleResult,
   dataset,
   liveSample,
+  publicDemoMode = false,
   recordPttVoiceTrace,
   selectedRunway,
   setAtcCommandText,
@@ -76,13 +78,14 @@ export function useAtcVoiceBridge({
     pilotSpeechFastMode,
     pilotSpeechStatus,
     playPilotSpeech
-  } = usePilotSpeechPlayback();
+  } = usePilotSpeechPlayback({ disabled: publicDemoMode });
   const {
     atcMicLevel,
     atcSpeechStatus,
     setAtcSpeechStatus,
     togglePushToTalkRecording
   } = useAtcPushToTalkRecorder({
+    disabled: publicDemoMode,
     onAudioBlob: (audioBlob) => atcAudioBlobHandlerRef.current(audioBlob)
   });
   const { handleAtcAudioBlob } = useAtcAudioTranscription({
@@ -108,13 +111,25 @@ export function useAtcVoiceBridge({
   });
 
   function togglePilotVoiceMode() {
+    if (publicDemoMode) {
+      return;
+    }
+
     setPilotVoiceMode((current) => (current === "llm" ? "deterministic" : "llm"));
+  }
+
+  function cyclePilotSpeechModeForUi() {
+    if (publicDemoMode) {
+      return;
+    }
+
+    cyclePilotSpeechMode();
   }
 
   return {
     atcMicLevel,
     atcSpeechStatus,
-    cyclePilotSpeechMode,
+    cyclePilotSpeechMode: cyclePilotSpeechModeForUi,
     pilotSpeechEnabled,
     pilotSpeechFastMode,
     pilotSpeechStatus,

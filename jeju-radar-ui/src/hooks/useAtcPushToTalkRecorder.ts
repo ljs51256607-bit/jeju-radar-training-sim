@@ -9,6 +9,7 @@ export interface AtcSpeechUiStatus {
 }
 
 interface UseAtcPushToTalkRecorderArgs {
+  disabled?: boolean;
   onAudioBlob: (audioBlob: Blob) => void;
 }
 
@@ -26,7 +27,7 @@ function preferredAtcAudioMimeType() {
   return candidates.find((candidate) => MediaRecorder.isTypeSupported(candidate)) ?? "";
 }
 
-export function useAtcPushToTalkRecorder({ onAudioBlob }: UseAtcPushToTalkRecorderArgs) {
+export function useAtcPushToTalkRecorder({ disabled = false, onAudioBlob }: UseAtcPushToTalkRecorderArgs) {
   const [atcSpeechStatus, setAtcSpeechStatus] = useState<AtcSpeechUiStatus>({
     state: "idle",
     detail: "CTRL PTT"
@@ -48,6 +49,20 @@ export function useAtcPushToTalkRecorder({ onAudioBlob }: UseAtcPushToTalkRecord
   }, [onAudioBlob]);
 
   useEffect(() => {
+    if (disabled) {
+      stopPushToTalkRecording();
+      cleanupAtcMediaStream();
+      setAtcMicLevel(0);
+      setAtcSpeechStatus({ state: "unsupported", detail: "TEXT ONLY" });
+      return;
+    }
+
+    setAtcSpeechStatus((current) =>
+      current.state === "unsupported" && current.detail === "TEXT ONLY"
+        ? { state: "idle", detail: "CTRL PTT" }
+        : current
+    );
+
     function handlePushToTalkKeyDown(event: KeyboardEvent) {
       if (!isPushToTalkControlKey(event) || event.repeat) {
         return;
@@ -88,9 +103,14 @@ export function useAtcPushToTalkRecorder({ onAudioBlob }: UseAtcPushToTalkRecord
       stopPushToTalkRecording();
       cleanupAtcMediaStream();
     };
-  }, []);
+  }, [disabled]);
 
   async function startPushToTalkRecording() {
+    if (disabled) {
+      setAtcSpeechStatus({ state: "unsupported", detail: "TEXT ONLY" });
+      return;
+    }
+
     if (mediaRecorderRef.current?.state === "recording") {
       return;
     }
@@ -175,6 +195,11 @@ export function useAtcPushToTalkRecorder({ onAudioBlob }: UseAtcPushToTalkRecord
   }
 
   function togglePushToTalkRecording() {
+    if (disabled) {
+      setAtcSpeechStatus({ state: "unsupported", detail: "TEXT ONLY" });
+      return;
+    }
+
     const recorder = mediaRecorderRef.current;
 
     if (pushToTalkIntentActiveRef.current || recorder?.state === "recording") {

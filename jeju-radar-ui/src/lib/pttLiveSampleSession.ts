@@ -1,4 +1,4 @@
-export const PTT_LIVE_SAMPLE_SESSION_URL = "/ptt-live-sample-session/ptt-live-sample-session.json";
+export const PTT_LIVE_SAMPLE_SESSION_PATH = "ptt-live-sample-session/ptt-live-sample-session.json";
 
 export interface PttLiveSample {
   index: number;

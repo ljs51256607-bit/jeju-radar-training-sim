@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { requestPilotSpeech } from "../lib/atcSpeechClient";
 import {
   callsignTelephonyText,
@@ -161,12 +161,16 @@ function pilotProcedureSuffixToSpeechWord(value: string) {
   return map[value] ?? value;
 }
 
-export function usePilotSpeechPlayback() {
-  const [pilotSpeechEnabled, setPilotSpeechEnabled] = useState(true);
+interface UsePilotSpeechPlaybackOptions {
+  disabled?: boolean;
+}
+
+export function usePilotSpeechPlayback({ disabled = false }: UsePilotSpeechPlaybackOptions = {}) {
+  const [pilotSpeechEnabled, setPilotSpeechEnabled] = useState(() => !disabled);
   const [pilotSpeechFastMode, setPilotSpeechFastMode] = useState(true);
   const [pilotSpeechStatus, setPilotSpeechStatus] = useState<PilotSpeechUiStatus>({
-    state: "ready",
-    detail: "FAST READY"
+    state: disabled ? "muted" : "ready",
+    detail: disabled ? "TEXT ONLY" : "FAST READY"
   });
   const pilotSpeechPlaybackKeyRef = useRef<string | null>(null);
   const pilotSpeechAudioCacheRef = useRef<Map<string, CachedPilotSpeechAudio>>(new Map());
@@ -175,7 +179,29 @@ export function usePilotSpeechPlayback() {
   const activePilotSpeechUtteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const activeRadioJamAudioContextRef = useRef<AudioContext | null>(null);
 
+  useEffect(() => {
+    if (!disabled) {
+      return;
+    }
+
+    pilotSpeechAbortControllerRef.current?.abort();
+    activePilotAudioRef.current?.pause();
+    activePilotAudioRef.current = null;
+    void activeRadioJamAudioContextRef.current?.close().catch(() => undefined);
+    activeRadioJamAudioContextRef.current = null;
+    window.speechSynthesis?.cancel();
+    activePilotSpeechUtteranceRef.current = null;
+    setPilotSpeechEnabled(false);
+    setPilotSpeechFastMode(false);
+    setPilotSpeechStatus({ state: "muted", detail: "TEXT ONLY" });
+  }, [disabled]);
+
   async function playPilotSpeech(text: string, playbackKey: string) {
+    if (disabled) {
+      setPilotSpeechStatus({ state: "muted", detail: "TEXT ONLY" });
+      return;
+    }
+
     const speechText = text.trim();
     const playbackKind = pilotSpeechPlaybackKind(speechText);
 
@@ -455,6 +481,13 @@ export function usePilotSpeechPlayback() {
   }
 
   function cyclePilotSpeechMode() {
+    if (disabled) {
+      setPilotSpeechEnabled(false);
+      setPilotSpeechFastMode(false);
+      setPilotSpeechStatus({ state: "muted", detail: "TEXT ONLY" });
+      return;
+    }
+
     activePilotAudioRef.current?.pause();
     activePilotAudioRef.current = null;
     void activeRadioJamAudioContextRef.current?.close().catch(() => undefined);

@@ -23,6 +23,7 @@ Public-facing work is controlled by:
 - `docs/architecture.md`
 - `docs/verification.md`
 - `docs/data-authority.md`
+- `docs/demo.md`
 - `docs/release-process.md`
 - `docs/triage-policy.md`
 

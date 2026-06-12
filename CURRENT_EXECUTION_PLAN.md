@@ -9,22 +9,11 @@ The active control plan is [OPERATIONS_UPGRADE_PLAN.md](OPERATIONS_UPGRADE_PLAN.
 ## Active Release Gates
 
 - `v0.1.0 Public Release Candidate`: completed.
-- `v0.1.1 Maintainer Operations`: active.
-- `v0.2.0 Public Demo`: next.
+- `v0.1.1 Maintainer Operations`: completed.
+- `v0.2.0 Public Demo`: active.
 - `v0.3.0 AI Pilot Runtime Prototype`: deferred until after the public demo.
 
-## Current Maintainer Work
-
-1. Keep the roadmap aligned with release status.
-2. Add maintainer, support, release-process, and triage documentation.
-3. Add issue templates and pull request template.
-4. Add Dependabot and scheduled verification.
-5. Organize GitHub labels, milestones, and existing issues.
-6. Verify the repository before tagging `v0.1.1`.
-
-## Next Work
-
-After `v0.1.1`, ship a free-first public demo:
+## Current Demo Work
 
 1. Prefer GitHub Pages for the first static demo.
 2. Add a visible training-only safety boundary in the UI.

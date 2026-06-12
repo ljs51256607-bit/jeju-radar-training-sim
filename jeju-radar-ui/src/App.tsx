@@ -76,6 +76,17 @@ import {
   type RadioQueueAction
 } from "./lib/radioQueueViewModel";
 
+const PUBLIC_DEMO_MODE = import.meta.env.VITE_PUBLIC_DEMO === "true";
+
+function DemoSafetyCopy() {
+  return (
+    <p className="demo-safety-copy">
+      Training-only simulator. Not for operational ATC, navigation, dispatch, certification, or
+      safety-critical use.
+    </p>
+  );
+}
+
 export default function App() {
   const simulationTimeRef = useRef(Date.now());
   const atcCommandInputRef = useRef<HTMLInputElement | null>(null);
@@ -226,6 +237,7 @@ export default function App() {
     atcConsoleResult,
     dataset,
     liveSample: pttLiveSamplePrompt?.current ?? null,
+    publicDemoMode: PUBLIC_DEMO_MODE,
     recordPttVoiceTrace,
     selectedRunway,
     setAtcCommandText,
@@ -585,6 +597,7 @@ export default function App() {
       <main className="scope-page">
         <section className="loading-card error-card">
           <h1>RKPC Radar Surface</h1>
+          <DemoSafetyCopy />
           <p>데이터 로딩 실패</p>
           <code>{error}</code>
         </section>
@@ -597,6 +610,7 @@ export default function App() {
       <main className="scope-page">
         <section className="loading-card">
           <h1>RKPC Radar Surface</h1>
+          <DemoSafetyCopy />
           <p>제주 TMA exact data와 renderer surface를 준비하는 중입니다.</p>
         </section>
       </main>
@@ -741,6 +755,7 @@ export default function App() {
     pilotSpeechStatus,
     pilotVoiceMode,
     pilotVoiceStatus,
+    publicDemoMode: PUBLIC_DEMO_MODE,
     pttLiveSamplePrompt,
     pttTraceExportStatus,
     pttVoiceTraceSummary,
@@ -750,6 +765,12 @@ export default function App() {
   return (
     <main className="scope-page radar-first-page">
       <section className={showChrome ? "radar-stage" : "radar-stage chrome-hidden"}>
+        <div aria-label="Training-only safety boundary" className="demo-safety-banner" role="note">
+          <strong>Training-only simulator</strong>
+          <span>Not for operational ATC, navigation, dispatch, certification, or safety-critical use.</span>
+          {PUBLIC_DEMO_MODE ? <em>Static public demo: text commands and deterministic responses only.</em> : null}
+        </div>
+
         <ScopeFloatingControls
           onSimulationSpeedChange={setSimulationSpeed}
           onToggleChrome={() => setShowChrome((current) => !current)}
@@ -811,6 +832,7 @@ export default function App() {
             onOpenControlPanel={toggleSelectedAircraftControlPanel}
             onSubmit={handleAtcCommandSubmitWithHistory}
             onTogglePushToTalkRecording={togglePushToTalkRecording}
+            publicDemoMode={PUBLIC_DEMO_MODE}
             selectedAircraftLabel={selectedAircraft?.callsign ?? null}
           />
         ) : null}

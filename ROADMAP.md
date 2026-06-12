@@ -20,35 +20,34 @@ The repository is public, has a first release tag, includes a radar scope screen
 - GitHub Actions `Verify` workflow.
 - Initial public roadmap issues.
 
-## v0.1.1 Maintainer Operations
+## Completed in v0.1.1
 
-Goal: make the repository look and behave like an actively maintained OSS project.
-
-- Add maintainer operating policy.
-- Add support policy.
-- Add release process documentation.
-- Add triage policy documentation.
-- Add issue templates.
-- Add pull request template.
-- Add Dependabot configuration.
-- Add manual and scheduled verification workflow triggers.
-- Organize labels, milestones, and existing issues.
+- Maintainer operating policy.
+- Support policy.
+- Release process documentation.
+- Triage policy documentation.
+- GitHub issue templates.
+- Pull request template.
+- Dependabot configuration.
+- Manual and scheduled verification workflow triggers.
+- Organized labels, milestones, and existing issues.
 
 ## v0.2.0 Public Demo
 
 Goal: make the simulator directly inspectable through a hosted, training-only public demo.
 
-- Use a free-first static deployment path.
-- Prefer GitHub Pages unless a stronger deployment surface is explicitly needed.
+- Use GitHub Pages as the free-first static deployment path.
 - Add a visible demo safety boundary in the UI.
 - Add demo documentation.
 - Add README `Live Demo` link.
-- Add repeatable deployment workflow or deployment documentation.
+- Add repeatable deployment workflow.
 - Verify the hosted demo in a browser before release.
 
 ## v0.3.0 AI Pilot Runtime Prototype
 
 Goal: introduce the first training-only AI pilot runtime boundary after the public demo is stable.
+
+Planned:
 
 - Keep API keys server-side.
 - Use the phraseology contract and pilot response policy as guardrails.

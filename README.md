@@ -8,6 +8,12 @@ Jeju/RKPC is the first reference implementation.
 
 This is not an operational ATC system. It is not for real-world air traffic control, navigation, dispatch, certification, or safety-critical decision making.
 
+## Live Demo
+
+Static public demo: [Jeju Radar Training Simulator](https://ljs51256607-bit.github.io/jeju-radar-training-sim/)
+
+The demo is training-only. It does not include operational ATC, navigation, dispatch, certification, safety-critical use, private source material, or API keys.
+
 ![Jeju Radar Training Simulator radar scope](docs/assets/jeju-radar-scope.png)
 
 ## Project Status
@@ -66,6 +72,7 @@ jeju-radar-training-sim/
       jeju-radar-scope.png
     architecture.md
     data-authority.md
+    demo.md
     release-process.md
     triage-policy.md
     verification.md
@@ -115,6 +122,7 @@ Internal migration notes are kept outside the public release surface. The public
 - [Architecture](docs/architecture.md)
 - [Verification](docs/verification.md)
 - [Data authority](docs/data-authority.md)
+- [Public demo](docs/demo.md)
 - [Release process](docs/release-process.md)
 - [Triage policy](docs/triage-policy.md)
 - [Maintaining](MAINTAINING.md)

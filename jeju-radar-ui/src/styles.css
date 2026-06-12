@@ -76,6 +76,49 @@ input {
   border-radius: 18px;
 }
 
+.demo-safety-banner {
+  position: absolute;
+  left: 220px;
+  right: 220px;
+  bottom: 12px;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 30px;
+  padding: 6px 12px;
+  border: 1px solid rgba(214, 255, 125, 0.28);
+  border-radius: 10px;
+  background: rgba(5, 15, 20, 0.78);
+  color: rgba(229, 255, 249, 0.86);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+  pointer-events: none;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.demo-safety-banner strong {
+  color: rgba(214, 255, 125, 0.96);
+  text-transform: uppercase;
+}
+
+.demo-safety-banner em {
+  color: rgba(114, 255, 231, 0.9);
+  font-style: normal;
+}
+
+.demo-safety-copy {
+  color: rgba(214, 255, 125, 0.92);
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+}
+
 .scope-overlay-controls {
   position: absolute;
   top: 12px;
@@ -3026,6 +3069,12 @@ input {
 @media (max-width: 1120px) {
   body {
     overflow: auto;
+  }
+
+  .demo-safety-banner {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
   }
 
   .scope-page {
