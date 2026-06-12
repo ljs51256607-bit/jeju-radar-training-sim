@@ -20,11 +20,11 @@
     "verify:public": "npm run verify:typecheck && npm run verify:procedures && npm run verify:motion && npm run verify:arrival-streams && npm run verify:scenario-presets && npm run verify:coverage && npm run verify:sid-geometry-audit && npm run verify:sid-derived-geometry && npm run verify:conventional-sid-authority-policy && npm run verify:secret-scan"
   },
   "dependencies": {
-    "react": "^18.3.1",
+    "react": "^19.2.7",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/react": "^18.3.12",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^18.3.1",
     "esbuild": "^0.28.1",
     "playwright": "^1.60.0",
