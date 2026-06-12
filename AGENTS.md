@@ -13,13 +13,18 @@ Answer the user in natural Korean unless they ask otherwise. Keep explanations c
 Public-facing work is controlled by:
 
 - `README.md`
+- `MAINTAINING.md`
+- `SUPPORT.md`
 - `DATA_POLICY.md`
 - `DATA_LICENSE.md`
 - `DISCLAIMER.md`
 - `ROADMAP.md`
+- `OPERATIONS_UPGRADE_PLAN.md`
 - `docs/architecture.md`
 - `docs/verification.md`
 - `docs/data-authority.md`
+- `docs/release-process.md`
+- `docs/triage-policy.md`
 
 Internal migration notes may exist locally under ignored paths, but public agents must not rely on them as repo documentation.
 

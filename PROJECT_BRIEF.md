@@ -10,6 +10,6 @@ The project focuses on deterministic training behavior, not operational control:
 - Coordinate authority rules that separate exact, training, and reference-only geometry.
 - Scenario replay and phraseology/parser regression contracts.
 
-This repository is an OSS staging version. It intentionally excludes private source documents, local-only evidence, secrets, generated artifacts, and oversized raw geometry.
+This repository is the public-safe OSS release line. It intentionally excludes private source documents, local-only evidence, secrets, generated artifacts, and oversized raw geometry.
 
 The engineering bar is that every public feature should be backed by a documented data contract or a deterministic verification script.

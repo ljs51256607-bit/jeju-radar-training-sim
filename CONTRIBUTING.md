@@ -1,6 +1,6 @@
 # Contributing
 
-This repository is being prepared as an open-source radar training simulator. Contributions are welcome only when they preserve the project's safety, data, and verification boundaries.
+This repository is maintained as an open-source radar training simulator. Contributions are welcome only when they preserve the project's safety, data, and verification boundaries.
 
 ## Ground Rules
 
@@ -22,6 +22,8 @@ This repository is being prepared as an open-source radar training simulator. Co
 ## Before Opening a Pull Request
 
 Run the relevant checks for the files you changed.
+
+Use the pull request template and follow [MAINTAINING.md](MAINTAINING.md), [docs/release-process.md](docs/release-process.md), and [docs/triage-policy.md](docs/triage-policy.md) when a change affects release, verification, labels, milestones, or data authority.
 
 For UI/runtime changes:
 
@@ -87,4 +89,3 @@ Data/security review:
 - [ ] no generated artifacts
 - [ ] no oversized raw data
 ```
-

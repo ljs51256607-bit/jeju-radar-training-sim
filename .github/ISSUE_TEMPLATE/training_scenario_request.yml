@@ -1,0 +1,52 @@
+name: Training scenario request
+description: Propose a public-safe training scenario, traffic flow, or debrief need.
+title: "[Scenario]: "
+labels: ["area:scenario", "type:feature", "priority:p2", "status:blocked"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Scenario requests must be public-safe and training-only. Do not include private SOPs or non-public training material.
+  - type: textarea
+    id: objective
+    attributes:
+      label: Training objective
+      description: What should the trainee practice?
+    validations:
+      required: true
+  - type: textarea
+    id: traffic
+    attributes:
+      label: Traffic flow
+      description: Describe the traffic pattern at a high level using public-safe terms.
+    validations:
+      required: true
+  - type: dropdown
+    id: scenario-kind
+    attributes:
+      label: Scenario kind
+      options:
+        - arrival sequencing
+        - departure flow
+        - missed approach
+        - visual approach
+        - handoff
+        - phraseology
+        - debrief/evaluation
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Deterministic verification idea
+      description: What should the simulator be able to verify or replay?
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety boundary
+      options:
+        - label: This scenario is training-only and public-safe.
+          required: true
+        - label: This scenario does not include private SOPs, non-public training manuals, secrets, or local-only evidence.
+          required: true

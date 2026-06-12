@@ -12,7 +12,9 @@ This is not an operational ATC system. It is not for real-world air traffic cont
 
 ## Project Status
 
-This repository is a public release candidate.
+This repository has a public `v0.1.0` release candidate and an active `v0.1.x` maintenance line.
+
+The current maintainer focus is operational readiness for public OSS work: issue templates, release discipline, scheduled verification, dependency maintenance, and a free-first public demo path.
 
 The public release surface is built from an allowlist, not a wholesale copy of the source workspace. It can build and run core verification without private source files, local secrets, generated artifacts, or oversized data.
 
@@ -43,11 +45,14 @@ The long-term direction is to start with Jeju approach training, then generalize
 ```text
 jeju-radar-training-sim/
   README.md
+  MAINTAINING.md
+  SUPPORT.md
   DISCLAIMER.md
   DATA_POLICY.md
   CONTRIBUTING.md
   SECURITY.md
   ROADMAP.md
+  OPERATIONS_UPGRADE_PLAN.md
   CHANGELOG.md
   LICENSE
   DATA_LICENSE.md
@@ -61,6 +66,8 @@ jeju-radar-training-sim/
       jeju-radar-scope.png
     architecture.md
     data-authority.md
+    release-process.md
+    triage-policy.md
     verification.md
   jeju-radar-ui/
     index.html
@@ -77,7 +84,7 @@ jeju-radar-training-sim/
 
 ```powershell
 cd jeju-radar-ui
-npm install
+npm ci
 npm audit --audit-level=moderate
 npm run build
 npm run verify:public
@@ -108,6 +115,10 @@ Internal migration notes are kept outside the public release surface. The public
 - [Architecture](docs/architecture.md)
 - [Verification](docs/verification.md)
 - [Data authority](docs/data-authority.md)
+- [Release process](docs/release-process.md)
+- [Triage policy](docs/triage-policy.md)
+- [Maintaining](MAINTAINING.md)
+- [Support](SUPPORT.md)
 
 ## Data Policy
 

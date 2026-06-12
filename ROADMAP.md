@@ -1,74 +1,75 @@
 # Roadmap
 
-This roadmap is intentionally conservative. The goal is to publish a safe, verifiable training simulator before expanding scope.
+This roadmap is intentionally conservative. The project should become easier to inspect, verify, and maintain before it expands into larger simulator capabilities.
 
-## Phase 0: OSS Staging Controls
+## Current Status
 
-Status: in progress
+`v0.1.0 Public Release Candidate` is complete.
 
-- Migration control document
-- Blocklist and allowlist
-- Public disclaimer
-- Data policy
-- Git ignore policy
-- Repo skeleton
-- Secret and size audit rules
+The repository is public, has a first release tag, includes a radar scope screenshot, and runs repeatable verification through GitHub Actions. The public release surface is still training-only and excludes private source material, generated folders, local evidence, secrets, and oversized raw geometry.
 
-## Phase 1: Public Minimal Build
+## Completed in v0.1.0
 
-Goal: selected source, data, and scripts can build without private source files.
+- Public-safe repository boundary.
+- README, screenshot, disclaimer, data policy, data license boundary, security policy, and public documentation.
+- Browser-based radar training UI under `jeju-radar-ui/`.
+- Public-safe reference, authority, geometry, and scenario data.
+- Coordinate authority validation.
+- Procedure guidance, motion-model, arrival-stream, scenario, and selected SID/STAR verification.
+- Phraseology contract, parser checks, pilot response policy checks, and voice tolerance cases.
+- GitHub Actions `Verify` workflow.
+- Initial public roadmap issues.
 
-- Copy public-safe app source
-- Copy public-safe derived data
-- Exclude raw PDFs, local secrets, generated output, and oversized raw geometry
-- Run `npm install`
-- Run TypeScript check
-- Run production build
-- Run secret scan
+## v0.1.1 Maintainer Operations
 
-## Phase 2: Core Verification Baseline
+Goal: make the repository look and behave like an actively maintained OSS project.
 
-Goal: the public repo has a small but meaningful verification baseline.
+- Add maintainer operating policy.
+- Add support policy.
+- Add release process documentation.
+- Add triage policy documentation.
+- Add issue templates.
+- Add pull request template.
+- Add Dependabot configuration.
+- Add manual and scheduled verification workflow triggers.
+- Organize labels, milestones, and existing issues.
 
-- Procedure route progression checks
-- Aircraft motion checks
-- Arrival stream checks
-- Scenario preset checks
-- Coordinate authority checks that do not require private source files
-- Phraseology contract checks with public-safe fixtures
+## v0.2.0 Public Demo
 
-## Phase 3: Documentation Hardening
+Goal: make the simulator directly inspectable through a hosted, training-only public demo.
 
-Goal: a reviewer can understand the project in minutes.
+- Use a free-first static deployment path.
+- Prefer GitHub Pages unless a stronger deployment surface is explicitly needed.
+- Add a visible demo safety boundary in the UI.
+- Add demo documentation.
+- Add README `Live Demo` link.
+- Add repeatable deployment workflow or deployment documentation.
+- Verify the hosted demo in a browser before release.
 
-- Architecture overview
-- Data source and authority explanation
-- Verification guide
-- Scenario guide
-- Contributor guide
-- Maintainer-local verification notes, separated from public verification
+## v0.3.0 AI Pilot Runtime Prototype
 
-## Phase 4: Release Candidate
+Goal: introduce the first training-only AI pilot runtime boundary after the public demo is stable.
 
-Goal: the repo is ready for public GitHub release and OpenAI Codex OSS support application.
-
-- License decision
-- Data license decision
-- Full secret scan
-- File-size audit
-- README polish
-- Initial issue labels
-- First release tag
-- Support application summary
+- Keep API keys server-side.
+- Use the phraseology contract and pilot response policy as guardrails.
+- Log generated pilot responses as training artifacts, not operational guidance.
+- Add deterministic fixtures for readback and response-policy behavior.
+- Preserve the non-operational, training-only boundary.
 
 ## Later Scope
 
-These are not Phase 1 goals.
+These items remain outside the current release targets:
 
-- Multi-airport framework
-- Additional reference airports
-- Full voice/STT quality certification
-- Multi-user training sessions
-- Weather avoidance scenarios
-- Certified simulator behavior
+- Multi-airport framework.
+- Additional reference airports.
+- Enroute and ACC training modes.
+- Multi-user training sessions.
+- Weather avoidance scenarios.
+- Certified simulator behavior.
+- Full voice/STT quality certification.
 
+## Non-Goals
+
+- Do not use this project for real-world ATC, navigation, dispatch, certification, or safety-critical decision making.
+- Do not add private SOPs, PDFs, training manuals, tacit notes, local-only evidence, secrets, generated folders, or oversized raw geometry.
+- Do not implement the AI pilot runtime before the public demo and maintainer operations baseline are complete.

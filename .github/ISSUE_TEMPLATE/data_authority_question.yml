@@ -1,0 +1,47 @@
+name: Data authority question
+description: Ask about coordinate authority, derived data, source boundaries, or redistribution safety.
+title: "[Data authority]: "
+labels: ["area:data-authority", "type:question", "priority:p1", "status:blocked"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for data-source, coordinate-authority, or redistribution-boundary questions.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What data authority question needs review?
+    validations:
+      required: true
+  - type: dropdown
+    id: authority
+    attributes:
+      label: Candidate authority label
+      options:
+        - exact
+        - derived
+        - training
+        - reference-only
+        - visual-only
+        - blocked
+        - unknown
+    validations:
+      required: true
+  - type: textarea
+    id: affected-files
+    attributes:
+      label: Affected files or data
+      description: List repo-relative paths only. Do not paste private source text.
+  - type: textarea
+    id: public-source
+    attributes:
+      label: Public source or derivation
+      description: Describe the public source or derivation method without copying restricted material.
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Public boundary
+      options:
+        - label: I did not attach or paste private PDFs, SOPs, manuals, tacit notes, secrets, or local-only evidence.
+          required: true

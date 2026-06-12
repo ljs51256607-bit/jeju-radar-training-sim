@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a reproducible simulator, UI, verification, or documentation bug.
+title: "[Bug]: "
+labels: ["type:question", "priority:p2", "status:blocked"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. This project is training-only and is not for operational ATC, navigation, dispatch, certification, or safety-critical use.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: List the shortest steps needed to reproduce the issue.
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Run ...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - UI/radar scope
+        - scenario/replay
+        - procedure/motion
+        - phraseology/parser
+        - data authority
+        - CI/verification
+        - documentation
+        - unknown
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Local verification
+      description: If you ran a command, paste the command and relevant summary. Do not paste secrets or private source text.
+      placeholder: npm run verify:public
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety boundary
+      options:
+        - label: This report does not include private SOPs, non-public training manuals, secrets, or local-only source material.
+          required: true
+        - label: This report does not request operational ATC, navigation, dispatch, certification, or safety-critical use.
+          required: true

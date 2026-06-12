@@ -2,14 +2,15 @@
 
 The private source workspace previously reached a broad milestone validation pass.
 
-For the public OSS staging repo, that historical pass is evidence of project maturity, but it is not enough. Public release readiness depends on checks that run from this repository alone.
+For the public OSS release line, that historical pass is evidence of project maturity, but it is not enough. Public release readiness depends on checks that run from this repository alone.
 
 ## Public Baseline To Reproduce
 
 From `jeju-radar-ui`:
 
 ```powershell
-npm install
+npm ci
+npm audit --audit-level=moderate
 npm run build
 npm run verify:public
 ```

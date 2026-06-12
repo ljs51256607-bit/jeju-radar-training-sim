@@ -1,0 +1,52 @@
+name: Feature request
+description: Propose a training-only simulator capability or maintainer improvement.
+title: "[Feature]: "
+labels: ["type:feature", "priority:p2", "status:blocked"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests must preserve the training-only boundary. Do not request operational ATC, navigation, dispatch, certification, or safety-critical use.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Training problem
+      description: What training or maintainer problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the smallest useful version of the feature.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - AI pilot
+        - public demo
+        - phraseology
+        - data authority
+        - scenario/debrief
+        - radar UI
+        - CI/maintainer operations
+        - documentation
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification idea
+      description: How could this be tested or verified deterministically?
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Safety boundary
+      options:
+        - label: This request is training-only.
+          required: true
+        - label: This request does not require private SOPs, non-public training manuals, local-only evidence, or secrets.
+          required: true

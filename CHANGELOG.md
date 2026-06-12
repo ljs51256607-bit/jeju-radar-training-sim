@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.1.1 Maintainer Operations
+
+Maintainer operations release for the public OSS repository.
+
+### Included
+
+- Release-based roadmap update.
+- Maintainer policy and support policy.
+- Release process and triage policy documentation.
+- GitHub issue templates and pull request template.
+- Dependabot configuration for UI npm dependencies.
+- Manual and weekly scheduled verification workflow triggers.
+- Public documentation links for maintainer operations.
+
+### Explicitly Preserved
+
+- Training-only boundary.
+- Non-operational, non-navigation, non-certified simulator disclaimer.
+- Public-safe data boundary.
+- Exclusion of private SOPs, PDFs, training manuals, tacit notes, local evidence, secrets, generated folders, and oversized raw geometry.
+
 ## v0.1.0 Public Release Candidate
 
 Initial public release candidate for Jeju Radar Training Simulator.

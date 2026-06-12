@@ -2,7 +2,7 @@
 
 ## Supported Status
 
-This repository is currently in OSS staging. Security handling is focused on secret hygiene, safe data boundaries, and preventing accidental publication of local/private material.
+This repository is a public, training-only OSS project. Security handling is focused on secret hygiene, safe data boundaries, and preventing accidental publication of local/private material.
 
 ## Do Not Commit
 
@@ -27,7 +27,11 @@ If a secret is accidentally committed:
 
 ## Reporting
 
-For now, report security issues through a private maintainer channel rather than a public issue when the issue involves:
+Do not disclose sensitive security or private-source material in a public issue.
+
+Use GitHub private vulnerability reporting when it is available for this repository. If that reporting path is unavailable, open a minimal public issue that says a private security or data-boundary review is needed, but do not include sensitive details.
+
+This applies when the issue involves:
 
 - Secret exposure
 - Private source material
@@ -39,7 +43,7 @@ Public issues are acceptable for ordinary bugs that do not disclose sensitive in
 
 ## Verification
 
-Before publication or release, run a secret scan and file-size audit. At minimum:
+Before every release, run a secret scan and file-size audit. At minimum:
 
 ```powershell
 rg --files | rg -i "API KEY|SECRET|TOKEN|PASSWORD|node_modules|dist|output|tmp|tools|coastline_lines\.geojson"

@@ -2,29 +2,39 @@
 
 ## Current Objective
 
-Prepare this repository as a public-safe OSS staging repo for the Jeju Radar Training Simulator.
+Operate the public Jeju Radar Training Simulator repository through release-sized OSS maintenance work.
 
-## Active Gates
+The active control plan is [OPERATIONS_UPGRADE_PLAN.md](OPERATIONS_UPGRADE_PLAN.md).
 
-- G0: migration rules and blocklist fixed.
-- G1: public repo skeleton and policy documents created.
-- G2: selected copy and public-safety audit in progress.
-- G3: public build and typecheck pending.
-- G4: public verification pending.
-- G5: release readiness, license, and final secret/size audit pending.
+## Active Release Gates
 
-## Near-Term Work
+- `v0.1.0 Public Release Candidate`: completed.
+- `v0.1.1 Maintainer Operations`: active.
+- `v0.2.0 Public Demo`: next.
+- `v0.3.0 AI Pilot Runtime Prototype`: deferred until after the public demo.
 
-1. Keep only public-safe app source, data, phraseology contracts, and verification scripts.
-2. Remove generated artifacts, private-source dependencies, local-only corpora, VICE/toolchain helpers, and oversized raw geometry.
-3. Sanitize derived data metadata so it does not expose local source paths or private source labels.
-4. Run `npm install`, `npm run build`, and `npm run verify:public` from `jeju-radar-ui`.
-5. Run coordinate authority and phraseology verification from the repository root.
-6. Complete license and data-license decisions before public release.
+## Current Maintainer Work
+
+1. Keep the roadmap aligned with release status.
+2. Add maintainer, support, release-process, and triage documentation.
+3. Add issue templates and pull request template.
+4. Add Dependabot and scheduled verification.
+5. Organize GitHub labels, milestones, and existing issues.
+6. Verify the repository before tagging `v0.1.1`.
+
+## Next Work
+
+After `v0.1.1`, ship a free-first public demo:
+
+1. Prefer GitHub Pages for the first static demo.
+2. Add a visible training-only safety boundary in the UI.
+3. Add demo documentation and README link.
+4. Add repeatable deployment workflow.
+5. Verify the hosted demo before tagging `v0.2.0`.
 
 ## Non-Goals
 
 - No operational ATC claim.
-- No navigation or certification claim.
+- No navigation, dispatch, certification, or safety-critical claim.
 - No redistribution of private source material.
-- No multi-airport framework expansion until the RKPC public reference implementation is stable.
+- No AI pilot runtime before the public demo baseline is complete.
